@@ -118,13 +118,93 @@ ul.navbar > li > a {
   font-size: 1rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-/* Hero Section */
-.hero {
+/* Welcome Full-Screen Section */
+.welcome-section {
+  height: 100vh;
+  background-color: #ab9998;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
   text-align: center;
-  padding: 5rem 2rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-section p {
+  font-size: 1.25rem;
+}
+
+/* Parallax Effect Spacer */
+.parallax-spacer {
+  background-image: url('https://images.unsplash.com/photo-1581091870627-1e7d4c4bb3ae?auto=format&fit=crop&w=1200&q=80'); /* use any legal-themed image here */
+  height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Services Section */
+.services-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.services-table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-item {
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.service-item:hover {
+  border-left-color: #541313;
+  background-color: #eee;
+}
+
+.service-details {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.service-details h2 {
+  margin-top: 0;
+  color: #541313;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #FFD700;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 /* Footer */
