@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,63 +8,83 @@ body {
 
 header {
   background: #1b1b1b;
-  color: white;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
   font-size: 1.5rem;
+  color: white;
   font-weight: bold;
 }
 
-nav ul.menu {
+/* Navigation */
+nav {
+  flex-grow: 1;
+}
+
+ul.navbar {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
 }
 
-nav ul.menu > li {
+ul.navbar > li {
   position: relative;
-  margin-left: 1.5rem;
 }
 
-nav a {
+ul.navbar > li > a {
   color: white;
   text-decoration: none;
-  padding: 0.5rem;
-  display: block;
+  padding: 0.5rem 0;
+  display: inline-block;
 }
 
-nav .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content {
-  display: none;
+/* Dropdown Menu */
+.dropdown-menu {
   position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  z-index: 1;
+  top: 100%;
+  left: 0;
+  background: #333;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 999;
 }
 
-.dropdown-content li {
-  margin: 0;
+.dropdown-menu li {
+  border-bottom: 1px solid #444;
 }
 
-.dropdown-content a {
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
   color: white;
-  padding: 0.5rem 1rem;
   text-decoration: none;
+  padding: 0.75rem 1rem;
+  display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown-menu a:hover {
   background-color: #555;
 }
 
+/* Show on Hover */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 5rem 2rem;
@@ -71,6 +92,7 @@ nav .dropdown:hover .dropdown-content {
   background: rgba(0, 0, 0, 0.5);
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
