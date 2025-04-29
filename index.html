@@ -6,6 +6,18 @@
   <title>Sandhu Law and Mediation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+  <script>
+  const items = document.querySelectorAll('.service-item');
+  const title = document.getElementById('service-title');
+  const desc = document.getElementById('service-desc');
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      title.textContent = item.getAttribute('data-title');
+      desc.textContent = item.getAttribute('data-desc');
+    });
+  });
+</script>
 <body>
   <header>
     <div class="header-container">
