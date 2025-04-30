@@ -3,7 +3,6 @@
   --yellow: #FFD700;
 }
 
-/* Smooth scrolling + page fade-in */
 html {
   scroll-behavior: smooth;
 }
@@ -18,31 +17,10 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #ab9998;
   color: #333;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
 }
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Scroll-triggered animation base */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Header */
 header {
-  height: 130px;
+  height: 130px; /* Ensure fixed height */
   background-color: white;
   position: sticky;
   top: 0;
@@ -63,7 +41,7 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5rem; /* distance between image and text */
   flex-shrink: 0;
 }
 
@@ -129,20 +107,18 @@ ul.navbar > li > a {
   font-size: 1.2rem;
   font-weight: 400;
   white-space: nowrap;
-  transition: background 0.3s ease;
 }
 
 ul.navbar > li > a:hover {
   background-color: var(--bright-burgundy);
   color: white;
 }
-
 .arrow {
   margin-left: 5px;
   font-size: 0.6rem;
 }
 
-/* Mega Menu */
+/* Mega Menu Layer */
 .mega-menu {
   position: sticky;
   top: 130px;
@@ -206,12 +182,6 @@ ul.navbar > li > a:hover {
   display: inline-block;
   font-size: 1rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-button a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Welcome Section */
@@ -267,7 +237,6 @@ ul.navbar > li > a:hover {
   font-size: 1.25rem;
   color: white;
 }
-
 /* About Section */
 .about-section {
   position: relative;
@@ -275,7 +244,6 @@ ul.navbar > li > a:hover {
   color: white;
   padding: 10rem 2rem;
   text-align: center;
-  transition: background 0.6s ease;
 }
 
 .about-content {
@@ -305,12 +273,6 @@ ul.navbar > li > a:hover {
   font-weight: bold;
   border-radius: 10px;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-button a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Services Section */
@@ -319,7 +281,6 @@ ul.navbar > li > a:hover {
   position: relative;
   padding: 10vh 2rem 6vh;
   color: white;
-  transition: background 0.6s ease;
 }
 
 .services-overlay {
@@ -375,7 +336,7 @@ ul.navbar > li > a:hover {
 
 .service-details {
   flex: 2;
-  padding-left: 10rem;
+  padding-left: 10rem; /* moved more to the right */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -393,7 +354,7 @@ ul.navbar > li > a:hover {
 
 .description.active {
   display: block;
-  margin-top: 2.75rem;
+  margin-top: 2.75rem; /* aligns with Our Services title */
 }
 
 .description h3 {
@@ -426,20 +387,20 @@ ul.navbar > li > a:hover {
   text-decoration: none;
   font-weight: bold;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.learn-more-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* Contact Section */
+/* Contact Section Parallax */
+/* Contact Section - White Background with Red Theme */
 .contact-section {
+  position: relative;
   background: white;
   padding: 6rem 2rem;
   color: #333;
   z-index: 1;
+}
+
+.contact-overlay {
+  display: none;
 }
 
 .contact-container {
@@ -452,6 +413,7 @@ ul.navbar > li > a:hover {
   align-items: flex-start;
 }
 
+/* Logo + Heading */
 .contact-logo {
   display: flex;
   align-items: center;
@@ -465,6 +427,7 @@ ul.navbar > li > a:hover {
   color: var(--bright-burgundy);
 }
 
+/* Info text */
 .contact-details p {
   margin: 0 0 1rem;
   line-height: 1.5;
@@ -484,6 +447,7 @@ ul.navbar > li > a:hover {
   text-decoration: underline;
 }
 
+/* Right Form Side */
 .contact-right {
   flex: 1;
   min-width: 320px;
@@ -501,6 +465,7 @@ ul.navbar > li > a:hover {
   width: 100%;
   padding: 0.85rem 1rem;
   font-size: 1rem;
+  font-family: inherit;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #fff;
@@ -529,15 +494,14 @@ ul.navbar > li > a:hover {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .submit-btn:hover {
   background-color: #a6012d;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* Confirmation message */
 #form-confirmation {
   display: none;
   color: var(--bright-burgundy);
@@ -545,14 +509,7 @@ ul.navbar > li > a:hover {
   margin-top: 2rem;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #eee;
-}
-
-/* Responsive */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -563,4 +520,10 @@ footer {
     width: 100%;
     padding-right: 0;
   }
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
 }
