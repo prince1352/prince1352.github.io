@@ -368,7 +368,7 @@ ul.navbar > li > a:hover {
   position: absolute;
   top: 50%;
   left: 10rem;
-  transform: translateY(-90%);
+  transform: translateY(-50%);
   text-align: left;
 }
 
