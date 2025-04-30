@@ -20,7 +20,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 120px;
+  height: 130px;
   display: flex;
   align-items: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -46,10 +46,10 @@ header {
 }
 
 .logo-line-1 {
-  font-size: 2.6rem;
+  font-size: 3.4rem;         /* increased size */
   font-weight: 700;
   color: var(--bright-burgundy);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.3rem;    /* increased spacing */
   width: fit-content;
 }
 
@@ -101,10 +101,16 @@ ul.navbar > li > a:hover {
   color: white;
 }
 
+/* Arrows beside menu items */
+.arrow {
+  margin-left: 5px;
+  font-size: 0.6rem; /* smaller arrow */
+}
+
 /* Submenu */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 110%; /* slightly below parent menu */
   left: 0;
   background: white;
   display: none;
@@ -138,6 +144,7 @@ ul.navbar > li > a:hover {
   color: white;
 }
 
+/* CTA Button */
 .cta-button {
   flex: 1;
   text-align: right;
@@ -152,11 +159,6 @@ ul.navbar > li > a:hover {
   font-weight: bold;
   display: inline-block;
   font-size: 1rem;
-}
-
-.arrow {
-  margin-left: 6px;
-  font-size: 0.85rem;
 }
 
 /* Welcome Section */
@@ -192,15 +194,21 @@ ul.navbar > li > a:hover {
   text-align: center;
 }
 
+/* Scroll text and arrow */
 .scroll-text {
   font-size: 1.25rem;
 }
 
-.scroll-arrow {
-  margin-left: 6px;
+.scroll-text a {
+  color: white;
   font-size: 1.25rem;
-  color: var(--yellow);
+  margin-left: 8px;
   text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-text:hover a {
+  opacity: 0.7;
 }
 
 /* About Section */
