@@ -70,6 +70,7 @@ header {
   color: var(--yellow);
   letter-spacing: 0.15rem;
   width: fit-content;
+  white-space: nowrap; /* 👈 prevents wrapping */
 }
 
 /* Navigation */
