@@ -110,18 +110,23 @@ ul.navbar > li > a:hover {
 
 /* Mega Menu Layer */
 .mega-menu {
-  display: none;
-  position: relative;
-  background-color: var(--bright-burgundy);
+  position: absolute;
+  top: 130px;
+  left: 0;
   width: 100%;
-  padding: 1rem 2rem;
-  transition: all 0.3s ease;
-  z-index: 900;
+  background-color: var(--bright-burgundy);
+  padding: 1.5rem 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+  z-index: 999;
 }
 
 .mega-menu.active {
-  display: flex;
-  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .submenu-row {
@@ -198,7 +203,6 @@ ul.navbar > li > a:hover {
   text-align: center;
 }
 
-/* Scroll to Services */
 .scroll-text.scroll-link {
   display: inline-flex;
   align-items: center;
@@ -217,6 +221,7 @@ ul.navbar > li > a:hover {
   font-size: 1.25rem;
   color: white;
 }
+
 
 /* About Section */
 .about-section {
