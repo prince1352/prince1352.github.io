@@ -46,22 +46,22 @@
   <section class="welcome-section">
     <div class="welcome-overlay"></div>
     <h1>Welcome to Sandhu Law and Mediation</h1>
-    <p>Scroll to see our services</p>
+    <p class="scroll-text">Scroll to see our Services</p>
   </section>
 
-  <!-- Parallax Transition -->
-  <section class="parallax"></section>
-
-  <!-- Services Section -->
-  <section class="services-section">
-    <div class="services-background-overlay"></div>
+  <!-- Services Section (on parallax image) -->
+  <section class="services-parallax">
+    <div class="services-overlay"></div>
     <div class="services-layout">
-      <ul class="service-list">
-        <li class="service-item" data-service="criminal">Criminal Law</li>
-        <li class="service-item" data-service="immigration">Immigration Law</li>
-        <li class="service-item" data-service="family">Family Law</li>
-        <li class="service-item" data-service="mediation">Mediation</li>
-      </ul>
+      <div class="services-left">
+        <h2 class="services-heading">Our Services</h2>
+        <ul class="service-list">
+          <li class="service-item" data-service="criminal">Criminal Law</li>
+          <li class="service-item" data-service="immigration">Immigration Law</li>
+          <li class="service-item" data-service="family">Family Law</li>
+          <li class="service-item" data-service="mediation">Mediation</li>
+        </ul>
+      </div>
 
       <div class="service-details">
         <div class="description" id="criminal">
@@ -93,7 +93,6 @@
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
-  <!-- Hover Script -->
   <script>
     const items = document.querySelectorAll('.service-item');
     const descriptions = document.querySelectorAll('.description');
