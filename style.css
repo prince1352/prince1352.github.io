@@ -120,26 +120,21 @@ ul.navbar > li > a:hover {
 
 /* Mega Menu Layer */
 .mega-menu {
-  position: sticky;
-  top: 130px;
+  position: absolute;
+  top: 130px; /* match header height */
   left: 0;
   width: 100%;
   background-color: var(--bright-burgundy);
-  padding: 0rem 2rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.4s ease;
+  padding: 0; /* no padding by default */
+  display: none;
+  justify-content: center;
+  gap: 2rem;
   z-index: 999;
-  margin: 0;
-  border: none;
-}
+  transition: all 0.3s ease;
 
 .mega-menu.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-    display: flex;
+  display: flex;
+  padding: 1.25rem 2rem; /* restore when active */
 }
 
 .submenu-row {
