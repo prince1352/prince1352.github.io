@@ -1,5 +1,5 @@
 :root {
-  --bright-burgundy: #8A1C1C;
+  --bright-burgundy: #b80238;
   --yellow: #FFD700;
 }
 
@@ -31,7 +31,7 @@ header {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #541313;
+  color: var(--bright-burgundy);
   flex: 1;
   text-align: left;
 }
@@ -139,10 +139,10 @@ ul.navbar > li > a {
 /* About */
 .about-section {
   position: relative;
-  background: linear-gradient(to bottom, #922b58, #a64663);
+  background: var(--bright-burgundy);
   background-attachment: fixed;
   color: white;
-  padding: 8rem 2rem;
+  padding: 10rem 2rem;
   text-align: center;
   z-index: 1;
 }
@@ -163,14 +163,16 @@ ul.navbar > li > a {
 }
 
 .about-section h2 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin-bottom: 1.5rem;
+  color: white;
 }
 
 .about-section p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .divider {
