@@ -235,21 +235,25 @@
       const cardBio = document.getElementById('cardBio');
       const cardImage = document.getElementById('cardImage');
       const closeBtn = document.getElementById('closeCard');
+      const backdrop = document.getElementById('cardBackdrop');
 
-      teamCards.forEach(card => {
-        card.addEventListener('click', () => {
-          cardName.textContent = card.dataset.name;
-          cardTitle.textContent = card.dataset.title;
-          cardBio.textContent = card.dataset.bio;
-          cardImage.src = card.querySelector('img').src;
-          expandedCard.classList.add('active');
-        });
-      });
 
-      closeBtn.addEventListener('click', () => {
-        expandedCard.classList.remove('active');
-      });
-    });
+teamCards.forEach(card => {
+  card.addEventListener('click', () => {
+    cardName.textContent = card.dataset.name;
+    cardTitle.textContent = card.dataset.title;
+    cardBio.textContent = card.dataset.bio;
+    cardImage.src = card.querySelector('img').src;
+
+    expandedCard.classList.add('active');
+    backdrop.classList.add('active'); // ✅ activate background shade
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  expandedCard.classList.remove('active');
+  backdrop.classList.remove('active'); // ✅ deactivate background shade
+});
 
     document.addEventListener('DOMContentLoaded', function () {
       const navDropdowns = document.querySelectorAll('.navbar .dropdown');
