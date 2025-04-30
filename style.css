@@ -50,7 +50,7 @@ header {
   font-size: 3.0rem;
   font-weight: 700;
   color: var(--bright-burgundy);
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.28rem;
   width: fit-content;
   transform: translateX(2px);
 }
