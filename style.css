@@ -1,6 +1,6 @@
 :root {
-  --bright-burgundy: #b80238;
-  --yellow: #FFD700;
+  --bright-burgundy: #962f33;
+  --yellow: #242e37;
 }
 
 html {
@@ -181,7 +181,7 @@ ul.navbar > li > a:hover {
 
 .cta-button a {
   background-color: var(--yellow);
-  color: black;
+  color: white;
   padding: 1rem 2rem;
   text-decoration: none;
   border-radius: 8px;
@@ -275,7 +275,7 @@ ul.navbar > li > a:hover {
   margin-top: 2rem;
   display: inline-block;
   background-color: var(--yellow);
-  color: black;
+  color: white;
   padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
