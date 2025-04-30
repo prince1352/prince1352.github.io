@@ -599,7 +599,7 @@ footer {
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: auto;
   z-index: 1;
@@ -615,6 +615,8 @@ footer {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   height: 350px;
+  width: 300px; /* or any size you prefer */
+  margin: auto; /* centers the card in its grid cell */
   display: flex;
   flex-direction: column;
 }
