@@ -104,10 +104,10 @@ ul.navbar > li > a {
   font-size: 1rem;
 }
 
-/* Welcome Section */
+/* Welcome Section with background image */
 .welcome-section {
   height: 100vh;
-  background: url('images/Welcome Background.jpg')center center / cover no-repeat fixed;
+  background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,10 +125,10 @@ ul.navbar > li > a {
   font-size: 1.25rem;
 }
 
-/* Parallax Section */
+/* Parallax Transition Background */
 .parallax {
   height: 60vh;
-  background-image: url('images/Services Background.jpg');
+  background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
