@@ -41,7 +41,6 @@ header {
 
 /* Logo */
 .logo {
-  flex: 1;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -125,7 +124,7 @@ ul.navbar > li > a:hover {
 
 /* Mega Menu Layer */
 .mega-menu {
-  position: absolute;
+  position: sticky;
   top: 130px;
   left: 0;
   width: 100%;
@@ -142,6 +141,7 @@ ul.navbar > li > a:hover {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+    display: flex;
 }
 
 .submenu-row {
