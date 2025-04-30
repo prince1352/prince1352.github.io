@@ -3,6 +3,10 @@
   --yellow: #FFD700;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,13 +14,19 @@ body {
   color: #333;
 }
 
-/* Header */
 header {
   background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0));
+  z-index: 0;
 }
 
 .header-container {
@@ -26,6 +36,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
@@ -58,6 +70,8 @@ ul.navbar > li > a {
   color: black;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  display: block;
 }
 
 .dropdown-menu {
@@ -72,10 +86,11 @@ ul.navbar > li > a {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 999;
   text-align: center;
+  padding: 0;
 }
 
 .dropdown-menu li {
-  border-bottom: 1px solid #ddd;
+  list-style: none;
 }
 
 .dropdown-menu a {
@@ -85,8 +100,15 @@ ul.navbar > li > a {
   display: block;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
   display: flex;
+}
+
+ul.navbar > li > a:hover,
+.dropdown-menu a:hover {
+  background-color: var(--bright-burgundy);
+  color: white;
 }
 
 .cta-button {
@@ -98,6 +120,7 @@ ul.navbar > li > a {
   background-color: var(--yellow);
   color: black;
   padding: 1rem 1.5rem;
+  text-align: center;
   text-decoration: none;
   border-radius: 12px;
   font-weight: bold;
@@ -106,7 +129,7 @@ ul.navbar > li > a {
   font-size: 1rem;
 }
 
-/* Welcome Section */
+/* Welcome */
 .welcome-section {
   height: 100vh;
   background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
@@ -149,10 +172,9 @@ ul.navbar > li > a {
   background: var(--bright-burgundy);
   background-attachment: fixed;
   color: white;
-  padding: 12rem 2rem 12rem;
+  padding: 10rem 2rem;
   text-align: center;
   z-index: 1;
-  overflow: hidden;
 }
 
 .about-overlay {
@@ -173,25 +195,25 @@ ul.navbar > li > a {
 .about-section h2 {
   font-size: 2.75rem;
   margin-bottom: 1.5rem;
-  color: white;
 }
 
 .about-section p {
   font-size: 1.4rem;
   line-height: 1.8;
   margin-bottom: 2rem;
+}
+
+.about-button a {
+  background-color: var(--yellow);
   color: white;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
-.divider {
-  height: 4px;
-  width: 60px;
-  background-color: white;
-  margin: auto;
-  border-radius: 2px;
-}
-
-/* Services Section - Animation effect */
+/* Services Section */
 .services-parallax {
   background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
