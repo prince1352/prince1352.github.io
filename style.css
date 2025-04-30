@@ -111,14 +111,13 @@ ul.navbar > li > a {
 
 /* Welcome Section */
 .welcome-section {
-  height: 100vh;
+  height: 100dvh;
   background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding-top: 10vh;
   text-align: center;
 }
 
@@ -126,25 +125,26 @@ ul.navbar > li > a {
   position: absolute;
   inset: 0;
   backdrop-filter: blur(6px);
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.3);
+}
+
+.welcome-section h1,
+.scroll-text {
+  position: relative;
+  color: white;
+  z-index: 1;
 }
 
 .welcome-section h1 {
-  position: relative;
-  color: var(--bright-burgundy);
   font-size: 3rem;
   margin-bottom: 1rem;
-  z-index: 1;
 }
 
 .scroll-text {
-  position: relative;
-  color: var(--yellow);
   font-size: 1.25rem;
-  z-index: 1;
 }
 
-/* Services Section on Parallax Background */
+/* Services Section */
 .services-parallax {
   background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
@@ -152,11 +152,9 @@ ul.navbar > li > a {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 10vh 2rem;
+  padding: 10vh 2rem 6vh;
   color: white;
-  min-height: 130vh;
-  display: flex;
-  align-items: center;
+  min-height: fit-content;
 }
 
 .services-overlay {
@@ -212,23 +210,28 @@ ul.navbar > li > a {
 
 .service-details {
   flex: 2;
-  position: relative;
   display: flex;
-  align-items: flex-start;
-  padding-top: 4rem;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 3rem;
   min-height: 300px;
+  position: relative;
   color: white;
 }
 
 .description {
   display: none;
-  padding: 0 1rem;
+  max-width: 600px;
+}
+
+.description.active {
+  display: block;
 }
 
 .description h3 {
-  margin-top: 0;
   font-size: 1.75rem;
   color: white;
+  margin-top: 0;
 }
 
 .learn-more-btn {
