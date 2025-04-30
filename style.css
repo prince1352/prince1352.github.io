@@ -146,37 +146,31 @@ ul.navbar > li > a:hover {
 }
 
 .submenu-row {
-  display: flex;
-  gap: 2rem;
+  display: none;
+  gap: 2.5rem;
   justify-content: center;
-  align-items: stretch;
-  padding: 1rem 0;
-  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
   width: 100%;
 }
 
-.submenu-card {
-  background-color: white;
-  padding: 1.25rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 160px;
-  text-align: center;
+.submenu-row.active {
+  display: flex;
 }
 
-.submenu-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.submenu-card a {
-  color: var(--bright-burgundy);
-  font-weight: 400;
+.submenu-row a {
+  color: white;
+  font-weight: 300; /* Light and modern */
+  font-size: 1rem; /* Match menu */
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
   text-decoration: none;
-  display: block;
+  transition: color 0.2s ease;
+  padding: 0.5rem 1rem;
+}
+
+
+.submenu-row a:hover {
+  text-decoration: underline;
 }
 
 /* CTA Button */
