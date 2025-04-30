@@ -33,12 +33,38 @@ header {
   width: 100%;
 }
 
+header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 120px; /* increased to fit two lines */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
 .logo {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--bright-burgundy);
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.logo-line-1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--bright-burgundy);
   font-family: 'Inter', sans-serif;
+}
+
+.logo-line-2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--yellow);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
 }
 
 nav {
