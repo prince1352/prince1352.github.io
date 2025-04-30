@@ -125,7 +125,13 @@ ul.navbar > li > a {
   background-color: rgba(0,0,0,0.3);
 }
 
-.welcome-section h1,
+.welcome-section h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin: 0 1rem 1rem;
+}
+
 .scroll-text {
   position: relative;
   color: white;
