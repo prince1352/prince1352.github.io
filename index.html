@@ -5,10 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sandhu Law and Mediation</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
+    <div class="header-overlay"></div>
     <div class="header-container">
       <div class="logo">Sandhu Law and Mediation</div>
       <nav>
@@ -31,7 +37,7 @@
               <li><a href="#">Aman Sandhu</a></li>
             </ul>
           </li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="#about-section">About Us</a></li>
           <li><a href="#">Resources</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
@@ -50,14 +56,16 @@
   </section>
 
   <!-- About Section -->
-  <section class="about-section">
+  <section id="about-section" class="about-section">
     <div class="about-overlay"></div>
     <div class="about-content">
       <h2>Why Choose Us</h2>
       <p>
         We are a full-service law firm based in Surrey, British Columbia. We have over 20 years of experience in Criminal Law, Immigration Law, Family Law and Mediation. With our strong network of partners and proven experience, we are the trusted law firm for all your needs.
       </p>
-      <div class="divider"></div>
+      <div class="about-button">
+        <a href="#about-section">About Us</a>
+      </div>
     </div>
   </section>
 
@@ -113,6 +121,7 @@
     const items = document.querySelectorAll('.service-item');
     const descriptions = document.querySelectorAll('.description');
     const defaultDesc = document.querySelector('.description.default');
+    const servicesSection = document.querySelector('.services-parallax');
 
     items.forEach(item => {
       item.addEventListener('mouseenter', () => {
@@ -128,8 +137,6 @@
       defaultDesc.style.display = 'block';
     });
 
-    // Scroll animation for services section
-    const servicesSection = document.querySelector('.services-parallax');
     window.addEventListener('scroll', () => {
       const rect = servicesSection.getBoundingClientRect();
       const windowHeight = window.innerHeight;
