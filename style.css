@@ -14,6 +14,63 @@ body {
   color: #333;
 }
 
+/* Additional for mobile submenu toggle */
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  width: 100%;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle:hover {
+  background-color: var(--bright-burgundy);
+  color: white;
+}
+
+/* For service slider effect */
+.services-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.services-wrapper.show-description .services-left {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.services-left {
+  flex: 1;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Responsive Update for centered CTA */
+#cta-button.centered-cta {
+  order: 4;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Existing code preserved below... */
+
 /* Header */
 header {
   background-color: white;
