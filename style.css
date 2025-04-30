@@ -3,7 +3,139 @@
   --yellow: #FFD700;
 }
 
-/* Scroll Text */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #ab9998;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #541313;
+  flex: 1;
+  text-align: left;
+}
+
+nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+ul.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+ul.navbar > li {
+  position: relative;
+}
+
+ul.navbar > li > a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 999;
+  text-align: center;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu a {
+  color: black;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.cta-button {
+  flex: 1;
+  text-align: right;
+}
+
+.cta-button a {
+  background-color: var(--yellow);
+  color: black;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.3;
+  font-size: 1rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+  height: 100vh;
+  background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0,0,0,0.2);
+}
+
+.welcome-section h1 {
+  position: relative;
+  color: var(--bright-burgundy);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
 .scroll-text {
   position: relative;
   color: var(--yellow);
@@ -70,7 +202,6 @@
   color: var(--bright-burgundy);
 }
 
-/* Descriptions on Image (no box) */
 .service-details {
   flex: 2;
   position: relative;
@@ -101,4 +232,9 @@
   border-radius: 8px;
 }
 
-/* Footer remains unchanged */
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
+}
