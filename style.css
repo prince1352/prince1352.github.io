@@ -79,7 +79,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 3rem;
+  margin-left: 2.5rem;   /* Previously 3rem — slightly reduced */
+  margin-right: 2.5rem;  /* Add this to push away from CTA button */
 }
 
 ul.navbar {
@@ -101,11 +102,12 @@ ul.navbar > li > a {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 1.5rem;
+ padding: 0 1rem;
   text-decoration: none;
   color: black;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1rem;             /* Decreased from 1.2rem */
+  font-weight: 300;            /* Lighter weight */
+  font-family: 'Inter', sans-serif;
   white-space: nowrap;
 }
 
