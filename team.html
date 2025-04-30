@@ -120,10 +120,23 @@
 </html>
 
 <script>
-  document.querySelectorAll('.card-inner').forEach(card => {
+  const teamCards = document.querySelectorAll('.team-card');
+  const expandedCard = document.getElementById('expandedCard');
+  const cardName = document.getElementById('cardName');
+  const cardTitle = document.getElementById('cardTitle');
+  const cardBio = document.getElementById('cardBio');
+  const closeBtn = document.getElementById('closeCard');
+
+  teamCards.forEach(card => {
     card.addEventListener('click', () => {
-      card.classList.toggle('flipped');
+      cardName.textContent = card.dataset.name;
+      cardTitle.textContent = card.dataset.title;
+      cardBio.textContent = card.dataset.bio;
+      expandedCard.classList.add('active');
     });
   });
-</script>
 
+  closeBtn.addEventListener('click', () => {
+    expandedCard.classList.remove('active');
+  });
+</script>
