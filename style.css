@@ -433,12 +433,14 @@ ul.navbar > li > a:hover {
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--bright-burgundy);
+  white-space: nowrap;
 }
 
 /* Info text */
 .contact-details p {
   margin: 0 0 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 1rem;
   color: #333;
 }
 
@@ -503,6 +505,8 @@ ul.navbar > li > a:hover {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+  align-self: center;
+  width: 100%;
 }
 
 .submit-btn:hover {
@@ -522,6 +526,13 @@ ul.navbar > li > a:hover {
   .contact-container {
     flex-direction: column;
   }
+  
+.contact-left {
+  flex: 1;
+  min-width: 320px;
+  max-width: 450px; /* Keeps the layout tight and aligned */
+  padding-left: 2rem;
+}
 
   .contact-left,
   .contact-right {
