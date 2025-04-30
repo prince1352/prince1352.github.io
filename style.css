@@ -755,3 +755,8 @@ footer {
   opacity: 1;
   pointer-events: all;
 }
+
+header.dimmed {
+  z-index: 0;
+}
+
