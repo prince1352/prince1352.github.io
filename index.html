@@ -126,53 +126,61 @@
   </footer>
 
   <script>
-    const items = document.querySelectorAll('.service-item');
-    const descriptions = document.querySelectorAll('.description');
-    const defaultDesc = document.querySelector('.description.default');
-    const servicesSection = document.querySelector('.services-parallax');
-    const navDropdowns = document.querySelectorAll('.navbar .dropdown');
-    const megaMenu = document.querySelector('.mega-menu');
-    const submenuRows = document.querySelectorAll('.submenu-row');
+  const items = document.querySelectorAll('.service-item');
+  const descriptions = document.querySelectorAll('.description');
+  const defaultDesc = document.querySelector('.description.default');
+  const servicesSection = document.querySelector('.services-parallax');
+  const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+  const megaMenu = document.querySelector('.mega-menu');
+  const submenuRows = document.querySelectorAll('.submenu-row');
 
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        descriptions.forEach(desc => desc.classList.remove('active'));
-        defaultDesc.style.display = 'none';
-        const target = item.getAttribute('data-service');
-        document.getElementById(target).classList.add('active');
-      });
-    });
-
-    document.querySelector('.services-layout').addEventListener('mouseleave', () => {
+  // Hover: show service description
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
       descriptions.forEach(desc => desc.classList.remove('active'));
-      defaultDesc.style.display = 'block';
+      defaultDesc.style.display = 'none';
+      const target = item.getAttribute('data-service');
+      document.getElementById(target).classList.add('active');
     });
+  });
 
-    window.addEventListener('scroll', () => {
-      const rect = servicesSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      if (rect.top < windowHeight - 100) {
-        servicesSection.classList.add('active');
-      }
-    });
+  document.querySelector('.services-layout').addEventListener('mouseleave', () => {
+    descriptions.forEach(desc => desc.classList.remove('active'));
+    defaultDesc.style.display = 'block';
+  });
 
-    navDropdowns.forEach(dropdown => {
-      dropdown.addEventListener('mouseenter', () => {
-        const submenuId = dropdown.getAttribute('data-submenu');
-        submenuRows.forEach(row => {
-          row.classList.remove('active');
-          if (row.id === submenuId) {
-            row.classList.add('active');
-          }
-        });
-        megaMenu.classList.add('active');
+  window.addEventListener('scroll', () => {
+    const rect = servicesSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    if (rect.top < windowHeight - 100) {
+      servicesSection.classList.add('active');
+    }
+  });
+
+  // Mega menu logic
+  let submenuTimeout;
+  navDropdowns.forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(submenuTimeout);
+      const submenuId = dropdown.getAttribute('data-submenu');
+      submenuRows.forEach(row => {
+        row.classList.remove('active');
+        if (row.id === submenuId) row.classList.add('active');
       });
+      megaMenu.classList.add('active');
     });
+  });
 
-    document.querySelector('nav').addEventListener('mouseleave', () => {
+  const navArea = document.querySelector('nav');
+
+  function hideMegaMenu() {
+    submenuTimeout = setTimeout(() => {
       megaMenu.classList.remove('active');
       submenuRows.forEach(row => row.classList.remove('active'));
-    });
-  </script>
-</body>
-</html>
+    }, 300);
+  }
+
+  navArea.addEventListener('mouseleave', hideMegaMenu);
+  megaMenu.addEventListener('mouseleave', hideMegaMenu);
+  megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
+</script>
