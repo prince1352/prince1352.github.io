@@ -592,73 +592,104 @@ footer {
 .team-grid-section {
   background-color: var(--yellow);
   padding: 5rem 2rem;
+  position: relative;
+  min-height: 100vh;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  z-index: 1;
+  position: relative;
 }
 
 .team-card {
-  perspective: 1000px;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-}
-
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  overflow: hidden;
   background: white;
   text-align: center;
-  padding: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.card-front img {
+.team-card img {
   width: 100%;
-  height: 300px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
-.card-front h3 {
-  margin: 1rem 0 0.5rem;
+.team-card h3 {
+  margin: 1rem 0 0.25rem;
   color: #111;
 }
 
-.card-front p {
-  color: #444;
+.team-card p {
   margin-bottom: 1rem;
+  color: #444;
 }
 
-.card-back {
-  transform: rotateY(180deg);
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  color: #333;
-}
-
-.card-inner.flipped {
-  transform: rotateY(180deg);
-}
-
-/* Hover zoom on image */
-.card-front:hover img {
+.team-card:hover img {
   transform: scale(1.05);
 }
 
+/* Expanded Popup Card */
+.expanded-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 800px;
+  background-color: var(--bright-burgundy);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.expanded-card.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.expanded-card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.expanded-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.expanded-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
