@@ -392,7 +392,7 @@ ul.navbar > li > a:hover {
 /* Contact Section Parallax */
 .contact-section {
   position: relative;
-  background: #111; /* Dark black-grey */
+  background: #1e1e1e; /* Dark black-grey */
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -465,6 +465,10 @@ ul.navbar > li > a:hover {
   line-height: 1.5;
 }
 
+.contact-details strong {
+  color: var(--yellow);
+}
+
 .contact-details a {
   color: var(--yellow);
   text-decoration: none;
@@ -478,6 +482,7 @@ ul.navbar > li > a:hover {
 .contact-right {
   flex: 1;
   min-width: 300px;
+  padding-right: 2rem;
 }
 
 .contact-right form {
