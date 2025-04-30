@@ -51,6 +51,7 @@ header {
   color: var(--bright-burgundy);
   letter-spacing: 0.3rem;    /* increased spacing */
   width: fit-content;
+  margin-left: 0.1rem;
 }
 
 .logo-line-2 {
