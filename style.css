@@ -349,7 +349,7 @@ ul.navbar > li > a:hover {
   max-width: 600px;
   position: absolute;
   top: 0;
-  left: 5rem;
+  left: 10rem;
 }
 
 .description.active {
@@ -367,8 +367,8 @@ ul.navbar > li > a:hover {
   display: block;
   position: absolute;
   top: 50%;
-  left: 5rem;
-  transform: translateY(-70%);
+  left: 10rem;
+  transform: translateY(-90%);
   text-align: left;
 }
 
