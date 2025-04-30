@@ -106,9 +106,9 @@ ul.navbar > li > a {
   font-size: 1rem;
 }
 
-/* Welcome */
+/* Welcome Section */
 .welcome-section {
-  height: 100dvh;
+  height: 100vh;
   background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
   position: relative;
   display: flex;
@@ -116,15 +116,14 @@ ul.navbar > li > a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
 }
 
 .welcome-overlay {
   position: absolute;
   inset: 0;
-  z-index: 0;
   backdrop-filter: blur(6px);
   background-color: rgba(0,0,0,0.3);
+  z-index: 0;
 }
 
 .welcome-section h1,
@@ -144,15 +143,16 @@ ul.navbar > li > a {
   font-size: 1.25rem;
 }
 
-/* About */
+/* About Section */
 .about-section {
   position: relative;
   background: var(--bright-burgundy);
   background-attachment: fixed;
   color: white;
-  padding: 10rem 2rem;
+  padding: 12rem 2rem 12rem;
   text-align: center;
   z-index: 1;
+  overflow: hidden;
 }
 
 .about-overlay {
@@ -191,17 +191,19 @@ ul.navbar > li > a {
   border-radius: 2px;
 }
 
-/* Services */
+/* Services Section with sticky-overlap effect */
 .services-parallax {
   background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: sticky;
+  top: 0;
   padding: 10vh 2rem 6vh;
+  z-index: 2;
   color: white;
-  min-height: fit-content;
+  min-height: 100vh;
 }
 
 .services-overlay {
