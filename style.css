@@ -148,13 +148,15 @@ ul.navbar > li > a {
 .services-parallax {
   background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 8rem 2rem;
+  padding: 10vh 2rem;
   color: white;
-  min-height: 100vh;
+  min-height: 130vh;
+  display: flex;
+  align-items: center;
 }
 
 .services-overlay {
