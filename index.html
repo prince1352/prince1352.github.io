@@ -22,23 +22,11 @@
       </div>
       <nav>
         <ul class="navbar">
-          <li class="dropdown">
+          <li class="dropdown" data-submenu="submenu-practices">
             <a href="#">Our Practices <span class="arrow">▼</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Criminal Law</a></li>
-              <li><a href="#">Immigration Law</a></li>
-              <li><a href="#">Family Law</a></li>
-              <li><a href="#">Mediation</a></li>
-            </ul>
           </li>
-          <li class="dropdown">
+          <li class="dropdown" data-submenu="submenu-team">
             <a href="#">Our Team <span class="arrow">▼</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Baldev Sandhu</a></li>
-              <li><a href="#">Bikramjit Sandhu</a></li>
-              <li><a href="#">Kiran Sandhu</a></li>
-              <li><a href="#">Aman Sandhu</a></li>
-            </ul>
           </li>
           <li><a href="#about-section">About Us</a></li>
           <li><a href="#">Resources</a></li>
@@ -50,6 +38,22 @@
       </div>
     </div>
   </header>
+
+  <!-- Submenu Layer -->
+  <div class="mega-menu">
+    <div class="submenu-row" id="submenu-practices">
+      <a href="#">Criminal Law</a>
+      <a href="#">Immigration Law</a>
+      <a href="#">Family Law</a>
+      <a href="#">Mediation</a>
+    </div>
+    <div class="submenu-row" id="submenu-team">
+      <a href="#">Baldev Sandhu</a>
+      <a href="#">Bikramjit Sandhu</a>
+      <a href="#">Kiran Sandhu</a>
+      <a href="#">Aman Sandhu</a>
+    </div>
+  </div>
 
   <!-- Welcome Section -->
   <section class="welcome-section">
@@ -126,6 +130,9 @@
     const descriptions = document.querySelectorAll('.description');
     const defaultDesc = document.querySelector('.description.default');
     const servicesSection = document.querySelector('.services-parallax');
+    const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+    const megaMenu = document.querySelector('.mega-menu');
+    const submenuRows = document.querySelectorAll('.submenu-row');
 
     items.forEach(item => {
       item.addEventListener('mouseenter', () => {
@@ -147,6 +154,24 @@
       if (rect.top < windowHeight - 100) {
         servicesSection.classList.add('active');
       }
+    });
+
+    navDropdowns.forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', () => {
+        const submenuId = dropdown.getAttribute('data-submenu');
+        submenuRows.forEach(row => {
+          row.classList.remove('active');
+          if (row.id === submenuId) {
+            row.classList.add('active');
+          }
+        });
+        megaMenu.classList.add('active');
+      });
+    });
+
+    document.querySelector('nav').addEventListener('mouseleave', () => {
+      megaMenu.classList.remove('active');
+      submenuRows.forEach(row => row.classList.remove('active'));
     });
   </script>
 </body>
