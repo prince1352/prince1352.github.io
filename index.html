@@ -49,7 +49,7 @@
     <p class="scroll-text">Scroll to see our Services</p>
   </section>
 
-  <!-- Services Section on Parallax Image -->
+  <!-- Services Section -->
   <section class="services-parallax">
     <div class="services-overlay"></div>
     <div class="services-layout">
@@ -93,21 +93,33 @@
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
+  <!-- Script -->
   <script>
     const items = document.querySelectorAll('.service-item');
     const descriptions = document.querySelectorAll('.description');
 
+    const defaultDesc = document.createElement('div');
+    defaultDesc.className = 'description active';
+    defaultDesc.innerHTML = `
+      <p style="font-size: 1.25rem; color: white; line-height: 1.5; text-align: left;">
+        Providing Effective, Professional, and Skilled Legal Representation for over 20 Years.
+      </p>
+    `;
+    const detailArea = document.querySelector('.service-details');
+    detailArea.appendChild(defaultDesc);
+
     items.forEach(item => {
       item.addEventListener('mouseenter', () => {
+        descriptions.forEach(desc => desc.classList.remove('active'));
+        defaultDesc.style.display = 'none';
         const target = item.getAttribute('data-service');
-        descriptions.forEach(desc => {
-          desc.style.display = desc.id === target ? 'block' : 'none';
-        });
+        document.getElementById(target).classList.add('active');
       });
     });
 
     document.querySelector('.services-layout').addEventListener('mouseleave', () => {
-      descriptions.forEach(desc => desc.style.display = 'none');
+      descriptions.forEach(desc => desc.classList.remove('active'));
+      defaultDesc.style.display = 'block';
     });
   </script>
 </body>
