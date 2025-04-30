@@ -53,33 +53,34 @@
 
   <!-- Services Section -->
   <section class="services-section">
-    <div class="services-grid">
-      <div class="service-item">
-        <h3>Criminal Law</h3>
-        <div class="service-desc">
-          Providing strong defense and advocacy in criminal cases.
-          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+    <div class="services-layout">
+      <ul class="service-list">
+        <li class="service-item" data-service="criminal">Criminal Law</li>
+        <li class="service-item" data-service="immigration">Immigration Law</li>
+        <li class="service-item" data-service="family">Family Law</li>
+        <li class="service-item" data-service="mediation">Mediation</li>
+      </ul>
+
+      <div class="service-details">
+        <div class="description" id="criminal">
+          <h3>Criminal Law</h3>
+          <p>Providing strong defense and advocacy in criminal cases.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
         </div>
-      </div>
-      <div class="service-item">
-        <h3>Immigration Law</h3>
-        <div class="service-desc">
-          Navigating visas, permits, and residency with confidence.
-          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+        <div class="description" id="immigration">
+          <h3>Immigration Law</h3>
+          <p>Navigating visas, permits, and residency with confidence.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
         </div>
-      </div>
-      <div class="service-item">
-        <h3>Family Law</h3>
-        <div class="service-desc">
-          Resolving matters like divorce, custody, and support.
-          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+        <div class="description" id="family">
+          <h3>Family Law</h3>
+          <p>Resolving matters like divorce, custody, and support.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
         </div>
-      </div>
-      <div class="service-item">
-        <h3>Mediation</h3>
-        <div class="service-desc">
-          Helping parties reach agreements outside of court.
-          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+        <div class="description" id="mediation">
+          <h3>Mediation</h3>
+          <p>Helping parties reach peaceful agreements outside of court.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
         </div>
       </div>
     </div>
@@ -89,5 +90,24 @@
   <footer>
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
+
+  <!-- Hover Functionality Script -->
+  <script>
+    const items = document.querySelectorAll('.service-item');
+    const descriptions = document.querySelectorAll('.description');
+
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const target = item.getAttribute('data-service');
+        descriptions.forEach(desc => {
+          desc.style.display = desc.id === target ? 'block' : 'none';
+        });
+      });
+    });
+
+    document.querySelector('.services-layout').addEventListener('mouseleave', () => {
+      descriptions.forEach(desc => desc.style.display = 'none');
+    });
+  </script>
 </body>
 </html>
