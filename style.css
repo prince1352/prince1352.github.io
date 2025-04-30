@@ -7,6 +7,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -120,12 +125,14 @@ ul.navbar > li > a:hover {
   left: 0;
   width: 100%;
   background-color: var(--bright-burgundy);
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 2rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.4s ease;
   z-index: 999;
+  margin: 0;
+  border: none;
 }
 
 .mega-menu.active {
@@ -186,6 +193,8 @@ ul.navbar > li > a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .welcome-overlay {
