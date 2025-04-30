@@ -36,6 +36,7 @@ header {
   width: 100%;
 }
 
+/* Logo */
 .logo {
   flex: 1;
   display: flex;
@@ -46,12 +47,12 @@ header {
 }
 
 .logo-line-1 {
-  font-size: 3.4rem;         /* increased size */
+  font-size: 3.4rem;
   font-weight: 700;
   color: var(--bright-burgundy);
-  letter-spacing: 0.3rem;    /* increased spacing */
+  letter-spacing: 0.3rem;
   width: fit-content;
-  margin-left: 0.1rem;
+  transform: translateX(2px);
 }
 
 .logo-line-2 {
@@ -60,9 +61,9 @@ header {
   color: var(--yellow);
   letter-spacing: 0.15rem;
   width: fit-content;
-  transform: scaleX(1.15);
 }
 
+/* Navigation */
 nav {
   flex: 2;
   display: flex;
@@ -73,7 +74,7 @@ nav {
 ul.navbar {
   list-style: none;
   display: flex;
-  gap: 3.5rem;
+  gap: 2.75rem;
   height: 100%;
   align-items: center;
   padding: 0;
@@ -102,16 +103,15 @@ ul.navbar > li > a:hover {
   color: white;
 }
 
-/* Arrows beside menu items */
+/* Dropdown */
 .arrow {
   margin-left: 5px;
-  font-size: 0.6rem; /* smaller arrow */
+  font-size: 0.6rem;
 }
 
-/* Submenu */
 .dropdown-menu {
   position: absolute;
-  top: 110%; /* slightly below parent menu */
+  top: 130%;
   left: 0;
   background: white;
   display: none;
@@ -145,7 +145,7 @@ ul.navbar > li > a:hover {
   color: white;
 }
 
-/* CTA Button */
+/* Call to Action Button */
 .cta-button {
   flex: 1;
   text-align: right;
@@ -195,21 +195,24 @@ ul.navbar > li > a:hover {
   text-align: center;
 }
 
-/* Scroll text and arrow */
-.scroll-text {
+/* Scroll to Services */
+.scroll-text.scroll-link {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.25rem;
-}
-
-.scroll-text a {
   color: white;
-  font-size: 1.25rem;
-  margin-left: 8px;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
 
-.scroll-text:hover a {
+.scroll-text.scroll-link:hover {
   opacity: 0.7;
+}
+
+.scroll-arrow {
+  margin-left: 8px;
+  font-size: 1.25rem;
+  color: white;
 }
 
 /* About Section */
