@@ -16,6 +16,7 @@
   <!-- Header -->
   <header>
     <div class="header-container">
+      <div class="hamburger" id="hamburger">&#9776;</div>
       <div class="logo">
         <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
         <div class="logo-text">
@@ -23,21 +24,32 @@
           <div class="logo-line-2">LAW AND MEDIATION</div>
         </div>
       </div>
-      <div class="hamburger" id="hamburger">&#9776;</div>
       <nav id="mobile-nav">
         <ul class="navbar" id="navbar">
-          <li class="dropdown" data-submenu="submenu-practices">
-            <a href="#">Our Practices <span class="arrow">▼</span></a>
+          <li class="dropdown">
+            <button class="dropdown-toggle">Our Practices <span class="arrow">▼</span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Criminal Law</a></li>
+              <li><a href="#">Immigration Law</a></li>
+              <li><a href="#">Family Law</a></li>
+              <li><a href="#">Mediation</a></li>
+            </ul>
           </li>
-          <li class="dropdown" data-submenu="submenu-team">
-            <a href="#">Our Team <span class="arrow">▼</span></a>
+          <li class="dropdown">
+            <button class="dropdown-toggle">Our Team <span class="arrow">▼</span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Baldev Sandhu</a></li>
+              <li><a href="#">Bikramjit Sandhu</a></li>
+              <li><a href="#">Kiran Sandhu</a></li>
+              <li><a href="#">Aman Sandhu</a></li>
+            </ul>
           </li>
           <li><a href="#about-section">About Us</a></li>
           <li><a href="#">Resources</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
-      <div class="cta-button">
+      <div class="cta-button" id="cta-button">
         <a href="#contact">Free<br>Consultation</a>
       </div>
     </div>
@@ -85,8 +97,8 @@
   <!-- Services Section -->
   <section id="services" class="services-parallax">
     <div class="services-overlay"></div>
-    <div class="services-layout">
-      <div class="services-left">
+    <div class="services-wrapper">
+      <div class="services-left" id="service-list">
         <h2 class="services-heading">Our Services</h2>
         <ul class="service-list">
           <li class="service-item" data-service="criminal">Criminal Law</li>
@@ -95,7 +107,7 @@
           <li class="service-item" data-service="mediation">Mediation</li>
         </ul>
       </div>
-      <div class="service-details">
+      <div class="service-details" id="service-details">
         <div class="description default active">
           <p>Providing Effective, Professional, and Skilled Legal Representation for over 20 Years.</p>
         </div>
@@ -132,36 +144,24 @@
     const items = document.querySelectorAll('.service-item');
     const descriptions = document.querySelectorAll('.description');
     const defaultDesc = document.querySelector('.description.default');
-    const servicesSection = document.querySelector('.services-parallax');
-    const navDropdowns = document.querySelectorAll('.navbar .dropdown');
-    const megaMenu = document.querySelector('.mega-menu');
-    const submenuRows = document.querySelectorAll('.submenu-row');
+    const servicesWrapper = document.querySelector('.services-wrapper');
 
-    // Hover: show service description
     items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
+      item.addEventListener('click', () => {
         descriptions.forEach(desc => desc.classList.remove('active'));
-        defaultDesc.style.display = 'none';
+        defaultDesc.classList.remove('active');
         const target = item.getAttribute('data-service');
         document.getElementById(target).classList.add('active');
+        servicesWrapper.classList.add('show-description');
       });
-    });
-
-    document.querySelector('.services-layout').addEventListener('mouseleave', () => {
-      descriptions.forEach(desc => desc.classList.remove('active'));
-      defaultDesc.style.display = 'block';
-    });
-
-    window.addEventListener('scroll', () => {
-      const rect = servicesSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      if (rect.top < windowHeight - 100) {
-        servicesSection.classList.add('active');
-      }
     });
 
     // Mega menu logic
     let submenuTimeout;
+    const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+    const megaMenu = document.querySelector('.mega-menu');
+    const submenuRows = document.querySelectorAll('.submenu-row');
+
     navDropdowns.forEach(dropdown => {
       dropdown.addEventListener('mouseenter', () => {
         clearTimeout(submenuTimeout);
@@ -175,21 +175,29 @@
     });
 
     const navArea = document.querySelector('nav');
-
-    function hideMegaMenu() {
+    navArea.addEventListener('mouseleave', () => {
       submenuTimeout = setTimeout(() => {
         megaMenu.classList.remove('active');
         submenuRows.forEach(row => row.classList.remove('active'));
       }, 300);
-    }
+    });
 
-    navArea.addEventListener('mouseleave', hideMegaMenu);
-    megaMenu.addEventListener('mouseleave', hideMegaMenu);
+    megaMenu.addEventListener('mouseleave', () => clearTimeout(submenuTimeout));
     megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
 
     // Hamburger toggle
     document.getElementById("hamburger").addEventListener("click", () => {
       document.getElementById("navbar").classList.toggle("show");
+      document.getElementById("cta-button").classList.toggle("centered-cta");
+    });
+
+    // Submenu toggle for mobile
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const nextMenu = toggle.nextElementSibling;
+        nextMenu.classList.toggle('show');
+      });
     });
   </script>
 </body>
