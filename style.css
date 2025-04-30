@@ -124,7 +124,7 @@ ul.navbar > li > a:hover {
   top: 130px;
   left: 0;
   width: 100%;
-  background-color: var(--yellow);
+  background-color: var(--bright-burgundy);
   padding: 0rem;
   opacity: 0;
   visibility: hidden;
