@@ -16,24 +16,24 @@
           <li class="dropdown">
             <a href="#">Our Practices</a>
             <ul class="dropdown-menu">
-              <li><a href="#criminal-law">Criminal Law</a></li>
-              <li><a href="#immigration-law">Immigration Law</a></li>
-              <li><a href="#family-law">Family Law</a></li>
-              <li><a href="#mediation">Mediation</a></li>
+              <li><a href="#">Criminal Law</a></li>
+              <li><a href="#">Immigration Law</a></li>
+              <li><a href="#">Family Law</a></li>
+              <li><a href="#">Mediation</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#">Our Team</a>
             <ul class="dropdown-menu">
-              <li><a href="#baldev">Baldev Sandhu</a></li>
-              <li><a href="#bikramjit">Bikramjit Sandhu</a></li>
-              <li><a href="#kiran">Kiran Sandhu</a></li>
-              <li><a href="#aman">Aman Sandhu</a></li>
+              <li><a href="#">Baldev Sandhu</a></li>
+              <li><a href="#">Bikramjit Sandhu</a></li>
+              <li><a href="#">Kiran Sandhu</a></li>
+              <li><a href="#">Aman Sandhu</a></li>
             </ul>
           </li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
       <div class="cta-button">
@@ -47,6 +47,18 @@
     <div class="welcome-overlay"></div>
     <h1>Welcome to Sandhu Law and Mediation</h1>
     <p class="scroll-text">Scroll to see our Services</p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-overlay"></div>
+    <div class="about-content">
+      <h2>Why Choose Us</h2>
+      <p>
+        We are a full-service law firm based in Surrey, British Columbia. We have over 20 years of experience in Criminal Law, Immigration Law, Family Law and Mediation. With our strong network of partners, and proven experience we are the trusted law firm for all your needs.
+      </p>
+      <div class="divider"></div>
+    </div>
   </section>
 
   <!-- Services Section -->
@@ -64,6 +76,9 @@
       </div>
 
       <div class="service-details">
+        <div class="description default active">
+          <p>Providing Effective, Professional, and Skilled Legal Representation for over 20 Years.</p>
+        </div>
         <div class="description" id="criminal">
           <h3>Criminal Law</h3>
           <p>Providing strong defense and advocacy in criminal cases.</p>
@@ -93,20 +108,11 @@
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
-  <!-- Script -->
+  <!-- JS -->
   <script>
     const items = document.querySelectorAll('.service-item');
     const descriptions = document.querySelectorAll('.description');
-
-    const defaultDesc = document.createElement('div');
-    defaultDesc.className = 'description active';
-    defaultDesc.innerHTML = `
-      <p style="font-size: 1.25rem; color: white; line-height: 1.5; text-align: left;">
-        Providing Effective, Professional, and Skilled Legal Representation for over 20 Years.
-      </p>
-    `;
-    const detailArea = document.querySelector('.service-details');
-    detailArea.appendChild(defaultDesc);
+    const defaultDesc = document.querySelector('.description.default');
 
     items.forEach(item => {
       item.addEventListener('mouseenter', () => {
