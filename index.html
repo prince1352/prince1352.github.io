@@ -162,6 +162,15 @@
 
   // Mega menu logic
   let submenuTimeout;
+// Hide mega menu when hovering over a non-dropdown menu item
+const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
+
+nonDropdowns.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    megaMenu.classList.remove('active');
+    submenuRows.forEach(row => row.classList.remove('active'));
+  });
+});
   navDropdowns.forEach(dropdown => {
     dropdown.addEventListener('mouseenter', () => {
       clearTimeout(submenuTimeout);
