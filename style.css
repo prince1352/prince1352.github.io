@@ -107,7 +107,7 @@ ul.navbar > li > a {
 /* Welcome Section */
 .welcome-section {
   height: 100vh;
-  background-color: #ab9998;
+  background: url('images/Welcome Background.jpg')center center / cover no-repeat fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,7 +128,7 @@ ul.navbar > li > a {
 /* Parallax Section */
 .parallax {
   height: 60vh;
-  background-image: url('https://t4.ftcdn.net/jpg/01/20/57/33/360_F_120573309_P57d9r8CQhZyadOCLLlEd47ekb0HdC3t.jpg');
+  background-image: url('images/Services Background.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
