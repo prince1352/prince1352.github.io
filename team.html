@@ -251,6 +251,23 @@
         backdrop.classList.remove('active');
       });
 
+      // Open card automatically if ?lawyer=XYZ is in the URL
+      const params = new URLSearchParams(window.location.search);
+      const targetId = params.get('lawyer');
+      if (targetId) {
+        const targetCard = Array.from(teamCards).find(card => card.dataset.lawyerId === targetId);
+        if (targetCard) {
+          cardName.textContent = targetCard.dataset.name;
+          cardTitle.textContent = targetCard.dataset.title;
+          cardBio.textContent = targetCard.dataset.bio;
+          cardImage.src = targetCard.querySelector('img').src;
+          
+          expandedCard.classList.add('active');
+          backdrop.classList.add('active');
+  }
+}
+
+
       const navDropdowns = document.querySelectorAll('.navbar .dropdown');
       const megaMenu = document.querySelector('.mega-menu');
       const submenuRows = document.querySelectorAll('.submenu-row');
