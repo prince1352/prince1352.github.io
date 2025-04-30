@@ -108,7 +108,7 @@
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script>
     const items = document.querySelectorAll('.service-item');
     const descriptions = document.querySelectorAll('.description');
@@ -126,6 +126,16 @@
     document.querySelector('.services-layout').addEventListener('mouseleave', () => {
       descriptions.forEach(desc => desc.classList.remove('active'));
       defaultDesc.style.display = 'block';
+    });
+
+    // Scroll animation for services section
+    const servicesSection = document.querySelector('.services-parallax');
+    window.addEventListener('scroll', () => {
+      const rect = servicesSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight - 100) {
+        servicesSection.classList.add('active');
+      }
     });
   </script>
 </body>
