@@ -248,21 +248,23 @@ ul.navbar > li > a:hover {
   #navbar {
     display: none;
     flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
     background-color: white;
-    margin-top: 0.5rem;
+    z-index: 998;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   #navbar.show {
     display: flex;
   }
 
-  ul.navbar {
-    gap: 0;
-  }
-
   ul.navbar > li {
     width: 100%;
+    text-align: left;
   }
 
   ul.navbar > li > a {
@@ -272,17 +274,7 @@ ul.navbar > li > a:hover {
   }
 
   .mega-menu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    padding: 1rem;
-    flex-direction: column;
-  }
-
-  .submenu-row {
-    flex-direction: column;
-    gap: 1rem;
+    display: none; /* hide on small screen */
   }
 
   .cta-button {
