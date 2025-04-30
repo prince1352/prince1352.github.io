@@ -40,10 +40,20 @@ header {
 .logo {
   flex: 1;
   display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  height: 60px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 1;
-  align-items: flex-start;
 }
 
 .logo-line-1 {
@@ -221,8 +231,6 @@ ul.navbar > li > a:hover {
   font-size: 1.25rem;
   color: white;
 }
-
-
 /* About Section */
 .about-section {
   position: relative;
