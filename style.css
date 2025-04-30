@@ -392,7 +392,7 @@ ul.navbar > li > a:hover {
 /* Contact Section Parallax */
 .contact-section {
   position: relative;
-  background: #1e1e1e; /* Dark black-grey */
+  background: #b8b4b4; /* Dark black-grey */
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
