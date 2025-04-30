@@ -191,7 +191,7 @@ ul.navbar > li > a {
   border-radius: 2px;
 }
 
-/* Services Section with sticky-overlap effect */
+/* Services Section - Animation effect */
 .services-parallax {
   background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
@@ -204,6 +204,14 @@ ul.navbar > li > a {
   z-index: 2;
   color: white;
   min-height: 100vh;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.services-parallax.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .services-overlay {
