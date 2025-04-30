@@ -58,8 +58,6 @@ ul.navbar > li > a {
   color: black;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 0;
-  display: inline-block;
 }
 
 .dropdown-menu {
@@ -100,7 +98,6 @@ ul.navbar > li > a {
   background-color: var(--yellow);
   color: black;
   padding: 1rem 1.5rem;
-  text-align: center;
   text-decoration: none;
   border-radius: 12px;
   font-weight: bold;
@@ -109,7 +106,7 @@ ul.navbar > li > a {
   font-size: 1rem;
 }
 
-/* Welcome Section */
+/* Welcome */
 .welcome-section {
   height: 100dvh;
   background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
@@ -135,16 +132,56 @@ ul.navbar > li > a {
   z-index: 1;
 }
 
-.welcome-section h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
 .scroll-text {
   font-size: 1.25rem;
 }
 
-/* Services Section */
+/* About */
+.about-section {
+  position: relative;
+  background: linear-gradient(to bottom, #922b58, #a64663);
+  background-attachment: fixed;
+  color: white;
+  padding: 8rem 2rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: white;
+  margin: auto;
+  border-radius: 2px;
+}
+
+/* Services */
 .services-parallax {
   background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
@@ -199,9 +236,9 @@ ul.navbar > li > a {
   font-size: 1.25rem;
   padding: 0.75rem 1rem;
   cursor: pointer;
-  transition: 0.3s ease;
   border-bottom: 1px solid white;
   margin-bottom: 1rem;
+  transition: 0.3s ease;
 }
 
 .service-item:hover {
@@ -213,9 +250,8 @@ ul.navbar > li > a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 3rem;
-  min-height: 300px;
-  position: relative;
+  padding-left: 6rem;
+  min-height: 350px;
   color: white;
 }
 
@@ -232,6 +268,13 @@ ul.navbar > li > a {
   font-size: 1.75rem;
   color: white;
   margin-top: 0;
+}
+
+.description.default p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: white;
+  text-align: left;
 }
 
 .learn-more-btn {
