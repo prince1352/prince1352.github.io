@@ -6,19 +6,8 @@
   <title>Sandhu Law and Mediation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  <script>
-  const items = document.querySelectorAll('.service-item');
-  const title = document.getElementById('service-title');
-  const desc = document.getElementById('service-desc');
-
-  items.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      title.textContent = item.getAttribute('data-title');
-      desc.textContent = item.getAttribute('data-desc');
-    });
-  });
-</script>
 <body>
+  <!-- Header -->
   <header>
     <div class="header-container">
       <div class="logo">Sandhu Law and Mediation</div>
@@ -53,29 +42,50 @@
     </div>
   </header>
 
+  <!-- Welcome Section -->
   <section class="welcome-section">
-  <h1>Welcome to Sandhu Law</h1>
-  <p>Scroll to see our services</p>
-</section>
+    <h1>Welcome to Sandhu Law</h1>
+    <p>Scroll to see our services</p>
+  </section>
 
-<section class="parallax-spacer"></section>
+  <!-- Parallax Section -->
+  <section class="parallax"></section>
 
-<section class="services-section">
-  <div class="services-container">
-    <div class="services-table">
-      <div class="service-item" data-title="Criminal Law" data-desc="Defense against criminal charges, ensuring your rights are protected.">Criminal Law</div>
-      <div class="service-item" data-title="Immigration Law" data-desc="Guidance through immigration processes, visas, and residency.">Immigration Law</div>
-      <div class="service-item" data-title="Family Law" data-desc="Support for family-related matters including divorce and custody.">Family Law</div>
-      <div class="service-item" data-title="Mediation" data-desc="Resolve disputes peacefully with trained mediators.">Mediation</div>
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="services-grid">
+      <div class="service-item">
+        <h3>Criminal Law</h3>
+        <div class="service-desc">
+          Providing strong defense and advocacy in criminal cases.
+          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+      <div class="service-item">
+        <h3>Immigration Law</h3>
+        <div class="service-desc">
+          Navigating visas, permits, and residency with confidence.
+          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+      <div class="service-item">
+        <h3>Family Law</h3>
+        <div class="service-desc">
+          Resolving matters like divorce, custody, and support.
+          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+      <div class="service-item">
+        <h3>Mediation</h3>
+        <div class="service-desc">
+          Helping parties reach agreements outside of court.
+          <br><a href="#contact" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
     </div>
-    <div class="service-details">
-      <h2 id="service-title">Hover over a service</h2>
-      <p id="service-desc">Description will appear here.</p>
-      <a href="#contact" class="learn-more-btn">Learn More</a>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
