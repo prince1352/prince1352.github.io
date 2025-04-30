@@ -175,13 +175,14 @@ ul.navbar > li > a:hover {
 .cta-button a {
   background-color: var(--yellow);
   color: black;
-  padding: 1rem 1.25rem;
+  padding: 1rem 2rem;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 600;
   display: inline-block;
-  font-size: 1rem;
-  text-align: center;
+  font-size: 1.15rem;
+  font-family: 'Inter', sans-serif; /* already included, clean and modern */
+  white-space: nowrap; /* ensures it stays on one line */
 }
 
 /* Welcome Section */
