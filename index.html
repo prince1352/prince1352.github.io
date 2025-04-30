@@ -6,11 +6,6 @@
   <title>Sandhu Law and Mediation</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 <body>
   <!-- Header -->
@@ -55,7 +50,7 @@
     </div>
   </header>
 
-  <!-- Submenu Layer -->
+  <!-- Submenu Layer (Desktop Only) -->
   <div class="mega-menu">
     <div class="submenu-row" id="submenu-practices">
       <a href="#">Criminal Law</a>
@@ -156,7 +151,7 @@
       });
     });
 
-    // Mega menu logic
+    // Mega menu logic (desktop)
     let submenuTimeout;
     const navDropdowns = document.querySelectorAll('.navbar .dropdown');
     const megaMenu = document.querySelector('.mega-menu');
