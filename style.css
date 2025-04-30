@@ -116,26 +116,28 @@ ul.navbar > li > a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .welcome-overlay {
   position: absolute;
   inset: 0;
+  z-index: 0;
   backdrop-filter: blur(6px);
   background-color: rgba(0,0,0,0.3);
 }
 
-.welcome-section h1 {
-  font-size: 3rem;
-  color: white;
-  text-align: center;
-  margin: 0 1rem 1rem;
-}
-
+.welcome-section h1,
 .scroll-text {
   position: relative;
-  color: white;
   z-index: 1;
+  color: white;
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  margin: 0 1rem 1rem;
+  text-align: center;
 }
 
 .scroll-text {
