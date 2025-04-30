@@ -322,17 +322,25 @@ ul.navbar > li > a:hover {
 
 .service-details {
   flex: 2;
-  padding-left: 4rem;
+  padding-left: 6rem; /* moved more to the right */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   min-height: 350px;
+  position: relative;
 }
 
 .description {
   display: none;
   max-width: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .description.active {
   display: block;
+  margin-top: 2.75rem; /* aligns with Our Services title */
 }
 
 .description h3 {
@@ -341,9 +349,19 @@ ul.navbar > li > a:hover {
   margin-top: 0;
 }
 
+.description.default {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
 .description.default p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: white;
+  max-width: 600px;
 }
 
 .learn-more-btn {
