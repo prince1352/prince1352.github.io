@@ -77,8 +77,9 @@ header {
 nav {
   flex: 2;
   display: flex;
-  justify-content: center;
+  justify-content: felx-start;
   height: 100%;
+  margin-left: 3rem;
 }
 
 ul.navbar {
