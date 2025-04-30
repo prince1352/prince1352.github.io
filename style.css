@@ -5,6 +5,12 @@ body {
   color: #333;
 }
 
+/* === COLORS === */
+:root {
+  --bright-burgundy: #8A1C1C;
+  --yellow: #FFD700;
+}
+
 /* Header */
 header {
   background-color: white;
@@ -92,7 +98,7 @@ ul.navbar > li > a {
 }
 
 .cta-button a {
-  background-color: #FFD700;
+  background-color: var(--yellow);
   color: black;
   padding: 1rem 1.5rem;
   text-align: center;
@@ -104,28 +110,41 @@ ul.navbar > li > a {
   font-size: 1rem;
 }
 
-/* Welcome Section with background image */
+/* Welcome Section */
 .welcome-section {
   height: 100vh;
   background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
 }
 
+.welcome-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0,0,0,0.2);
+}
+
 .welcome-section h1 {
+  position: relative;
+  color: var(--bright-burgundy);
   font-size: 3rem;
   margin-bottom: 1rem;
+  z-index: 1;
 }
 
 .welcome-section p {
+  position: relative;
   font-size: 1.25rem;
+  color: white;
+  z-index: 1;
 }
 
-/* Parallax Transition Background */
+/* Parallax Section */
 .parallax {
   height: 60vh;
   background-image: url('images/Services%20Background.jpg');
@@ -135,10 +154,20 @@ ul.navbar > li > a {
   background-size: cover;
 }
 
-/* Services Section Layout */
+/* Services Section */
 .services-section {
-  background-color: white;
+  position: relative;
   padding: 4rem 2rem;
+  color: #333;
+  overflow: hidden;
+}
+
+.services-background-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('images/Services%20Background.jpg') center center / cover no-repeat fixed;
+  filter: blur(6px);
+  z-index: 0;
 }
 
 .services-layout {
@@ -146,6 +175,8 @@ ul.navbar > li > a {
   max-width: 1200px;
   margin: auto;
   gap: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .service-list {
@@ -159,21 +190,22 @@ ul.navbar > li > a {
 }
 
 .service-item {
-  background-color: #f4f4f4;
+  background-color: rgba(255,255,255,0.5);
   padding: 1.5rem;
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .service-item:hover {
-  background-color: #e0e0e0;
+  background-color: rgba(255,255,255,0.7);
+  color: var(--bright-burgundy);
 }
 
 .service-details {
   flex: 2;
-  background-color: #f9f9f9;
+  background-color: rgba(255,255,255,0.8);
   padding: 2rem;
   border-radius: 10px;
   position: relative;
@@ -197,7 +229,7 @@ ul.navbar > li > a {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.25rem;
-  background-color: #FFD700;
+  background-color: var(--yellow);
   color: black;
   text-decoration: none;
   font-weight: bold;
