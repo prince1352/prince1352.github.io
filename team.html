@@ -217,94 +217,101 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const teamCards = document.querySelectorAll('.team-card');
-      const expandedCard = document.getElementById('expandedCard');
-      const cardName = document.getElementById('cardName');
-      const cardTitle = document.getElementById('cardTitle');
-      const cardBio = document.getElementById('cardBio');
-      const cardImage = document.getElementById('cardImage');
-      const closeBtn = document.getElementById('closeCard');
-      const backdrop = document.getElementById('cardBackdrop');
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const teamCards = document.querySelectorAll('.team-card');
+    const expandedCard = document.getElementById('expandedCard');
+    const cardName = document.getElementById('cardName');
+    const cardTitle = document.getElementById('cardTitle');
+    const cardBio = document.getElementById('cardBio');
+    const cardImage = document.getElementById('cardImage');
+    const closeBtn = document.getElementById('closeCard');
+    const backdrop = document.getElementById('cardBackdrop');
+    const header = document.querySelector('header');
 
-      teamCards.forEach(card => {
-        card.addEventListener('click', () => {
-          cardName.textContent = card.dataset.name;
-          cardTitle.textContent = card.dataset.title;
-          cardBio.textContent = card.dataset.bio;
-          cardImage.src = card.querySelector('img').src;
+    // Open card when clicked
+    teamCards.forEach(card => {
+      card.addEventListener('click', () => {
+        cardName.textContent = card.dataset.name;
+        cardTitle.textContent = card.dataset.title;
+        cardBio.textContent = card.dataset.bio;
+        cardImage.src = card.querySelector('img').src;
 
-          expandedCard.classList.add('active');
-          backdrop.classList.add('active');
-        });
+        expandedCard.classList.add('active');
+        backdrop.classList.add('active');
+        header.classList.add('dimmed'); // lower header z-index
       });
-
-      closeBtn.addEventListener('click', () => {
-        expandedCard.classList.remove('active');
-        backdrop.classList.remove('active');
-      });
-
-      // Close popup if clicking outside the card
-      backdrop.addEventListener('click', () => {
-        expandedCard.classList.remove('active');
-        backdrop.classList.remove('active');
-      });
-
-      // Open card automatically if ?lawyer=XYZ is in the URL
-      const params = new URLSearchParams(window.location.search);
-      const targetId = params.get('lawyer');
-      if (targetId) {
-        const targetCard = Array.from(teamCards).find(card => card.dataset.lawyerId === targetId);
-        if (targetCard) {
-          cardName.textContent = targetCard.dataset.name;
-          cardTitle.textContent = targetCard.dataset.title;
-          cardBio.textContent = targetCard.dataset.bio;
-          cardImage.src = targetCard.querySelector('img').src;
-          
-          expandedCard.classList.add('active');
-          backdrop.classList.add('active');
-  }
-}
-
-
-      const navDropdowns = document.querySelectorAll('.navbar .dropdown');
-      const megaMenu = document.querySelector('.mega-menu');
-      const submenuRows = document.querySelectorAll('.submenu-row');
-      let submenuTimeout;
-
-      const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
-      nonDropdowns.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          megaMenu.classList.remove('active');
-          submenuRows.forEach(row => row.classList.remove('active'));
-        });
-      });
-
-      navDropdowns.forEach(dropdown => {
-        dropdown.addEventListener('mouseenter', () => {
-          clearTimeout(submenuTimeout);
-          const submenuId = dropdown.getAttribute('data-submenu');
-          submenuRows.forEach(row => {
-            row.classList.remove('active');
-            if (row.id === submenuId) row.classList.add('active');
-          });
-          megaMenu.classList.add('active');
-        });
-      });
-
-      const navArea = document.querySelector('nav');
-      function hideMegaMenu() {
-        submenuTimeout = setTimeout(() => {
-          megaMenu.classList.remove('active');
-          submenuRows.forEach(row => row.classList.remove('active'));
-        }, 300);
-      }
-
-      navArea.addEventListener('mouseleave', hideMegaMenu);
-      megaMenu.addEventListener('mouseleave', hideMegaMenu);
-      megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
     });
-  </script>
+
+    // Close on button
+    closeBtn.addEventListener('click', () => {
+      expandedCard.classList.remove('active');
+      backdrop.classList.remove('active');
+      header.classList.remove('dimmed');
+    });
+
+    // Close on backdrop
+    backdrop.addEventListener('click', () => {
+      expandedCard.classList.remove('active');
+      backdrop.classList.remove('active');
+      header.classList.remove('dimmed');
+    });
+
+    // Auto-open card if URL has ?lawyer=name
+    const params = new URLSearchParams(window.location.search);
+    const targetId = params.get('lawyer');
+    if (targetId) {
+      const targetCard = Array.from(teamCards).find(card => card.dataset.lawyerId === targetId);
+      if (targetCard) {
+        cardName.textContent = targetCard.dataset.name;
+        cardTitle.textContent = targetCard.dataset.title;
+        cardBio.textContent = targetCard.dataset.bio;
+        cardImage.src = targetCard.querySelector('img').src;
+
+        expandedCard.classList.add('active');
+        backdrop.classList.add('active');
+        header.classList.add('dimmed');
+      }
+    }
+
+    // Mega menu logic
+    const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+    const megaMenu = document.querySelector('.mega-menu');
+    const submenuRows = document.querySelectorAll('.submenu-row');
+    let submenuTimeout;
+
+    const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
+    nonDropdowns.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        megaMenu.classList.remove('active');
+        submenuRows.forEach(row => row.classList.remove('active'));
+      });
+    });
+
+    navDropdowns.forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', () => {
+        clearTimeout(submenuTimeout);
+        const submenuId = dropdown.getAttribute('data-submenu');
+        submenuRows.forEach(row => {
+          row.classList.remove('active');
+          if (row.id === submenuId) row.classList.add('active');
+        });
+        megaMenu.classList.add('active');
+      });
+    });
+
+    const navArea = document.querySelector('nav');
+    function hideMegaMenu() {
+      submenuTimeout = setTimeout(() => {
+        megaMenu.classList.remove('active');
+        submenuRows.forEach(row => row.classList.remove('active'));
+      }, 300);
+    }
+
+    navArea.addEventListener('mouseleave', hideMegaMenu);
+    megaMenu.addEventListener('mouseleave', hideMegaMenu);
+    megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
+  });
+</script>
 </body>
 </html>
