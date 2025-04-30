@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,6 +9,85 @@
   <style>
     html {
       scroll-behavior: smooth;
+    }
+    .team-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      border-radius: 0;
+    }
+    .team-card:hover img {
+      transform: scale(1.1);
+      box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+    }
+    .team-card {
+      border-radius: 0;
+    }
+    .expanded-card {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      max-width: 1000px;
+      background-color: var(--bright-burgundy);
+      color: white;
+      padding: 0;
+      border-radius: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1000;
+      transition: all 0.4s ease;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      display: flex;
+      overflow: hidden;
+    }
+    .expanded-card.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .expanded-card::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    .expanded-card img {
+      height: 100%;
+      width: 40%;
+      object-fit: cover;
+    }
+    .expanded-content {
+      padding: 2rem;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .expanded-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .expanded-content h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .expanded-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -73,7 +152,7 @@
   <!-- Yellow Team Section with Photos -->
   <section class="team-grid-section">
     <div class="team-grid">
-      <!-- 6 Lawyer Cards -->
+       <!-- 6 Lawyer Cards -->
       <div class="team-card" data-name="Baldev Sandhu" data-title="Founding Partner" data-bio="Baldev Sandhu is a senior litigation attorney...">
         <img src="images/lawyer1.jpg" alt="Baldev Sandhu">
         <h3>Baldev Sandhu</h3>
@@ -105,12 +184,16 @@
         <p>Student-at-Law</p>
       </div>
     </div>
+    </div>
     <!-- Expanded Bio Card -->
     <div class="expanded-card" id="expandedCard">
       <button class="close-btn" id="closeCard">&times;</button>
-      <h2 id="cardName"></h2>
-      <h4 id="cardTitle"></h4>
-      <p id="cardBio"></p>
+      <img id="cardImage" src="" alt="Lawyer Photo">
+      <div class="expanded-content">
+        <h2 id="cardName"></h2>
+        <h4 id="cardTitle"></h4>
+        <p id="cardBio"></p>
+      </div>
     </div>
   </section>
 
@@ -119,7 +202,7 @@
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
-  <!-- Team Flip Animation Script -->
+  <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const teamCards = document.querySelectorAll('.team-card');
@@ -127,6 +210,7 @@
       const cardName = document.getElementById('cardName');
       const cardTitle = document.getElementById('cardTitle');
       const cardBio = document.getElementById('cardBio');
+      const cardImage = document.getElementById('cardImage');
       const closeBtn = document.getElementById('closeCard');
 
       teamCards.forEach(card => {
@@ -134,6 +218,7 @@
           cardName.textContent = card.dataset.name;
           cardTitle.textContent = card.dataset.title;
           cardBio.textContent = card.dataset.bio;
+          cardImage.src = card.querySelector('img').src;
           expandedCard.classList.add('active');
         });
       });
@@ -142,10 +227,7 @@
         expandedCard.classList.remove('active');
       });
     });
-  </script>
 
-  <!-- Mega Menu Script -->
-  <script>
     document.addEventListener('DOMContentLoaded', function () {
       const navDropdowns = document.querySelectorAll('.navbar .dropdown');
       const megaMenu = document.querySelector('.mega-menu');
