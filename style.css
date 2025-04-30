@@ -79,7 +79,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 2.5rem;   /* Previously 3rem — slightly reduced */
+  margin-left: 3.5rem;   /* Previously 3rem — slightly reduced */
   margin-right: 2.5rem;  /* Add this to push away from CTA button */
 }
 
