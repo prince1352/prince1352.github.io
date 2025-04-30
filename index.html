@@ -12,6 +12,19 @@
     }
   </style>
 </head>
+  <script>
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const confirmation = document.getElementById('form-confirmation');
+
+    form.style.display = 'none';
+    confirmation.style.display = 'block';
+
+    // Actually submit the form to FormSubmit
+    form.submit();
+  }
+</script>
 <body>
   <!-- Header -->
   <header>
@@ -155,15 +168,19 @@
     </div>
 
     <!-- Right Side: Contact Form -->
-    <div class="contact-right">
-      <form action="https://formsubmit.co/prince52sv@gmail.com" method="POST">
-        <input type="text" name="Name" placeholder="Your Name" required />
-        <input type="email" name="Email" placeholder="Your Email Address" required />
-        <input type="tel" name="Phone" placeholder="Your Phone Number" required />
-        <textarea name="Message" placeholder="How can we help?" required></textarea>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-    </div>
+<div class="contact-right">
+  <form id="contact-form" action="https://formsubmit.co/prince52sv@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="Name" placeholder="Your Name" required />
+    <input type="email" name="Email" placeholder="Your Email Address" required />
+    <input type="tel" name="Phone" placeholder="Your Phone Number" required />
+    <textarea name="Message" placeholder="How can we help?" required></textarea>
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+  <div id="form-confirmation" style="display: none; color: var(--yellow); font-size: 1.2rem; margin-top: 2rem;">
+    Thank you for contacting us! We'll be in touch shortly.
+  </div>
+</div>
   </div>
 </section>
 
