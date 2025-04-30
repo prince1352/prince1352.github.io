@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,31 +10,26 @@
     html {
       scroll-behavior: smooth;
     }
-    .team-card img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      transition: transform 0.6s ease, box-shadow 0.6s ease;
-      border-radius: 0;
+    .card-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
     }
-    .team-card:hover img {
-      transform: scale(1.1);
-      box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.85);
+    .card-backdrop.active {
+      opacity: 1;
+      pointer-events: all;
     }
-    .team-card {
-      border-radius: 0;
-    }
-      
-    <div class="card-backdrop" id="cardBackdrop"></div>
-    <div class="expanded-card" id="expandedCard">...</div>
-
     .expanded-card {
       position: fixed;
       top: 50%;
       left: 50%;
       width: 90%;
       max-width: 1000px;
-      background-color: var(--bright-burgundy);
+      background-color: #b80238;
       color: white;
       padding: 0;
       border-radius: 0;
@@ -43,25 +38,18 @@
       pointer-events: none;
       z-index: 1000;
       transition: all 0.4s ease;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
       display: flex;
       overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
     }
     .expanded-card.active {
       opacity: 1;
       pointer-events: all;
       transform: translate(-50%, -50%) scale(1);
     }
-    .expanded-card::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: -1;
-    }
     .expanded-card img {
-      height: 100%;
       width: 40%;
+      height: 100%;
       object-fit: cover;
     }
     .expanded-content {
@@ -97,7 +85,7 @@
 </head>
 <body>
   <!-- Header -->
-  <header>
+  <header class="header-blur">
     <div class="header-container">
       <a href="index.html" class="logo-link">
         <div class="logo">
@@ -155,10 +143,10 @@
 
   <!-- Yellow Team Section with Photos -->
   <section class="team-grid-section">
+    <div class="card-backdrop" id="cardBackdrop"></div>
     <div class="team-grid">
-       <!-- 6 Lawyer Cards -->
-        
-      <div class="team-card" data-name="Baldev Sandhu" data-title="Founding Partner" data-bio="Baldev Sandhu is a senior litigation attorney...">
+
+          <div class="team-card" data-name="Baldev Sandhu" data-title="Founding Partner" data-bio="Baldev Sandhu is a senior litigation attorney...">
            <div class="team-image-wrapper">
            <img src="images/lawyer1.jpg" alt="Baldev Sandhu">
         </div>
@@ -206,9 +194,8 @@
         <p>Student-at-Law</p>
       </div>
     </div>
-      
+
     <!-- Expanded Bio Card -->
-      <div class="card-backdrop" id="cardBackdrop"></div>
     <div class="expanded-card" id="expandedCard">
       <button class="close-btn" id="closeCard">&times;</button>
       <img id="cardImage" src="" alt="Lawyer Photo">
@@ -227,72 +214,70 @@
 
   <!-- Scripts -->
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const teamCards = document.querySelectorAll('.team-card');
-  const expandedCard = document.getElementById('expandedCard');
-  const cardName = document.getElementById('cardName');
-  const cardTitle = document.getElementById('cardTitle');
-  const cardBio = document.getElementById('cardBio');
-  const cardImage = document.getElementById('cardImage');
-  const closeBtn = document.getElementById('closeCard');
-  const backdrop = document.getElementById('cardBackdrop');
+    document.addEventListener('DOMContentLoaded', function () {
+      const teamCards = document.querySelectorAll('.team-card');
+      const expandedCard = document.getElementById('expandedCard');
+      const cardName = document.getElementById('cardName');
+      const cardTitle = document.getElementById('cardTitle');
+      const cardBio = document.getElementById('cardBio');
+      const cardImage = document.getElementById('cardImage');
+      const closeBtn = document.getElementById('closeCard');
+      const backdrop = document.getElementById('cardBackdrop');
 
-  teamCards.forEach(card => {
-    card.addEventListener('click', () => {
-      cardName.textContent = card.dataset.name;
-      cardTitle.textContent = card.dataset.title;
-      cardBio.textContent = card.dataset.bio;
-      cardImage.src = card.querySelector('img').src;
+      teamCards.forEach(card => {
+        card.addEventListener('click', () => {
+          cardName.textContent = card.dataset.name;
+          cardTitle.textContent = card.dataset.title;
+          cardBio.textContent = card.dataset.bio;
+          cardImage.src = card.querySelector('img').src;
 
-      expandedCard.classList.add('active');
-      backdrop.classList.add('active');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    expandedCard.classList.remove('active');
-    backdrop.classList.remove('active');
-  });
-
-  // 🧩 Mega menu script (now part of the same DOMContentLoaded block)
-  const navDropdowns = document.querySelectorAll('.navbar .dropdown');
-  const megaMenu = document.querySelector('.mega-menu');
-  const submenuRows = document.querySelectorAll('.submenu-row');
-  let submenuTimeout;
-
-  const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
-  nonDropdowns.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      megaMenu.classList.remove('active');
-      submenuRows.forEach(row => row.classList.remove('active'));
-    });
-  });
-
-  navDropdowns.forEach(dropdown => {
-    dropdown.addEventListener('mouseenter', () => {
-      clearTimeout(submenuTimeout);
-      const submenuId = dropdown.getAttribute('data-submenu');
-      submenuRows.forEach(row => {
-        row.classList.remove('active');
-        if (row.id === submenuId) row.classList.add('active');
+          expandedCard.classList.add('active');
+          backdrop.classList.add('active');
+        });
       });
-      megaMenu.classList.add('active');
+
+      closeBtn.addEventListener('click', () => {
+        expandedCard.classList.remove('active');
+        backdrop.classList.remove('active');
+      });
+
+      const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+      const megaMenu = document.querySelector('.mega-menu');
+      const submenuRows = document.querySelectorAll('.submenu-row');
+      let submenuTimeout;
+
+      const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
+      nonDropdowns.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          megaMenu.classList.remove('active');
+          submenuRows.forEach(row => row.classList.remove('active'));
+        });
+      });
+
+      navDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+          clearTimeout(submenuTimeout);
+          const submenuId = dropdown.getAttribute('data-submenu');
+          submenuRows.forEach(row => {
+            row.classList.remove('active');
+            if (row.id === submenuId) row.classList.add('active');
+          });
+          megaMenu.classList.add('active');
+        });
+      });
+
+      const navArea = document.querySelector('nav');
+      function hideMegaMenu() {
+        submenuTimeout = setTimeout(() => {
+          megaMenu.classList.remove('active');
+          submenuRows.forEach(row => row.classList.remove('active'));
+        }, 300);
+      }
+
+      navArea.addEventListener('mouseleave', hideMegaMenu);
+      megaMenu.addEventListener('mouseleave', hideMegaMenu);
+      megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
     });
-  });
-
-  const navArea = document.querySelector('nav');
-  function hideMegaMenu() {
-    submenuTimeout = setTimeout(() => {
-      megaMenu.classList.remove('active');
-      submenuRows.forEach(row => row.classList.remove('active'));
-    }, 300);
-  }
-
-  navArea.addEventListener('mouseleave', hideMegaMenu);
-  megaMenu.addEventListener('mouseleave', hideMegaMenu);
-  megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
-});
-
   </script>
 </body>
 </html>
