@@ -228,6 +228,7 @@
     const closeBtn = document.getElementById('closeCard');
     const backdrop = document.getElementById('cardBackdrop');
     const header = document.querySelector('header');
+    const body = document.body;
 
     // Open card when clicked
     teamCards.forEach(card => {
@@ -239,7 +240,8 @@
 
         expandedCard.classList.add('active');
         backdrop.classList.add('active');
-        header.classList.add('dimmed'); // lower header z-index
+        header.classList.add('dimmed');
+        body.classList.add('no-scroll'); // Disable scrolling
       });
     });
 
@@ -248,6 +250,7 @@
       expandedCard.classList.remove('active');
       backdrop.classList.remove('active');
       header.classList.remove('dimmed');
+      body.classList.remove('no-scroll'); // Re-enable scrolling
     });
 
     // Close on backdrop
@@ -255,6 +258,7 @@
       expandedCard.classList.remove('active');
       backdrop.classList.remove('active');
       header.classList.remove('dimmed');
+      body.classList.remove('no-scroll'); // Re-enable scrolling
     });
 
     // Auto-open card if URL has ?lawyer=name
@@ -271,6 +275,7 @@
         expandedCard.classList.add('active');
         backdrop.classList.add('active');
         header.classList.add('dimmed');
+        body.classList.add('no-scroll'); // Disable scrolling
       }
     }
 
