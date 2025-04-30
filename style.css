@@ -389,6 +389,144 @@ ul.navbar > li > a:hover {
   border-radius: 8px;
 }
 
+/* Contact Section Parallax */
+.contact-section {
+  position: relative;
+  background: #111; /* Dark black-grey */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 6rem 2rem;
+  z-index: 1;
+}
+
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+
+.contact-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: auto;
+  z-index: 1;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Left: Logo + Info */
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-logo .logo-icon {
+  height: 60px;
+  width: auto;
+}
+
+.contact-logo .logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.contact-logo .logo-line-1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--bright-burgundy);
+  letter-spacing: 0.28rem;
+}
+
+.contact-logo .logo-line-2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--yellow);
+  letter-spacing: 0.15rem;
+  white-space: nowrap;
+}
+
+.contact-details p {
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.contact-details a {
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Right: Form */
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-right input,
+.contact-right textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.contact-right textarea {
+  min-height: 150px;
+}
+
+.submit-btn {
+  background-color: var(--yellow);
+  color: black;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e6c300;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-left, .contact-right {
+    width: 100%;
+  }
+}
 /* Footer */
 footer {
   text-align: center;
