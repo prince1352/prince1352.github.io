@@ -150,6 +150,8 @@ ul.navbar > li > a:hover {
   gap: 2.5rem;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .submenu-row.active {
@@ -158,11 +160,14 @@ ul.navbar > li > a:hover {
 
 .submenu-row a {
   color: white;
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 300; /* Light and modern */
+  font-size: 1rem; /* Match menu */
+  font-family: 'Inter', sans-serif;
   text-decoration: none;
   transition: color 0.2s ease;
+  padding: 0.5rem 1rem;
 }
+
 
 .submenu-row a:hover {
   text-decoration: underline;
