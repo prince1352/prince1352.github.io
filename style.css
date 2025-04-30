@@ -279,7 +279,7 @@ ul.navbar > li > a:hover {
 .services-parallax {
   background: url('images/Services%20Background.jpg') center center / cover no-repeat fixed;
   position: relative;
-  padding: 10vh 2rem 6vh;
+  padding: 20vh 2rem 20vh;
   color: white;
 }
 
