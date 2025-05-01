@@ -474,6 +474,10 @@ body {
   color: var(--bright-burgundy);
 }
 
+.mobile-contact-details strong {
+  color: var(--yellow);
+}
+
 .mobile-contact-details p {
   margin: 0.5rem 0;
   font-size: 1rem;
@@ -483,7 +487,7 @@ body {
 
 .mobile-contact-details a {
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Contact Form Styling */
@@ -494,6 +498,7 @@ body {
   gap: 1rem;
   padding: 0 0.5rem;
   box-sizing: border-box;
+  margin-top: 2rem;
 }
 
 #contact-form input,
