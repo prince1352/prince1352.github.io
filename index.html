@@ -56,12 +56,6 @@
             const parent = button.closest(".has-submenu");
             const isOpen = parent.classList.contains("open");
 
-            // If already open and it's "Our Team", go to team page
-            if (isOpen && button.textContent.includes("Our Team")) {
-              window.location.href = "mobile-team.html";
-              return;
-            }
-
             // Close all other submenus
             document.querySelectorAll(".has-submenu").forEach(item => {
               if (item !== parent) item.classList.remove("open");
