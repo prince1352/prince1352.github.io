@@ -38,7 +38,12 @@
         if (hamburger && mobileNav) {
           hamburger.addEventListener("click", () => {
             console.log("☰ Hamburger clicked");
-            mobileNav.classList.toggle("open");
+           mobileNav.classList.toggle("open");
+
+// Close all submenus when the main menu closes
+if (!mobileNav.classList.contains("open")) {
+  document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("open"));
+}
           });
         } else {
           console.warn("❌ hamburger or mobileNav not found");
