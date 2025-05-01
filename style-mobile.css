@@ -442,7 +442,7 @@ body {
   align-items: center;
   text-align: center;
   gap: 1rem;
-  color: white;
+  color: var(--bright-burgundy);
 }
 
 .mobile-contact-top img {
@@ -458,12 +458,12 @@ body {
 .mobile-contact-details p {
   margin: 0.5rem 0;
   font-size: 1rem;
-  color: white;
+  color: black;
   line-height: 1.6;
 }
 
 .mobile-contact-details a {
-  color: white;
+  color: black;
   text-decoration: underline;
 }
 
