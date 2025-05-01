@@ -723,7 +723,7 @@ TEAM PAGE BODY
 .expanded-card img {
   width: 80%;
   max-width: 300px;
-  margin: 0 auto 1rem;
+  margin: 2rem auto 1rem;
   display: block;
   border-radius: 8px;
   box-shadow: 0 0 0 8px var(--bright-burgundy);
@@ -752,12 +752,12 @@ TEAM PAGE BODY
 
 .close-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.01rem;
+  right: 0.01rem;
   font-size: 2rem;
   background: none;
   border: none;
-  color: white;
+  color: black;
   cursor: pointer;
   z-index: 1010; /* ✅ ensure it's on top of everything inside */
 }
