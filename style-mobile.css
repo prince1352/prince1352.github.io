@@ -418,19 +418,11 @@ body {
 
 .mobile-contact-section {
   position: relative;
-  background: white;
+  background: white; /* white stays here */
   padding: 6rem 1rem;
   text-align: center;
   z-index: 1;
   overflow: hidden;
-}
-
-.mobile-contact-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: white;
-  z-index: -1;
 }
 
 .mobile-contact-container {
