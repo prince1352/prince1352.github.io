@@ -304,7 +304,7 @@ body {
   /* ✅ Correct format: background-image alone, other props separate */
   background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
 }
