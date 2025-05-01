@@ -613,20 +613,12 @@ TEAM PAGE BODY
 
 /* Team Grid */
 .team-grid-section {
-  background: url('images/Team-Background.jpg') center center / cover no-repeat fixed;
+  background-color: var(--yellow); /* ✅ Replaces Team-Background.jpg */
   position: relative;
   padding: 4rem 1rem;
-  overflow: hidden;
 }
 
-.team-grid-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
+/* Removed .team-grid-section::after — no blur needed */
 
 .team-grid {
   display: grid;
@@ -639,24 +631,26 @@ TEAM PAGE BODY
 }
 
 .team-card {
-  background: white;
+  background: none; /* ✅ Remove white background */
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  height: 370px;
+  overflow: hidden;
+  box-shadow: none; /* ✅ Remove shadow */
+  height: auto;
   max-width: 320px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
   z-index: 2;
 }
 
-.team-card img {
+.team-image-wrapper img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: auto;
+  display: block;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -665,18 +659,22 @@ TEAM PAGE BODY
   transform: scale(1.05);
 }
 
-.team-card h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.25rem;
-  font-size: 1.1rem;
+/* ✅ Info shown below the image/card */
+.team-card-info {
+  text-align: center;
+  color: white;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
-.team-card p {
+.team-card-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.team-card-info p {
   font-size: 0.95rem;
   margin: 0;
-  padding-bottom: 0.75rem;
-  z-index: 2;
-  color: var(--yellow);
 }
 
 /* Expanded Card */
@@ -720,14 +718,19 @@ TEAM PAGE BODY
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* ✅ Shrink image and add red border around it */
 .expanded-card img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  max-width: 300px;
+  margin: 2rem auto 1rem;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 0 8px var(--bright-burgundy);
   object-fit: cover;
 }
 
 .expanded-content {
-  padding: 2rem;
+  padding: 1rem 2rem 2rem;
   text-align: center;
 }
 
@@ -757,6 +760,7 @@ TEAM PAGE BODY
   cursor: pointer;
 }
 
+/* Disable background scroll + clicks */
 body.no-scroll {
   height: 100vh;
   overflow: hidden;
@@ -764,10 +768,8 @@ body.no-scroll {
   width: 100%;
 }
 
-/* Prevent clicking the menu while card is open */
 header.dimmed,
 .mobile-nav.dimmed {
   pointer-events: none;
   opacity: 0.4;
 }
-
