@@ -156,6 +156,16 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.submenu-arrow {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.4s ease;
+}
+
+.has-submenu.open .submenu-arrow {
+  transform: rotate(180deg);
+}
+
 /* Submenu container with smooth slide down */
 .submenu {
   max-height: 0;
