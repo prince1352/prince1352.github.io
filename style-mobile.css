@@ -753,7 +753,7 @@ TEAM PAGE BODY
 .close-btn {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0.25rem;
   font-size: 2rem;
   background: none;
   border: none;
