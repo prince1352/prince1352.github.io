@@ -12,23 +12,69 @@
 
   <script>
     const isMobile = window.innerWidth <= 768;
-
     const css = isMobile ? "style-mobile.css" : "style-desktop.css";
     const html = isMobile ? "mobile-index.html" : "desktop-index.html";
 
-    // Load the CSS
     document.getElementById("theme-css").href = css;
 
-    // Load the appropriate layout
     fetch(html)
       .then(res => res.text())
       .then(html => {
         document.getElementById("dynamic-root").innerHTML = html;
+        loadScripts();
       })
       .catch(err => {
         console.error("Error loading layout:", err);
         document.getElementById("dynamic-root").innerHTML = "<p>Error loading page. Please refresh or try again later.</p>";
       });
+
+    function loadScripts() {
+      const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+      const megaMenu = document.querySelector('.mega-menu');
+      const submenuRows = document.querySelectorAll('.submenu-row');
+      const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
+      let submenuTimeout;
+
+      if (!megaMenu || navDropdowns.length === 0) return;
+
+      nonDropdowns.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          megaMenu.classList.remove('active');
+          submenuRows.forEach(row => row.classList.remove('active'));
+        });
+      });
+
+      navDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+          clearTimeout(submenuTimeout);
+          const submenuId = dropdown.getAttribute('data-submenu');
+          submenuRows.forEach(row => {
+            row.classList.remove('active');
+            if (row.id === submenuId) row.classList.add('active');
+          });
+          megaMenu.classList.add('active');
+        });
+      });
+
+      const navArea = document.querySelector('nav');
+      navArea?.addEventListener('mouseleave', () => {
+        submenuTimeout = setTimeout(() => {
+          megaMenu.classList.remove('active');
+          submenuRows.forEach(row => row.classList.remove('active'));
+        }, 300);
+      });
+
+      megaMenu?.addEventListener('mouseleave', () => {
+        submenuTimeout = setTimeout(() => {
+          megaMenu.classList.remove('active');
+          submenuRows.forEach(row => row.classList.remove('active'));
+        }, 300);
+      });
+
+      megaMenu?.addEventListener('mouseenter', () => {
+        clearTimeout(submenuTimeout);
+      });
+    }
   </script>
 </body>
 </html>
