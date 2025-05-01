@@ -43,32 +43,25 @@
               mobileNav.classList.add("animate-in");
             } else {
               mobileNav.classList.remove("animate-in");
-
-              // Close all submenus when menu closes
               document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("open"));
             }
 
             mobileNav.classList.toggle("open");
           });
-        } else {
-          console.warn("❌ hamburger or mobileNav not found");
         }
 
         document.querySelectorAll(".submenu-toggle").forEach(button => {
           button.addEventListener("click", () => {
             const parent = button.closest(".has-submenu");
-
-            // ✅ Redirect to mobile-team.html if already open and 'Our Team' clicked again
             if (parent.classList.contains("open") && button.textContent.includes("Our Team")) {
               window.location.href = "mobile-team.html";
               return;
             }
-
             parent.classList.toggle("open");
           });
         });
 
-        // ✅ Simulated parallax scroll effect for mobile welcome section
+        // Parallax welcome
         const welcomeSection = document.querySelector('.mobile-welcome-section');
         if (welcomeSection) {
           window.addEventListener('scroll', () => {
@@ -76,6 +69,14 @@
             welcomeSection.style.backgroundPositionY = `${offset * 0.5}px`;
           });
         }
+
+        // Flip cards
+        const flipCards = document.querySelectorAll(".flip-card");
+        flipCards.forEach(card => {
+          card.addEventListener("click", () => {
+            card.classList.toggle("flipped");
+          });
+        });
 
       } else {
         console.log("💻 Running desktop script");
