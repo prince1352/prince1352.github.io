@@ -68,6 +68,15 @@
           });
         });
 
+        // ✅ Simulated parallax scroll effect for mobile welcome section
+        const welcomeSection = document.querySelector('.mobile-welcome-section');
+        if (welcomeSection) {
+          window.addEventListener('scroll', () => {
+            const offset = window.pageYOffset;
+            welcomeSection.style.backgroundPositionY = `${offset * 0.5}px`;
+          });
+        }
+
       } else {
         console.log("💻 Running desktop script");
 
