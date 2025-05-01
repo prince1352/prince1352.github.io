@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandhu Law and Mediation – Mobile</title>
+  <link rel="stylesheet" href="style-mobile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
 <!-- Begin mobile header -->
 <header class="mobile-header">
   <div class="mobile-header-container">
@@ -13,51 +24,55 @@
     <button class="hamburger" id="hamburger">&#9776;</button>
   </div>
 
+  <!-- START MENU ITEMS -->
   <nav class="mobile-nav" id="mobileNav">
     <ul>
-      <li><a href="#welcome">Home</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Our Practices ▾</button>
+        <ul class="submenu">
+          <li><a href="#">Criminal Law</a></li>
+          <li><a href="#">Immigration Law</a></li>
+          <li><a href="#">Family Law</a></li>
+          <li><a href="#">Mediation</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Our Team ▾</button>
+        <ul class="submenu">
+          <li><a href="team.html?lawyer=baldev">Baldev Sandhu</a></li>
+          <li><a href="team.html?lawyer=bikramjit">Bikramjit Sandhu</a></li>
+          <li><a href="team.html?lawyer=kiran">Kiran Sandhu</a></li>
+          <li><a href="team.html?lawyer=aman">Aman Sandhu</a></li>
+          <li><a href="team.html?lawyer=harpun">Harpun Brar</a></li>
+          <li><a href="team.html?lawyer=aaliyah">Aaliyah Mohammad</a></li>
+        </ul>
+      </li>
       <li><a href="#about">About Us</a></li>
       <li><a href="#services">Our Services</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="team.html">Our Team</a></li>
     </ul>
   </nav>
 </header>
+<!-- End mobile header -->
 
+<!-- Add your welcome, about, services, contact sections here -->
+
+<!-- Begin Scripts -->
 <script>
-  // Hamburger toggle
+  // Toggle main menu
   document.getElementById("hamburger")?.addEventListener("click", () => {
     document.getElementById("mobileNav")?.classList.toggle("open");
   });
+
+  // Toggle submenus
+  document.querySelectorAll(".submenu-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+      const parent = button.closest(".has-submenu");
+      parent.classList.toggle("open");
+    });
+  });
 </script>
+<!-- End Scripts -->
 
-<!-- End mobile header -->
-<!-- START MENU ITEMS -->
-
-<nav class="mobile-nav" id="mobileNav">
-  <ul>
-    <li class="has-submenu">
-      <button class="submenu-toggle">Our Practices ▾</button>
-      <ul class="submenu">
-        <li><a href="#">Criminal Law</a></li>
-        <li><a href="#">Immigration Law</a></li>
-        <li><a href="#">Family Law</a></li>
-        <li><a href="#">Mediation</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <button class="submenu-toggle">Our Team ▾</button>
-      <ul class="submenu">
-        <li><a href="team.html?lawyer=baldev">Baldev Sandhu</a></li>
-        <li><a href="team.html?lawyer=bikramjit">Bikramjit Sandhu</a></li>
-        <li><a href="team.html?lawyer=kiran">Kiran Sandhu</a></li>
-        <li><a href="team.html?lawyer=aman">Aman Sandhu</a></li>
-        <li><a href="team.html?lawyer=harpun">Harpun Brar</a></li>
-        <li><a href="team.html?lawyer=aaliyah">Aaliyah Mohammad</a></li>
-      </ul>
-    </li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#services">Our Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+</body>
+</html>
