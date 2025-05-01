@@ -301,12 +301,12 @@ body {
   z-index: 1;
   overflow: hidden;
 
-  /* ✅ Show full image, similar to welcome section */
   background-image: url('images/Services Background.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-color: red; /* TEMP: if image fails, red will show */
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 /* ✅ Only blur the background, not the content */
