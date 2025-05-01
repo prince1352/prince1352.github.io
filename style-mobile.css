@@ -761,6 +761,10 @@ TEAM PAGE BODY
   cursor: pointer;
   z-index: 1010;
   line-height: 1;
+  padding: 0.5rem; /* larger tap zone */
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: right; /* ✅ aligns the X to the right edge */
 }
 
 /* Disable background scroll + clicks */
