@@ -213,12 +213,29 @@
     </div>
   </section>
 
+  <!-- Review Section -->
+<section class="review-parallax-section">
+  <!-- Arrow Buttons (background level) -->
+  <div class="review-controls">
+    <button class="review-arrow left" onclick="prevReview()">&#8592;</button>
+    <button class="review-arrow right" onclick="nextReview()">&#8594;</button>
+  </div>
+
+  <!-- Outer Container -->
+  <div class="review-card-container">
+    <!-- Flipping Review Card -->
+    <div class="review-card" id="reviewCard">
+      <!-- JS will insert review content here -->
+    </div>
+  </div>
+</section>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Lawyer Card Section Scripts -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const teamCards = document.querySelectorAll('.team-card');
@@ -320,5 +337,54 @@
     megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
   });
 </script>
+  
+  <!-- Review Section Scripts -->
+  
+  <script>
+  const reviews = [
+    { name: "Jaspreet K.", text: "Incredible service and professionalism throughout my case." },
+    { name: "Amrit S.", text: "They made a very difficult process feel smooth and understandable." },
+    { name: "Navdeep R.", text: "Truly a firm that puts people first. Can't recommend them enough." },
+    { name: "Kiran D.", text: "Extremely knowledgeable and compassionate. Thank you!" },
+    { name: "Manpreet B.", text: "Prompt communication and great results. Five stars!" },
+    { name: "Ravinder G.", text: "I felt supported every step of the way. Great legal team." },
+    { name: "Simran V.", text: "Their attention to detail and care is unmatched." },
+    { name: "Gurpreet N.", text: "Hands down the best legal service I've ever received." }
+  ];
+
+  let currentReview = 0;
+  const card = document.getElementById('reviewCard');
+
+  function renderReview(index) {
+    const review = reviews[index];
+    card.innerHTML = `
+      <div class="review-name">${review.name}</div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">“${review.text}”</div>
+      <div class="review-quote">”</div>
+    `;
+    card.style.transform = 'rotateY(0deg)';
+  }
+
+  function nextReview() {
+    card.style.transform = 'rotateY(180deg)';
+    setTimeout(() => {
+      currentReview = (currentReview + 1) % reviews.length;
+      renderReview(currentReview);
+    }, 400);
+  }
+
+  function prevReview() {
+    card.style.transform = 'rotateY(-180deg)';
+    setTimeout(() => {
+      currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+      renderReview(currentReview);
+    }, 400);
+  }
+
+  // Load first review on page load
+  renderReview(currentReview);
+</script>
+
 </body>
 </html>
