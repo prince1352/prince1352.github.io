@@ -572,3 +572,25 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 9998;
 }
+
+/* --- FINAL FIXES --- */
+
+.header-blur {
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+#cardBackdrop {
+  transition: opacity 0.3s ease;
+}
+
+.expanded-card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
