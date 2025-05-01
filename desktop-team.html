@@ -216,15 +216,16 @@
   <!-- Review Section -->
 <section class="review-parallax-section">
   <div class="review-card-wrapper">
-    <button class="review-arrow left" onclick="prevReview()">&#8249;</button>
+    <button class="review-arrow left" onclick="flipToPrev()">&#8249;</button>
 
     <div class="review-card-container">
-      <div class="review-card" id="reviewCard">
-        <!-- Review content will be inserted via JS -->
+      <div class="review-card-flipper" id="reviewFlipper">
+        <div class="review-card review-front" id="reviewFront"></div>
+        <div class="review-card review-back" id="reviewBack"></div>
       </div>
     </div>
 
-    <button class="review-arrow right" onclick="nextReview()">&#8250;</button>
+    <button class="review-arrow right" onclick="flipToNext()">&#8250;</button>
   </div>
 </section>
 
@@ -338,7 +339,7 @@
   
   <!-- Review Section Scripts -->
   
-  <script>
+ <script>
 const reviews = [
   { name: "Jaspreet K.", text: "Incredible service and professionalism throughout my case." },
   { name: "Amrit S.", text: "They made a very difficult process feel smooth and understandable." },
@@ -351,41 +352,44 @@ const reviews = [
 ];
 
 let currentReview = 0;
-const card = document.getElementById('reviewCard');
+const flipper = document.getElementById('reviewFlipper');
+const front = document.getElementById('reviewFront');
+const back = document.getElementById('reviewBack');
 
-function renderReview(index) {
+function renderReview(target, index) {
   const review = reviews[index];
-  card.innerHTML = `
+  target.innerHTML = `
     <div class="review-name">${review.name}</div>
     <div class="review-stars">★★★★★</div>
     <div class="review-text">“${review.text}”</div>
     <div class="review-quote">”</div>
   `;
-  card.style.transform = 'rotateY(0deg)';
 }
 
-function nextReview() {
-  card.style.transition = 'transform 0.6s ease';
-  card.style.transform = 'rotateY(90deg)';
+function flipToNext() {
+  currentReview = (currentReview + 1) % reviews.length;
+  renderReview(back, currentReview);
+  flipper.classList.remove('flip-prev');
+  flipper.classList.add('flip-next');
   setTimeout(() => {
-    currentReview = (currentReview + 1) % reviews.length;
-    renderReview(currentReview);
-    card.style.transform = 'rotateY(0deg)';
-  }, 300);
+    renderReview(front, currentReview);
+    flipper.classList.remove('flip-next');
+  }, 800);
 }
 
-function prevReview() {
-  card.style.transition = 'transform 0.6s ease';
-  card.style.transform = 'rotateY(-90deg)';
+function flipToPrev() {
+  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+  renderReview(back, currentReview);
+  flipper.classList.remove('flip-next');
+  flipper.classList.add('flip-prev');
   setTimeout(() => {
-    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-    renderReview(currentReview);
-    card.style.transform = 'rotateY(0deg)';
-  }, 300);
+    renderReview(front, currentReview);
+    flipper.classList.remove('flip-prev');
+  }, 800);
 }
 
-renderReview(currentReview);
+renderReview(front, currentReview);
 </script>
-
+  
 </body>
 </html>
