@@ -221,10 +221,7 @@
     <button class="review-arrow left" onclick="flipToPrev()">&#8249;</button>
 
     <div class="review-card-container">
-      <div class="review-card-flipper" id="reviewFlipper">
-        <div class="review-card review-front" id="reviewFront"></div>
-        <div class="review-card review-back" id="reviewBack"></div>
-      </div>
+      <div class="review-card active-card" id="activeCard"></div>
     </div>
 
     <button class="review-arrow right" onclick="flipToNext()">&#8250;</button>
@@ -354,60 +351,53 @@ const reviews = [
 ];
 
 let currentReview = 0;
-let flipping = false;
-let rotation = 0;
+const container = document.querySelector('.review-card-container');
+let activeCard = document.getElementById('activeCard');
 
-const flipper = document.getElementById('reviewFlipper');
-const front = document.getElementById('reviewFront');
-const back = document.getElementById('reviewBack');
-
-function renderReview(target, index) {
-  const review = reviews[index];
-  target.innerHTML = `
-    <div class="review-name">${review.name}</div>
+function renderReview(content, index) {
+  content.innerHTML = `
+    <div class="review-name">${reviews[index].name}</div>
     <div class="review-stars">★★★★★</div>
-    <div class="review-text">“${review.text}”</div>
+    <div class="review-text">“${reviews[index].text}”</div>
     <div class="review-quote">”</div>
   `;
 }
 
 function flipToNext() {
-  if (flipping) return;
-  flipping = true;
-
-  currentReview = (currentReview + 1) % reviews.length;
-  rotation += 180;
-
-  const targetFace = (rotation / 180) % 2 === 0 ? front : back;
-  renderReview(targetFace, currentReview);
-
-  flipper.style.transform = `rotateY(${rotation}deg)`;
-
-  setTimeout(() => {
-    flipping = false;
-  }, 800);
+  const nextIndex = (currentReview + 1) % reviews.length;
+  flipCard(nextIndex, 'next');
 }
 
 function flipToPrev() {
-  if (flipping) return;
-  flipping = true;
+  const prevIndex = (currentReview - 1 + reviews.length) % reviews.length;
+  flipCard(prevIndex, 'prev');
+}
 
-  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-  rotation -= 180;
+function flipCard(newIndex, direction) {
+  const newCard = document.createElement('div');
+  newCard.className = 'review-card';
+  renderReview(newCard, newIndex);
+  container.appendChild(newCard);
 
-  const targetFace = (rotation / 180) % 2 === 0 ? front : back;
-  renderReview(targetFace, currentReview);
-
-  flipper.style.transform = `rotateY(${rotation}deg)`;
+  requestAnimationFrame(() => {
+    newCard.style.transform = direction === 'next' ? 'rotateY(-180deg)' : 'rotateY(180deg)';
+    newCard.style.opacity = '1';
+    newCard.classList.add('active-card');
+    activeCard.style.transform = direction === 'next' ? 'rotateY(180deg)' : 'rotateY(-180deg)';
+    activeCard.style.opacity = '0';
+  });
 
   setTimeout(() => {
-    flipping = false;
-  }, 800);
+    container.removeChild(activeCard);
+    activeCard = newCard;
+    currentReview = newIndex;
+  }, 600);
 }
 
 // Initial render
-renderReview(front, currentReview);
+renderReview(activeCard, currentReview);
 </script>
+
 
   
 </body>
