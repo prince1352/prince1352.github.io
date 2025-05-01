@@ -411,3 +411,122 @@ body {
   text-decoration: none;
   display: inline-block;
 }
+
+/* ===============================
+   Mobile Contact Section Styling
+=============================== */
+
+.mobile-contact-section {
+  position: relative;
+  background: white;
+  padding: 6rem 1rem;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ✅ Background image and blur */
+.mobile-contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('images/Contact%20Background.jpg') center center / cover no-repeat fixed;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+}
+
+.mobile-contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* Top Logo/Info Block */
+.mobile-contact-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  color: white;
+}
+
+.mobile-contact-top img {
+  height: 60px;
+}
+
+.mobile-contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bright-burgundy);
+}
+
+.mobile-contact-details p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: white;
+  line-height: 1.6;
+}
+
+.mobile-contact-details a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Form Block */
+.mobile-contact-form {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-contact-form input,
+.mobile-contact-form textarea {
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.mobile-contact-form textarea {
+  min-height: 120px;
+}
+
+.submit-btn {
+  background-color: var(--bright-burgundy);
+  color: white;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #a6012d;
+}
+
+/* Confirmation Message */
+#form-confirmation {
+  margin-top: 2rem;
+  color: var(--bright-burgundy);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
