@@ -63,22 +63,21 @@
 
         // Parallax for mobile sections
         const parallaxSections = [
-          '.mobile-welcome-section',
-          '.mobile-about-section',
-          '.mobile-services-section',
-          '.mobile-contact-section'
-        ];
+  { selector: '.mobile-welcome-overlay' },
+  { selector: '.mobile-about-overlay' },
+  { selector: '.services-blur-background' },
+  { selector: '.mobile-contact-section' } // No image/overlay but still scroll transform
+];
 
-        parallaxSections.forEach(selector => {
-          const section = document.querySelector(selector);
-          if (section) {
-            window.addEventListener('scroll', () => {
-              const offset = window.pageYOffset;
-              section.style.backgroundPositionY = `${offset * 0.5}px`;
-            });
-          }
-        });
-
+window.addEventListener('scroll', () => {
+  const offset = window.pageYOffset;
+  parallaxSections.forEach(({ selector }) => {
+    const el = document.querySelector(selector);
+    if (el) {
+      el.style.transform = `translateY(${offset * 0.3}px)`; // subtle scroll effect
+    }
+  });
+});
         // Flip card behavior
         const flipCards = document.querySelectorAll(".flip-card, .service-card");
         flipCards.forEach(card => {
