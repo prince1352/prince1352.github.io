@@ -296,7 +296,7 @@ body {
 
 .mobile-services-section {
   position: relative;
-  background: url('images/Services Background.jpg') center center / contain no-repeat fixed;
+  background: url('images/Services Background.jpg') center center / cover no-repeat fixed;
   padding: 6rem 1rem;
   text-align: center;
   z-index: 1;
