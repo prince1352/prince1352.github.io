@@ -63,34 +63,42 @@
   </section>
 
   <!-- ✅ Mobile Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById("hamburger");
-      const mobileNav = document.getElementById("mobileNav");
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
 
-      if (hamburger && mobileNav) {
-        hamburger.addEventListener("click", () => {
-          const isOpening = !mobileNav.classList.contains("open");
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener("click", () => {
+        const isOpening = !mobileNav.classList.contains("open");
 
-          if (isOpening) {
-            mobileNav.classList.add("animate-in");
-          } else {
-            mobileNav.classList.remove("animate-in");
-            document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("open"));
-          }
+        if (isOpening) {
+          mobileNav.classList.add("animate-in");
+        } else {
+          mobileNav.classList.remove("animate-in");
+          document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("open"));
+        }
 
-          mobileNav.classList.toggle("open");
-        });
-      }
+        mobileNav.classList.toggle("open");
+      });
+    }
 
-      document.querySelectorAll(".submenu-toggle").forEach(button => {
-        button.addEventListener("click", () => {
-          const parent = button.closest(".has-submenu");
-          parent.classList.toggle("open");
-        });
+    document.querySelectorAll(".submenu-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const parent = button.closest(".has-submenu");
+
+        // Special case: redirect if already open and text matches 'Our Team'
+        if (parent.classList.contains("open") && button.textContent.includes("Our Team")) {
+          window.location.href = "mobile-team.html";
+          return;
+        }
+
+        // Otherwise, toggle open state
+        parent.classList.toggle("open");
       });
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
