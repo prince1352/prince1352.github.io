@@ -95,7 +95,8 @@ body {
 
 /* Mobile Navigation */
 .mobile-nav {
-  display: none;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   color: var(--yellow);
   width: 100%;
@@ -104,18 +105,17 @@ body {
   opacity: 0;
   transform: translateY(-10px);
   transition: max-height 1.5s ease, opacity 1.5s ease, transform 1.5s ease;
+  padding: 0 1rem; /* horizontal padding always visible */
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   box-sizing: border-box;
 }
 
 .mobile-nav.open {
-  display: flex;
-  flex-direction: column;
   max-height: 1000px;
   opacity: 1;
   transform: translateY(0);
-  padding: 1rem;
+  padding: 1rem; /* full padding when open */
 }
 
 .mobile-nav ul {
