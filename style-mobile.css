@@ -1,24 +1,18 @@
+/* Updated styles for mobile menu */
 :root {
   --bright-burgundy: #962f33;
   --yellow: #242e37;
 }
 
-/* General Resets */
-* {
-  box-sizing: border-box;
-}
-
 body {
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
   background-color: #f5f5f5;
+  overflow-x: hidden;
 }
 
-/* ============================
-   MOBILE HEADER
-============================= */
+/* Header */
 .mobile-header {
   width: 100vw;
   background: white;
@@ -27,7 +21,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  overflow-x: hidden;
 }
 
 .mobile-header-container {
@@ -37,7 +30,6 @@ body {
   gap: 0.5rem;
   width: 100%;
   flex-wrap: nowrap;
-  overflow-x: hidden;
 }
 
 .mobile-logo-icon {
@@ -61,7 +53,7 @@ body {
 }
 
 .mobile-line-2 {
-  font-size: 0.6rem; /* Matches width to SANDHU */
+  font-size: 0.6rem;
   font-weight: 500;
   color: var(--yellow);
   letter-spacing: 0.5px;
@@ -90,9 +82,7 @@ body {
   max-width: 2rem;
 }
 
-/* ============================
-   MOBILE NAVIGATION MENU
-============================= */
+/* Mobile Navigation */
 .mobile-nav {
   display: none;
   background-color: var(--bright-burgundy);
@@ -100,10 +90,12 @@ body {
   width: 100vw;
   padding: 1rem;
   transition: height 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
 }
 
 .mobile-nav.open {
-  display: block;
+  display: flex;
   flex-direction: column;
 }
 
@@ -115,14 +107,15 @@ body {
 }
 
 .mobile-nav li {
-  margin-bottom: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
 }
 
 .mobile-nav a,
 .mobile-nav .submenu-toggle {
   color: white;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   font-size: 1rem;
   background: none;
@@ -130,7 +123,8 @@ body {
   cursor: pointer;
   width: 100%;
   text-align: left;
-  padding: 0.25rem 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .submenu {
@@ -140,9 +134,27 @@ body {
 }
 
 .submenu li {
-  margin-bottom: 0.5rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  margin-left: 0.5rem;
 }
 
 .mobile-nav li.open .submenu {
   display: block;
+}
+
+/* Improve button spacing visually */
+.submenu-toggle::after {
+  content: '\25BC';
+  float: right;
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.has-submenu.open .submenu-toggle::after {
+  transform: rotate(180deg);
 }
