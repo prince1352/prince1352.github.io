@@ -117,7 +117,7 @@ body {
 }
 
 .mobile-nav.animate-in {
-  transition: max-height 1.5s ease, opacity 1.5s ease, transform 1.5s ease;
+  transition: max-height 1.0s ease, opacity 1.0s ease, transform 1.0s ease;
 }
 
 .mobile-nav.open {
