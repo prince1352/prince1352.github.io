@@ -3,6 +3,106 @@
   --yellow: #242e37;
 }
 
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  nav {
+    width: 100%;
+    margin: 1rem 0 0;
+    justify-content: center;
+  }
+
+  ul.navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .services-layout {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .service-details {
+    padding-left: 0;
+    position: static;
+  }
+
+  .description,
+  .description.default {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+    left: auto;
+    text-align: center;
+  }
+
+  .team-grid-section {
+    padding: 2rem 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .expanded-card {
+    flex-direction: column;
+    width: 95%;
+    max-width: none;
+    height: auto;
+  }
+
+  .expanded-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .expanded-content {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-left {
+    flex: 1;
+    min-width: 320px;
+    max-width: 450px;
+    padding-left: 2rem;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
 }
