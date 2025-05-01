@@ -58,9 +58,7 @@
 <section class="team-grid-section">
   <div class="card-backdrop" id="cardBackdrop"></div>
   <div class="team-grid">
-    <!-- Each .team-card here -->
-    <!-- Already included in your uploaded content -->
-    <!-- For brevity, you can paste the rest from your full layout here -->
+    <!-- Each .team-card goes here -->
   </div>
 
   <div class="expanded-card" id="expandedCard">
@@ -77,4 +75,124 @@
 <footer>
   <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
 </footer>
+
+<script>
+  // Mega Menu Logic
+  const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+  const megaMenu = document.querySelector('.mega-menu');
+  const submenuRows = document.querySelectorAll('.submenu-row');
+  const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
+  let submenuTimeout;
+
+  nonDropdowns.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      megaMenu.classList.remove('active');
+      submenuRows.forEach(row => row.classList.remove('active'));
+    });
+  });
+
+  navDropdowns.forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(submenuTimeout);
+      const submenuId = dropdown.getAttribute('data-submenu');
+      submenuRows.forEach(row => {
+        row.classList.remove('active');
+        if (row.id === submenuId) row.classList.add('active');
+      });
+      megaMenu.classList.add('active');
+    });
+  });
+
+  const navArea = document.querySelector('nav');
+  function hideMegaMenu() {
+    submenuTimeout = setTimeout(() => {
+      megaMenu.classList.remove('active');
+      submenuRows.forEach(row => row.classList.remove('active'));
+    }, 300);
+  }
+
+  navArea.addEventListener('mouseleave', hideMegaMenu);
+  megaMenu.addEventListener('mouseleave', hideMegaMenu);
+  megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
+
+  // Team Card Expand Logic
+  const cardBackdrop = document.getElementById("cardBackdrop");
+  const expandedCard = document.getElementById("expandedCard");
+  const closeCard = document.getElementById("closeCard");
+  const cardImage = document.getElementById("cardImage");
+  const cardName = document.getElementById("cardName");
+  const cardTitle = document.getElementById("cardTitle");
+  const cardBio = document.getElementById("cardBio");
+
+  const bioData = {
+    baldev: {
+      name: "Baldev Sandhu",
+      title: "Founder & Senior Lawyer",
+      image: "images/team/baldev.jpg",
+      bio: "Baldev Sandhu is the founder of the firm with over 20 years of experience in criminal and family law."
+    },
+    bikramjit: {
+      name: "Bikramjit Sandhu",
+      title: "Associate Lawyer",
+      image: "images/team/bikramjit.jpg",
+      bio: "Bikramjit specializes in immigration and refugee law, helping families navigate complex processes."
+    },
+    kiran: {
+      name: "Kiran Sandhu",
+      title: "Family Law Specialist",
+      image: "images/team/kiran.jpg",
+      bio: "Kiran offers compassionate legal services in divorce, custody, and property disputes."
+    },
+    aman: {
+      name: "Aman Sandhu",
+      title: "Criminal Defense Lawyer",
+      image: "images/team/aman.jpg",
+      bio: "Aman has a sharp courtroom presence and defends clients in serious criminal matters."
+    },
+    harpun: {
+      name: "Harpun Brar",
+      title: "Mediation Specialist",
+      image: "images/team/harpun.jpg",
+      bio: "Harpun is a certified mediator focusing on dispute resolution outside of court."
+    },
+    aaliyah: {
+      name: "Aaliyah Mohammad",
+      title: "Legal Counsel",
+      image: "images/team/aaliyah.jpg",
+      bio: "Aaliyah handles complex immigration appeals and provides multilingual support."
+    }
+  };
+
+  function openCard(lawyerKey) {
+    const data = bioData[lawyerKey];
+    if (!data) return;
+
+    cardName.textContent = data.name;
+    cardTitle.textContent = data.title;
+    cardBio.textContent = data.bio;
+    cardImage.src = data.image;
+    expandedCard.style.display = "flex";
+    cardBackdrop.style.display = "block";
+  }
+
+  function closeExpandedCard() {
+    expandedCard.style.display = "none";
+    cardBackdrop.style.display = "none";
+  }
+
+  document.querySelectorAll(".team-card").forEach(card => {
+    const lawyerKey = card.getAttribute("data-lawyer");
+    card.addEventListener("click", () => openCard(lawyerKey));
+  });
+
+  closeCard.addEventListener("click", closeExpandedCard);
+  cardBackdrop.addEventListener("click", closeExpandedCard);
+
+  // Open card if URL contains a ?lawyer= parameter
+  const params = new URLSearchParams(window.location.search);
+  const targetLawyer = params.get("lawyer");
+  if (targetLawyer && bioData[targetLawyer]) {
+    openCard(targetLawyer);
+  }
+</script>
 <!-- End desktop-team.html -->
