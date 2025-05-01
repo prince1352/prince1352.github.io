@@ -300,33 +300,37 @@ body {
   text-align: center;
   z-index: 1;
   overflow: hidden;
-  background: url('images/Services Background.jpg') center center / cover no-repeat;
-  background-attachment: scroll;
+
+  /* ✅ Parallax background image */
+  background-image: url('images/Services Background.jpg');
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
-/* ✅ Background image with blur behind everything */
-.services-blur-background {
+/* ✅ Blur layer over image only */
+.mobile-services-section::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: url('images/Services Background.jpg') center center / cover no-repeat fixed;
-  filter: blur(6px);
+  backdrop-filter: blur(6px);
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 0;
+  pointer-events: none;
 }
 
-/* ✅ Inner wrapper on top of blur */
+/* ✅ Main content stays on top of blur */
 .services-inner-wrapper {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
 
-/* Removed logo row and adjusted spacing */
+/* Services title styling */
 .services-title {
   color: white;
   font-size: 2rem;
@@ -334,7 +338,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Grid for 1 column card layout */
+/* One column grid for service cards */
 .service-card-grid {
   display: flex;
   flex-direction: column;
@@ -414,7 +418,6 @@ body {
   text-decoration: none;
   display: inline-block;
 }
-
 /* ===============================
    Mobile Contact Section Styling
 =============================== */
