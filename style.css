@@ -47,12 +47,19 @@
     gap: 0.75rem;
   }
 
-  .cta-button {
-    width: 100%;
-    text-align: center;
-    margin-top: 1rem;
+.cta-button {
+    width: auto;
+    text-align: right;
+    margin-top: 0;
   }
 
+  .cta-button a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  
   .services-layout {
     flex-direction: column;
     padding: 2rem 1rem;
