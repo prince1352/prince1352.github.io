@@ -752,20 +752,28 @@ TEAM PAGE BODY
 
 .close-btn {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  font-size: 2.2rem;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
   z-index: 1010;
+
+  /* Ensures no visual offset */
   line-height: 1;
-  padding: 0.5rem; /* larger tap zone */
-  width: 2.5rem;
-  height: 2.5rem;
-  text-align: right; /* ✅ aligns the X to the right edge */
+  padding: 0.25rem; /* just enough for clickability */
+  margin: 0;
+  width: auto;
+  height: auto;
+
+  /* Align X to the top-right of button */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
+
 
 /* Disable background scroll + clicks */
 body.no-scroll {
