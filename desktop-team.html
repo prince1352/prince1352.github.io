@@ -355,10 +355,11 @@ const container = document.querySelector('.review-card-container');
 let activeCard = document.getElementById('activeCard');
 
 function renderReview(content, index) {
+  const review = reviews[index];
   content.innerHTML = `
-    <div class="review-name">${reviews[index].name}</div>
+    <div class="review-name">${review.name}</div>
     <div class="review-stars">★★★★★</div>
-    <div class="review-text">“${reviews[index].text}”</div>
+    <div class="review-text">“${review.text}”</div>
     <div class="review-quote">”</div>
   `;
 }
