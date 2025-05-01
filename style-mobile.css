@@ -99,7 +99,7 @@ body {
   max-height: 0;
   opacity: 0;
   transform: translateY(-10px);
-  transition: all 0.9s ease;
+  transition: max-height 1.5s ease, opacity 1.5s ease, transform 1.5s ease;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   box-sizing: border-box;
