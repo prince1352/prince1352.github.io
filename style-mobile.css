@@ -111,10 +111,12 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .mobile-nav li {
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .mobile-nav a,
