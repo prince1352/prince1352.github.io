@@ -376,13 +376,14 @@ function flipToNext() {
   flipping = true;
 
   currentReview = (currentReview + 1) % reviews.length;
-  renderReview(back, currentReview);
-
   rotation += 180;
+
+  const targetFace = (rotation / 180) % 2 === 0 ? front : back;
+  renderReview(targetFace, currentReview);
+
   flipper.style.transform = `rotateY(${rotation}deg)`;
 
   setTimeout(() => {
-    renderReview(front, currentReview);
     flipping = false;
   }, 800);
 }
@@ -392,18 +393,19 @@ function flipToPrev() {
   flipping = true;
 
   currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-  renderReview(back, currentReview);
-
   rotation -= 180;
+
+  const targetFace = (rotation / 180) % 2 === 0 ? front : back;
+  renderReview(targetFace, currentReview);
+
   flipper.style.transform = `rotateY(${rotation}deg)`;
 
   setTimeout(() => {
-    renderReview(front, currentReview);
     flipping = false;
   }, 800);
 }
 
-// Initial load
+// Initial render
 renderReview(front, currentReview);
 </script>
 
