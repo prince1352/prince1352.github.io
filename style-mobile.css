@@ -553,3 +553,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* ===============================
+FOOTER
+=============================== */
+.mobile-footer {
+  background-color: #f1f1f1; /* or white */
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
