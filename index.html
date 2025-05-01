@@ -57,6 +57,13 @@
         document.querySelectorAll(".submenu-toggle").forEach(button => {
           button.addEventListener("click", () => {
             const parent = button.closest(".has-submenu");
+
+            // ✅ Redirect to mobile-team.html if already open and 'Our Team' clicked again
+            if (parent.classList.contains("open") && button.textContent.includes("Our Team")) {
+              window.location.href = "mobile-team.html";
+              return;
+            }
+
             parent.classList.toggle("open");
           });
         });
