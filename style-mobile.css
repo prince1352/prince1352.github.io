@@ -109,8 +109,11 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   box-sizing: border-box;
-  position: relative;
-  top: auto;
+
+  position: fixed; /* ✅ fixed so it overlays current scroll position */
+  top: 60px;        /* ✅ adjust this to match your header height */
+  left: 0;
+  z-index: 1001;    /* ✅ above your header (z-index: 1000) */
 }
 
 .mobile-nav.animate-in {
@@ -159,12 +162,12 @@ body {
   overflow: hidden;
   margin-top: 0.5rem;
   padding-left: 1rem;
-  transition: max-height 1.0s ease;
+  transition: max-height 1s ease;
 }
 
 /* Animate when parent has .open */
 .has-submenu.open .submenu {
-  max-height: 500px; /* or however tall needed */
+  max-height: 500px;
 }
 
 .submenu li {
