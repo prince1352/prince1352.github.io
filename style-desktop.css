@@ -823,11 +823,11 @@ TEAM REVIEW SECTION
   border: 4px solid rgba(255, 255, 255, 0.15);
   padding: 3rem;
   max-width: 800px;
-  width: 800px; /* ✅ fixed width */
+  width: 800px;
   height: 260px;
   perspective: 1500px;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* ✅ shadow aligned to card size */
 }
 
 .review-card-flipper {
