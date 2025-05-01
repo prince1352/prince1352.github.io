@@ -300,7 +300,9 @@ body {
   text-align: center;
   z-index: 1;
   overflow: hidden;
-  background-image: url('images/Services Background.jpg');
+  
+  /* ✅ Correct format: background-image alone, other props separate */
+  background-image: url('images/Services%20Background.jpg');
   background-attachment: fixed;
   background-size: contain;
   background-repeat: no-repeat;
@@ -316,6 +318,7 @@ body {
   z-index: 0;
   pointer-events: none;
 }
+
 
 /* ✅ Main content stays on top of blur */
 .services-inner-wrapper {
