@@ -109,6 +109,8 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   box-sizing: border-box;
+  position: relative;
+  top: auto;
 }
 
 .mobile-nav.animate-in {
@@ -189,16 +191,20 @@ body {
 ============================= */
 .mobile-welcome-section {
   height: 100vh;
-  background: url('images/Welcome Background.jpg') center center / cover no-repeat fixed;
+  background: url('images/Welcome Background.jpg') center top / contain no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0;
   padding: 0 1rem;
 }
+
 
 .mobile-welcome-overlay {
   position: absolute;
