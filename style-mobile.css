@@ -752,14 +752,15 @@ TEAM PAGE BODY
 
 .close-btn {
   position: absolute;
-  top: 0.01rem;
-  right: 0.01rem;
-  font-size: 2rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2.2rem;
   background: none;
   border: none;
-  color: black;
+  color: white;
   cursor: pointer;
-  z-index: 1010; /* ✅ ensure it's on top of everything inside */
+  z-index: 1010;
+  line-height: 1;
 }
 
 /* Disable background scroll + clicks */
