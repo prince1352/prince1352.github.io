@@ -809,6 +809,14 @@ TEAM REVIEW SECTION
   flex-direction: column;
 }
 
+.review-section-title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
 .review-card-wrapper {
   display: flex;
   align-items: center;
@@ -854,7 +862,7 @@ TEAM REVIEW SECTION
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* ✅ Aligns content to top */
 }
 
 .review-front {
