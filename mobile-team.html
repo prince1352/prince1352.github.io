@@ -182,22 +182,27 @@
 
     teamCards.forEach(card => {
       card.addEventListener('click', () => {
-        cardName.textContent = card.dataset.name;
-        cardTitle.textContent = card.dataset.title;
-        cardBio.textContent = card.dataset.bio;
-        cardImage.src = card.querySelector('img').src;
+    cardName.textContent = card.dataset.name;
+    cardTitle.textContent = card.dataset.title;
+    cardBio.textContent = card.dataset.bio;
+    cardImage.src = card.querySelector('img').src;
 
-        expandedCard.classList.add('active');
-        backdrop.classList.add('active');
-        body.classList.add('no-scroll');
-      });
-    });
+    expandedCard.classList.add('active');
+    backdrop.classList.add('active');
+    body.classList.add('no-scroll');
+    document.querySelector('header').classList.add('dimmed');
+    document.getElementById('mobileNav')?.classList.add('dimmed');
+  });
+});
 
-    function closeCard() {
-      expandedCard.classList.remove('active');
-      backdrop.classList.remove('active');
-      body.classList.remove('no-scroll');
-    }
+function closeCard() {
+  expandedCard.classList.remove('active');
+  backdrop.classList.remove('active');
+  body.classList.remove('no-scroll');
+  document.querySelector('header').classList.remove('dimmed');
+  document.getElementById('mobileNav')?.classList.remove('dimmed');
+}
+
 
     closeBtn.addEventListener('click', closeCard);
     backdrop.addEventListener('click', closeCard);
