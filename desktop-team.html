@@ -215,7 +215,7 @@
 
   <!-- Review Section -->
 
-  <section class="review-parallax-section">
+<section class="review-parallax-section">
   <div class="review-card-wrapper">
     <button class="review-arrow left" onclick="flipToPrev()">&#8249;</button>
 
@@ -375,6 +375,7 @@ function flipToNext() {
   renderReview(back, currentReview);
   flipper.classList.remove('flip-prev');
   flipper.classList.add('flip-next');
+
   setTimeout(() => {
     renderReview(front, currentReview);
     flipper.classList.remove('flip-next');
@@ -389,6 +390,7 @@ function flipToPrev() {
   renderReview(back, currentReview);
   flipper.classList.remove('flip-next');
   flipper.classList.add('flip-prev');
+
   setTimeout(() => {
     renderReview(front, currentReview);
     flipper.classList.remove('flip-prev');
