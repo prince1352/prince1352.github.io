@@ -29,6 +29,7 @@
       });
 
     function loadScripts() {
+      // === Mega Menu ===
       const navDropdowns = document.querySelectorAll('.navbar .dropdown');
       const megaMenu = document.querySelector('.mega-menu');
       const submenuRows = document.querySelectorAll('.submenu-row');
@@ -74,6 +75,40 @@
       megaMenu?.addEventListener('mouseenter', () => {
         clearTimeout(submenuTimeout);
       });
+
+      // === Services Hover ===
+      const items = document.querySelectorAll('.service-item');
+      const descriptions = document.querySelectorAll('.description');
+      const defaultDesc = document.querySelector('.description.default');
+      const layout = document.querySelector('.services-layout');
+
+      if (items.length > 0 && layout) {
+        items.forEach(item => {
+          item.addEventListener('mouseenter', () => {
+            descriptions.forEach(desc => desc.classList.remove('active'));
+            if (defaultDesc) defaultDesc.style.display = 'none';
+            const target = item.getAttribute('data-service');
+            const desc = document.getElementById(target);
+            if (desc) desc.classList.add('active');
+          });
+        });
+
+        layout.addEventListener('mouseleave', () => {
+          descriptions.forEach(desc => desc.classList.remove('active'));
+          if (defaultDesc) defaultDesc.style.display = 'block';
+        });
+      }
+
+      // === Optional: Parallax Activation ===
+      const servicesSection = document.querySelector('.services-parallax');
+      if (servicesSection) {
+        window.addEventListener('scroll', () => {
+          const rect = servicesSection.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            servicesSection.classList.add('active');
+          }
+        });
+      }
     }
   </script>
 </body>
