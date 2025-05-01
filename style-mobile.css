@@ -301,15 +301,15 @@ body {
   z-index: 1;
   overflow: hidden;
 
-  /* ✅ Parallax background image */
-  background-image: url('images/Services Background.jpg') center top / contain no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  /* ✅ Show full image, similar to welcome section */
+  background-image: url('images/Services Background.jpg');
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
 }
 
-/* ✅ Blur layer over image only */
+/* ✅ Only blur the background, not the content */
 .mobile-services-section::before {
   content: "";
   position: absolute;
