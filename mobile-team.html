@@ -192,8 +192,10 @@
 </script>
 
   <!-- ✅ Mobile Script for CARDS -->
+  
+<script>
+  let scrollY = 0; // ✅ Add this outside the DOMContentLoaded block
 
-  <script>
   document.addEventListener("DOMContentLoaded", function () {
     const teamCards = document.querySelectorAll('.team-card');
     const expandedCard = document.getElementById('expandedCard');
@@ -205,33 +207,40 @@
     const backdrop = document.getElementById('cardBackdrop');
     const body = document.body;
 
+    // ✅ Open expanded card
     teamCards.forEach(card => {
       card.addEventListener('click', () => {
-    cardName.textContent = card.dataset.name;
-    cardTitle.textContent = card.dataset.title;
-    cardBio.textContent = card.dataset.bio;
-    cardImage.src = card.querySelector('img').src;
+        scrollY = window.scrollY; // ✅ Save scroll position
 
-    expandedCard.classList.add('active');
-    backdrop.classList.add('active');
-    body.classList.add('no-scroll');
-    document.querySelector('header').classList.add('dimmed');
-    document.getElementById('mobileNav')?.classList.add('dimmed');
-  });
-});
+        cardName.textContent = card.dataset.name;
+        cardTitle.textContent = card.dataset.title;
+        cardBio.textContent = card.dataset.bio;
+        cardImage.src = card.querySelector('img').src;
 
-function closeCard() {
-  expandedCard.classList.remove('active');
-  backdrop.classList.remove('active');
-  body.classList.remove('no-scroll');
-  document.querySelector('header').classList.remove('dimmed');
-  document.getElementById('mobileNav')?.classList.remove('dimmed');
-}
+        expandedCard.classList.add('active');
+        backdrop.classList.add('active');
+        body.classList.add('no-scroll');
+        body.style.top = `-${scrollY}px`; // ✅ Freeze page in place
+        document.querySelector('header')?.classList.add('dimmed');
+        document.getElementById('mobileNav')?.classList.add('dimmed');
+      });
+    });
 
+    // ✅ Close expanded card and restore scroll
+    function closeCard() {
+      expandedCard.classList.remove('active');
+      backdrop.classList.remove('active');
+      body.classList.remove('no-scroll');
+      body.style.top = ''; // ✅ Remove inline style
+      window.scrollTo(0, scrollY); // ✅ Restore scroll position
+      document.querySelector('header')?.classList.remove('dimmed');
+      document.getElementById('mobileNav')?.classList.remove('dimmed');
+    }
 
     closeBtn.addEventListener('click', closeCard);
     backdrop.addEventListener('click', closeCard);
 
+    // Auto-open card if linked via ?lawyer=name
     const params = new URLSearchParams(window.location.search);
     const targetId = params.get('lawyer');
     if (targetId) {
@@ -240,8 +249,6 @@ function closeCard() {
     }
   });
 </script>
-
-
 
 </body>
 </html>
