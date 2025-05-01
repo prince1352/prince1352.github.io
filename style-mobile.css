@@ -1,4 +1,4 @@
-/* Updated styles for mobile menu */
+/* Finalized styles for mobile menu improvements */
 :root {
   --bright-burgundy: #962f33;
   --yellow: #242e37;
@@ -22,6 +22,7 @@ body {
   top: 0;
   z-index: 1000;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .mobile-header-container {
@@ -30,8 +31,10 @@ body {
   justify-content: space-between;
   gap: 0.5rem;
   width: 100%;
+  max-width: 100%;
   flex-wrap: nowrap;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .mobile-logo-icon {
@@ -86,7 +89,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 2.5rem;
+  max-width: 2rem;
+  overflow: hidden;
 }
 
 /* Mobile Navigation */
@@ -155,6 +159,7 @@ body {
   font-weight: 400;
   margin-left: 0.5rem;
   color: var(--bright-burgundy);
+  box-sizing: border-box;
 }
 
 .mobile-nav li.open .submenu {
