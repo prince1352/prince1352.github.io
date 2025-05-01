@@ -566,3 +566,185 @@ FOOTER
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
 }
+
+/* ===============================
+TEAM PAGE BODY
+=============================== */
+
+.team-intro {
+  background: white;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.team-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.team-logo {
+  height: 60px;
+  background: white;
+  padding: 0 1.5rem;
+}
+
+.team-line {
+  flex: 1;
+  height: 3px;
+  background-color: var(--yellow);
+}
+
+.left-line {
+  margin-right: 1.5rem;
+}
+.right-line {
+  margin-left: 1.5rem;
+}
+
+.team-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bright-burgundy);
+  margin-top: 0.5rem;
+}
+
+/* Team Grid */
+.team-grid-section {
+  background: url('images/Team-Background.jpg') center center / cover no-repeat fixed;
+  position: relative;
+  padding: 4rem 1rem;
+  overflow: hidden;
+}
+
+.team-grid-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+  z-index: 2;
+  position: relative;
+}
+
+.team-card {
+  background: white;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  height: 370px;
+  max-width: 320px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+}
+
+.team-card h3 {
+  margin: 1rem 0 0.25rem;
+  color: #111;
+}
+
+.team-card p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Expanded Card */
+.card-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.card-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.expanded-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 1000px;
+  background-color: var(--bright-burgundy);
+  color: white;
+  padding: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.expanded-card.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.expanded-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.expanded-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.expanded-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.expanded-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.expanded-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
