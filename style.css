@@ -3,7 +3,7 @@
   --yellow: #242e37;
 }
 
-/* Responsive Enhancements */
+/* PHONE COMPATIBILITY CODE STARTS */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -13,8 +13,26 @@
 
   .header-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-text {
+    align-items: center;
+  }
+
+  .logo-line-1 {
+    font-size: 2rem;
+  }
+
+  .logo-line-2 {
+    font-size: 1rem;
   }
 
   nav {
@@ -102,6 +120,8 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* PHONE COMPATIBILITY CODE ENDS */
 
 html {
   scroll-behavior: smooth;
