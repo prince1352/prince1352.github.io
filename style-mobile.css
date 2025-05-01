@@ -30,6 +30,7 @@ body {
   gap: 0.5rem;
   width: 100%;
   flex-wrap: nowrap;
+  overflow-x: hidden;
 }
 
 .mobile-logo-icon {
@@ -84,19 +85,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 2.5rem;
 }
 
 /* Mobile Navigation */
 .mobile-nav {
   display: none;
-  background-color: var(--bright-burgundy);
-  color: white;
+  background-color: white;
+  color: var(--yellow);
   width: 100vw;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
   transform: translateY(-10px);
-  transition: all 0.3s ease;
+  transition: all 0.9s ease;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
 }
@@ -119,13 +121,12 @@ body {
 
 .mobile-nav li {
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
 }
 
 .mobile-nav a,
 .mobile-nav .submenu-toggle {
-  color: white;
+  color: var(--yellow);
   font-weight: 500;
   text-decoration: none;
   font-size: 1rem;
@@ -148,23 +149,15 @@ body {
   padding: 0.5rem 0 0.5rem 1rem;
   font-size: 0.95rem;
   font-weight: 400;
-  border-left: 2px solid rgba(255, 255, 255, 0.2);
   margin-left: 0.5rem;
+  color: var(--bright-burgundy);
 }
 
 .mobile-nav li.open .submenu {
   display: block;
 }
 
+/* Remove extra arrow from .submenu-toggle */
 .submenu-toggle::after {
-  content: '\25BC';
-  float: right;
-  margin-right: 0.5rem;
-  font-size: 0.7rem;
-  transform: rotate(0deg);
-  transition: transform 0.2s ease;
-}
-
-.has-submenu.open .submenu-toggle::after {
-  transform: rotate(180deg);
+  content: none;
 }
