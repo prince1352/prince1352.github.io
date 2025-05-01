@@ -302,7 +302,7 @@ body {
   overflow: hidden;
 
   /* ✅ Parallax background image */
-  background-image: url('images/Services Background.jpg');
+  background-image: url('images/Services Background.jpg') center top / contain no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
