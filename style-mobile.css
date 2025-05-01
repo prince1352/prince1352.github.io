@@ -3,12 +3,22 @@
   --yellow: #242e37;
 }
 
+/* General Resets */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
 }
 
+/* ============================
+   MOBILE HEADER
+============================= */
 .mobile-header {
   width: 100vw;
   background: white;
@@ -17,15 +27,17 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 .mobile-header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   gap: 0.5rem;
   width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
 }
 
 .mobile-logo-icon {
@@ -36,7 +48,6 @@ body {
 .mobile-logo-text {
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;
   line-height: 1;
   white-space: nowrap;
   flex-shrink: 1;
@@ -50,10 +61,11 @@ body {
 }
 
 .mobile-line-2 {
-  font-size: 0.75rem;
+  font-size: 0.6rem; /* Matches width to SANDHU */
   font-weight: 500;
   color: var(--yellow);
   letter-spacing: 0.5px;
+  margin-top: 2px;
 }
 
 .mobile-cta-button {
@@ -61,7 +73,7 @@ body {
   color: white;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -75,8 +87,12 @@ body {
   cursor: pointer;
   color: var(--bright-burgundy);
   flex-shrink: 0;
+  max-width: 2rem;
 }
 
+/* ============================
+   MOBILE NAVIGATION MENU
+============================= */
 .mobile-nav {
   display: none;
   background: white;
