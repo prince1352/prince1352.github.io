@@ -296,22 +296,24 @@ body {
 
 .mobile-services-section {
   position: relative;
-  background: url('images/Services Background.jpg') center center / cover no-repeat fixed;
   padding: 6rem 1rem;
   text-align: center;
   z-index: 1;
   overflow: hidden;
 }
 
+/* ✅ Background image with blur behind everything */
 .mobile-services-section::before {
   content: "";
   position: absolute;
   inset: 0;
+  background: url('images/Services Background.jpg') center center / cover no-repeat fixed;
   backdrop-filter: blur(6px);
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 0;
+  z-index: -1; /* ✅ Push completely behind */
 }
 
+/* ✅ Container on top of blurred background */
 .services-inner-wrapper {
   position: relative;
   z-index: 1;
