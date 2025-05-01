@@ -924,3 +924,8 @@ TEAM REVIEW SECTION
 .review-arrow:hover {
   color: var(--yellow);
 }
+
+.review-back > * {
+  transform: scaleX(-1);
+}
+
