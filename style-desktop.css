@@ -871,8 +871,11 @@ TEAM REVIEW SECTION
 }
 
 .review-back {
-  transform: rotateY(180deg) scaleX(-1);
+  transform: rotateY(180deg);
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .review-card-flipper.flip-next {
