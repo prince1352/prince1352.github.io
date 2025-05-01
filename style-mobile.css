@@ -215,8 +215,6 @@ body {
   backdrop-filter: blur(6px);
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 0;
-  will-change: transform;
-  transition: transform 0.2s ease-out;
 }
 
 .mobile-welcome-section h1,
@@ -261,10 +259,7 @@ body {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.1);
   z-index: 0;
-  will-change: transform;
-  transition: transform 0.2s ease-out;
 }
-
 
 .mobile-about-content {
   position: relative;
@@ -316,10 +311,7 @@ body {
   filter: blur(6px);
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 0;
-  will-change: transform;
-  transition: transform 0.2s ease-out;
 }
-
 
 /* ✅ Inner wrapper on top of blur */
 .services-inner-wrapper {
@@ -426,13 +418,11 @@ body {
 
 .mobile-contact-section {
   position: relative;
-  background: white;
+  background: white; /* white stays here */
   padding: 6rem 1rem;
   text-align: center;
   z-index: 1;
   overflow: hidden;
-  will-change: transform;
-  transition: transform 0.2s ease-out;
 }
 
 .mobile-contact-container {
