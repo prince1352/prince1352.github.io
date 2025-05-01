@@ -104,18 +104,22 @@ body {
   max-height: 0;
   opacity: 0;
   transform: translateY(-10px);
-  transition: max-height 1.5s ease, opacity 1.5s ease, transform 1.5s ease;
-  padding: 0 1rem; /* horizontal padding always visible */
+  transition: none; /* No animation by default */
+  padding: 0 1rem;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   box-sizing: border-box;
+}
+
+.mobile-nav.animate-in {
+  transition: max-height 1.5s ease, opacity 1.5s ease, transform 1.5s ease;
 }
 
 .mobile-nav.open {
   max-height: 1000px;
   opacity: 1;
   transform: translateY(0);
-  padding: 1rem; /* full padding when open */
+  padding: 1rem;
 }
 
 .mobile-nav ul {
@@ -147,10 +151,18 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* Submenu container with smooth slide down */
 .submenu {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
   margin-top: 0.5rem;
   padding-left: 1rem;
+  transition: max-height 0.5s ease;
+}
+
+/* Animate when parent has .open */
+.has-submenu.open .submenu {
+  max-height: 500px; /* or however tall needed */
 }
 
 .submenu li {
@@ -167,11 +179,7 @@ body {
   font-weight: 500;
 }
 
-
-.mobile-nav li.open .submenu {
-  display: block;
-}
-
+/* Remove arrow that was added by CSS */
 .submenu-toggle::after {
   content: none;
 }
