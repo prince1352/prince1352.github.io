@@ -75,6 +75,11 @@
       <div class="cta-button">
         <a href="#contact">Free Consultation</a>
       </div>
+      <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     </div>
   </header>
 
@@ -279,4 +284,26 @@ nonDropdowns.forEach(item => {
   navArea.addEventListener('mouseleave', hideMegaMenu);
   megaMenu.addEventListener('mouseleave', hideMegaMenu);
   megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
+
+    const hamburger = document.getElementById('hamburger');
+  const nav = document.querySelector('nav');
+  const dropdowns = document.querySelectorAll('.navbar .dropdown');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  dropdowns.forEach(drop => {
+    drop.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const submenuId = drop.getAttribute('data-submenu');
+      const submenu = document.getElementById(submenuId);
+      
+      if (submenu) {
+        submenu.classList.toggle('active');
+      }
+    });
+  });
 </script>
