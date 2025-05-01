@@ -62,7 +62,7 @@
   </section>
 
   <!-- ✅ Mobile Script -->
- <script>
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const mobileNav = document.getElementById("mobileNav");
@@ -82,17 +82,18 @@
       });
     }
 
+    // Submenu toggle logic
     document.querySelectorAll(".submenu-toggle").forEach(button => {
       button.addEventListener("click", () => {
         const parent = button.closest(".has-submenu");
+        const isOpen = parent.classList.contains("open");
 
-        // Special case: redirect if already open and text matches 'Our Team'
-        if (parent.classList.contains("open") && button.textContent.includes("Our Team")) {
-          window.location.href = "mobile-team.html";
-          return;
-        }
+        // Close all other submenus
+        document.querySelectorAll(".has-submenu").forEach(item => {
+          if (item !== parent) item.classList.remove("open");
+        });
 
-        // Otherwise, toggle open state
+        // Toggle the clicked one
         parent.classList.toggle("open");
       });
     });
