@@ -428,11 +428,18 @@ body {
   text-align: center;
   z-index: 1;
   overflow: hidden;
-  background: white;
-  background-attachment: scroll;
+
+  /* ✅ Simulated parallax with white background */
+  background-color: white;
+  background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* Remove any overlay that blocks content */
+.mobile-contact-section::before {
+  content: none;
 }
 
 .mobile-contact-container {
