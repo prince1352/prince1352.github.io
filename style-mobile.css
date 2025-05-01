@@ -425,14 +425,11 @@ body {
   overflow: hidden;
 }
 
-/* ✅ Background image and blur */
 .mobile-contact-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('images/Contact%20Background.jpg') center center / cover no-repeat fixed;
-  backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.25);
+  background: white;
   z-index: -1;
 }
 
