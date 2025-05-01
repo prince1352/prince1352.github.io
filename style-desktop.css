@@ -925,7 +925,3 @@ TEAM REVIEW SECTION
   color: var(--yellow);
 }
 
-.review-back > * {
-  transform: scaleX(-1);
-}
-
