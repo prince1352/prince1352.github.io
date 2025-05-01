@@ -63,9 +63,9 @@ body {
 .mobile-cta-button {
   background-color: var(--yellow);
   color: white;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 6px;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -73,13 +73,17 @@ body {
 }
 
 .hamburger {
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--bright-burgundy);
   flex-shrink: 0;
-  max-width: 2rem;
+  padding: 0.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Mobile Navigation */
@@ -88,8 +92,11 @@ body {
   background-color: var(--bright-burgundy);
   color: white;
   width: 100vw;
-  padding: 1rem;
-  transition: height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
 }
@@ -97,6 +104,10 @@ body {
 .mobile-nav.open {
   display: flex;
   flex-direction: column;
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 1rem;
 }
 
 .mobile-nav ul {
@@ -145,7 +156,6 @@ body {
   display: block;
 }
 
-/* Improve button spacing visually */
 .submenu-toggle::after {
   content: '\25BC';
   float: right;
