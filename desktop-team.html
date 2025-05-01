@@ -355,6 +355,8 @@ const reviews = [
 
 let currentReview = 0;
 let flipping = false;
+let currentSide = 'front'; // keeps track of which face is currently showing
+
 const flipper = document.getElementById('reviewFlipper');
 const front = document.getElementById('reviewFront');
 const back = document.getElementById('reviewBack');
@@ -372,13 +374,18 @@ function renderReview(target, index) {
 function flipToNext() {
   if (flipping) return;
   flipping = true;
-  renderReview(back, (currentReview + 1) % reviews.length);
-  flipper.classList.remove('flip-prev');
-  flipper.classList.add('flip-next');
+
+  const nextIndex = (currentReview + 1) % reviews.length;
+  const incoming = currentSide === 'front' ? back : front;
+
+  renderReview(incoming, nextIndex);
+
+  // flip forward
+  flipper.style.transform = currentSide === 'front' ? 'rotateY(180deg)' : 'rotateY(0deg)';
+  currentSide = currentSide === 'front' ? 'back' : 'front';
+  currentReview = nextIndex;
+
   setTimeout(() => {
-    currentReview = (currentReview + 1) % reviews.length;
-    renderReview(front, currentReview);
-    flipper.classList.remove('flip-next');
     flipping = false;
   }, 800);
 }
@@ -386,19 +393,26 @@ function flipToNext() {
 function flipToPrev() {
   if (flipping) return;
   flipping = true;
-  renderReview(back, (currentReview - 1 + reviews.length) % reviews.length);
-  flipper.classList.remove('flip-next');
-  flipper.classList.add('flip-prev');
+
+  const prevIndex = (currentReview - 1 + reviews.length) % reviews.length;
+  const incoming = currentSide === 'front' ? back : front;
+
+  renderReview(incoming, prevIndex);
+
+  // flip backward
+  flipper.style.transform = currentSide === 'front' ? 'rotateY(-180deg)' : 'rotateY(0deg)';
+  currentSide = currentSide === 'front' ? 'back' : 'front';
+  currentReview = prevIndex;
+
   setTimeout(() => {
-    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-    renderReview(front, currentReview);
-    flipper.classList.remove('flip-prev');
     flipping = false;
   }, 800);
 }
 
+// Initial render
 renderReview(front, currentReview);
 </script>
+
   
 </body>
 </html>
