@@ -37,13 +37,18 @@
 
         if (hamburger && mobileNav) {
           hamburger.addEventListener("click", () => {
-            console.log("☰ Hamburger clicked");
-           mobileNav.classList.toggle("open");
+            const isOpening = !mobileNav.classList.contains("open");
 
-// Close all submenus when the main menu closes
-if (!mobileNav.classList.contains("open")) {
-  document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("open"));
-}
+            if (isOpening) {
+              mobileNav.classList.add("animate-in");
+            } else {
+              mobileNav.classList.remove("animate-in");
+
+              // Close all submenus when menu closes
+              document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("open"));
+            }
+
+            mobileNav.classList.toggle("open");
           });
         } else {
           console.warn("❌ hamburger or mobileNav not found");
@@ -55,10 +60,10 @@ if (!mobileNav.classList.contains("open")) {
             parent.classList.toggle("open");
           });
         });
+
       } else {
         console.log("💻 Running desktop script");
 
-        // Mega menu
         const navDropdowns = document.querySelectorAll('.navbar .dropdown');
         const megaMenu = document.querySelector('.mega-menu');
         const submenuRows = document.querySelectorAll('.submenu-row');
@@ -105,7 +110,6 @@ if (!mobileNav.classList.contains("open")) {
           clearTimeout(submenuTimeout);
         });
 
-        // Services hover
         const items = document.querySelectorAll('.service-item');
         const descriptions = document.querySelectorAll('.description');
         const defaultDesc = document.querySelector('.description.default');
@@ -128,7 +132,6 @@ if (!mobileNav.classList.contains("open")) {
           });
         }
 
-        // Parallax
         const servicesSection = document.querySelector('.services-parallax');
         if (servicesSection) {
           window.addEventListener('scroll', () => {
