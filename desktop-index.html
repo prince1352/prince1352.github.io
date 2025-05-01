@@ -1,159 +1,260 @@
-<!-- Begin desktop-index.html -->
-<header>
-  <div class="header-container">
-    <a href="index.html" class="logo-link">
-      <div class="logo">
-        <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
-        <div class="logo-text">
-          <div class="logo-line-1">SANDHU</div>
-          <div class="logo-line-2">LAW AND MEDIATION</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandhu Law and Mediation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const confirmation = document.getElementById('form-confirmation');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // Stop page reload
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/prince52sv@gmail.com", {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          confirmation.style.display = 'block';
+        } else {
+          alert("Error submitting the form. Please try again.");
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again later.");
+        console.error(error);
+      }
+    });
+  });
+</script>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+    <a href="dektop-index.html" class="logo-link">
+  <div class="logo">
+    <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
+    <div class="logo-text">
+      <div class="logo-line-1">SANDHU</div>
+      <div class="logo-line-2">LAW AND MEDIATION</div>
+    </div>
+  </div>
+</a>
+      <nav>
+        <ul class="navbar">
+<li class="dropdown" data-submenu="submenu-practices">
+  <a href="#" onclick="event.preventDefault();">Our Practices <span class="arrow">▼</span></a>
+</li>
+<li class="dropdown" data-submenu="submenu-team">
+  <a href="desktop-team.html" onclick="event.stopPropagation();">
+    Our Team <span class="arrow">▼</span>
+  </a>
+</li>
+          <li><a href="#about-section">About Us</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="cta-button">
+        <a href="#contact">Free Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Submenu Layer -->
+  <div class="mega-menu">
+<div class="submenu-row" id="submenu-practices">
+  <a href="#">Criminal Law</a>
+  <a href="#">Immigration Law</a>
+  <a href="#">Family Law</a>
+  <a href="#">Mediation</a>
+</div>
+    <div class="submenu-row" id="submenu-team">
+  <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
+  <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+  <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
+  <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
+  <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
+  <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+</div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <div class="welcome-overlay"></div>
+    <h1>Welcome to Sandhu Law and Mediation</h1>
+    <a href="#services" class="scroll-text scroll-link">
+      Scroll to see our Services <span class="scroll-arrow">↓</span>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about-section" class="about-section">
+    <div class="about-overlay"></div>
+    <div class="about-content">
+      <h2>Why Choose Us</h2>
+      <p>
+        We are a full-service law firm based in Surrey, British Columbia. We have over 20 years of experience in Criminal Law, Immigration Law, Family Law and Mediation. With our strong network of partners and proven experience, we are the trusted law firm for all your needs.
+      </p>
+      <div class="about-button">
+        <a href="#about-section">About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-parallax">
+    <div class="services-overlay"></div>
+    <div class="services-layout">
+      <div class="services-left">
+        <h2 class="services-heading">Our Services</h2>
+        <ul class="service-list">
+          <li class="service-item" data-service="criminal">Criminal Law</li>
+          <li class="service-item" data-service="immigration">Immigration Law</li>
+          <li class="service-item" data-service="family">Family Law</li>
+          <li class="service-item" data-service="mediation">Mediation</li>
+        </ul>
+      </div>
+
+      <div class="service-details">
+        <div class="description default active">
+          <p>Providing Effective, Professional, and Skilled Legal Representation for over 20 Years.</p>
+        </div>
+        <div class="description" id="criminal">
+          <h3>Criminal Law</h3>
+          <p>Providing strong defense and advocacy in criminal cases.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
+        </div>
+        <div class="description" id="immigration">
+          <h3>Immigration Law</h3>
+          <p>Navigating visas, permits, and residency with confidence.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
+        </div>
+        <div class="description" id="family">
+          <h3>Family Law</h3>
+          <p>Resolving matters like divorce, custody, and support.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
+        </div>
+        <div class="description" id="mediation">
+          <h3>Mediation</h3>
+          <p>Helping parties reach peaceful agreements outside of court.</p>
+          <a href="#contact" class="learn-more-btn">Learn More</a>
         </div>
       </div>
-    </a>
-    <nav>
-      <ul class="navbar">
-        <li class="dropdown" data-submenu="submenu-practices">
-          <a href="#" onclick="event.preventDefault();">Our Practices <span class="arrow">▼</span></a>
-        </li>
-        <li class="dropdown" data-submenu="submenu-team">
-          <a href="team.html" onclick="event.stopPropagation();">Our Team <span class="arrow">▼</span></a>
-        </li>
-        <li><a href="#about-section">About Us</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </nav>
-    <div class="cta-button">
-      <a href="#contact">Free Consultation</a>
     </div>
-  </div>
-</header>
+  </section>
 
-<div class="mega-menu">
-  <div class="submenu-row" id="submenu-practices">
-    <a href="#">Criminal Law</a>
-    <a href="#">Immigration Law</a>
-    <a href="#">Family Law</a>
-    <a href="#">Mediation</a>
-  </div>
-  <div class="submenu-row" id="submenu-team">
-    <a href="team.html?lawyer=baldev">Baldev Sandhu</a>
-    <a href="team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
-    <a href="team.html?lawyer=kiran">Kiran Sandhu</a>
-    <a href="team.html?lawyer=aman">Aman Sandhu</a>
-    <a href="team.html?lawyer=harpun">Harpun Brar</a>
-    <a href="team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
-  </div>
-</div>
-
-<section class="welcome-section">
-  <div class="welcome-overlay"></div>
-  <h1>Welcome to Sandhu Law and Mediation</h1>
-  <a href="#services" class="scroll-text scroll-link">Scroll to see our Services <span class="scroll-arrow">↓</span></a>
-</section>
-
-<section id="about-section" class="about-section">
-  <div class="about-overlay"></div>
-  <div class="about-content">
-    <h2>Why Choose Us</h2>
-    <p>We are a full-service law firm based in Surrey, British Columbia. We have over 20 years of experience in Criminal Law, Immigration Law, Family Law and Mediation. With our strong network of partners and proven experience, we are the trusted law firm for all your needs.</p>
-    <div class="about-button">
-      <a href="#about-section">About Us</a>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="services-parallax">
-  <div class="services-overlay"></div>
-  <div class="services-layout">
-    <div class="services-left">
-      <h2 class="services-heading">Our Services</h2>
-      <ul class="service-list">
-        <li class="service-item" data-service="criminal">Criminal Law</li>
-        <li class="service-item" data-service="immigration">Immigration Law</li>
-        <li class="service-item" data-service="family">Family Law</li>
-        <li class="service-item" data-service="mediation">Mediation</li>
-      </ul>
-    </div>
-    <div class="service-details">
-      <div class="description default active">
-        <p>Providing Effective, Professional, and Skilled Legal Representation for over 20 Years.</p>
-      </div>
-      <div class="description" id="criminal">
-        <h3>Criminal Law</h3>
-        <p>Providing strong defense and advocacy in criminal cases.</p>
-        <a href="#contact" class="learn-more-btn">Learn More</a>
-      </div>
-      <div class="description" id="immigration">
-        <h3>Immigration Law</h3>
-        <p>Navigating visas, permits, and residency with confidence.</p>
-        <a href="#contact" class="learn-more-btn">Learn More</a>
-      </div>
-      <div class="description" id="family">
-        <h3>Family Law</h3>
-        <p>Resolving matters like divorce, custody, and support.</p>
-        <a href="#contact" class="learn-more-btn">Learn More</a>
-      </div>
-      <div class="description" id="mediation">
-        <h3>Mediation</h3>
-        <p>Helping parties reach peaceful agreements outside of court.</p>
-        <a href="#contact" class="learn-more-btn">Learn More</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact-section" id="contact">
+<!-- Contact Section -->
+<section class="contact-section">
   <div class="contact-overlay"></div>
   <div class="contact-container">
+    <!-- Left Side: Logo + Info -->
     <div class="contact-left">
-      <div class="contact-logo">
-        <img src="images/Logo.png" alt="Contact Us" class="logo-icon" />
-        <div class="contact-title">Contact Us</div>
-      </div>
+<div class="contact-logo">
+  <img src="images/Logo.png" alt="Contact Us" class="logo-icon" />
+  <div class="contact-title">Contact Us</div>
+</div>
       <div class="contact-details">
         <p><strong>Phone:</strong> <a href="tel:6045925434">604-592-5434</a></p>
         <p><strong>Fax:</strong> 604-592-5401</p>
-        <p><strong>Hours:</strong><br> Monday – Friday: 9:00am – 5:00pm<br> Saturday – Sunday: Closed</p>
-        <p><strong>Surrey:</strong><br> Unit#282-8128 128 Street<br> Surrey, BC Canada, V3W 1R1</p>
-        <p><strong>Abbotsford:</strong><br> 200 – 3720 Townline Road<br> Abbotsford, BC V2T 0G6</p>
+        <p><strong>Hours:</strong><br>
+          Monday – Friday: 9:00am – 5:00pm<br>
+          Saturday – Sunday: Closed
+        </p>
+        <p><strong>Surrey:</strong><br>
+          Unit#282-8128 128 Street<br>
+          Surrey, BC Canada, V3W 1R1
+        </p>
+        <p><strong>Abbotsford:</strong><br>
+          200 – 3720 Townline Road<br>
+          Abbotsford, BC V2T 0G6
+        </p>
       </div>
     </div>
-    <div class="contact-right">
-      <form id="contact-form">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="Name" placeholder="Your Name" required />
-        <input type="email" name="Email" placeholder="Your Email Address" required />
-        <input type="tel" name="Phone" placeholder="Your Phone Number" required />
-        <textarea name="Message" placeholder="How can we help?" required></textarea>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-      <div id="form-confirmation" style="display: none; color: var(--yellow); font-size: 1.2rem; margin-top: 2rem;">
-        Thank you for contacting us! We'll be in touch shortly.
-      </div>
-    </div>
+
+    <!-- Right Side: Contact Form -->
+<div class="contact-right">
+<form id="contact-form">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="Name" placeholder="Your Name" required />
+  <input type="email" name="Email" placeholder="Your Email Address" required />
+  <input type="tel" name="Phone" placeholder="Your Phone Number" required />
+  <textarea name="Message" placeholder="How can we help?" required></textarea>
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<div id="form-confirmation" style="display: none; color: var(--yellow); font-size: 1.2rem; margin-top: 2rem;">
+  Thank you for contacting us! We'll be in touch shortly.
+</div>
+</div>
   </div>
 </section>
 
-<footer>
-  <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
+  </footer>
 
-<script>
-  // Mega Menu Toggle Logic
+  <script>
+  const items = document.querySelectorAll('.service-item');
+  const descriptions = document.querySelectorAll('.description');
+  const defaultDesc = document.querySelector('.description.default');
+  const servicesSection = document.querySelector('.services-parallax');
   const navDropdowns = document.querySelectorAll('.navbar .dropdown');
   const megaMenu = document.querySelector('.mega-menu');
   const submenuRows = document.querySelectorAll('.submenu-row');
-  const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
-  let submenuTimeout;
 
-  nonDropdowns.forEach(item => {
+  // Hover: show service description
+  items.forEach(item => {
     item.addEventListener('mouseenter', () => {
-      megaMenu.classList.remove('active');
-      submenuRows.forEach(row => row.classList.remove('active'));
+      descriptions.forEach(desc => desc.classList.remove('active'));
+      defaultDesc.style.display = 'none';
+      const target = item.getAttribute('data-service');
+      document.getElementById(target).classList.add('active');
     });
   });
 
+  document.querySelector('.services-layout').addEventListener('mouseleave', () => {
+    descriptions.forEach(desc => desc.classList.remove('active'));
+    defaultDesc.style.display = 'block';
+  });
+
+  window.addEventListener('scroll', () => {
+    const rect = servicesSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    if (rect.top < windowHeight - 100) {
+      servicesSection.classList.add('active');
+    }
+  });
+
+  // Mega menu logic
+  let submenuTimeout;
+// Hide mega menu when hovering over a non-dropdown menu item
+const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
+
+nonDropdowns.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    megaMenu.classList.remove('active');
+    submenuRows.forEach(row => row.classList.remove('active'));
+  });
+});
   navDropdowns.forEach(dropdown => {
     dropdown.addEventListener('mouseenter', () => {
       clearTimeout(submenuTimeout);
@@ -167,6 +268,7 @@
   });
 
   const navArea = document.querySelector('nav');
+
   function hideMegaMenu() {
     submenuTimeout = setTimeout(() => {
       megaMenu.classList.remove('active');
@@ -177,70 +279,4 @@
   navArea.addEventListener('mouseleave', hideMegaMenu);
   megaMenu.addEventListener('mouseleave', hideMegaMenu);
   megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
-
-  // Service Description Hover Logic
-  const items = document.querySelectorAll('.service-item');
-  const descriptions = document.querySelectorAll('.description');
-  const defaultDesc = document.querySelector('.description.default');
-
-  items.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      descriptions.forEach(desc => desc.classList.remove('active'));
-      if (defaultDesc) defaultDesc.style.display = 'none';
-      const target = item.getAttribute('data-service');
-      const activeDesc = document.getElementById(target);
-      if (activeDesc) activeDesc.classList.add('active');
-    });
-  });
-
-  const serviceLayout = document.querySelector('.services-layout');
-  if (serviceLayout) {
-    serviceLayout.addEventListener('mouseleave', () => {
-      descriptions.forEach(desc => desc.classList.remove('active'));
-      if (defaultDesc) defaultDesc.style.display = 'block';
-    });
-  }
-
-  // Scroll Activation for Parallax Section
-  window.addEventListener('scroll', () => {
-    const servicesSection = document.querySelector('.services-parallax');
-    if (!servicesSection) return;
-    const rect = servicesSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      servicesSection.classList.add('active');
-    }
-  });
-
-  // Contact Form Submission via AJAX
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    const confirmation = document.getElementById('form-confirmation');
-
-    if (form) {
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch("https://formsubmit.co/ajax/prince52sv@gmail.com", {
-            method: "POST",
-            headers: { 'Accept': 'application/json' },
-            body: formData
-          });
-
-          if (response.ok) {
-            form.style.display = 'none';
-            confirmation.style.display = 'block';
-          } else {
-            alert("Error submitting the form. Please try again.");
-          }
-        } catch (error) {
-          alert("Something went wrong. Please try again later.");
-          console.error(error);
-        }
-      });
-    }
-  });
 </script>
-<!-- End desktop-index.html -->
