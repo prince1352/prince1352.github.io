@@ -594,18 +594,23 @@ footer {
   padding: 5rem 2rem;
   min-height: 100vh;
   overflow: hidden;
-  z-index: 1;
 }
 
-/* Background image + blur overlay */
 .team-grid-section::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url('images/Team-Background.jpg') center center / cover no-repeat fixed;
-  background-color: rgba(0, 0, 0, 0.3); /* optional dark overlay */
-  backdrop-filter: blur(6px); /* ✅ Blur applied like Welcome section */
   z-index: 0;
+}
+
+.team-grid-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px); /* ✅ This is what blurs the image behind */
+  background-color: rgba(0, 0, 0, 0.3); /* ✅ Optional dark overlay */
+  z-index: 1;
 }
 
 .team-grid {
@@ -614,7 +619,7 @@ footer {
   gap: 1.5rem;
   max-width: 1000px;
   margin: auto;
-  z-index: 1;
+  z-index: 2;
   position: relative;
 }
 
