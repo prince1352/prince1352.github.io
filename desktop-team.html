@@ -353,6 +353,7 @@ const reviews = [
 ];
 
 let currentReview = 0;
+let flipping = false;
 const flipper = document.getElementById('reviewFlipper');
 const front = document.getElementById('reviewFront');
 const back = document.getElementById('reviewBack');
@@ -368,6 +369,8 @@ function renderReview(target, index) {
 }
 
 function flipToNext() {
+  if (flipping) return;
+  flipping = true;
   currentReview = (currentReview + 1) % reviews.length;
   renderReview(back, currentReview);
   flipper.classList.remove('flip-prev');
@@ -375,10 +378,13 @@ function flipToNext() {
   setTimeout(() => {
     renderReview(front, currentReview);
     flipper.classList.remove('flip-next');
+    flipping = false;
   }, 800);
 }
 
 function flipToPrev() {
+  if (flipping) return;
+  flipping = true;
   currentReview = (currentReview - 1 + reviews.length) % reviews.length;
   renderReview(back, currentReview);
   flipper.classList.remove('flip-next');
@@ -386,6 +392,7 @@ function flipToPrev() {
   setTimeout(() => {
     renderReview(front, currentReview);
     flipper.classList.remove('flip-prev');
+    flipping = false;
   }, 800);
 }
 
