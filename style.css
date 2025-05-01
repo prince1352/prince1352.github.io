@@ -591,19 +591,20 @@ footer {
 
 .team-grid-section {
   position: relative;
-  background: none;
   padding: 5rem 2rem;
-  overflow: hidden;
   min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
 }
 
+/* Background image + blur overlay */
 .team-grid-section::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url('images/Team-Background.jpg') center center / cover no-repeat fixed;
-  backdrop-filter: blur(6px); /* ✅ same as Welcome section */
-  background-color: rgba(0, 0, 0, 0.3); /* subtle dark overlay like welcome */
+  background-color: rgba(0, 0, 0, 0.3); /* optional dark overlay */
+  backdrop-filter: blur(6px); /* ✅ Blur applied like Welcome section */
   z-index: 0;
 }
 
