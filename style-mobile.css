@@ -95,8 +95,11 @@ body {
 ============================= */
 .mobile-nav {
   display: none;
-  background: white;
+  background-color: var(--bright-burgundy);
+  color: white;
+  width: 100vw;
   padding: 1rem;
+  transition: height 0.3s ease;
 }
 
 .mobile-nav.open {
@@ -113,9 +116,31 @@ body {
   margin-bottom: 1rem;
 }
 
-.mobile-nav a {
-  color: var(--bright-burgundy);
+.mobile-nav a,
+.mobile-nav .submenu-toggle {
+  color: white;
   font-weight: 600;
   text-decoration: none;
   font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem 0;
 }
+
+.submenu {
+  display: none;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.submenu li {
+  margin-bottom: 0.5rem;
+}
+
+.mobile-nav li.open .submenu {
+  display: block;
+}
+
