@@ -300,16 +300,13 @@ body {
   text-align: center;
   z-index: 1;
   overflow: hidden;
-
   background-image: url('images/Services Background.jpg');
-  background-color: red; /* TEMP: if image fails, red will show */
   background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
-/* ✅ Only blur the background, not the content */
 .mobile-services-section::before {
   content: "";
   position: absolute;
