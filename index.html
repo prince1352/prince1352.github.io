@@ -61,7 +61,7 @@
           });
         });
 
-        // Parallax welcome
+        // ✅ Parallax scroll for welcome
         const welcomeSection = document.querySelector('.mobile-welcome-section');
         if (welcomeSection) {
           window.addEventListener('scroll', () => {
@@ -70,8 +70,17 @@
           });
         }
 
-        // Flip cards
-        const flipCards = document.querySelectorAll(".flip-card");
+        // ✅ Parallax scroll for services section
+        const mobileServices = document.querySelector('.mobile-services-section');
+        if (mobileServices) {
+          window.addEventListener('scroll', () => {
+            const offset = window.pageYOffset;
+            mobileServices.style.backgroundPositionY = `${offset * 0.5}px`;
+          });
+        }
+
+        // ✅ Flip card functionality
+        const flipCards = document.querySelectorAll(".flip-card, .service-card");
         flipCards.forEach(card => {
           card.addEventListener("click", () => {
             card.classList.toggle("flipped");
