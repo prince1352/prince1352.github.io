@@ -302,7 +302,7 @@ body {
   overflow: hidden;
   
   /* ✅ Correct format: background-image alone, other props separate */
-  background-image: url('images/Services%20Background.jpg');
+  background-image: url('images/Mobile-Service-Background.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
