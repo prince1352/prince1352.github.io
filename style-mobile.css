@@ -192,6 +192,108 @@ body {
 /* ============================
    WELCOME SECTION
 ============================= */
+.mobile-welcome-section {
+  height: 100vh;
+  background: url('images/Welcome Background.jpg') center top / contain no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+
+.mobile-welcome-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.mobile-welcome-section h1,
+.mobile-scroll-text {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.mobile-welcome-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-scroll-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.mobile-scroll-arrow {
+  margin-left: 6px;
+  font-size: 1.2rem;
+}
+
+/* ============================
+   ABOUT SECTION
+============================= */
+.mobile-about-section {
+  position: relative;
+  background: var(--bright-burgundy);
+  color: white;
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.mobile-about-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.mobile-about-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: auto;
+}
+
+.mobile-about-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-about-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.mobile-about-button a {
+  margin-top: 2rem;
+  display: inline-block;
+  background-color: var(--yellow);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* ============================
+   SERVICES SECTION
+============================= */
+
 .mobile-services-section {
   position: relative;
   padding: 6rem 1rem 4rem;
