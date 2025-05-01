@@ -341,7 +341,7 @@
   
   <!-- Review Section Scripts -->
   
- <script>
+<script>
 const reviews = [
   { name: "Jaspreet K.", text: "Incredible service and professionalism throughout my case." },
   { name: "Amrit S.", text: "They made a very difficult process feel smooth and understandable." },
@@ -355,7 +355,7 @@ const reviews = [
 
 let currentReview = 0;
 let flipping = false;
-let currentSide = 'front'; // keeps track of which face is currently showing
+let rotation = 0;
 
 const flipper = document.getElementById('reviewFlipper');
 const front = document.getElementById('reviewFront');
@@ -375,17 +375,14 @@ function flipToNext() {
   if (flipping) return;
   flipping = true;
 
-  const nextIndex = (currentReview + 1) % reviews.length;
-  const incoming = currentSide === 'front' ? back : front;
+  currentReview = (currentReview + 1) % reviews.length;
+  renderReview(back, currentReview);
 
-  renderReview(incoming, nextIndex);
-
-  // flip forward
-  flipper.style.transform = currentSide === 'front' ? 'rotateY(180deg)' : 'rotateY(0deg)';
-  currentSide = currentSide === 'front' ? 'back' : 'front';
-  currentReview = nextIndex;
+  rotation += 180;
+  flipper.style.transform = `rotateY(${rotation}deg)`;
 
   setTimeout(() => {
+    renderReview(front, currentReview);
     flipping = false;
   }, 800);
 }
@@ -394,22 +391,19 @@ function flipToPrev() {
   if (flipping) return;
   flipping = true;
 
-  const prevIndex = (currentReview - 1 + reviews.length) % reviews.length;
-  const incoming = currentSide === 'front' ? back : front;
+  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+  renderReview(back, currentReview);
 
-  renderReview(incoming, prevIndex);
-
-  // flip backward
-  flipper.style.transform = currentSide === 'front' ? 'rotateY(-180deg)' : 'rotateY(0deg)';
-  currentSide = currentSide === 'front' ? 'back' : 'front';
-  currentReview = prevIndex;
+  rotation -= 180;
+  flipper.style.transform = `rotateY(${rotation}deg)`;
 
   setTimeout(() => {
+    renderReview(front, currentReview);
     flipping = false;
   }, 800);
 }
 
-// Initial render
+// Initial load
 renderReview(front, currentReview);
 </script>
 
