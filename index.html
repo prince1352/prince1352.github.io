@@ -61,22 +61,25 @@
           });
         });
 
-        const welcomeSection = document.querySelector('.mobile-welcome-section');
-        if (welcomeSection) {
-          window.addEventListener('scroll', () => {
-            const offset = window.pageYOffset;
-            welcomeSection.style.backgroundPositionY = `${offset * 0.5}px`;
-          });
-        }
+        // Parallax for mobile sections
+        const parallaxSections = [
+          '.mobile-welcome-section',
+          '.mobile-about-section',
+          '.mobile-services-section',
+          '.mobile-contact-section'
+        ];
 
-        const mobileServices = document.querySelector('.mobile-services-section');
-        if (mobileServices) {
-          window.addEventListener('scroll', () => {
-            const offset = window.pageYOffset;
-            mobileServices.style.backgroundPositionY = `${offset * 0.5}px`;
-          });
-        }
+        parallaxSections.forEach(selector => {
+          const section = document.querySelector(selector);
+          if (section) {
+            window.addEventListener('scroll', () => {
+              const offset = window.pageYOffset;
+              section.style.backgroundPositionY = `${offset * 0.5}px`;
+            });
+          }
+        });
 
+        // Flip card behavior
         const flipCards = document.querySelectorAll(".flip-card, .service-card");
         flipCards.forEach(card => {
           card.addEventListener("click", () => {
