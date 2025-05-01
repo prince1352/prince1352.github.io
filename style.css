@@ -571,7 +571,7 @@ footer {
 .team-line {
   flex: 1;
   height: 4px;
-  background-color: var(--bright-burgundy);
+  background-color: var(--yellow);
 }
 
 .left-line {
