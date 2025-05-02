@@ -842,9 +842,11 @@ TEAM REVIEW SECTION
 }
 
 .review-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(0,0,0,0.1));
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.07), rgba(0,0,0,0.25));
   border-radius: 8px;
-  padding: 2rem;
+  align-items: flex-start;
+  padding: 2rem 2rem 1.5rem 2rem; /* ✅ adds spacing around edges */
+  gap: 0.75rem; /* ✅ spacing between name, stars, text */
   width: 100%;
   height: 100%;
   display: flex;
@@ -859,11 +861,13 @@ TEAM REVIEW SECTION
 .review-card.flip-out {
   transform: rotateY(90deg);
   opacity: 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
 .review-card.flip-in {
   transform: rotateY(0deg);
   opacity: 1;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
 .review-name {
