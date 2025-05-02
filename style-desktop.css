@@ -1,6 +1,6 @@
 :root {
-  --bright-burgundy: #962f33;
-  --yellow: #242e37;
+  --red: #962f33;
+  --navy: #242e37;
 }
 
 html {
@@ -60,14 +60,14 @@ header {
 .logo-line-1 {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--bright-burgundy);
+  color: var(--red);
   letter-spacing: 0.28rem;
 }
 
 .logo-line-2 {
   font-size: 1.1rem;
   font-weight: 500;
-  color: var(--yellow);
+  color: var(--navy);
   letter-spacing: 0.15rem;
   white-space: nowrap;
 }
@@ -112,7 +112,7 @@ ul.navbar > li > a {
 }
 
 ul.navbar > li > a:hover {
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   color: white;
 }
 .arrow {
@@ -126,7 +126,7 @@ ul.navbar > li > a:hover {
   top: 130px;
   left: 0;
   width: 100%;
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   padding: 0rem;
   opacity: 0;
   visibility: hidden;
@@ -180,7 +180,7 @@ ul.navbar > li > a:hover {
 }
 
 .cta-button a {
-  background-color: var(--yellow);
+  background-color: var(--navy);
   color: white;
   padding: 1rem 2rem;
   text-decoration: none;
@@ -248,7 +248,7 @@ ul.navbar > li > a:hover {
 /* About Section */
 .about-section {
   position: relative;
-  background: var(--bright-burgundy);
+  background: var(--red);
   color: white;
   padding: 10rem 2rem;
   text-align: center;
@@ -274,7 +274,7 @@ ul.navbar > li > a:hover {
 .about-button a {
   margin-top: 2rem;
   display: inline-block;
-  background-color: var(--yellow);
+  background-color: var(--navy);
   color: white;
   padding: 1rem 2rem;
   font-size: 1.2rem;
@@ -339,7 +339,7 @@ ul.navbar > li > a:hover {
 }
 
 .service-item:hover {
-  color: var(--bright-burgundy);
+  color: var(--red);
 }
 
 .service-details {
@@ -390,7 +390,7 @@ ul.navbar > li > a:hover {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.25rem;
-  background-color: var(--yellow);
+  background-color: var(--navy);
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -432,7 +432,7 @@ ul.navbar > li > a:hover {
 .contact-title {
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--bright-burgundy);
+  color: var(--red);
   white-space: nowrap;
 }
 
@@ -445,7 +445,7 @@ ul.navbar > li > a:hover {
 }
 
 .contact-details strong {
-  color: var(--bright-burgundy);
+  color: var(--red);
 }
 
 .contact-details a {
@@ -486,7 +486,7 @@ ul.navbar > li > a:hover {
 .contact-right input:focus,
 .contact-right textarea:focus {
   outline: none;
-  border-color: var(--bright-burgundy);
+  border-color: var(--red);
   box-shadow: 0 0 0 3px rgba(184, 2, 56, 0.2);
 }
 
@@ -496,7 +496,7 @@ ul.navbar > li > a:hover {
 }
 
 .submit-btn {
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   color: white;
   padding: 1rem 1.25rem;
   font-size: 1rem;
@@ -516,7 +516,7 @@ ul.navbar > li > a:hover {
 /* Confirmation message */
 #form-confirmation {
   display: none;
-  color: var(--bright-burgundy);
+  color: var(--red);
   font-size: 1.2rem;
   margin-top: 2rem;
 }
@@ -573,7 +573,7 @@ footer {
 .team-line {
   flex: 1;
   height: 4px;
-  background-color: var(--yellow);
+  background-color: var(--navy);
 }
 
 .left-line {
@@ -587,7 +587,7 @@ footer {
 .team-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--bright-burgundy);
+  color: var(--red);
   margin-top: 1rem;
 }
 
@@ -666,7 +666,7 @@ footer {
   left: 50%;
   width: 80%;
   max-width: 800px;
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   color: white;
   padding: 3rem 2rem;
   border-radius: 15px;
@@ -796,7 +796,7 @@ TEAM REVIEW SECTION
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 .review-parallax-section {
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   color: white;
   padding: 6rem 2rem;
   background-attachment: fixed;
@@ -827,7 +827,7 @@ TEAM REVIEW SECTION
 .review-carousel-box {
   width: 800px;
   height: 260px;
-  background: var(--yellow);
+  background: var(--navy);
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -919,5 +919,5 @@ TEAM REVIEW SECTION
 }
 
 .review-arrow:hover {
-  color: var(--yellow);
+  color: var(--navy);
 }
