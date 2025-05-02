@@ -954,25 +954,28 @@ TEAM CONTACT MESSAGE SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
 .team-contact-message-section {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-contact-message-blur {
+  position: absolute;
+  inset: 0;
   background-image: url('Team-Contact-Message.jpg');
   background-attachment: fixed;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  filter: blur(4px);
+  z-index: 1;
 }
 
-.team-contact-message-overlay {
-  background-color: rgba(0, 49, 83, 0.7); /* matches the blue blur used in Team-Background.jpg */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.team-contact-message-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
   padding: 0 2rem;
 }
@@ -982,4 +985,5 @@ TEAM CONTACT MESSAGE SECTION
   font-size: 1.5rem;
   max-width: 1000px;
   font-weight: 400;
+  margin: 0 auto;
 }
