@@ -810,45 +810,50 @@ header.dimmed,
   color: white;
 }
 
-.mobile-review-carousel {
+/* Scrollable container for swipe effect */
+.mobile-review-carousel-scroll {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   gap: 1rem;
-  position: relative;
-  max-width: 600px;
-  margin: auto;
+  padding: 2rem 1rem;
+  scroll-padding: 1rem;
 }
 
+/* Review Card */
 .mobile-review-card {
+  scroll-snap-align: center;
+  flex: 0 0 80%;
+  min-width: 300px;
+  max-width: 400px;
   background-color: var(--navy);
   color: white;
   padding: 2rem 1.25rem;
   border-radius: 12px;
   position: relative;
-  min-height: 200px;
-  flex: 1;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 350px;
   text-align: left;
 }
 
+/* Review Name */
 .mobile-review-name {
   font-size: 1.2rem;
   font-weight: 600;
   color: white;
 }
 
+/* Star Rating */
 .mobile-review-stars {
-  color: var(--navy);
   font-size: 1.2rem;
   margin: 0.5rem 0 1.25rem;
-  color: #FFD700;
+  color: #FFD700; /* gold stars */
 }
 
+/* Review Text */
 .mobile-review-text {
   font-size: 1rem;
   font-style: italic;
@@ -857,6 +862,7 @@ header.dimmed,
   margin-bottom: 1rem;
 }
 
+/* Quotation Mark */
 .mobile-review-quote {
   position: absolute;
   top: 1rem;
@@ -867,15 +873,9 @@ header.dimmed,
   line-height: 1;
 }
 
+/* Arrow buttons no longer needed, but keeping in case you re-add */
 .mobile-review-arrow {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-  padding: 0.5rem;
-  line-height: 1;
-  z-index: 10;
+  display: none;
 }
 
 /* ===============================
