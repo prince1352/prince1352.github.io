@@ -815,8 +815,11 @@ TEAM REVIEW SECTION
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   position: relative;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .review-card-container {
@@ -824,6 +827,7 @@ TEAM REVIEW SECTION
   height: 260px;
   perspective: 1200px;
   position: relative;
+  z-index: 1;
 }
 
 .review-card-flipper {
@@ -845,11 +849,12 @@ TEAM REVIEW SECTION
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   backface-visibility: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   gap: 0.75rem;
+  padding-top: 1rem;
 }
 
 .review-front {
@@ -874,6 +879,7 @@ TEAM REVIEW SECTION
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
+  margin-top: 0;
 }
 
 .review-stars {
@@ -904,6 +910,8 @@ TEAM REVIEW SECTION
   font-size: 2.5rem;
   cursor: pointer;
   transition: color 0.3s;
+  z-index: 5;
+  padding: 1rem;
 }
 
 .review-arrow:hover {
