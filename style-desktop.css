@@ -965,7 +965,7 @@ TEAM CONTACT MESSAGE SECTION
 .team-contact-message-blur {
   position: absolute;
   inset: 0;
-  background-image: url('Team-Contact-Message.jpg');
+  background-image: url('images/Team-Contact-Message.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
