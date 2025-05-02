@@ -364,13 +364,29 @@ function renderCarousel(index) {
 }
 
 function showNextReview() {
-  currentReview = (currentReview + 1) % reviews.length;
-  renderCarousel(currentReview);
+  card.classList.add('fade-out');
+  setTimeout(() => {
+    currentReview = (currentReview + 1) % reviews.length;
+    renderCarousel(currentReview);
+    card.classList.remove('fade-out');
+    card.classList.add('fade-in');
+    setTimeout(() => {
+      card.classList.remove('fade-in');
+    }, 400);
+  }, 300);
 }
 
 function showPrevReview() {
-  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-  renderCarousel(currentReview);
+  card.classList.add('fade-out');
+  setTimeout(() => {
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    renderCarousel(currentReview);
+    card.classList.remove('fade-out');
+    card.classList.add('fade-in');
+    setTimeout(() => {
+      card.classList.remove('fade-in');
+    }, 400);
+  }, 300);
 }
 
 renderCarousel(currentReview);
