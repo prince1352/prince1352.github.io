@@ -613,12 +613,24 @@ TEAM PAGE BODY
 
 /* Team Grid */
 .team-grid-section {
-  background-color: var(--navy); /* ✅ Replaces Team-Background.jpg */
   position: relative;
+  background-image: url('images/Mobile-Team-Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 4rem 1rem;
+  z-index: 1;
+  overflow: hidden;
 }
 
-/* Removed .team-grid-section::after — no blur needed */
+.team-grid-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  z-index: 0;
+  pointer-events: none;
+}
 
 .team-grid {
   display: grid;
