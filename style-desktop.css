@@ -1001,29 +1001,44 @@ TEAM CONTACT FORM SECTION
   padding: 6rem 2rem;
 }
 
+/* Custom Vertical Logo Column */
 .contact-vertical-logo {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
-  height: 100%;
-  position: relative;
+  padding: 0 2rem;
+  min-width: 120px;
 }
 
 .vertical-logo {
   height: 100px;
-  z-index: 1;
+  z-index: 2;
   background-color: white;
   padding: 0.5rem;
+  position: relative;
 }
 
-.vertical-line {
+.vertical-line-top,
+.vertical-line-bottom {
+  position: absolute;
   width: 3px;
   background-color: var(--navy);
-  flex-grow: 1;
-  height: 100%;
-  min-height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.vertical-line-top {
+  top: 0;
+  bottom: 50%;
+  margin-bottom: 60px;
+}
+
+.vertical-line-bottom {
+  top: 50%;
+  bottom: 0;
+  margin-top: 60px;
 }
 
 /* Align Three Columns */
