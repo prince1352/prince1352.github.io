@@ -606,7 +606,7 @@ TEAM PAGE BODY
   background-image: url('images/Mobile-Team-Background.png');
   background-size: cover;
   background-position: center 0;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   padding: 4rem 1rem;
   z-index: 1;
   overflow: hidden;
