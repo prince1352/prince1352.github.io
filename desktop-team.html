@@ -217,19 +217,14 @@
 
 <section class="review-parallax-section">
   <h2 class="review-section-title">Read Our Reviews</h2>
-  <div class="review-card-wrapper">
-    <button class="review-arrow left" onclick="flipToPrev()">&#8249;</button>
+  <div class="review-carousel-wrapper">
+    <button class="review-arrow left" onclick="showPrevReview()">&#8249;</button>
 
-    <div class="review-card-area">
-      <div class="review-card-container">
-        <div class="review-card-flipper" id="reviewFlipper">
-          <div class="review-card review-front" id="reviewFront"></div>
-          <div class="review-card review-back" id="reviewBack"></div>
-        </div>
-      </div>
+    <div class="review-carousel-box">
+      <div class="review-carousel-card" id="reviewCarouselCard"></div>
     </div>
 
-    <button class="review-arrow right" onclick="flipToNext()">&#8250;</button>
+    <button class="review-arrow right" onclick="showNextReview()">&#8250;</button>
   </div>
 </section>
   
@@ -356,16 +351,11 @@ const reviews = [
 ];
 
 let currentReview = 0;
-let flipping = false;
-let rotation = 0;
+const card = document.getElementById('reviewCarouselCard');
 
-const flipper = document.getElementById('reviewFlipper');
-const front = document.getElementById('reviewFront');
-const back = document.getElementById('reviewBack');
-
-function renderReview(target, index) {
+function renderCarousel(index) {
   const review = reviews[index];
-  target.innerHTML = `
+  card.innerHTML = `
     <div class="review-name">${review.name}</div>
     <div class="review-stars">★★★★★</div>
     <div class="review-text">“${review.text}”</div>
@@ -373,35 +363,17 @@ function renderReview(target, index) {
   `;
 }
 
-function flipToNext() {
-  if (flipping) return;
-  flipping = true;
+function showNextReview() {
   currentReview = (currentReview + 1) % reviews.length;
-  renderReview(back, currentReview);
-  flipper.classList.remove('flipped-backward');
-  flipper.classList.add('flipped-forward');
-  setTimeout(() => {
-    renderReview(front, currentReview);
-    flipper.classList.remove('flipped-forward');
-    flipping = false;
-  }, 800);
+  renderCarousel(currentReview);
 }
 
-function flipToPrev() {
-  if (flipping) return;
-  flipping = true;
+function showPrevReview() {
   currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-  renderReview(back, currentReview);
-  flipper.classList.remove('flipped-forward');
-  flipper.classList.add('flipped-backward');
-  setTimeout(() => {
-    renderReview(front, currentReview);
-    flipper.classList.remove('flipped-backward');
-    flipping = false;
-  }, 800);
+  renderCarousel(currentReview);
 }
 
-renderReview(front, currentReview);
+renderCarousel(currentReview);
 </script>
   
 </body>
