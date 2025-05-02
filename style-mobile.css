@@ -544,17 +544,6 @@ body {
 }
 
 /* ===============================
-   Parallax Scrolling Controller
-=============================== */
-
-.parallax-scroll {
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* ===============================
 FOOTER
 =============================== */
 .mobile-footer {
@@ -926,4 +915,15 @@ header.dimmed,
   max-width: 600px;
   font-weight: 400;
   margin: 0 auto;
+}
+
+/* ===============================
+   Parallax Scrolling Controller
+=============================== */
+
+.parallax-scroll {
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
