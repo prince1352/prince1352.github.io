@@ -463,6 +463,42 @@ function showPrevReview() {
 
 renderCarousel(currentReview);
 </script>
+
+    <!-- Contact Section Scripts -->
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const confirmation = document.getElementById('form-confirmation');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // Prevent page reload
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/prince52sv@gmail.com", {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          confirmation.style.display = 'block';
+        } else {
+          alert("Error submitting the form. Please try again.");
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again later.");
+        console.error(error);
+      }
+    });
+  });
+</script>
+
   
 </body>
 </html>
