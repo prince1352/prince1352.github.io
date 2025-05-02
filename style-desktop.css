@@ -1026,19 +1026,19 @@ TEAM CONTACT FORM SECTION
   background-color: var(--navy);
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 0;
+  content: "";
+  display: block;
 }
 
 .vertical-line-top {
   top: 0;
-  bottom: 50%;
-  margin-bottom: 60px;
+  height: calc(50% - 60px);
 }
 
 .vertical-line-bottom {
-  top: 50%;
   bottom: 0;
-  margin-top: 60px;
+  height: calc(50% - 60px);
 }
 
 /* Align Three Columns */
@@ -1046,7 +1046,7 @@ TEAM CONTACT FORM SECTION
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1400px;
   margin: auto;
   align-items: stretch;
@@ -1059,9 +1059,9 @@ TEAM CONTACT FORM SECTION
 }
 
 .contact-right {
-  flex: 2;
-  max-width: 600px;
-  margin-left: -2rem;
+  flex: 3;
+  max-width: none;
+  margin-left: -3rem;
 }
 
 .contact-right form input,
