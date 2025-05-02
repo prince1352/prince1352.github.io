@@ -62,7 +62,7 @@
 
 <!-- Team Card Grid Section -->
   
-<section class="team-grid-section parallax-scroll">
+<section class="team-grid-section" data-parallax>
   <div class="card-backdrop" id="cardBackdrop"></div>
   <div class="team-grid">
     <!-- Team Cards + Info -->
@@ -173,7 +173,7 @@
 
 <!-- Contact Prompt Section -->
 
-<section class="mobile-contact-message-section parallax-scroll">
+<section class="mobile-contact-message-section" data-parallax>
   <div class="mobile-contact-message-blur"></div>
   <div class="mobile-contact-message-content">
     <p class="mobile-contact-message-text">
@@ -411,6 +411,17 @@
         alert("Something went wrong. Please try again later.");
         console.error(error);
       }
+    });
+  });
+</script>
+
+   <!-- ✅ Mobile Script for PARALLAX EFFECT>
+  
+  <script>
+  document.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    document.querySelectorAll("[data-parallax]").forEach(section => {
+      section.style.backgroundPosition = `center ${scrollY * 0.5}px`;
     });
   });
 </script>
