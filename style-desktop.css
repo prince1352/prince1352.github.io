@@ -1021,13 +1021,13 @@ TEAM CONTACT FORM SECTION
 
 .vertical-line-top,
 .vertical-line-bottom {
+  content: "";
   position: absolute;
   width: 3px;
   background-color: var(--navy);
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
-  content: "";
   display: block;
 }
 
@@ -1061,7 +1061,8 @@ TEAM CONTACT FORM SECTION
 .contact-right {
   flex: 3;
   max-width: none;
-  margin-left: -3rem;
+  margin-left: -2rem;
+  padding-left: 2rem; /* added spacing from center column */
 }
 
 .contact-right form input,
