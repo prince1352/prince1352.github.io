@@ -221,7 +221,10 @@
     <button class="review-arrow left" onclick="flipToPrev()">&#8249;</button>
 
     <div class="review-card-container">
-      <div class="review-card" id="reviewCard"></div>
+      <div class="review-card-flipper" id="reviewFlipper">
+        <div class="review-card review-front" id="reviewFront"></div>
+        <div class="review-card review-back" id="reviewBack"></div>
+      </div>
     </div>
 
     <button class="review-arrow right" onclick="flipToNext()">&#8250;</button>
@@ -352,11 +355,15 @@ const reviews = [
 
 let currentReview = 0;
 let flipping = false;
-const card = document.getElementById('reviewCard');
+let rotation = 0;
 
-function renderReview(index) {
+const flipper = document.getElementById('reviewFlipper');
+const front = document.getElementById('reviewFront');
+const back = document.getElementById('reviewBack');
+
+function renderReview(target, index) {
   const review = reviews[index];
-  card.innerHTML = `
+  target.innerHTML = `
     <div class="review-name">${review.name}</div>
     <div class="review-stars">★★★★★</div>
     <div class="review-text">“${review.text}”</div>
@@ -367,36 +374,32 @@ function renderReview(index) {
 function flipToNext() {
   if (flipping) return;
   flipping = true;
-  card.classList.add('flip-out');
+  currentReview = (currentReview + 1) % reviews.length;
+  renderReview(back, currentReview);
+  flipper.classList.remove('flipped-backward');
+  flipper.classList.add('flipped-forward');
   setTimeout(() => {
-    currentReview = (currentReview + 1) % reviews.length;
-    renderReview(currentReview);
-    card.classList.remove('flip-out');
-    card.classList.add('flip-in');
-    setTimeout(() => {
-      card.classList.remove('flip-in');
-      flipping = false;
-    }, 600);
-  }, 300);
+    renderReview(front, currentReview);
+    flipper.classList.remove('flipped-forward');
+    flipping = false;
+  }, 800);
 }
 
 function flipToPrev() {
   if (flipping) return;
   flipping = true;
-  card.classList.add('flip-out');
+  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+  renderReview(back, currentReview);
+  flipper.classList.remove('flipped-forward');
+  flipper.classList.add('flipped-backward');
   setTimeout(() => {
-    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-    renderReview(currentReview);
-    card.classList.remove('flip-out');
-    card.classList.add('flip-in');
-    setTimeout(() => {
-      card.classList.remove('flip-in');
-      flipping = false;
-    }, 600);
-  }, 300);
+    renderReview(front, currentReview);
+    flipper.classList.remove('flipped-backward');
+    flipping = false;
+  }, 800);
 }
 
-renderReview(currentReview);
+renderReview(front, currentReview);
 </script>
   
 </body>
