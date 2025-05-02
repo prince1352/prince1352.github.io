@@ -221,7 +221,7 @@
     <button class="review-arrow left" onclick="flipToPrev()">&#8249;</button>
 
     <div class="review-card-container">
-      <div class="review-card active-card" id="activeCard"></div>
+      <div class="review-card" id="reviewCard"></div>
     </div>
 
     <button class="review-arrow right" onclick="flipToNext()">&#8250;</button>
@@ -351,51 +351,52 @@ const reviews = [
 ];
 
 let currentReview = 0;
-const container = document.querySelector('.review-card-container');
-let activeCard = document.getElementById('activeCard');
+let flipping = false;
+const card = document.getElementById('reviewCard');
 
-function renderReview(content, index) {
-  content.innerHTML = `
-    <div class="review-name">${reviews[index].name}</div>
+function renderReview(index) {
+  const review = reviews[index];
+  card.innerHTML = `
+    <div class="review-name">${review.name}</div>
     <div class="review-stars">★★★★★</div>
-    <div class="review-text">“${reviews[index].text}”</div>
+    <div class="review-text">“${review.text}”</div>
     <div class="review-quote">”</div>
   `;
 }
 
 function flipToNext() {
-  const nextIndex = (currentReview + 1) % reviews.length;
-  flipCard(nextIndex, 'next');
+  if (flipping) return;
+  flipping = true;
+  card.classList.add('flip-out');
+  setTimeout(() => {
+    currentReview = (currentReview + 1) % reviews.length;
+    renderReview(currentReview);
+    card.classList.remove('flip-out');
+    card.classList.add('flip-in');
+    setTimeout(() => {
+      card.classList.remove('flip-in');
+      flipping = false;
+    }, 600);
+  }, 300);
 }
 
 function flipToPrev() {
-  const prevIndex = (currentReview - 1 + reviews.length) % reviews.length;
-  flipCard(prevIndex, 'prev');
-}
-
-function flipCard(newIndex, direction) {
-  const newCard = document.createElement('div');
-  newCard.className = 'review-card';
-  renderReview(newCard, newIndex);
-  container.appendChild(newCard);
-
-  requestAnimationFrame(() => {
-    newCard.style.transform = direction === 'next' ? 'rotateY(-180deg)' : 'rotateY(180deg)';
-    newCard.style.opacity = '1';
-    newCard.classList.add('active-card');
-    activeCard.style.transform = direction === 'next' ? 'rotateY(180deg)' : 'rotateY(-180deg)';
-    activeCard.style.opacity = '0';
-  });
-
+  if (flipping) return;
+  flipping = true;
+  card.classList.add('flip-out');
   setTimeout(() => {
-    container.removeChild(activeCard);
-    activeCard = newCard;
-    currentReview = newIndex;
-  }, 600);
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    renderReview(currentReview);
+    card.classList.remove('flip-out');
+    card.classList.add('flip-in');
+    setTimeout(() => {
+      card.classList.remove('flip-in');
+      flipping = false;
+    }, 600);
+  }, 300);
 }
 
-// Initial render
-renderReview(activeCard, currentReview);
+renderReview(currentReview);
 </script>
   
 </body>
