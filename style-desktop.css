@@ -835,10 +835,25 @@ TEAM REVIEW SECTION
   align-items: flex-start;
   position: relative;
   gap: 0.75rem;
+  overflow: hidden;
 }
 
 .review-carousel-card {
   width: 100%;
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+  position: relative;
+}
+
+.review-carousel-card.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.review-carousel-card.fade-in {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .review-name {
