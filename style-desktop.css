@@ -813,12 +813,12 @@ TEAM REVIEW SECTION
 
 .review-card-wrapper {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 48px 1fr 48px;
   align-items: center;
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 2rem;
+  gap: 1.5rem;
   position: relative;
 }
 
