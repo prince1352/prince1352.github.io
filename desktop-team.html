@@ -379,13 +379,15 @@ function flipCard(newIndex, direction) {
   renderReview(newCard, newIndex);
   container.appendChild(newCard);
 
-  requestAnimationFrame(() => {
-    newCard.style.transform = direction === 'next' ? 'rotateY(-180deg)' : 'rotateY(180deg)';
-    newCard.style.opacity = '1';
-    newCard.classList.add('active-card');
-    activeCard.style.transform = direction === 'next' ? 'rotateY(180deg)' : 'rotateY(-180deg)';
-    activeCard.style.opacity = '0';
-  });
+  // ✅ Force reflow so the transition will apply correctly
+  void newCard.offsetWidth;
+
+  newCard.classList.add('active-card');
+  newCard.style.transform = direction === 'next' ? 'rotateY(-180deg)' : 'rotateY(180deg)';
+  newCard.style.opacity = '1';
+
+  activeCard.style.transform = direction === 'next' ? 'rotateY(180deg)' : 'rotateY(-180deg)';
+  activeCard.style.opacity = '0';
 
   setTimeout(() => {
     container.removeChild(activeCard);
@@ -398,7 +400,5 @@ function flipCard(newIndex, direction) {
 renderReview(activeCard, currentReview);
 </script>
 
-
-  
 </body>
 </html>
