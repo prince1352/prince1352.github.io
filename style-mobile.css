@@ -810,37 +810,23 @@ header.dimmed,
   color: white;
 }
 
-/* Wrapper to align arrows with the cards */
+/* Wrapper aligns arrows with scrollable container */
 .mobile-review-carousel-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   max-width: 100%;
-}
-
-/* Arrow visual cues aligned with cards */
-.mobile-review-arrow-cue {
-  font-size: 2.25rem;
-  color: rgba(255, 255, 255, 0.3);
-  pointer-events: none;
-  user-select: none;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  height: 100%;
+  gap: 0.25rem;
   padding: 0 0.5rem;
 }
 
-.mobile-review-arrow-cue.left {
-  justify-content: flex-start;
+/* Narrow container between arrows for scrollable area */
+.mobile-review-carousel-scroll-container {
+  flex: 1;
+  overflow: hidden;
 }
 
-.mobile-review-arrow-cue.right {
-  justify-content: flex-end;
-}
-
-/* Scrollable container */
+/* Horizontal scroll area */
 .mobile-review-carousel-scroll {
   display: flex;
   overflow-x: auto;
@@ -868,7 +854,18 @@ header.dimmed,
   text-align: left;
 }
 
-/* Name */
+/* Arrows */
+.mobile-review-arrow-cue {
+  font-size: 2.25rem;
+  color: rgba(255, 255, 255, 0.3);
+  user-select: none;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Review name */
 .mobile-review-name {
   font-size: 1.2rem;
   font-weight: 600;
@@ -882,7 +879,7 @@ header.dimmed,
   color: #FFD700;
 }
 
-/* Review Text */
+/* Review text */
 .mobile-review-text {
   font-size: 1rem;
   font-style: italic;
@@ -897,7 +894,7 @@ header.dimmed,
   top: 1rem;
   right: 1rem;
   font-family: 'Rokkitt', serif;
-  font-size: 5rem;
+  font-size: 3.5rem;
   color: rgba(255, 255, 255, 0.1);
   line-height: 1;
 }
