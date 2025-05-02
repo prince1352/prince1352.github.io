@@ -1001,7 +1001,6 @@ TEAM CONTACT FORM SECTION
   padding: 6rem 2rem;
 }
 
-/* Custom Vertical Logo Column */
 .contact-vertical-logo {
   position: relative;
   display: flex;
@@ -1021,14 +1020,12 @@ TEAM CONTACT FORM SECTION
 
 .vertical-line-top,
 .vertical-line-bottom {
-  content: "";
   position: absolute;
   width: 3px;
   background-color: var(--navy);
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
-  display: block;
 }
 
 .vertical-line-top {
@@ -1041,7 +1038,6 @@ TEAM CONTACT FORM SECTION
   height: calc(50% - 60px);
 }
 
-/* Align Three Columns */
 .contact-container {
   display: flex;
   flex-wrap: nowrap;
@@ -1062,7 +1058,7 @@ TEAM CONTACT FORM SECTION
   flex: 3;
   max-width: none;
   margin-left: -2rem;
-  padding-left: 2rem; /* added spacing from center column */
+  padding-left: 3rem; /* added spacing from center column */
 }
 
 .contact-right form input,
