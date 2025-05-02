@@ -375,31 +375,23 @@ function flipToPrev() {
 
 function flipCard(newIndex, direction) {
   const newCard = document.createElement('div');
-  newCard.className = 'review-card active-card'; // ✅ Set up everything at once
+  newCard.className = 'review-card';
   renderReview(newCard, newIndex);
   container.appendChild(newCard);
 
-  // Force reflow
-  void newCard.offsetWidth;
+  requestAnimationFrame(() => {
+    newCard.style.transform = direction === 'next' ? 'rotateY(-180deg)' : 'rotateY(180deg)';
+    newCard.style.opacity = '1';
+    newCard.classList.add('active-card');
+    activeCard.style.transform = direction === 'next' ? 'rotateY(180deg)' : 'rotateY(-180deg)';
+    activeCard.style.opacity = '0';
+  });
 
-  // Apply rotation and fade in
-  newCard.style.transform = direction === 'next' ? 'rotateY(-180deg)' : 'rotateY(180deg)';
-  newCard.style.opacity = '1';
-  newCard.style.zIndex = '2';
-
-  // Animate old card out
-  activeCard.style.transform = direction === 'next' ? 'rotateY(180deg)' : 'rotateY(-180deg)';
-  activeCard.style.opacity = '0';
-  activeCard.style.zIndex = '1';
-
-  // Wait for transition to complete before cleanup
   setTimeout(() => {
-    if (activeCard && activeCard.parentNode) {
-      container.removeChild(activeCard);
-    }
+    container.removeChild(activeCard);
     activeCard = newCard;
     currentReview = newIndex;
-  }, 600); // match your CSS transition duration
+  }, 600);
 }
 
 // Initial render
