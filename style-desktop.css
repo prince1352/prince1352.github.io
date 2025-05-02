@@ -18,7 +18,11 @@ body {
   background-color: #ab9998;
   color: #333;
 }
-/* Header */
+
+/* ----------------------------------------------------------------------------------------------------------------
+HEADER SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 header {
   height: 130px; /* Ensure fixed height */
   background-color: white;
@@ -72,7 +76,10 @@ header {
   white-space: nowrap;
 }
 
-/* NAV MENU */
+/* ----------------------------------------------------------------------------------------------------------------
+MENU SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 nav {
   flex: 2;
   height: 100%;
@@ -192,7 +199,10 @@ ul.navbar > li > a:hover {
   white-space: nowrap; /* ensures it stays on one line */
 }
 
-/* Welcome Section */
+/* ----------------------------------------------------------------------------------------------------------------
+HOMEPAGE WELCOME SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 .welcome-section {
   height: 100vh;
   background: url('images/Welcome%20Background.jpg') center center / cover no-repeat fixed;
@@ -245,7 +255,11 @@ ul.navbar > li > a:hover {
   font-size: 1.25rem;
   color: white;
 }
-/* About Section */
+
+/* ----------------------------------------------------------------------------------------------------------------
+HOMEPAGE ABOUT SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 .about-section {
   position: relative;
   background: var(--red);
@@ -283,7 +297,10 @@ ul.navbar > li > a:hover {
   text-decoration: none;
 }
 
-/* Services Section */
+/* ----------------------------------------------------------------------------------------------------------------
+HOMEPAGE SERVICES SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 .services-parallax {
   background: url('images/Services%20Background.jpg') center center / cover no-repeat fixed;
   position: relative;
@@ -397,8 +414,10 @@ ul.navbar > li > a:hover {
   border-radius: 8px;
 }
 
-/* Contact Section Parallax */
-/* Contact Section - White Background with Red Theme */
+/* ----------------------------------------------------------------------------------------------------------------
+HOMEPAGE CONTACT SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 .contact-section {
   position: relative;
   background: white;
@@ -540,14 +559,19 @@ ul.navbar > li > a:hover {
     padding-right: 0;
   }
 }
-/* Footer */
+
+/* ----------------------------------------------------------------------------------------------------------------
+FOOTER SECTION
+------------------------------------------------------------------------------------------------------------------*/
 footer {
   text-align: center;
   padding: 1rem;
   background-color: #eee;
 }
 
-/* TEAM CARD SECTION */
+/* ----------------------------------------------------------------------------------------------------------------
+TEAM LAWYER CARD SECTION
+------------------------------------------------------------------------------------------------------------------*/
 
 .team-intro {
   background: white;
@@ -659,7 +683,10 @@ footer {
   color: #444;
 }
 
-/* Expanded Popup Card */
+/* ----------------------------------------------------------------------------------------------------------------
+TEAM EXPANDED POPUP SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 .expanded-card {
   position: fixed;
   top: 50%;
@@ -789,9 +816,9 @@ body.no-scroll {
   overflow: hidden;
 }
 
-/* 
+/* ----------------------------------------------------------------------------------------------------------------
 TEAM REVIEW SECTION
-*/
+------------------------------------------------------------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
@@ -920,4 +947,39 @@ TEAM REVIEW SECTION
 
 .review-arrow:hover {
   color: var(--navy);
+}
+
+/* ----------------------------------------------------------------------------------------------------------------
+TEAM CONTACT MESSAGE SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
+.team-contact-message-section {
+  background-image: url('Team-Contact-Message.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-contact-message-overlay {
+  background-color: rgba(0, 49, 83, 0.7); /* matches the blue blur used in Team-Background.jpg */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.team-contact-message-text {
+  color: white;
+  font-size: 1.5rem;
+  max-width: 1000px;
+  font-weight: 400;
 }
