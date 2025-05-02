@@ -893,6 +893,7 @@ header.dimmed,
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 2px solid red;
 }
 
 .mobile-contact-message-blur {
