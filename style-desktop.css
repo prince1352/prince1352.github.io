@@ -793,6 +793,8 @@ body.no-scroll {
 TEAM REVIEW SECTION
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap');
+
 .review-parallax-section {
   background-color: var(--bright-burgundy);
   color: white;
@@ -887,11 +889,12 @@ TEAM REVIEW SECTION
   top: 0.1rem;
   right: -0.4rem;
   font-size: 11rem;
-  font-family: 'Playfair Display', 'Georgia', serif;
+  font-family: 'Rokkitt', serif;
   color: rgba(255, 255, 255, 0.15);
   pointer-events: none;
   user-select: none;
   line-height: 0.75;
+  content: '❞';
 }
 
 .review-carousel-card.fade-out {
