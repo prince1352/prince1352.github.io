@@ -792,7 +792,7 @@ body.no-scroll {
 /* 
 TEAM REVIEW SECTION
 */
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
 
 .review-parallax-section {
   background-color: var(--bright-burgundy);
@@ -888,7 +888,7 @@ TEAM REVIEW SECTION
   top: 0.1rem;
   right: -0.4rem;
   font-size: 11rem;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Domine', serif;
   color: rgba(255, 255, 255, 0.15);
   pointer-events: none;
   user-select: none;
