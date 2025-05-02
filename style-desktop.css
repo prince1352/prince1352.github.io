@@ -815,11 +815,14 @@ TEAM REVIEW SECTION
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  gap: 2rem;
-  max-width: 1000px;
+  gap: 4rem;
+  max-width: 1200px;
   margin: 0 auto;
-  z-index: 2;
+  position: relative;
+}
+
+.review-card-area {
+  flex-shrink: 0;
 }
 
 .review-card-container {
@@ -910,8 +913,9 @@ TEAM REVIEW SECTION
   font-size: 2.5rem;
   cursor: pointer;
   transition: color 0.3s;
-  z-index: 5;
+  z-index: 10;
   padding: 1rem;
+  flex-shrink: 0;
 }
 
 .review-arrow:hover {
