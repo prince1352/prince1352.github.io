@@ -992,6 +992,7 @@ TEAM CONTACT MESSAGE SECTION
 TEAM CONTACT FORM SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
+/* Parallax Background for Team Contact */
 .team-contact-parallax {
   background-color: white;
   background-attachment: fixed;
@@ -1054,9 +1055,6 @@ TEAM CONTACT FORM SECTION
   flex: 1;
   padding-left: 1rem;
   max-width: 450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .contact-left .contact-title {
@@ -1071,9 +1069,6 @@ TEAM CONTACT FORM SECTION
   max-width: none;
   margin-left: -2rem;
   padding-left: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .contact-right form input,
@@ -1125,4 +1120,3 @@ TEAM CONTACT FORM SECTION
 .contact-details a:hover {
   text-decoration: underline;
 }
-
