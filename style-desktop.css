@@ -884,13 +884,14 @@ TEAM REVIEW SECTION
 
 .review-quote {
   position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 6rem;
-  font-family: serif;
+  top: 0.25rem;
+  right: 0.75rem;
+  font-size: 8rem;
+  font-family: 'Courier New', Courier, monospace;
   color: rgba(255, 255, 255, 0.15);
   pointer-events: none;
   user-select: none;
+  line-height: 0.8;
 }
 
 .review-carousel-card.fade-out {
