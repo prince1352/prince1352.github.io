@@ -812,17 +812,20 @@ TEAM REVIEW SECTION
 }
 
 .review-card-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 2rem;
   position: relative;
 }
 
 .review-card-area {
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .review-card-container {
@@ -831,6 +834,9 @@ TEAM REVIEW SECTION
   perspective: 1200px;
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .review-card-flipper {
@@ -915,7 +921,6 @@ TEAM REVIEW SECTION
   transition: color 0.3s;
   z-index: 10;
   padding: 1rem;
-  flex-shrink: 0;
 }
 
 .review-arrow:hover {
