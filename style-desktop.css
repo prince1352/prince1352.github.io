@@ -987,3 +987,89 @@ TEAM CONTACT MESSAGE SECTION
   font-weight: 400;
   margin: 0 auto;
 }
+
+/* ----------------------------------------------------------------------------------------------------------------
+TEAM CONTACT FORM SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
+.team-contact-parallax {
+  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6rem 2rem;
+}
+
+.contact-vertical-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.vertical-logo {
+  height: 100px;
+  z-index: 1;
+}
+
+.vertical-line {
+  width: 3px;
+  height: 100px;
+  background-color: var(--navy);
+}
+
+.top-line {
+  margin-bottom: 1rem;
+}
+
+.bottom-line {
+  margin-top: 1rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+.contact-left, .contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-left {
+  padding-left: 1rem;
+}
+
+.contact-details p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-details strong {
+  color: var(--red);
+}
+
+.contact-details a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
