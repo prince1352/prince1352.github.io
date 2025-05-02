@@ -810,15 +810,36 @@ header.dimmed,
   color: white;
 }
 
-/* Scrollable container for swipe effect */
+/* Arrow visual cues */
+.mobile-review-arrow-cue {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.25rem;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.mobile-review-arrow-cue.left {
+  left: 0.5rem;
+}
+
+.mobile-review-arrow-cue.right {
+  right: 0.5rem;
+}
+
+/* Scrollable container */
 .mobile-review-carousel-scroll {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   gap: 1rem;
-  padding: 2rem 1rem;
-  scroll-padding: 1rem;
+  padding: 2rem 1.5rem;
+  scroll-padding: 1.5rem;
+  position: relative;
 }
 
 /* Review Card */
@@ -839,18 +860,18 @@ header.dimmed,
   text-align: left;
 }
 
-/* Review Name */
+/* Name */
 .mobile-review-name {
   font-size: 1.2rem;
   font-weight: 600;
   color: white;
 }
 
-/* Star Rating */
+/* Stars */
 .mobile-review-stars {
   font-size: 1.2rem;
   margin: 0.5rem 0 1.25rem;
-  color: #FFD700; /* gold stars */
+  color: #FFD700;
 }
 
 /* Review Text */
@@ -862,7 +883,7 @@ header.dimmed,
   margin-bottom: 1rem;
 }
 
-/* Quotation Mark */
+/* Quotation mark */
 .mobile-review-quote {
   position: absolute;
   top: 1rem;
@@ -871,11 +892,6 @@ header.dimmed,
   font-size: 3.5rem;
   color: rgba(255, 255, 255, 0.1);
   line-height: 1;
-}
-
-/* Arrow buttons no longer needed, but keeping in case you re-add */
-.mobile-review-arrow {
-  display: none;
 }
 
 /* ===============================
