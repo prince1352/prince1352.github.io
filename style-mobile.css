@@ -788,3 +788,131 @@ header.dimmed,
   pointer-events: none;
   opacity: 0.4;
 }
+
+/* ===============================
+   REVIEW SECTION (MOBILE)
+=============================== */
+
+.mobile-review-section {
+  background-color: var(--red);
+  padding: 4rem 1rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-review-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.mobile-review-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.mobile-review-card {
+  background-color: var(--navy);
+  color: white;
+  padding: 2rem 1.25rem;
+  border-radius: 12px;
+  position: relative;
+  min-height: 200px;
+  flex: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 350px;
+  text-align: left;
+}
+
+.mobile-review-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.mobile-review-stars {
+  color: var(--navy);
+  font-size: 1.2rem;
+  margin: 0.5rem 0 1.25rem;
+  color: #FFD700;
+}
+
+.mobile-review-text {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.mobile-review-quote {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: 'Rokkitt', serif;
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.1);
+  line-height: 1;
+}
+
+.mobile-review-arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  z-index: 10;
+}
+
+/* ===============================
+   CONTACT PROMPT SECTION (MOBILE)
+=============================== */
+
+.mobile-contact-message-section {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mobile-contact-message-blur {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/Team-Contact-Message.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  filter: blur(4px);
+  z-index: 1;
+}
+
+.mobile-contact-message-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.mobile-contact-message-text {
+  color: white;
+  font-size: 1.2rem;
+  max-width: 600px;
+  font-weight: 400;
+  margin: 0 auto;
+}
