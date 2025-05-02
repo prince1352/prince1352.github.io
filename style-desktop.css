@@ -792,6 +792,7 @@ body.no-scroll {
 /* 
 TEAM REVIEW SECTION
 */
+
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 .review-parallax-section {
@@ -826,7 +827,7 @@ TEAM REVIEW SECTION
 .review-carousel-box {
   width: 800px;
   height: 260px;
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.07), rgba(0,0,0,0.2));
+  background: var(--yellow);
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -889,11 +890,11 @@ TEAM REVIEW SECTION
   right: -0.4rem;
   font-size: 13rem;
   font-family: 'Share Tech Mono', monospace;
-  color: rgba(255, 255, 255, 0.15);
+  color: #a3d5ff;
   pointer-events: none;
   user-select: none;
   line-height: 0.75;
-  content: '❞';
+  content: '”';
 }
 
 .review-carousel-card.fade-out {
@@ -918,5 +919,5 @@ TEAM REVIEW SECTION
 }
 
 .review-arrow:hover {
-  color: var(--yellow);
+  color: var(--bright-burgundy);
 }
