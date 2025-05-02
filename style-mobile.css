@@ -1,7 +1,7 @@
 /* Finalized styles for mobile menu improvements */
 :root {
-  --bright-burgundy: #962f33;
-  --yellow: #242e37;
+  --red: #962f33;
+  --navy: #242e37;
 }
 
 body {
@@ -53,20 +53,20 @@ body {
 .mobile-line-1 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--bright-burgundy);
+  color: var(--red);
   letter-spacing: 1px;
 }
 
 .mobile-line-2 {
   font-size: 0.6rem;
   font-weight: 500;
-  color: var(--yellow);
+  color: var(--navy);
   letter-spacing: 0.5px;
   margin-top: 2px;
 }
 
 .mobile-cta-button {
-  background-color: var(--yellow);
+  background-color: var(--navy);
   color: white;
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
@@ -82,7 +82,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--bright-burgundy);
+  color: var(--red);
   flex-shrink: 0;
   padding: 0.3rem;
   line-height: 1;
@@ -98,7 +98,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: white;
-  color: var(--yellow);
+  color: var(--navy);
   width: 100%;
   overflow: hidden;
   max-height: 0;
@@ -143,7 +143,7 @@ body {
 
 .mobile-nav a,
 .mobile-nav .submenu-toggle {
-  color: var(--yellow);
+  color: var(--navy);
   font-weight: 500;
   text-decoration: none;
   font-size: 1rem;
@@ -190,7 +190,7 @@ body {
 }
 
 .submenu li a {
-  color: var(--bright-burgundy) !important;
+  color: var(--red) !important;
   text-decoration: none;
   font-weight: 500;
 }
@@ -259,7 +259,7 @@ body {
 ============================= */
 .mobile-about-section {
   position: relative;
-  background: var(--bright-burgundy);
+  background: var(--red);
   color: white;
   padding: 6rem 1.5rem;
   text-align: center;
@@ -292,7 +292,7 @@ body {
 .mobile-about-button a {
   margin-top: 2rem;
   display: inline-block;
-  background-color: var(--yellow);
+  background-color: var(--navy);
   color: white;
   padding: 0.75rem 1.25rem;
   font-size: 1rem;
@@ -397,14 +397,14 @@ body {
 }
 
 .card-front {
-  background-color: var(--yellow);
+  background-color: var(--navy);
   color: white;
   font-size: 1.4rem;
   font-weight: 600;
 }
 
 .card-back {
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   color: white;
   transform: rotateY(180deg);
   flex-direction: column;
@@ -420,7 +420,7 @@ body {
 
 .learn-more-btn {
   padding: 0.6rem 1.25rem;
-  background-color: var(--yellow);
+  background-color: var(--navy);
   color: white;
   border: none;
   border-radius: 8px;
@@ -471,11 +471,11 @@ body {
 .mobile-contact-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--bright-burgundy);
+  color: var(--red);
 }
 
 .mobile-contact-details strong {
-  color: var(--yellow);
+  color: var(--navy);
 }
 
 .mobile-contact-details p {
@@ -519,7 +519,7 @@ body {
 
 .submit-btn {
   width: 100%;
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   color: white;
   padding: 0.85rem 1.25rem;
   font-size: 1rem;
@@ -538,7 +538,7 @@ body {
 /* Confirmation Message */
 #form-confirmation {
   margin-top: 2rem;
-  color: var(--bright-burgundy);
+  color: var(--red);
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -594,7 +594,7 @@ TEAM PAGE BODY
 .team-line {
   flex: 1;
   height: 3px;
-  background-color: var(--yellow);
+  background-color: var(--navy);
 }
 
 .left-line {
@@ -607,13 +607,13 @@ TEAM PAGE BODY
 .team-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--bright-burgundy);
+  color: var(--red);
   margin-top: 0.5rem;
 }
 
 /* Team Grid */
 .team-grid-section {
-  background-color: var(--yellow); /* ✅ Replaces Team-Background.jpg */
+  background-color: var(--navy); /* ✅ Replaces Team-Background.jpg */
   position: relative;
   padding: 4rem 1rem;
 }
@@ -699,7 +699,7 @@ TEAM PAGE BODY
   left: 50%;
   width: 90%;
   max-width: 1000px;
-  background-color: var(--bright-burgundy);
+  background-color: var(--red);
   color: white;
   padding: 0;
   transform: translate(-50%, -50%) scale(0.8);
@@ -726,7 +726,7 @@ TEAM PAGE BODY
   margin: 2rem auto 1rem;
   display: block;
   border-radius: 8px;
-  box-shadow: 0 0 0 8px var(--bright-burgundy);
+  box-shadow: 0 0 0 8px var(--red);
   object-fit: cover;
 }
 
