@@ -888,12 +888,11 @@ header.dimmed,
   background-image: url('images/Mobile-Team-Contact-Background.png');
   background-position: center 0;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: 2px solid red;
 }
 
 .mobile-contact-message-blur {
