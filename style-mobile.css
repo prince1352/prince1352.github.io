@@ -833,16 +833,15 @@ header.dimmed,
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   gap: 1rem;
-  padding: 2rem 0;
-  scroll-padding: 1.5rem;
+  padding: 2rem 1rem;
+  scroll-padding: 1rem;
 }
 
 /* Review Card */
 .mobile-review-card {
   scroll-snap-align: center;
-  flex: 0 0 80%;
-  min-width: 300px;
-  max-width: 400px;
+  flex: 0 0 70%;
+  max-width: 320px;
   background-color: var(--navy);
   color: white;
   padding: 2rem 1.25rem;
@@ -852,6 +851,12 @@ header.dimmed,
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
+}
+
+.mobile-review-carousel-scroll::before,
+.mobile-review-carousel-scroll::after {
+  content: "";
+  flex: 0 0 15%;
 }
 
 /* Arrows */
