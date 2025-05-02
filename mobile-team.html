@@ -155,19 +155,9 @@
 
 <section class="mobile-review-section">
   <h2 class="mobile-review-title">Read Our Reviews</h2>
-  <div class="mobile-review-carousel">
-    <button class="mobile-review-arrow left" onclick="showPrevReview()">&#8249;</button>
 
-    <div class="mobile-review-card" id="mobileReviewCard">
-      <div class="mobile-review-header">
-        <div id="mobileReviewName" class="mobile-review-name"></div>
-        <div id="mobileReviewStars" class="mobile-review-stars">★★★★★</div>
-      </div>
-      <div class="mobile-review-text" id="mobileReviewText"></div>
-      <div class="mobile-review-quote">”</div>
-    </div>
-
-    <button class="mobile-review-arrow right" onclick="showNextReview()">&#8250;</button>
+  <div class="mobile-review-carousel-scroll" id="reviewScrollContainer">
+    <!-- JS will insert review cards here -->
   </div>
 </section>
 
@@ -321,7 +311,7 @@
 
    <!-- ✅ Mobile Script for REVIEWS -->
   
-  <script>
+<script>
   const mobileReviews = [
     {
       name: "Amrit K.",
@@ -357,28 +347,23 @@
     }
   ];
 
-  let currentMobileReview = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("reviewScrollContainer");
 
-  function updateMobileReview() {
-    const review = mobileReviews[currentMobileReview];
-    document.getElementById("mobileReviewName").textContent = review.name;
-    document.getElementById("mobileReviewText").textContent = review.text;
-    document.getElementById("mobileReviewStars").innerHTML = "★★★★★";
-  }
-
-  function showNextReview() {
-    currentMobileReview = (currentMobileReview + 1) % mobileReviews.length;
-    updateMobileReview();
-  }
-
-  function showPrevReview() {
-    currentMobileReview = (currentMobileReview - 1 + mobileReviews.length) % mobileReviews.length;
-    updateMobileReview();
-  }
-
-  // Initialize on page load
-  document.addEventListener("DOMContentLoaded", updateMobileReview);
+    mobileReviews.forEach(review => {
+      const card = document.createElement("div");
+      card.className = "mobile-review-card";
+      card.innerHTML = `
+        <div class="mobile-review-name">${review.name}</div>
+        <div class="mobile-review-stars">★★★★★</div>
+        <div class="mobile-review-text">${review.text}</div>
+        <div class="mobile-review-quote">”</div>
+      `;
+      container.appendChild(card);
+    });
+  });
 </script>
+
 
      <!-- ✅ Mobile Script for CONTACT FORM -->
   
