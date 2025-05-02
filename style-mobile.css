@@ -906,11 +906,11 @@ header.dimmed,
 .mobile-contact-message-blur {
   position: absolute;
   inset: 0;
-  background-image: url('images/Team-Contact-Message.jpg');
+  background-image: url('images/Mobile-Team-Contact-Background.png');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  filter: blur(4px);
+  filter: blur(6px);
   z-index: 1;
 }
 
