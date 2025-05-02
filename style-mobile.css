@@ -810,24 +810,34 @@ header.dimmed,
   color: white;
 }
 
-/* Arrow visual cues */
+/* Wrapper to align arrows with the cards */
+.mobile-review-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+}
+
+/* Arrow visual cues aligned with cards */
 .mobile-review-arrow-cue {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 2.25rem;
   color: rgba(255, 255, 255, 0.3);
   pointer-events: none;
   user-select: none;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.5rem;
 }
 
 .mobile-review-arrow-cue.left {
-  left: 0.5rem;
+  justify-content: flex-start;
 }
 
 .mobile-review-arrow-cue.right {
-  right: 0.5rem;
+  justify-content: flex-end;
 }
 
 /* Scrollable container */
@@ -837,9 +847,8 @@ header.dimmed,
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   gap: 1rem;
-  padding: 2rem 1.5rem;
+  padding: 2rem 0;
   scroll-padding: 1.5rem;
-  position: relative;
 }
 
 /* Review Card */
@@ -853,7 +862,6 @@ header.dimmed,
   padding: 2rem 1.25rem;
   border-radius: 12px;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -889,7 +897,7 @@ header.dimmed,
   top: 1rem;
   right: 1rem;
   font-family: 'Rokkitt', serif;
-  font-size: 3.5rem;
+  font-size: 5rem;
   color: rgba(255, 255, 255, 0.1);
   line-height: 1;
 }
