@@ -439,6 +439,10 @@ body {
 MOBILE CONTACT FORM SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
+/* ============================
+   CONTACT SECTION (MOBILE)
+============================= */
+
 .team-contact-parallax {
   background-color: white;
   background-attachment: fixed;
@@ -466,15 +470,14 @@ MOBILE CONTACT FORM SECTION
 /* LEFT COLUMN (LOGO + VERTICAL LINES) */
 .contact-vertical-logo {
   position: relative;
-  flex: 0 0 auto;
-  width: clamp(50px, 15vw, 90px); /* Shrinks responsively */
+  flex: 0 0 clamp(30px, 10vw, 80px);  /* ⬅ Shrinks when needed */
   min-height: 160px;
   flex-shrink: 1;
 }
 
 /* LOGO IMAGE */
 .vertical-logo {
-  height: clamp(40px, 6vw, 80px);
+  height: clamp(35px, 5vw, 70px);
   width: auto;
   background-color: white;
   padding: 0.25rem;
@@ -510,9 +513,12 @@ MOBILE CONTACT FORM SECTION
 .contact-left {
   flex: 1 1 auto;
   min-width: 0;
+  padding-left: 1rem;
+  padding-right: 1.25rem; /* ✅ right gap */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   box-sizing: border-box;
-  white-space: normal;
-  word-break: break-word;
 }
 
 /* CONTACT TITLE */
@@ -529,8 +535,9 @@ MOBILE CONTACT FORM SECTION
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
-  white-space: normal;
-  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-details strong {
@@ -547,7 +554,7 @@ MOBILE CONTACT FORM SECTION
 }
 
 /* ========================
-   BOTTOM ROW: CONTACT FORM
+   CONTACT FORM
 ======================== */
 .contact-right {
   max-width: 800px;
