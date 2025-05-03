@@ -893,11 +893,6 @@ header.dimmed,
   z-index: 0;
 }
 
-.mobile-review-title,
-.mobile-review-carousel-wrapper {
-  position: relative;
-  z-index: 1;
-
 .mobile-review-title {
   font-size: 1.75rem;
   font-weight: 700;
@@ -937,7 +932,7 @@ header.dimmed,
   scroll-snap-align: center;
   flex: 0 0 70%;
   max-width: 320px;
-  background-color: var(--navy);
+  background-color: var(--red);
   color: white;
   padding: 2rem 1.25rem;
   border-radius: 12px;
