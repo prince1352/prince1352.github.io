@@ -436,112 +436,140 @@ body {
 /* ===============================
    Final Mobile Contact Section Styling
 =============================== */
-.mobile-contact-section {
-  position: relative;
-  padding: 6rem 1rem;
-  text-align: center;
-  z-index: 1;
-  overflow: hidden;
 
-  /* ✅ Simulated parallax with white background */
+/* ----------------------------------------------------------------------------------------------------------------
+TEAM CONTACT FORM SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
+/* Parallax Background for Team Contact */
+.team-contact-parallax {
   background-color: white;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 6rem 2rem;
 }
 
-/* Remove any overlay that blocks content */
-.mobile-contact-section::before {
-  content: none;
-}
-
-.mobile-contact-container {
+/* Custom Vertical Logo Column */
+.contact-vertical-logo {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  z-index: 1;
-  width: 100%;
-  box-sizing: border-box;
+  justify-content: center;
+  padding: 0 2rem;
+  min-width: 120px;
 }
 
-.mobile-contact-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--red);
+.vertical-logo {
+  height: 100px;
+  z-index: 2;
+  background-color: white;
+  padding: 0.5rem;
+  position: relative;
 }
 
-.mobile-contact-details strong {
-  color: var(--navy);
+.vertical-line-top,
+.vertical-line-bottom {
+  position: absolute;
+  width: 3px;
+  background-color: var(--navy);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
-.mobile-contact-details p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: black;
-  line-height: 1.6;
+.vertical-line-top {
+  top: 0;
+  height: calc(50% - 60px);
 }
 
-.mobile-contact-details a {
-  color: black;
-  text-decoration: none;
+.vertical-line-bottom {
+  bottom: 0;
+  height: calc(50% - 60px);
 }
 
-/* Contact Form Styling */
-#contact-form {
-  width: 100%;
+/* Align Three Columns */
+.contact-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: 1rem;
-  padding: 0 0.5rem;
-  box-sizing: border-box;
-  margin-top: 2rem;
+  max-width: 1400px;
+  margin: auto;
+  align-items: stretch;
 }
 
-#contact-form input,
-#contact-form textarea {
+.contact-left {
+  flex: 1;
+  padding-left: 1rem;
+  max-width: 450px;
+}
+
+.contact-left .contact-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.contact-right {
+  flex: 3;
+  max-width: none;
+  margin-left: -2rem;
+  padding-left: 2rem;
+}
+
+.contact-right form input,
+.contact-right form textarea {
   width: 100%;
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
-  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
   border: 1px solid #ccc;
-  font-family: inherit;
-  resize: vertical;
-  box-sizing: border-box;
+  font-size: 1rem;
+  border-radius: 4px;
 }
 
-#contact-form textarea {
-  min-height: 120px;
+.contact-right form textarea {
+  height: 150px;
+  resize: vertical;
 }
 
 .submit-btn {
-  width: 100%;
-  background-color: var(--red);
+  background-color: var(--navy);
   color: white;
-  padding: 0.85rem 1.25rem;
-  font-size: 1rem;
-  font-weight: bold;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
-  box-sizing: border-box;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
 .submit-btn:hover {
-  background-color: #a6012d;
+  background-color: var(--red);
 }
 
-/* Confirmation Message */
-#form-confirmation {
-  margin-top: 2rem;
-  color: var(--red);
-  font-size: 1.2rem;
-  font-weight: 500;
+.contact-details p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
 }
+
+.contact-details strong {
+  color: var(--red);
+}
+
+.contact-details a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
 
 /* ===============================
 FOOTER
