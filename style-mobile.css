@@ -506,9 +506,10 @@ TEAM CONTACT FORM SECTION
 .contact-left {
   flex: 1;
   padding-left: 2rem;
-  min-width: 320px; /* enough to fit longest line */
-  white-space: nowrap; /* force all lines to stay single-line */
-  overflow-x: auto;     /* prevent overflow on ultra-small screens */
+  padding-right: clamp(8px, 2vw, 20px); /* ✅ Minimal right gap added */
+  min-width: 320px;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .contact-title {
