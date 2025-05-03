@@ -451,7 +451,9 @@ MOBILE CONTACT FORM SECTION
   max-width: 1400px;
   margin: 0 auto 3rem auto;
   position: relative;
-  padding-right: 40px; /* ✅ Guaranteed right-side gap */
+  padding-right: 1rem;
+  box-sizing: border-box;
+
 }
 
 /* LEFT COLUMN (LOGO) */
