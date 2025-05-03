@@ -969,6 +969,21 @@ header.dimmed,
   line-height: 1;
 }
 
+.mobile-review-carousel-scroll::before,
+.mobile-review-carousel-scroll::after {
+  content: "";
+  flex: 0 0 15%;
+}
+
+.mobile-review-arrow-cue {
+  font-size: 2.25rem;
+  color: rgba(255, 255, 255, 0.3);
+  user-select: none;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
 
 
 
