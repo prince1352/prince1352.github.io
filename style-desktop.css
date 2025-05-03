@@ -974,3 +974,11 @@ TEAM CONTACT FORM SECTION
 .contact-details a:hover {
   text-decoration: underline;
 }
+
+#form-confirmation {
+  display: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: green;
+  text-align: center;
+}
