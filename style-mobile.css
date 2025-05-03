@@ -453,36 +453,37 @@ TEAM CONTACT FORM SECTION
 /* Top Row: Logo + Contact Info */
 .contact-top-row {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
 }
 
-/* Vertical Logo Styles */
+/* Vertical Logo Column — Now Smaller */
 .contact-vertical-logo {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
-  min-width: 120px;
+  min-width: 80px;
+  height: 200px; /* Allows lines to show properly */
+  padding: 0 1rem;
 }
 
 .vertical-logo {
-  height: 100px;
+  height: 60px; /* Smaller logo */
   z-index: 2;
   background-color: white;
-  padding: 0.5rem;
+  padding: 0.25rem;
   position: relative;
 }
 
+/* Vertical Lines Above and Below the Logo */
 .vertical-line-top,
 .vertical-line-bottom {
   position: absolute;
-  width: 3px;
+  width: 2px;
   background-color: var(--navy);
   left: 50%;
   transform: translateX(-50%);
@@ -491,19 +492,19 @@ TEAM CONTACT FORM SECTION
 
 .vertical-line-top {
   top: 0;
-  height: calc(50% - 60px);
+  height: calc(50% - 40px); /* Adjusted for new logo size */
 }
 
 .vertical-line-bottom {
   bottom: 0;
-  height: calc(50% - 60px);
+  height: calc(50% - 40px);
 }
 
 /* Contact Info */
 .contact-left {
   flex: 1;
-  padding-left: 1rem;
-  max-width: 500px;
+  padding-left: 0.5rem;
+  max-width: none;
 }
 
 .contact-title {
