@@ -429,16 +429,9 @@ body {
   text-decoration: none;
   display: inline-block;
 }
-/* ===============================
-   Mobile Contact Section Styling
-=============================== */
-
-/* ===============================
-   Final Mobile Contact Section Styling
-=============================== */
 
 /* ----------------------------------------------------------------------------------------------------------------
-TEAM CONTACT FORM SECTION
+MOBILE CONTACT FORM SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
 .team-contact-parallax {
@@ -454,23 +447,24 @@ TEAM CONTACT FORM SECTION
 .contact-top-row {
   display: flex;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
   position: relative;
+  padding-right: clamp(24px, 5vw, 60px); /* ✅ Right-side visual gap */
 }
 
-/* Left Column: Logo – shrinks, but keeps tiny left margin */
+/* Left Column: Vertical Logo */
 .contact-vertical-logo {
   position: relative;
-  width: 50px; /* even smaller */
-  margin-left: clamp(6px, 1vw, 12px); /* dynamic minimal gap */
-  flex-shrink: 0;
+  width: clamp(40px, 5vw, 60px); /* ✅ Shrinkable width */
+  margin-left: clamp(4px, 0.5vw, 12px); /* ✅ Hug left edge */
+  flex-shrink: 1;
 }
 
-/* Center the logo vertically relative to the middle column */
+/* Logo Styling — Responsive sizing */
 .vertical-logo {
-  height: 45px; /* smaller for mobile */
+  height: clamp(36px, 4vw, 50px); /* ✅ Shrinks with screen size */
   width: auto;
   z-index: 2;
   background-color: white;
@@ -481,7 +475,7 @@ TEAM CONTACT FORM SECTION
   transform: translate(-50%, -50%);
 }
 
-/* Vertical lines stretch to match middle column height */
+/* Vertical Lines */
 .vertical-line-top,
 .vertical-line-bottom {
   position: absolute;
@@ -502,18 +496,17 @@ TEAM CONTACT FORM SECTION
   bottom: 0;
 }
 
-/* Middle Column: Contact Info — guaranteed width */
+/* Middle Column: Contact Info */
 .contact-left {
-  flex: 1;
-  padding-left: 2rem;
-  padding-right: clamp(16px, 4vw, 40px); /* ✅ Minimal right gap added */
+  flex-grow: 1;
   min-width: 320px;
+  padding-left: 2rem;
   white-space: nowrap;
   overflow-x: auto;
 }
 
 .contact-title {
-  font-size: 2.25rem;
+  font-size: 2.25rem; /* Increased size */
   font-weight: 600;
   color: var(--red);
   margin-bottom: 1rem;
@@ -524,7 +517,7 @@ TEAM CONTACT FORM SECTION
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
-  white-space: nowrap; /* prevent wrapping on all p tags */
+  white-space: nowrap; /* Keep single-line */
 }
 
 .contact-details strong {
@@ -583,7 +576,6 @@ TEAM CONTACT FORM SECTION
 .submit-btn:hover {
   background-color: var(--red);
 }
-
 
 /* ===============================
 FOOTER
