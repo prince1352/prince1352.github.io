@@ -683,6 +683,7 @@ TEAM PAGE BODY
   z-index: 0;
   backdrop-filter: blur(6px);
   pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Team Grid */
