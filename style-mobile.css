@@ -453,33 +453,34 @@ TEAM CONTACT FORM SECTION
 /* Top Row: Logo + Contact Info */
 .contact-top-row {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
-  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
+  position: relative;
 }
 
-/* Vertical Logo Column — Now Smaller */
+/* Wrap logo and lines in a tighter, far-left column */
 .contact-vertical-logo {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 80px;
-  height: 200px; /* Allows lines to show properly */
-  padding: 0 1rem;
+  width: 80px;
+  margin-left: 10px; /* Slight padding from left edge */
 }
 
+/* Center the logo vertically relative to the middle column */
 .vertical-logo {
-  height: 60px; /* Smaller logo */
+  height: 60px;
+  width: auto;
   z-index: 2;
   background-color: white;
   padding: 0.25rem;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Vertical Lines Above and Below the Logo */
+/* Vertical lines now stretch to match middle column height */
 .vertical-line-top,
 .vertical-line-bottom {
   position: absolute;
@@ -487,24 +488,25 @@ TEAM CONTACT FORM SECTION
   background-color: var(--navy);
   left: 50%;
   transform: translateX(-50%);
-  z-index: 0;
+  z-index: 1;
 }
 
 .vertical-line-top {
   top: 0;
-  height: calc(50% - 40px); /* Adjusted for new logo size */
+  bottom: 50%;
 }
 
 .vertical-line-bottom {
+  top: 50%;
   bottom: 0;
-  height: calc(50% - 40px);
 }
 
-/* Contact Info */
+/* Middle Column: Contact Info */
 .contact-left {
   flex: 1;
-  padding-left: 0.5rem;
+  padding-left: 2rem;
   max-width: none;
+  position: relative;
 }
 
 .contact-title {
