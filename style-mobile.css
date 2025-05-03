@@ -434,37 +434,29 @@ body {
 MOBILE CONTACT FORM SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
-.team-contact-parallax {
-  background-color: white;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 3.6rem 2rem;
-}
-
-/* Top Row: Logo + Contact Info */
+/* CONTACT TOP ROW */
 .contact-top-row {
   display: flex;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
   position: relative;
-  padding-right: clamp(8px, 2vw, 24px); /* ✅ Right-side visual gap */
 }
 
-/* Left Column: Vertical Logo */
+/* LEFT COLUMN (LOGO) */
 .contact-vertical-logo {
   position: relative;
-  width: clamp(40px, 5vw, 60px); /* ✅ Shrinkable width */
-  margin-left: clamp(4px, 0.5vw, 12px); /* ✅ Hug left edge */
-  flex-shrink: 1;
+  width: auto;
+  min-width: 50px;               /* Prevent from shrinking too much */
+  max-width: 80px;               /* Allow some breathing room */
+  margin-left: clamp(8px, 1vw, 12px); /* Dynamic small left gap */
+  flex-shrink: 1;                /* Allow shrinking */
 }
 
-/* Logo Styling — Responsive sizing */
+/* LOGO STYLING */
 .vertical-logo {
-  height: clamp(36px, 4vw, 50px); /* ✅ Shrinks with screen size */
+  height: clamp(36px, 4vw, 50px);
   width: auto;
   z-index: 2;
   background-color: white;
@@ -475,7 +467,7 @@ MOBILE CONTACT FORM SECTION
   transform: translate(-50%, -50%);
 }
 
-/* Vertical Lines */
+/* VERTICAL LINES */
 .vertical-line-top,
 .vertical-line-bottom {
   position: absolute;
@@ -496,28 +488,34 @@ MOBILE CONTACT FORM SECTION
   bottom: 0;
 }
 
-/* Middle Column: Contact Info */
+/* MIDDLE COLUMN (CONTACT INFO) */
 .contact-left {
   flex-grow: 1;
-  min-width: 320px;
+  flex-shrink: 1;
+  flex-basis: 0;
   padding-left: 2rem;
-  white-space: nowrap;
+  padding-right: clamp(16px, 3vw, 36px); /* ✅ Dynamic right margin */
+  min-width: 360px;                      /* ✅ Enough to fit long line */
+  max-width: calc(100% - 90px);          /* ✅ Leaves space for logo and right margin */
+  white-space: nowrap;                   /* Prevent line wrapping */
   overflow-x: auto;
 }
 
+/* CONTACT TITLE */
 .contact-title {
-  font-size: 2.25rem; /* Increased size */
+  font-size: 2.25rem;
   font-weight: 600;
   color: var(--red);
   margin-bottom: 1rem;
 }
 
+/* CONTACT TEXT */
 .contact-details p {
   margin-bottom: 1rem;
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
-  white-space: nowrap; /* Keep single-line */
+  white-space: nowrap;
 }
 
 .contact-details strong {
@@ -533,7 +531,7 @@ MOBILE CONTACT FORM SECTION
   text-decoration: underline;
 }
 
-/* Contact Form Below */
+/* CONTACT FORM BELOW */
 .contact-right {
   max-width: 800px;
   margin: 0 auto;
