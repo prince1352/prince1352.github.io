@@ -469,7 +469,7 @@ MOBILE CONTACT FORM SECTION
 /* LEFT COLUMN (LOGO + VERTICAL LINES) */
 .contact-vertical-logo {
   position: relative;
-  flex: 0 0 clamp(30px, 10vw, 80px);  /* ⬅ Shrinks when needed */
+  flex: 0 0 clamp(30px, 10vw, 80px);  /* Shrinks when needed */
   min-height: 160px;
   flex-shrink: 1;
 }
@@ -510,13 +510,13 @@ MOBILE CONTACT FORM SECTION
 
 /* MIDDLE COLUMN (CONTACT INFO) */
 .contact-left {
-  flex: 1 1 auto;
+  flex-grow: 1;
+  flex-shrink: 1;
   min-width: 0;
   padding-left: 1rem;
-  padding-right: 1.25rem; /* ✅ right gap */
+  padding-right: 1.25rem; /* ✅ right visual gap */
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-x: auto; /* Only scroll if absolutely necessary */
   box-sizing: border-box;
 }
 
@@ -534,9 +534,7 @@ MOBILE CONTACT FORM SECTION
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap; /* ⬅ Prevent wrapping */
 }
 
 .contact-details strong {
