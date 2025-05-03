@@ -903,6 +903,8 @@ header.dimmed,
   font-weight: 700;
   margin-bottom: 2rem;
   color: white;
+   position: relative;
+  z-index: 1;
 }
 
 /* Wrapper aligns arrows with scrollable container */
@@ -913,6 +915,8 @@ header.dimmed,
   max-width: 100%;
   gap: 0.25rem;
   padding: 0 0.5rem;
+   position: relative;
+  z-index: 1;
 }
 
 /* Narrow container between arrows for scrollable area */
