@@ -407,28 +407,21 @@
   
 <script>
   const parallaxSections = [
-    '.team-title-section',
-    '.mobile-review-section'
+    '.mobile-review-section',
+    '.team-title-section'
   ];
 
   window.addEventListener('scroll', () => {
     parallaxSections.forEach(selector => {
       const section = document.querySelector(selector);
       if (section) {
-        const offsetTop = section.offsetTop;
-        const scrollY = window.scrollY || window.pageYOffset;
-        const scrollPos = scrollY - offsetTop;
-
-        // Clamp the effect so it doesn't apply too early
-        const inView = section.getBoundingClientRect().top < window.innerHeight;
-
-        if (inView) {
-          section.style.backgroundPositionY = `${Math.max(0, scrollPos * 0.5)}px`;
-        }
+        const offset = window.pageYOffset;
+        section.style.backgroundPositionY = `${offset * 0.5}px`;
       }
     });
   });
 </script>
+
 
 
 </body>
