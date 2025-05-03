@@ -506,7 +506,7 @@ TEAM CONTACT FORM SECTION
 .contact-left {
   flex: 1;
   padding-left: 2rem;
-  padding-right: clamp(8px, 2vw, 20px); /* ✅ Minimal right gap added */
+  padding-right: clamp(16px, 4vw, 40px); /* ✅ Minimal right gap added */
   min-width: 320px;
   white-space: nowrap;
   overflow-x: auto;
