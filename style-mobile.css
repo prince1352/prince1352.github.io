@@ -872,8 +872,8 @@ header.dimmed,
 .mobile-review-section {
   position: relative;
   background-image: url('images/Mobile-Review.jpg');
-  background-size: auto;
-  background-repeat: repeat-y;
+  background-size: cover;               /* ✅ How it was when working well */
+  background-repeat: repeat-y;          /* ✅ Keep if you want seamless loop */
   background-position: center top;
   background-attachment: scroll;
   padding: 4rem 1rem;
