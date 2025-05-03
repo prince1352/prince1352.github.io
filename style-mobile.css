@@ -676,6 +676,12 @@ TEAM PAGE BODY
   margin: 0;
 }
 
+.team-title-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
 /* Team Grid */
 .team-grid-section {
   position: relative;
