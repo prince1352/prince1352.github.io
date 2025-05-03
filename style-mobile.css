@@ -872,8 +872,8 @@ header.dimmed,
 .mobile-review-section {
   position: relative;
   background-image: url('images/Mobile-Review.jpg');
-  background-size: contain;
-  background-repeat: repeat-y;
+  background-size: auto;              /* ✅ Don't zoom/stretch */
+  background-repeat: repeat-y;        /* ✅ Repeat vertically */
   background-position: center top;
   background-attachment: scroll;
   padding: 4rem 1rem;
