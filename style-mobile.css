@@ -663,22 +663,27 @@ TEAM PAGE BODY
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
   z-index: 1;
+  position: relative;
 }
 
+
 .team-title-overlay {
+  content: "";
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.3);
   z-index: 0;
+
+  /* ✅ Only apply blur */
+  backdrop-filter: blur(6px);
+  background-color: transparent;
+  pointer-events: none;
 }
+
 
 .team-title-text {
   position: relative;
@@ -687,7 +692,6 @@ TEAM PAGE BODY
   font-weight: 700;
   z-index: 1;
 }
-
 
 /* Team Grid */
 .team-grid-section {
