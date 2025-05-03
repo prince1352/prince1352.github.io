@@ -451,10 +451,10 @@ MOBILE CONTACT FORM SECTION
   max-width: 1400px;
   margin: 0 auto 3rem auto;
   position: relative;
-  padding-right: 1rem;
+  padding-right: 2rem;         /* Reduce hard gap */
   box-sizing: border-box;
-
 }
+
 
 /* LEFT COLUMN (LOGO) */
 .contact-vertical-logo {
@@ -503,16 +503,16 @@ MOBILE CONTACT FORM SECTION
 
 /* MIDDLE COLUMN (CONTACT INFO) */
 .contact-left {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
+  flex: 1 1 360px;              /* Prefer shorthand for cleaner control */
+  min-width: 280px;             /* Still keeps things readable on small screens */
+  max-width: calc(100% - 110px);/* Still leaves room for logo */
   padding-left: 2rem;
-  padding-right: 0; /* ✅ Removed internal padding-right */
-  min-width: 360px;
-  max-width: calc(100% - 110px); /* ✅ Leaves room for logo + 40px right gap */
+  padding-right: 0;
   white-space: nowrap;
-  overflow-x: auto;
+  overflow-x: auto;             /* Allows local scroll inside if needed */
+  box-sizing: border-box;
 }
+
 
 /* CONTACT TITLE */
 .contact-title {
