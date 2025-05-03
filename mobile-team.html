@@ -52,7 +52,7 @@
 
  <!-- Top Section with Logo and Title -->
 
-<section class="team-title-section parallax-scroll">
+<section class="team-title-section">
   <div class="team-title-overlay"></div>
   <h1>Our Legal Team</h1>
 </section>
@@ -408,40 +408,54 @@
 </script>
 
 
-   <!-- ✅ Mobile Script for PARALLAX EFFECT-->
+   <!-- ✅ Mobile Script for TEAM TITLE PARALLAX EFFECT-->
   
 <script>
-  // Select all sections with the parallax-scroll class
-  const parallaxSections = document.querySelectorAll('.parallax-scroll');
+  const parallaxSections = [
+    '.team-title-section'
+  ];
 
-  // Create observer to watch when sections enter viewport
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        const section = entry.target;
-
-        if (entry.isIntersecting) {
-          section.classList.add('parallax-active');
-        } else {
-          section.classList.remove('parallax-active');
-        }
-      });
-    },
-    {
-      threshold: 0.1 // Trigger when 10% of section is visible
-    }
-  );
-
-  // Start observing each section
-  parallaxSections.forEach(section => observer.observe(section));
-
-  // Apply parallax effect only when section is active
   window.addEventListener('scroll', () => {
-    document.querySelectorAll('.parallax-scroll.parallax-active').forEach(section => {
-      const offset = window.pageYOffset;
-      section.style.backgroundPositionY = `${offset * 0.5}px`;
+    parallaxSections.forEach(selector => {
+      const section = document.querySelector(selector);
+      if (section) {
+        const offset = window.pageYOffset;
+        section.style.backgroundPositionY = `${offset * 0.5}px`;
+      }
     });
   });
+</script>
+
+   <!-- ✅ Mobile Script for TEAM REVIEW PARALLAX EFFECT-->
+
+  <script>
+  const reviewSection = document.querySelector('.mobile-review-section');
+
+  if (reviewSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            reviewSection.classList.add('parallax-active');
+          } else {
+            reviewSection.classList.remove('parallax-active');
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    observer.observe(reviewSection);
+
+    window.addEventListener('scroll', () => {
+      if (reviewSection.classList.contains('parallax-active')) {
+        const offset = window.pageYOffset;
+        reviewSection.style.backgroundPositionY = `${offset * 0.5}px`;
+      }
+    });
+  }
 </script>
 
 
