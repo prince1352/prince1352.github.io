@@ -20,8 +20,8 @@
     fetch(html)
       .then(res => res.text())
       .then(html => {
-        document.getElementById("dynamic-root").innerHTML = html;
-        initDynamicScripts();
+document.getElementById("dynamic-root").innerHTML = html;
+setTimeout(initDynamicScripts, 0);
       })
       .catch(err => {
         console.error("Error loading layout:", err);
