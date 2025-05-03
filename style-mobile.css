@@ -659,14 +659,18 @@ TEAM PAGE BODY
 .team-title-section {
   height: 300px;
   background-image: url('images/Mobile-Team-Title.jpg');
-  background-size: cover;
+  background-size: 100% 150%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
+  background-attachment: scroll;
   position: relative;
+  z-index: 0;
+  overflow: hidden;
   display: flex;                /* ✅ added */
   align-items: center;          /* ✅ added */
   justify-content: center;      /* ✅ added */
 }
+
 
 .team-title-section h1 {
   color: white;
