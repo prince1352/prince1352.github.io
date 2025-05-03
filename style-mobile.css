@@ -440,36 +440,37 @@ MOBILE CONTACT FORM SECTION
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 3.6rem 2rem; /* Reduced vertical padding by 40% */
+  padding: 3.6rem 2rem;
 }
 
 /* CONTACT TOP ROW */
 .contact-top-row {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-start;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
   position: relative;
-  padding-right: 2rem;         /* Reduce hard gap */
+  padding: 0 1rem; /* Balanced left and right gap */
   box-sizing: border-box;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
-
 
 /* LEFT COLUMN (LOGO) */
 .contact-vertical-logo {
-  position: relative;
+  flex: 0 1 80px;       /* Shrinkable but with a preferred width */
   min-width: 50px;
-  width: auto;
   max-width: 100px;
-  margin-left: clamp(8px, 1vw, 12px);
+  position: relative;
+  margin-left: 0;
   flex-shrink: 1;
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 /* LOGO IMAGE — Responsive Scaling */
 .vertical-logo {
-  height: clamp(40px, 6vw, 80px);
+  height: clamp(40px, 5vw, 80px);
   width: auto;
   z-index: 2;
   background-color: white;
@@ -503,16 +504,15 @@ MOBILE CONTACT FORM SECTION
 
 /* MIDDLE COLUMN (CONTACT INFO) */
 .contact-left {
-  flex: 1 1 360px;              /* Prefer shorthand for cleaner control */
-  min-width: 320px;             /* Still keeps things readable on small screens */
-  max-width: calc(100% - 110px);/* Still leaves room for logo */
-  padding-left: 2rem;
+  flex: 1 1 auto;            /* Can shrink and grow */
+  min-width: 0;              /* Crucial: allows shrinkage in flex */
+  max-width: 100%;
+  padding-left: 1rem;
   padding-right: 0;
-  white-space: nowrap;
-  overflow-x: auto;             /* Allows local scroll inside if needed */
+  white-space: normal;       /* Allow text to wrap */
+  overflow-wrap: break-word; /* Break long lines if needed */
   box-sizing: border-box;
 }
-
 
 /* CONTACT TITLE */
 .contact-title {
@@ -528,7 +528,7 @@ MOBILE CONTACT FORM SECTION
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .contact-details strong {
@@ -589,7 +589,7 @@ MOBILE CONTACT FORM SECTION
 }
 
 #form-confirmation {
-  display: none; /* ✅ Prevents it from showing before submission */
+  display: none;
   margin-top: 1rem;
   font-size: 1rem;
   color: green;
