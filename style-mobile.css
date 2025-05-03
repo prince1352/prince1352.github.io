@@ -460,16 +460,16 @@ TEAM CONTACT FORM SECTION
   position: relative;
 }
 
-/* Push logo column even further left */
+/* Left Column: Vertical Logo – smaller and closer to edge */
 .contact-vertical-logo {
   position: relative;
-  width: 70px; /* Narrower */
-  margin-left: 0px; /* Almost flush with left edge */
+  width: 60px; /* smaller width */
+  margin-left: -10px; /* closer to the edge */
 }
 
 /* Center the logo vertically relative to the middle column */
 .vertical-logo {
-  height: 60px;
+  height: 50px; /* slightly smaller */
   width: auto;
   z-index: 2;
   background-color: white;
@@ -504,13 +504,13 @@ TEAM CONTACT FORM SECTION
 /* Middle Column: Contact Info (expanded) */
 .contact-left {
   flex: 1;
-  padding-left: 2.5rem;
+  padding-left: 3rem; /* More space between logo and text */
   max-width: none;
   position: relative;
 }
 
 .contact-title {
-  font-size: 2.25rem; /* 1.5x increase from original 1.5rem */
+  font-size: 2.25rem; /* 1.5x original */
   font-weight: 600;
   color: var(--red);
   margin-bottom: 1rem;
