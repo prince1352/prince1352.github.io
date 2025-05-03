@@ -451,25 +451,26 @@ MOBILE CONTACT FORM SECTION
 /* CONTACT TOP ROW */
 .contact-top-row {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
-  padding: 0 1rem;             /* ✅ Consistent left/right gap */
-  gap: 1.25rem;                /* ✅ Space between logo and contact info */
+  padding: 0 1rem;
+  gap: 1.25rem;
   box-sizing: border-box;
   flex-wrap: nowrap;
+  overflow-x: auto; /* ✅ Allows side scroll if needed */
 }
 
-/* LEFT COLUMN (LOGO) */
+/* LEFT COLUMN (LOGO + VERTICAL LINES) */
 .contact-vertical-logo {
   position: relative;
-  flex: 0 1 100px;             /* ✅ Preferred width but shrinkable */
-  min-width: 50px;
-  max-width: 100px;
+  width: 100px;
+  flex-shrink: 0;
+  min-height: 180px; /* ✅ Ensures vertical lines always appear */
 }
 
-/* LOGO IMAGE — Responsive Scaling */
+/* LOGO IMAGE */
 .vertical-logo {
   height: clamp(40px, 6vw, 80px);
   width: auto;
@@ -505,10 +506,10 @@ MOBILE CONTACT FORM SECTION
 
 /* MIDDLE COLUMN (CONTACT INFO) */
 .contact-left {
-  flex: 1 1 auto;              /* ✅ Fills remaining space */
-  min-width: 0;                /* ✅ Prevents flex overflow */
-  white-space: normal;
-  overflow-wrap: break-word;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto; /* ✅ Allows horizontal scrolling instead of wrapping */
+  white-space: nowrap; /* ✅ Prevents wrapping of text */
   box-sizing: border-box;
 }
 
@@ -526,7 +527,7 @@ MOBILE CONTACT FORM SECTION
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .contact-details strong {
