@@ -411,21 +411,35 @@
    <!-- ✅ Mobile Script for PARALLAX EFFECT-->
   
 <script>
-const parallaxSections = ['.team-title-section', '.mobile-review-section'];
-  
-window.addEventListener('scroll', () => {
-  parallaxSections.forEach(selector => {
-    const section = document.querySelector(selector);
-    if (section) {
+  const parallaxSections = document.querySelectorAll('.parallax-scroll');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const section = entry.target;
+
+        if (entry.isIntersecting) {
+          section.classList.add('parallax-active');
+        } else {
+          section.classList.remove('parallax-active');
+        }
+      });
+    },
+    {
+      threshold: 0.1
+    }
+  );
+
+  parallaxSections.forEach(section => observer.observe(section));
+
+  // Apply background shift only if section is active
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.parallax-scroll.parallax-active').forEach(section => {
       const offset = window.pageYOffset;
       section.style.backgroundPositionY = `${offset * 0.5}px`;
-    }
+    });
   });
-});
-
 </script>
-
-
 
 </body>
 </html>
