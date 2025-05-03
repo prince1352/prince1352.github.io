@@ -456,16 +456,17 @@ MOBILE CONTACT FORM SECTION
 /* LEFT COLUMN (LOGO) */
 .contact-vertical-logo {
   position: relative;
-  width: auto;
   min-width: 50px;
-  max-width: 80px;
-  margin-left: clamp(8px, 1vw, 12px);
+  width: auto;
+  max-width: 100px; /* ✅ Allows logo to grow */
+  margin-left: clamp(8px, 1vw, 12px); /* ✅ Keeps small left gap */
   flex-shrink: 1;
+  flex-grow: 1; /* ✅ Expands if room allows */
 }
 
-/* LOGO IMAGE */
+/* LOGO IMAGE — Responsive Scaling */
 .vertical-logo {
-  height: clamp(36px, 4vw, 50px);
+  height: clamp(40px, 6vw, 80px); /* ✅ Grows dynamically */
   width: auto;
   z-index: 2;
   background-color: white;
@@ -503,9 +504,9 @@ MOBILE CONTACT FORM SECTION
   flex-shrink: 1;
   flex-basis: 0;
   padding-left: 2rem;
-  padding-right: clamp(16px, 3vw, 36px);
-  min-width: 360px;
-  max-width: calc(100% - 90px); /* Leaves space for logo and right margin */
+  padding-right: clamp(32px, 6vw, 72px); /* ✅ Doubled right gap */
+  min-width: 360px; /* ✅ Guarantees line never wraps */
+  max-width: calc(100% - 90px); /* ✅ Leaves space for logo and gap */
   white-space: nowrap;
   overflow-x: auto;
 }
@@ -524,7 +525,7 @@ MOBILE CONTACT FORM SECTION
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
-  white-space: nowrap;
+  white-space: nowrap; /* ✅ Prevent wrapping */
 }
 
 .contact-details strong {
@@ -583,7 +584,6 @@ MOBILE CONTACT FORM SECTION
 .submit-btn:hover {
   background-color: var(--red);
 }
-
 
 /* ===============================
 FOOTER
