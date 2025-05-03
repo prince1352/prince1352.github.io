@@ -460,16 +460,17 @@ TEAM CONTACT FORM SECTION
   position: relative;
 }
 
-/* Left Column: Vertical Logo – smaller and closer to edge */
+/* Left Column: Logo – shrinks, but keeps tiny left margin */
 .contact-vertical-logo {
   position: relative;
-  width: 60px; /* smaller width */
-  margin-left: -10px; /* closer to the edge */
+  width: 50px; /* even smaller */
+  margin-left: clamp(6px, 1vw, 12px); /* dynamic minimal gap */
+  flex-shrink: 0;
 }
 
 /* Center the logo vertically relative to the middle column */
 .vertical-logo {
-  height: 50px; /* slightly smaller */
+  height: 45px; /* smaller for mobile */
   width: auto;
   z-index: 2;
   background-color: white;
@@ -501,16 +502,17 @@ TEAM CONTACT FORM SECTION
   bottom: 0;
 }
 
-/* Middle Column: Contact Info (expanded) */
+/* Middle Column: Contact Info — guaranteed width */
 .contact-left {
   flex: 1;
-  padding-left: 3rem; /* More space between logo and text */
-  max-width: none;
-  position: relative;
+  padding-left: 2rem;
+  min-width: 320px; /* enough to fit longest line */
+  white-space: nowrap; /* force all lines to stay single-line */
+  overflow-x: auto;     /* prevent overflow on ultra-small screens */
 }
 
 .contact-title {
-  font-size: 2.25rem; /* 1.5x original */
+  font-size: 2.25rem;
   font-weight: 600;
   color: var(--red);
   margin-bottom: 1rem;
@@ -521,6 +523,7 @@ TEAM CONTACT FORM SECTION
   line-height: 1.6;
   font-size: 1rem;
   color: #333;
+  white-space: nowrap; /* prevent wrapping on all p tags */
 }
 
 .contact-details strong {
@@ -579,6 +582,7 @@ TEAM CONTACT FORM SECTION
 .submit-btn:hover {
   background-color: var(--red);
 }
+
 
 /* ===============================
 FOOTER
