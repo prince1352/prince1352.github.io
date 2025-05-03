@@ -445,42 +445,45 @@ MOBILE CONTACT FORM SECTION
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 3.6rem 2rem;
+  padding: 3.6rem 1rem;
+  box-sizing: border-box;
 }
 
-/* CONTACT TOP ROW */
+/* ========================
+   TOP ROW: LOGO + CONTACT INFO
+======================== */
 .contact-top-row {
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
-  padding: 0 1rem;
-  gap: 1.25rem;
   box-sizing: border-box;
-  flex-wrap: nowrap;
-  overflow-x: auto; /* ✅ Allows side scroll if needed */
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0 1rem;
 }
 
 /* LEFT COLUMN (LOGO + VERTICAL LINES) */
 .contact-vertical-logo {
   position: relative;
-  width: 100px;
-  flex-shrink: 0;
-  min-height: 180px; /* ✅ Ensures vertical lines always appear */
+  flex: 0 0 auto;
+  width: clamp(50px, 15vw, 90px); /* Shrinks dynamically */
+  min-height: 160px;
+  flex-shrink: 1;
 }
 
 /* LOGO IMAGE */
 .vertical-logo {
   height: clamp(40px, 6vw, 80px);
   width: auto;
-  z-index: 2;
   background-color: white;
   padding: 0.25rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 /* VERTICAL LINES */
@@ -506,10 +509,10 @@ MOBILE CONTACT FORM SECTION
 
 /* MIDDLE COLUMN (CONTACT INFO) */
 .contact-left {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   min-width: 0;
-  overflow-x: auto; /* ✅ Allows horizontal scrolling instead of wrapping */
-  white-space: nowrap; /* ✅ Prevents wrapping of text */
+  overflow-x: auto; /* Enables scroll if needed on very small screens */
+  white-space: nowrap; /* Prevents line wrapping */
   box-sizing: border-box;
 }
 
@@ -543,11 +546,14 @@ MOBILE CONTACT FORM SECTION
   text-decoration: underline;
 }
 
-/* CONTACT FORM BELOW */
+/* ========================
+   BOTTOM ROW: CONTACT FORM
+======================== */
 .contact-right {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .contact-right form {
@@ -565,6 +571,7 @@ MOBILE CONTACT FORM SECTION
   border: 1px solid #ccc;
   font-size: 1rem;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .contact-right form textarea {
