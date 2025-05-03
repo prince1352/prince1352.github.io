@@ -406,20 +406,18 @@
    <!-- ✅ Mobile Script for PARALLAX EFFECT-->
   
 <script>
-  const parallaxSections = [
-    '.team-title-section',
-    '.mobile-review-section'
-  ];
+const parallaxSections = ['.team-title-section', '.mobile-review-section'];
 
-  window.addEventListener('scroll', () => {
-    parallaxSections.forEach(selector => {
-      const section = document.querySelector(selector);
-      if (section) {
-        const offset = window.pageYOffset;
-        section.style.backgroundPositionY = `${offset * 0.5}px`;
-      }
-    });
+window.addEventListener('scroll', () => {
+  parallaxSections.forEach(selector => {
+    const section = document.querySelector(selector);
+    if (section) {
+      const offset = window.pageYOffset;
+      section.style.backgroundPositionY = `${offset * 0.5}px`;
+    }
   });
+});
+
 </script>
 
 
