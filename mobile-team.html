@@ -405,22 +405,30 @@
 
    <!-- ✅ Mobile Script for PARALLAX EFFECT-->
   
-  <script>
+<script>
   const parallaxSections = [
     '.team-title-section',
     '.mobile-review-section'
   ];
 
-  parallaxSections.forEach(selector => {
-    const section = document.querySelector(selector);
-    if (section) {
-      window.addEventListener('scroll', () => {
-        const offset = window.pageYOffset;
-        section.style.backgroundPositionY = `${offset * 0.5}px`;
-      });
-    }
+  window.addEventListener('scroll', () => {
+    parallaxSections.forEach(selector => {
+      const section = document.querySelector(selector);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+        const offsetTop = section.offsetTop;
+        const visibleScroll = scrollY - offsetTop;
+
+        // Only apply parallax when in or above viewport
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          section.style.backgroundPositionY = `${visibleScroll * 0.5}px`;
+        }
+      }
+    });
   });
 </script>
+
 
 </body>
 </html>
