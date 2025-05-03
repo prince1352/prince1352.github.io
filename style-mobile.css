@@ -662,7 +662,7 @@ TEAM PAGE BODY
   background-image: url('images/Mobile-Team-Title.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   background-attachment: scroll;
   display: flex;
   align-items: center;
@@ -872,8 +872,8 @@ header.dimmed,
 .mobile-review-section {
   position: relative;
   background-image: url('images/Mobile-Review.jpg');
-  background-size: auto;              /* ✅ Don't zoom/stretch */
-  background-repeat: repeat-y;        /* ✅ Repeat vertically */
+  background-size: auto;
+  background-repeat: repeat-y;
   background-position: center top;
   background-attachment: scroll;
   padding: 4rem 1rem;
