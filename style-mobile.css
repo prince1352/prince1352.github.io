@@ -514,11 +514,11 @@ MOBILE CONTACT FORM SECTION
   flex-shrink: 1;
   min-width: 0;
   padding-left: 1rem;
-  padding-right: 1.25rem; /* ✅ right visual gap */
+  padding-right: 1.25rem;
   white-space: nowrap;
-  overflow-x: auto; /* Only scroll if absolutely necessary */
   box-sizing: border-box;
 }
+
 
 /* CONTACT TITLE */
 .contact-title {
