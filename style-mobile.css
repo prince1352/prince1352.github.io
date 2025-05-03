@@ -660,7 +660,7 @@ TEAM PAGE BODY
   position: relative;
   height: 300px;
   background-image: url('images/Mobile-Team-Title.jpg');
-  background-size: auto 150%;     /* ✅ 150% height of section */
+  background-size: 100% 150%;
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: scroll;
@@ -669,6 +669,9 @@ TEAM PAGE BODY
   justify-content: center;
   text-align: center;
   z-index: 1;
+
+    /* Debug border (optional) */
+  border: 4px solid red;
 }
 
 .team-title-overlay {
