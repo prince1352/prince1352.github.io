@@ -460,11 +460,11 @@ TEAM CONTACT FORM SECTION
   position: relative;
 }
 
-/* Wrap logo and lines in a tighter, far-left column */
+/* Push logo column even further left */
 .contact-vertical-logo {
   position: relative;
-  width: 80px;
-  margin-left: 10px; /* Slight padding from left edge */
+  width: 70px; /* Narrower */
+  margin-left: 0px; /* Almost flush with left edge */
 }
 
 /* Center the logo vertically relative to the middle column */
@@ -480,7 +480,7 @@ TEAM CONTACT FORM SECTION
   transform: translate(-50%, -50%);
 }
 
-/* Vertical lines now stretch to match middle column height */
+/* Vertical lines stretch to match middle column height */
 .vertical-line-top,
 .vertical-line-bottom {
   position: absolute;
@@ -501,16 +501,16 @@ TEAM CONTACT FORM SECTION
   bottom: 0;
 }
 
-/* Middle Column: Contact Info */
+/* Middle Column: Contact Info (expanded) */
 .contact-left {
   flex: 1;
-  padding-left: 2rem;
+  padding-left: 2.5rem;
   max-width: none;
   position: relative;
 }
 
 .contact-title {
-  font-size: 1.5rem;
+  font-size: 2.25rem; /* 1.5x increase from original 1.5rem */
   font-weight: 600;
   color: var(--red);
   margin-bottom: 1rem;
