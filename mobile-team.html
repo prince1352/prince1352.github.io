@@ -52,7 +52,7 @@
 
  <!-- Top Section with Logo and Title -->
 
-  <section class="team-title-section">
+<section class="team-title-section parallax-scroll">
   <div class="team-title-overlay"></div>
   <h1>Our Legal Team</h1>
 </section>
@@ -151,7 +151,7 @@
 
   <!-- Review Section -->
 
-<section class="mobile-review-section">
+<section class="mobile-review-section parallax-scroll">
   <h2 class="mobile-review-title">Read Our Reviews</h2>
   <div class="mobile-review-overlay"></div>
   <div class="mobile-review-carousel-wrapper">
@@ -411,8 +411,10 @@
    <!-- ✅ Mobile Script for PARALLAX EFFECT-->
   
 <script>
+  // Select all sections with the parallax-scroll class
   const parallaxSections = document.querySelectorAll('.parallax-scroll');
 
+  // Create observer to watch when sections enter viewport
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -426,13 +428,14 @@
       });
     },
     {
-      threshold: 0.1
+      threshold: 0.1 // Trigger when 10% of section is visible
     }
   );
 
+  // Start observing each section
   parallaxSections.forEach(section => observer.observe(section));
 
-  // Apply background shift only if section is active
+  // Apply parallax effect only when section is active
   window.addEventListener('scroll', () => {
     document.querySelectorAll('.parallax-scroll.parallax-active').forEach(section => {
       const offset = window.pageYOffset;
@@ -440,6 +443,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
