@@ -924,6 +924,56 @@ header.dimmed,
   scroll-padding: 1rem;
 }
 
+.mobile-review-card {
+  scroll-snap-align: center;
+  flex: 0 0 70%;
+  max-width: 320px;
+  background-color: var(--navy);
+  color: white;
+  padding: 2rem 1.25rem;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.mobile-review-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.mobile-review-stars {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 1.25rem;
+  color: #FFD700;
+}
+
+.mobile-review-text {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.mobile-review-quote {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: 'Rokkitt', serif;
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.1);
+  line-height: 1;
+}
+
+
+
+
+
+
 
 /*
 .mobile-review-overlay {
