@@ -873,7 +873,7 @@ header.dimmed,
   position: relative;
   background-image: url('images/Mobile-Review.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center center;
   background-attachment: scroll;
   padding: 4rem 1rem;
