@@ -868,20 +868,21 @@ header.dimmed,
 =============================== */
 
 .mobile-review-section {
-  position: relative;
+  height: 300px;
   background-image: url('images/Mobile-Review.jpg');
-  background-size: cover;               /* ✅ How it was when working well */
-  background-repeat: repeat-y;          /* ✅ Keep if you want seamless loop */
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center top;
-  background-attachment: scroll;
-  padding: 4rem 1rem;
-  text-align: center;
-  color: white;
-  overflow: hidden;
-  min-height: 300px;
-  z-index: 1;
+  border: 4px solid red;
 }
 
+
+
+
+
+
+
+/*
 .mobile-review-overlay {
   position: absolute;
   inset: 0;
@@ -987,6 +988,8 @@ header.dimmed,
   color: rgba(255, 255, 255, 0.1);
   line-height: 1;
 }
+
+*/
 
 /* ===============================
    Parallax Scrolling Controller
