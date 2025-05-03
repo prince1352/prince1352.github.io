@@ -898,6 +898,31 @@ header.dimmed,
   z-index: 1;
 }
 
+.mobile-review-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  gap: 0.25rem;
+  padding: 0 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mobile-review-carousel-scroll-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.mobile-review-carousel-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  scroll-padding: 1rem;
+}
 
 
 /*
