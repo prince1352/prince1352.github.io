@@ -428,7 +428,7 @@
 
    <!-- ✅ Mobile Script for TEAM REVIEW PARALLAX EFFECT-->
 
-  <script>
+<script>
   const reviewSection = document.querySelector('.mobile-review-section');
 
   if (reviewSection) {
@@ -451,12 +451,16 @@
 
     window.addEventListener('scroll', () => {
       if (reviewSection.classList.contains('parallax-active')) {
-        const offset = window.pageYOffset;
+        const rect = reviewSection.getBoundingClientRect();
+        const offset = rect.top; // ← Local offset relative to viewport
+
+        // Parallax movement using local scroll inside section
         reviewSection.style.backgroundPositionY = `${offset * 0.5}px`;
       }
     });
   }
 </script>
+
 
 
 </body>
