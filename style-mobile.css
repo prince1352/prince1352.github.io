@@ -875,6 +875,8 @@ header.dimmed,
   background-position: center top;
   background-attachment: scroll;
   border: 4px solid red;
+  position: relative;
+  z-index: 0; /* ✅ Lower than 1000 */
 }
 
 .mobile-review-section h2 {
