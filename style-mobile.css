@@ -504,7 +504,7 @@ MOBILE CONTACT FORM SECTION
 /* MIDDLE COLUMN (CONTACT INFO) */
 .contact-left {
   flex: 1 1 360px;              /* Prefer shorthand for cleaner control */
-  min-width: 280px;             /* Still keeps things readable on small screens */
+  min-width: 320px;             /* Still keeps things readable on small screens */
   max-width: calc(100% - 110px);/* Still leaves room for logo */
   padding-left: 2rem;
   padding-right: 0;
