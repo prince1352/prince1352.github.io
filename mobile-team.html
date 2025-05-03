@@ -419,14 +419,17 @@
         const scrollY = window.scrollY || window.pageYOffset;
         const scrollPos = scrollY - offsetTop;
 
-        // Apply parallax only if in view
-        if (section.getBoundingClientRect().bottom > 0) {
-          section.style.backgroundPositionY = `${scrollPos * 0.5}px`;
+        // Clamp the effect so it doesn't apply too early
+        const inView = section.getBoundingClientRect().top < window.innerHeight;
+
+        if (inView) {
+          section.style.backgroundPositionY = `${Math.max(0, scrollPos * 0.5)}px`;
         }
       }
     });
   });
 </script>
+
 
 </body>
 </html>
