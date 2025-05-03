@@ -899,6 +899,14 @@ header.dimmed,
   pointer-events: none;
 }
 
+.mobile-review-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
 
 
 
