@@ -875,6 +875,7 @@ header.dimmed,
   background-position: center top;
   background-attachment: scroll;
   position: relative;
+  overflow: hidden; 
   z-index: 0;
 }
 
@@ -891,10 +892,12 @@ header.dimmed,
 .mobile-review-overlay {
   position: absolute;
   inset: 0;
-  z-index: 0;
   backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3); /* ✅ Soft darkening */
+  z-index: 0;
   pointer-events: none;
 }
+
 
 
 
