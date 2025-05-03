@@ -415,20 +415,18 @@
     parallaxSections.forEach(selector => {
       const section = document.querySelector(selector);
       if (section) {
-        const rect = section.getBoundingClientRect();
-        const scrollY = window.scrollY || window.pageYOffset;
         const offsetTop = section.offsetTop;
-        const visibleScroll = scrollY - offsetTop;
+        const scrollY = window.scrollY || window.pageYOffset;
+        const scrollPos = scrollY - offsetTop;
 
-        // Only apply parallax when in or above viewport
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          section.style.backgroundPositionY = `${visibleScroll * 0.5}px`;
+        // Apply parallax only if in view
+        if (section.getBoundingClientRect().bottom > 0) {
+          section.style.backgroundPositionY = `${scrollPos * 0.5}px`;
         }
       }
     });
   });
 </script>
-
 
 </body>
 </html>
