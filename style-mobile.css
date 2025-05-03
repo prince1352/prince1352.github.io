@@ -586,6 +586,14 @@ MOBILE CONTACT FORM SECTION
   background-color: var(--red);
 }
 
+#form-confirmation {
+  display: none; /* ✅ Prevents it from showing before submission */
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: green;
+  text-align: center;
+}
+
 /* ===============================
 FOOTER
 =============================== */
