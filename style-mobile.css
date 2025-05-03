@@ -876,7 +876,8 @@ header.dimmed,
   background-attachment: scroll;
   border: 4px solid red;
   position: relative;
-  z-index: 0; /* ✅ Lower than 1000 */
+  z-index: 0;
+  overflow: hidden;
 }
 
 .mobile-review-section h2 {
@@ -889,7 +890,13 @@ header.dimmed,
   z-index: 1;
 }
 
-
+.mobile-review-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
 
 
 
