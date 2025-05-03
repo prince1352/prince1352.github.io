@@ -434,6 +434,15 @@ body {
 MOBILE CONTACT FORM SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
+.team-contact-parallax {
+  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3.6rem 2rem; /* Reduced vertical padding by 40% */
+}
+
 /* CONTACT TOP ROW */
 .contact-top-row {
   display: flex;
@@ -448,13 +457,13 @@ MOBILE CONTACT FORM SECTION
 .contact-vertical-logo {
   position: relative;
   width: auto;
-  min-width: 50px;               /* Prevent from shrinking too much */
-  max-width: 80px;               /* Allow some breathing room */
-  margin-left: clamp(8px, 1vw, 12px); /* Dynamic small left gap */
-  flex-shrink: 1;                /* Allow shrinking */
+  min-width: 50px;
+  max-width: 80px;
+  margin-left: clamp(8px, 1vw, 12px);
+  flex-shrink: 1;
 }
 
-/* LOGO STYLING */
+/* LOGO IMAGE */
 .vertical-logo {
   height: clamp(36px, 4vw, 50px);
   width: auto;
@@ -494,10 +503,10 @@ MOBILE CONTACT FORM SECTION
   flex-shrink: 1;
   flex-basis: 0;
   padding-left: 2rem;
-  padding-right: clamp(16px, 3vw, 36px); /* ✅ Dynamic right margin */
-  min-width: 360px;                      /* ✅ Enough to fit long line */
-  max-width: calc(100% - 90px);          /* ✅ Leaves space for logo and right margin */
-  white-space: nowrap;                   /* Prevent line wrapping */
+  padding-right: clamp(16px, 3vw, 36px);
+  min-width: 360px;
+  max-width: calc(100% - 90px); /* Leaves space for logo and right margin */
+  white-space: nowrap;
   overflow-x: auto;
 }
 
@@ -509,7 +518,7 @@ MOBILE CONTACT FORM SECTION
   margin-bottom: 1rem;
 }
 
-/* CONTACT TEXT */
+/* CONTACT DETAILS */
 .contact-details p {
   margin-bottom: 1rem;
   line-height: 1.6;
@@ -574,6 +583,7 @@ MOBILE CONTACT FORM SECTION
 .submit-btn:hover {
   background-color: var(--red);
 }
+
 
 /* ===============================
 FOOTER
