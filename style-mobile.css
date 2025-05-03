@@ -869,7 +869,8 @@ header.dimmed,
 =============================== */
 
 .mobile-review-section {
-  height: 300px;
+  min-height: 500px;       /* ✅ Enough room for title + arrows + cards */
+  padding: 4rem 1rem 6rem; /* ✅ Extra space at the bottom */
   background-image: url('images/Mobile-Review.jpg');
   background-size: 100% 150%;   /* ✅ Not zoomed, fits section + 50% height */
   background-repeat: no-repeat;
@@ -896,6 +897,9 @@ header.dimmed,
   color: white;
   position: relative;
   z-index: 1;
+  text-align: center;
+  width: 100%;             /* ✅ Force full width */
+  display: block;          /* ✅ Override any inline issues */
 }
 
 .mobile-review-carousel-wrapper {
