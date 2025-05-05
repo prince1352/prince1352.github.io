@@ -1053,7 +1053,7 @@ CONTACT PAGE CONTACT  SECTION
 
 /* RIGHT SECTION */
 .custom-contact-right {
-  flex: 0 0 600px; /* Set fixed width */
+  flex: 0 0 1100px; /* Set fixed width */
   max-width: 600px;
   background: white;
   padding: 2.5rem 3rem;
