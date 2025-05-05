@@ -1098,20 +1098,16 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-checkbox-align {
   margin: 1rem 0 1.5rem 0;
-  display: block;
-  /* Remove padding-left */
+  padding-left: 0;                 /* no extra indent */
 }
 
 .custom-checkbox-align label {
-  display: flex;
+  display: inline-flex;            /* inline layout, aligned left */
   align-items: center;
-  gap: 0.35rem;
   font-size: 0.95rem;
   color: var(--navy);
   line-height: 1.4;
-  cursor: pointer;
-  /* Prevent label from overflowing */
-  flex-wrap: wrap;
+  gap: 0.3rem;
 }
 
 .custom-checkbox-align input[type="checkbox"] {
