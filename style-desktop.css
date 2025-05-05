@@ -1131,18 +1131,16 @@ CONTACT PAGE CONTACT  SECTION
 }
 
 .custom-checkbox-label input[type="checkbox"] {
-  width: 1.1rem;
+  appearance: checkbox;         /* ✅ Keep browser default styling */
+  width: 1.1rem;                /* ✅ Force square dimensions */
   height: 1.1rem;
-  padding: 0;               /* ✅ Remove any internal clickable space */
-  margin: 0;                /* ✅ Remove external margin */
-  line-height: 1;           /* ✅ No extra vertical space */
-  appearance: none;         /* ✅ Remove browser style completely */
+  padding: 0;
+  margin: 0;
+  line-height: normal;
   display: inline-block;
-  border: 2px solid var(--navy);
-  background: white;
-  border-radius: 2px;
   cursor: pointer;
-  position: relative;
+  flex-shrink: 0;
+  box-sizing: content-box;      /* ✅ Prevents stretching from border/padding */
 }
 
 /* Optional: add a checkmark when checked */
