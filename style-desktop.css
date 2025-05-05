@@ -1156,6 +1156,13 @@ CONTACT PAGE CONTACT  SECTION
   transform: rotate(45deg);
 }
 
+input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 2px solid var(--navy);
+}
+
 /* Submit Button */
 .custom-submit-btn {
   background-color: var(--navy);
