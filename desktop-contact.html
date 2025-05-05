@@ -248,18 +248,22 @@
 <script>
   function updateTextPosition() {
     const textBlock = document.querySelector('.custom-contact-text');
-    const scrollY = window.scrollY;
-
     if (!textBlock) return;
 
+    const scrollY = window.scrollY;
+
     if (scrollY === 0) {
-      textBlock.style.transform = 'translateY(50vh)';
+      textBlock.style.transform = `translateY(${window.innerHeight * 0.5}px)`;
     } else {
       textBlock.style.transform = `translateY(${scrollY}px)`;
     }
   }
 
-  window.addEventListener('load', updateTextPosition);
+  // Use requestAnimationFrame to ensure it runs after rendering
+  window.addEventListener('load', () => {
+    requestAnimationFrame(updateTextPosition);
+  });
+
   window.addEventListener('scroll', updateTextPosition);
   window.addEventListener('resize', updateTextPosition);
 </script>
