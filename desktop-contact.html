@@ -65,6 +65,56 @@
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navDropdowns = document.querySelectorAll('.navbar .dropdown');
+    const megaMenu = document.querySelector('.mega-menu');
+    const submenuRows = document.querySelectorAll('.submenu-row');
+    const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
+    let submenuTimeout;
+
+    if (!megaMenu || navDropdowns.length === 0) return;
+
+    nonDropdowns.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        megaMenu.classList.remove('active');
+        submenuRows.forEach(row => row.classList.remove('active'));
+      });
+    });
+
+    navDropdowns.forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', () => {
+        clearTimeout(submenuTimeout);
+        const submenuId = dropdown.getAttribute('data-submenu');
+        submenuRows.forEach(row => {
+          row.classList.remove('active');
+          if (row.id === submenuId) row.classList.add('active');
+        });
+        megaMenu.classList.add('active');
+      });
+    });
+
+    const navArea = document.querySelector('nav');
+    navArea?.addEventListener('mouseleave', () => {
+      submenuTimeout = setTimeout(() => {
+        megaMenu.classList.remove('active');
+        submenuRows.forEach(row => row.classList.remove('active'));
+      }, 300);
+    });
+
+    megaMenu?.addEventListener('mouseleave', () => {
+      submenuTimeout = setTimeout(() => {
+        megaMenu.classList.remove('active');
+        submenuRows.forEach(row => row.classList.remove('active');
+      }, 300);
+    });
+
+    megaMenu?.addEventListener('mouseenter', () => {
+      clearTimeout(submenuTimeout);
+    });
+  });
+</script>
+
 </body>
 </html>
 
