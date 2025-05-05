@@ -248,20 +248,22 @@
 <script>
   const textBlock = document.querySelector('.custom-contact-text');
 
-  // On load, force it to 50% of screen height
-  window.addEventListener('load', () => {
-    if (textBlock) {
-      textBlock.style.transform = `translateY(${window.innerHeight * 0.5}px)`;
-    }
-  });
+  function updateTextTransform() {
+    if (!textBlock) return;
 
-  // On scroll, override with scroll-based movement
-  window.addEventListener('scroll', () => {
-    if (textBlock) {
-      const scrollY = window.scrollY;
-      textBlock.style.transform = `translateY(${scrollY}px)`;
-    }
-  });
+    const scrollY = window.scrollY;
+    const startOffset = window.innerHeight * 0.5; // 50% of screen height
+    const newOffset = startOffset - scrollY;
+
+    textBlock.style.transform = `translateY(${newOffset}px)`;
+  }
+
+  // On load, set it based on 50vh
+  window.addEventListener('load', updateTextTransform);
+  // On scroll, adjust it smoothly
+  window.addEventListener('scroll', updateTextTransform);
+  // Optional: on resize, keep it accurate
+  window.addEventListener('resize', updateTextTransform);
 </script>
 
 
