@@ -248,23 +248,26 @@
 <script>
   const textBlock = document.querySelector('.custom-contact-text');
 
-  function updateTextTransform() {
-    if (!textBlock) return;
-
-    const scrollY = window.scrollY;
-    const startOffset = window.innerHeight * 0.5; // 50% of screen height
-    const newOffset = startOffset - scrollY;
-
-    textBlock.style.transform = `translateY(${newOffset}px)`;
+  function setInitialPosition() {
+    if (textBlock) {
+      textBlock.style.transform = `translateY(${window.innerHeight * 0.5}px)`;
+    }
   }
 
-  // On load, set it based on 50vh
-  window.addEventListener('load', updateTextTransform);
-  // On scroll, adjust it smoothly
-  window.addEventListener('scroll', updateTextTransform);
-  // Optional: on resize, keep it accurate
-  window.addEventListener('resize', updateTextTransform);
+  function updateOnScroll() {
+    if (textBlock) {
+      const scrollY = window.scrollY;
+      textBlock.style.transform = `translateY(${scrollY}px)`;
+    }
+  }
+
+  // Set initial position on load
+  window.addEventListener('load', setInitialPosition);
+
+  // Apply scroll position on first scroll (even to top)
+  window.addEventListener('scroll', updateOnScroll);
 </script>
+
 
 
 </body>
