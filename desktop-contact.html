@@ -247,13 +247,13 @@
   document.addEventListener('scroll', function () {
     const textBlock = document.querySelector('.custom-contact-text');
     const scrollY = window.scrollY;
-    const offset = Math.min(scrollY * 0.3, 100); // Limit movement
 
     if (textBlock) {
-      textBlock.style.transform = `translateY(${offset}px)`;
+      textBlock.style.transform = `translateY(${scrollY}px)`; // ✅ 1:1 scroll rate
     }
   });
 </script>
+
   
   <!-- Script for Checkbox -->
   <script>
