@@ -251,13 +251,20 @@
     const scrollY = window.scrollY;
 
     if (textBlock) {
-      const initialOffset = window.innerHeight * 0.5; // 50vh in px
-      const totalOffset = initialOffset + scrollY;
+      const offset = window.innerHeight * 0.5 + scrollY; // 50% of screen + scroll
+      textBlock.style.transform = `translateY(${offset}px)`;
+    }
+  });
 
-      textBlock.style.transform = `translateY(${totalOffset}px)`;
+  // Force offset on page load
+  window.addEventListener('load', () => {
+    const textBlock = document.querySelector('.custom-contact-text');
+    if (textBlock) {
+      textBlock.style.transform = `translateY(${window.innerHeight * 0.5}px)`;
     }
   });
 </script>
+
 
   <!-- Script for Checkbox -->
   <script>
