@@ -1114,33 +1114,41 @@ CONTACT PAGE CONTACT  SECTION
 
 /* Checkbox Alignment */
 .custom-checkbox-align {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   margin: 1rem 0 1.5rem;
 }
 
-.custom-checkbox-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.95rem;
-  color: var(--navy);
-  cursor: pointer;
-  user-select: none;
+.custom-checkbox-align input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
 }
 
-.custom-checkbox-label input[type="checkbox"] {
-  appearance: none;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: 0;
-  line-height: normal;
-  display: inline-block;
-  background: red;
-  border: none;
-  box-sizing: border-box;
+.custom-checkbox-box {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--navy);
+  background-color: white;
+  border-radius: 2px;
   position: relative;
+  cursor: pointer;
 }
 
+/* Checkmark */
+input[type="checkbox"]:checked + .custom-checkbox-box::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--navy);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
 
 /* ✅ Small checkmark for small box */
 .custom-checkbox-label input[type="checkbox"]:checked::after {
