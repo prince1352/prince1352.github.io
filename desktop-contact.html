@@ -246,23 +246,25 @@
    <!-- Script for Parallax -->
   
 <script>
-  document.addEventListener('scroll', function () {
+  function setContactTextPosition() {
     const textBlock = document.querySelector('.custom-contact-text');
+    if (!textBlock) return;
+
     const scrollY = window.scrollY;
+    const screenOffset = window.innerHeight * 0.5; // ✅ 50% of screen height
+    const offset = screenOffset + scrollY;
 
-    if (textBlock) {
-      const offset = window.innerHeight * 0.5 + scrollY; // 50% of screen + scroll
-      textBlock.style.transform = `translateY(${offset}px)`;
-    }
-  });
+    textBlock.style.transform = `translateY(${offset}px)`;
+  }
 
-  // Force offset on page load
-  window.addEventListener('load', () => {
-    const textBlock = document.querySelector('.custom-contact-text');
-    if (textBlock) {
-      textBlock.style.transform = `translateY(${window.innerHeight * 0.5}px)`;
-    }
-  });
+  // Set on scroll
+  window.addEventListener('scroll', setContactTextPosition);
+
+  // Set immediately on load
+  window.addEventListener('load', setContactTextPosition);
+
+  // Set again if window is resized
+  window.addEventListener('resize', setContactTextPosition);
 </script>
 
 
