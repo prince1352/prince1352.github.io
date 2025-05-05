@@ -1043,10 +1043,12 @@ CONTACT PAGE CONTACT  SECTION
 }
 
 /* RIGHT SECTION */
+
+/* RIGHT SECTION */
 .custom-contact-right {
   flex: 1;
   background: white;
-  padding: 2.5rem 3rem; /* ↓ was 4rem */
+  padding: 2.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1059,6 +1061,15 @@ CONTACT PAGE CONTACT  SECTION
   margin-bottom: 2rem;
 }
 
+#custom-contact-form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#custom-contact-form * {
+  box-sizing: border-box;
+}
+
 #custom-contact-form input,
 #custom-contact-form textarea {
   width: 100%;
@@ -1068,7 +1079,6 @@ CONTACT PAGE CONTACT  SECTION
   border: 1px solid #ccc;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
-  box-sizing: border-box;
 }
 
 #custom-contact-form textarea {
@@ -1076,6 +1086,7 @@ CONTACT PAGE CONTACT  SECTION
   resize: vertical;
 }
 
+/* Disclaimer Box */
 .custom-disclaimer-box {
   background: #f7f7f7;
   border-radius: 6px;
@@ -1084,9 +1095,10 @@ CONTACT PAGE CONTACT  SECTION
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
   color: var(--navy);
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-wrap: break-word;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: normal;
+  white-space: normal;
 }
 
 .custom-disclaimer-heading {
@@ -1100,40 +1112,29 @@ CONTACT PAGE CONTACT  SECTION
   color: var(--red);
 }
 
-/* ✅ Checkbox aligned perfectly */
+/* Checkbox Alignment */
 .custom-checkbox-align {
   display: flex;
-  align-items: flex-start;
-  width: 100%;
-  padding-left: 1rem; /* aligns with disclaimer content */
-  box-sizing: border-box;
-  margin: 1rem 0 1.5rem 0;
-}
-
-.custom-checkbox-align label {
-  display: flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.95rem;
-  color: var(--navy);
-  line-height: 1.4;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
   width: 100%;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
-}
-
-.custom-checkbox-align label span {
-  display: inline-block;
-  max-width: 100%;
-  word-break: break-word;
 }
 
 .custom-checkbox-align input[type="checkbox"] {
-  margin: 0;
   transform: scale(1.1);
+  margin: 0;
   flex-shrink: 0;
 }
 
+.custom-checkbox-align label {
+  font-size: 0.95rem;
+  color: var(--navy);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Submit Button */
 .custom-submit-btn {
   background-color: var(--navy);
   color: white;
@@ -1143,6 +1144,7 @@ CONTACT PAGE CONTACT  SECTION
   border-radius: 6px;
   cursor: not-allowed;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .custom-submit-btn.enabled {
@@ -1151,6 +1153,7 @@ CONTACT PAGE CONTACT  SECTION
   color: var(--navy);
 }
 
+/* Confirmation Message */
 #custom-form-confirmation {
   display: none;
   margin-top: 1rem;
