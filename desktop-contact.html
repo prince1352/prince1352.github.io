@@ -1,28 +1,30 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Sandhu Law and Mediation</title>
+  <title>Our Team | Sandhu Law and Mediation</title>
   <link rel="stylesheet" href="style-desktop.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
-    html { scroll-behavior: smooth; }
-  </style>
-</head>
-<body>
+    html {
+      scroll-behavior: smooth;
+    }
+   <body>
   <!-- Header -->
   <header class="header-blur">
     <div class="header-container">
-      <a href="desktop-index.html" class="logo-link">
-        <div class="logo">
-          <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
-          <div class="logo-text">
-            <div class="logo-line-1">SANDHU</div>
-            <div class="logo-line-2">LAW AND MEDIATION</div>
-          </div>
-        </div>
-      </a>
+      
+     <a href="desktop-index.html" class="logo-link">
+  <div class="logo">
+    <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
+    <div class="logo-text">
+      <div class="logo-line-1">SANDHU</div>
+      <div class="logo-line-2">LAW AND MEDIATION</div>
+    </div>
+  </div>
+</a>
+      
       <nav>
         <ul class="navbar">
           <li class="dropdown" data-submenu="submenu-practices">
@@ -50,31 +52,45 @@
       <a href="#">Family Law</a>
       <a href="#">Mediation</a>
     </div>
+    
     <div class="submenu-row" id="submenu-team">
-      <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
-      <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
-      <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
-      <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
-      <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
-      <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
-    </div>
+  <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
+  <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+  <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
+  <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
+  <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
+  <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+</div>
+
   </div>
 
-  <!-- Optional Footer -->
+  <!-- Top White Section with Logo and Lines -->
+  <section class="team-intro">
+    <div class="team-logo-wrapper">
+      <div class="team-line left-line"></div>
+      <img src="images/Logo.png" alt="Logo" class="team-logo" />
+      <div class="team-line right-line"></div>
+    </div>
+    <h1 class="team-title">Contact Sandhu Law and Mediation</h1>
+  </section>
+  
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sandhu Law and Mediation. All rights reserved.</p>
   </footer>
 
-  <script>
+  <!-- Lawyer Card Section Scripts -->
+<script>
   document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header');
+    const body = document.body;
+
     const navDropdowns = document.querySelectorAll('.navbar .dropdown');
     const megaMenu = document.querySelector('.mega-menu');
     const submenuRows = document.querySelectorAll('.submenu-row');
-    const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
     let submenuTimeout;
 
-    if (!megaMenu || navDropdowns.length === 0) return;
-
+    const nonDropdowns = document.querySelectorAll('.navbar > li:not(.dropdown)');
     nonDropdowns.forEach(item => {
       item.addEventListener('mouseenter', () => {
         megaMenu.classList.remove('active');
@@ -95,26 +111,20 @@
     });
 
     const navArea = document.querySelector('nav');
-    navArea?.addEventListener('mouseleave', () => {
+    function hideMegaMenu() {
       submenuTimeout = setTimeout(() => {
         megaMenu.classList.remove('active');
         submenuRows.forEach(row => row.classList.remove('active'));
       }, 300);
-    });
+    }
 
-    megaMenu?.addEventListener('mouseleave', () => {
-      submenuTimeout = setTimeout(() => {
-        megaMenu.classList.remove('active');
-        submenuRows.forEach(row => row.classList.remove('active');
-      }, 300);
-    });
-
-    megaMenu?.addEventListener('mouseenter', () => {
-      clearTimeout(submenuTimeout);
-    });
+    navArea.addEventListener('mouseleave', hideMegaMenu);
+    megaMenu.addEventListener('mouseleave', hideMegaMenu);
+    megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
   });
-</script>
 
+ 
+</script>
+  
 </body>
 </html>
-
