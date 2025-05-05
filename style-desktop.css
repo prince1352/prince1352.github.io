@@ -1141,13 +1141,13 @@ CONTACT PAGE CONTACT  SECTION
 input[type="checkbox"]:checked + .custom-checkbox-box::after {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 2px;
+  top: 50%;
+  left: 50%;
   width: 4px;
   height: 8px;
   border: solid var(--navy);
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
   box-sizing: border-box;
 }
 
