@@ -1003,14 +1003,15 @@ CONTACT PAGE CONTACT  SECTION
 
 /* LEFT SECTION */
 .custom-contact-left {
+  flex: 1 1 0%;
   display: flex;
-  align-items: flex-start;       /* ✅ align to top */
+  align-items: flex-start;
   justify-content: center;
   position: relative;
   min-height: 100vh;
   background: url('images/contact-page.jpg') center center / cover no-repeat;
   overflow: hidden;
-  padding-top: 4rem;             /* ✅ optional spacing */
+  padding-top: 4rem;
 }
 
 
@@ -1052,7 +1053,8 @@ CONTACT PAGE CONTACT  SECTION
 
 /* RIGHT SECTION */
 .custom-contact-right {
-  flex: 1;
+  flex: 0 0 600px; /* Set fixed width */
+  max-width: 600px;
   background: white;
   padding: 2.5rem 3rem;
   display: flex;
@@ -1060,6 +1062,7 @@ CONTACT PAGE CONTACT  SECTION
   justify-content: flex-start;
   box-sizing: border-box;
 }
+
 
 .custom-contact-heading {
   font-size: 2rem;
