@@ -1,1 +1,79 @@
+<!-- mobile-contact.html -->
+<div class="mobile-header">
+  <div class="mobile-header-container">
+    <img src="images/Logo.png" alt="Logo" class="mobile-logo-icon" />
+    <div class="mobile-logo-text">
+      <div class="mobile-line-1">SANDHU</div>
+      <div class="mobile-line-2">LAW AND MEDIATION</div>
+    </div>
+    <a href="mobile-contact.html" class="mobile-cta-button">Free Consult</a>
+    <button id="hamburger" class="hamburger">☰</button>
+  </div>
+</div>
+
+<nav id="mobileNav" class="mobile-nav">
+  <ul>
+    <li><a href="mobile-index.html">Home</a></li>
+    <li class="has-submenu">
+      <button class="submenu-toggle">Our Practices <span class="submenu-arrow">▼</span></button>
+      <ul class="submenu">
+        <li><a href="#">Criminal Law</a></li>
+        <li><a href="#">Immigration Law</a></li>
+        <li><a href="#">Family Law</a></li>
+        <li><a href="#">Mediation</a></li>
+      </ul>
+    </li>
+    <li class="has-submenu">
+      <button class="submenu-toggle">Our Team <span class="submenu-arrow">▼</span></button>
+      <ul class="submenu">
+        <li><a href="mobile-team.html?lawyer=baldev">Baldev Sandhu</a></li>
+        <li><a href="mobile-team.html?lawyer=bikramjit">Bikramjit Sandhu</a></li>
+        <li><a href="mobile-team.html?lawyer=kiran">Kiran Sandhu</a></li>
+        <li><a href="mobile-team.html?lawyer=aman">Aman Sandhu</a></li>
+        <li><a href="mobile-team.html?lawyer=harpun">Harpun Brar</a></li>
+        <li><a href="mobile-team.html?lawyer=aaliyah">Aaliyah Mohammad</a></li>
+      </ul>
+    </li>
+    <li><a href="mobile-about.html">About Us</a></li>
+    <li><a href="mobile-resources.html">Resources</a></li>
+    <li><a href="mobile-contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<footer class="mobile-footer">
+  &copy; 2025 Sandhu Law and Mediation. All rights reserved.
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener("click", () => {
+        const isOpening = !mobileNav.classList.contains("open");
+        if (isOpening) {
+          mobileNav.classList.add("animate-in");
+        } else {
+          mobileNav.classList.remove("animate-in");
+          document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("open"));
+        }
+        mobileNav.classList.toggle("open");
+      });
+    }
+
+    document.querySelectorAll(".submenu-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const parent = button.closest(".has-submenu");
+        const isOpen = parent.classList.contains("open");
+
+        document.querySelectorAll(".has-submenu").forEach(item => {
+          if (item !== parent) item.classList.remove("open");
+        });
+
+        parent.classList.toggle("open");
+      });
+    });
+
+</script>
 
