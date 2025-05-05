@@ -1129,8 +1129,8 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-checkbox-label input[type="checkbox"] {
   appearance: none;
-  width: 14px;
-  height: 14px;
+  width: 1px;
+  height: 1px;
   border: 2px solid var(--navy);
   background: white;
   box-sizing: border-box;
@@ -1143,6 +1143,7 @@ CONTACT PAGE CONTACT  SECTION
   position: relative;
   cursor: pointer;
 }
+
 
 /* ✅ Small checkmark for small box */
 .custom-checkbox-label input[type="checkbox"]:checked::after {
