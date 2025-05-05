@@ -251,14 +251,14 @@
     const scrollY = window.scrollY;
 
     if (textBlock) {
-      textBlock.style.transform = `translateY(${scrollY}px)`; // ✅ 1:1 scroll rate
+      const initialOffset = window.innerHeight * 0.5; // 50vh in px
+      const totalOffset = initialOffset + scrollY;
+
+      textBlock.style.transform = `translateY(${totalOffset}px)`;
     }
   });
 </script>
 
-
-
-  
   <!-- Script for Checkbox -->
   <script>
   document.getElementById('checkbox-toggle').addEventListener('click', function () {
