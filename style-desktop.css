@@ -1114,15 +1114,12 @@ CONTACT PAGE CONTACT  SECTION
 
 /* Checkbox Alignment */
 .custom-checkbox-align {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
   margin: 1rem 0 1.5rem;
 }
 
 .custom-checkbox-label {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
   font-size: 0.95rem;
   color: var(--navy);
@@ -1136,11 +1133,29 @@ CONTACT PAGE CONTACT  SECTION
 .custom-checkbox-label input[type="checkbox"] {
   width: 1.1rem;
   height: 1.1rem;
-  margin: 0;
-  flex-shrink: 0;
-  cursor: pointer;
+  padding: 0;               /* ✅ Remove any internal clickable space */
+  margin: 0;                /* ✅ Remove external margin */
+  line-height: 1;           /* ✅ No extra vertical space */
+  appearance: none;         /* ✅ Remove browser style completely */
   display: inline-block;
-  appearance: checkbox;
+  border: 2px solid var(--navy);
+  background: white;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Optional: add a checkmark when checked */
+.custom-checkbox-label input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--navy);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 /* Submit Button */
