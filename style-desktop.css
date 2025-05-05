@@ -995,60 +995,57 @@ TEAM CONTACT FORM SECTION
 /* ----------------------------------------------------------------------------------------------------------------
 CONTACT PAGE CONTACT  SECTION
 ------------------------------------------------------------------------------------------------------------------*/
-/* === Contact Page Section Layout === */
-.custom-contact-section {
+.custom-contact-wrapper {
   display: flex;
+  flex-wrap: wrap;
   min-height: 100vh;
 }
 
-/* === Left: Image + Blur + Text === */
+/* LEFT SECTION */
 .custom-contact-left {
   flex: 1;
+  background: url('images/contact-page.jpg') center center / cover no-repeat;
   position: relative;
-  background-image: url('images/contact-page.jpg');
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  overflow: hidden;
 }
 
-.custom-contact-blur {
+.custom-contact-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(36, 46, 55, 0.4); /* navy-colored blur */
   backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
-.custom-contact-overlay-text {
-  position: relative;
+.custom-contact-text {
   z-index: 2;
-  color: white;
   text-align: center;
   padding: 2rem;
 }
 
-.custom-contact-overlay-text h1 {
-  font-size: 2.5rem;
+.custom-contact-text h1 {
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.custom-contact-overlay-text p {
-  font-size: 1.2rem;
-  font-weight: 300;
+.custom-contact-text p {
+  font-size: 1.25rem;
 }
 
-/* === Right: Form & Content === */
+/* RIGHT SECTION */
 .custom-contact-right {
   flex: 1;
-  background-color: white;
+  background: white;
   padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .custom-contact-heading {
@@ -1057,16 +1054,16 @@ CONTACT PAGE CONTACT  SECTION
   margin-bottom: 2rem;
 }
 
-/* === Form Styling === */
 #custom-contact-form input,
 #custom-contact-form textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
 #custom-contact-form textarea {
@@ -1074,115 +1071,92 @@ CONTACT PAGE CONTACT  SECTION
   resize: vertical;
 }
 
-.custom-submit-btn {
-  background-color: var(--navy);
-  color: white;
-  padding: 0.9rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.custom-submit-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.custom-submit-btn:hover:not(:disabled) {
-  background-color: var(--red);
-}
-
-/* === Disclaimer Box === */
 .custom-disclaimer-box {
-  background-color: #f5f5f5;
-  border-left: 4px solid var(--navy);
-  padding: 1rem 1.25rem;
-  margin-top: 1.5rem;
+  background: #f7f7f7;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 0.95rem;
   color: var(--navy);
-  border-radius: 4px;
 }
 
-.custom-disclaimer-title {
-  font-weight: 600;
-  color: var(--navy);
+.custom-disclaimer-heading {
+  font-weight: bold;
   margin-bottom: 0.5rem;
+  color: var(--navy);
 }
 
-.custom-disclaimer-title .required {
+.required-label {
   font-style: italic;
   color: var(--red);
-  margin-left: 0.5rem;
 }
 
-/* === Checkbox Line === */
-.custom-checkbox-wrap {
-  margin-top: 1rem;
+.checkbox-wrapper {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 0.95rem;
-  color: var(--navy);
-}
-
-/* === Confirmation Message === */
-#custom-form-confirmation {
-  display: none;
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: green;
-  text-align: center;
-}
-
-/* === Locations Section === */
-.custom-location-section {
-  margin-top: 4rem;
-}
-
-.custom-location-section h2 {
-  color: var(--navy);
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.custom-location-row {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  align-items: flex-start;
-}
-
-.custom-location-info {
-  flex: 1;
-  font-size: 1rem;
   color: #333;
 }
 
-.custom-direction-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  background-color: var(--red);
-  color: white;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.custom-direction-btn:hover {
+.custom-submit-btn {
   background-color: var(--navy);
+  color: white;
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--navy);
+  border-radius: 6px;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
 }
 
-.custom-map {
-  flex: 1;
-  border: none;
+.custom-submit-btn.enabled {
+  cursor: pointer;
+  background: white;
+  color: var(--navy);
+}
+
+#custom-form-confirmation {
+  display: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: green;
+}
+
+/* LOCATION BLOCK */
+.custom-contact-locations {
+  margin-top: 3rem;
+}
+
+.custom-contact-locations h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+}
+
+.location-entry {
+  margin-bottom: 2rem;
+}
+
+.location-entry iframe {
+  width: 100%;
   height: 200px;
-  min-width: 300px;
-  max-width: 100%;
+  margin: 1rem 0;
+  border: none;
+}
+
+.location-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.location-btn:hover {
+  background: var(--red);
 }
