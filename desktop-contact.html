@@ -63,76 +63,68 @@
   </div>
 
 <!-- FULL CONTACT FORM SECTION -->
-<section class="modern-contact-wrapper">
-  <div class="modern-contact-container">
+<section class="custom-contact-wrapper">
+  <!-- Left Image with Blur and Text -->
+  <div class="custom-contact-left">
+    <div class="custom-contact-overlay"></div>
+    <div class="custom-contact-text">
+      <h1>Let’s Connect</h1>
+      <p>We are happy to help you solve all your problems</p>
+    </div>
+  </div>
 
-    <!-- Left Panel: Form -->
-    <div class="contact-form-section">
-      <h2 class="form-title">Let's Connect</h2>
-      <p class="form-subtitle">Send us a message and we'll get back to you within two business days.</p>
+  <!-- Right Side: Form and Disclaimer -->
+  <div class="custom-contact-right">
+    <h2 class="custom-contact-heading">Contact Form</h2>
 
-      <form id="custom-contact-form">
-        <div id="custom-form-confirmation" style="display: none;">Thank you!</div>
-        <input type="text" name="name" placeholder="Your Full Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="tel" name="phone" placeholder="Phone Number" required />
-        <textarea name="message" placeholder="How can we help you?" required></textarea>
+    <form id="custom-contact-form">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="Name" placeholder="Your Name" required />
+      <input type="email" name="Email" placeholder="Your Email Address" required />
+      <input type="tel" name="Phone" placeholder="Your Phone Number" required />
+      <textarea name="Message" placeholder="How can we help?" required></textarea>
 
-        <!-- Disclaimer Box -->
-        <div class="disclaimer-box">
-          <div class="disclaimer-title">
-            Disclaimer Agreement <span class="required">(Required)</span>
-          </div>
-          <p class="disclaimer-text">
-            Please note that use of the Internet for this form of communication with the firm does not establish a
-            lawyer-client relationship. A lawyer-client relationship is only established once a written agreement is
-            signed between you and our firm. Your e-mail may not be privileged and, due to the inherent nature of
-            Internet communications, is not secure and may be viewed by unauthorized parties prior to its receipt by us.
-            Accordingly, confidential or time-sensitive information should not be sent through this contact form. We will
-            respond to your inquiry within approximately two business days. Thank you.
-          </p>
+      <div class="custom-disclaimer-box">
+        <div class="custom-disclaimer-heading">
+          Disclaimer Agreement <span class="required-label">(Required)</span>
         </div>
+        <p>
+          Please note that use of the Internet for this form of communication with the firm does not establish a lawyer-client relationship. A lawyer-client relationship is only established once a written agreement is signed between you and our firm. Your e-mail may not be privileged and, due to the inherent nature of Internet communications, is not secure and may be viewed by unauthorized parties prior to its receipt by us. Accordingly, confidential or time-sensitive information should not be sent through this contact form. We will respond to your inquiry within approximately two business days. Thank you.
+        </p>
+      </div>
 
-        <!-- Checkbox Agreement -->
-        <div class="disclaimer-agree">
-          <input type="checkbox" id="agree-checkbox" />
-          <label for="agree-checkbox">I agree to the above disclaimer.</label>
-        </div>
+      <label class="checkbox-wrapper">
+        <input type="checkbox" id="agree-checkbox" required />
+        <span>I agree to the above disclaimer.</span>
+      </label>
 
-        <!-- Submit Button -->
-        <button type="submit" id="submit-btn" disabled>Schedule Your Free Consultation</button>
-      </form>
+      <button type="submit" class="custom-submit-btn" disabled>Schedule Your Free Consultation</button>
+    </form>
+
+    <div id="custom-form-confirmation">
+      Thank you for contacting us! We'll be in touch shortly.
     </div>
 
-    <!-- Right Panel: Info -->
-    <div class="contact-info-section">
-      <h3 class="info-title">Visit Our Offices</h3>
-
-      <div class="office-location">
-        <h4>Surrey Office</h4>
-        <p>Unit #282-8128 128 Street<br />Surrey, BC V3W 1R1</p>
-        <div class="map-box">
-          <iframe
-            src="https://www.google.com/maps/embed?..." frameborder="0" allowfullscreen></iframe>
+    <div class="custom-contact-locations">
+      <h3>Locations</h3>
+      <div class="location-entry">
+        <div>
+          <strong>Surrey Office:</strong><br />
+          Unit#282-8128 128 Street<br />
+          Surrey, BC Canada, V3W 1R1
         </div>
-        <a href="https://maps.google.com/?q=Unit+282-8128+128+Street+Surrey+BC+V3W+1R1" target="_blank"
-          class="directions-btn">Get Directions</a>
+        <iframe src="https://www.google.com/maps?q=8128+128+Street,+Surrey,+BC&output=embed"></iframe>
+        <a class="location-btn" target="_blank" href="https://www.google.com/maps?q=8128+128+Street,+Surrey,+BC">Get Directions</a>
       </div>
 
-      <div class="office-location">
-        <h4>Abbotsford Office</h4>
-        <p>200 – 3720 Townline Road<br />Abbotsford, BC V2T 0G6</p>
-        <div class="map-box">
-          <iframe
-            src="https://www.google.com/maps/embed?..." frameborder="0" allowfullscreen></iframe>
+      <div class="location-entry">
+        <div>
+          <strong>Abbotsford Office:</strong><br />
+          200 – 3720 Townline Road<br />
+          Abbotsford, BC V2T 0G6
         </div>
-        <a href="https://maps.google.com/?q=200+3720+Townline+Road+Abbotsford+BC+V2T+0G6" target="_blank"
-          class="directions-btn">Get Directions</a>
-      </div>
-
-      <div class="hours-box">
-        <h4>Hours of Operation</h4>
-        <p>Monday to Friday: 9:00 AM - 5:00 PM<br />Saturday & Sunday: Closed</p>
+        <iframe src="https://www.google.com/maps?q=3720+Townline+Road,+Abbotsford,+BC&output=embed"></iframe>
+        <a class="location-btn" target="_blank" href="https://www.google.com/maps?q=3720+Townline+Road,+Abbotsford,+BC">Get Directions</a>
       </div>
     </div>
   </div>
@@ -195,11 +187,17 @@
 
       // Contact form submission
 
-const checkbox = document.getElementById('agree-checkbox');
-    const submitBtn = document.getElementById('submit-btn');
+    const checkbox = document.getElementById('agree-checkbox');
+    const submitBtn = document.querySelector('.custom-submit-btn');
 
     checkbox.addEventListener('change', function () {
-      submitBtn.disabled = !checkbox.checked;
+      if (checkbox.checked) {
+        submitBtn.disabled = false;
+        submitBtn.classList.add('enabled');
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('enabled');
+      }
     });
 
     const form = document.getElementById('custom-contact-form');
@@ -231,5 +229,6 @@ const checkbox = document.getElementById('agree-checkbox');
     });
   });
 </script>
+
 </body>
 </html>
