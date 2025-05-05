@@ -1023,13 +1023,13 @@ CONTACT PAGE CONTACT  SECTION
 }
 
 .custom-contact-text {
-  transform: translateY(50vh); /* Starts at middle of screen */
-  transition: transform 0.1s ease-out;
-  color: white;
   z-index: 2;
   text-align: center;
   padding: 2rem;
+  color: white;
+  transition: transform 0.1s ease-out;
 }
+
 
 
 
