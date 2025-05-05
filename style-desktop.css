@@ -1176,7 +1176,7 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 
 /* Submit Button */
 .custom-submit-btn {
-  background-color: grey;
+  background-color: white;
   color: var(--navy);
   padding: 0.85rem 1.5rem;
   font-size: 1rem;
