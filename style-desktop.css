@@ -1145,18 +1145,7 @@ CONTACT PAGE CONTACT  SECTION
 }
 
 
-/* ✅ Small checkmark for small box */
-.custom-checkbox-label input[type="checkbox"]:checked::after {
-  content: "";
-  position: absolute;
-  left: 3px;
-  top: 0px;
-  width: 3px;
-  height: 6px;
-  border: solid var(--navy);
-  border-width: 0 1.5px 1.5px 0;
-  transform: rotate(45deg);
-}
+
 
 /* Submit Button */
 .custom-submit-btn {
