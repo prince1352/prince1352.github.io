@@ -982,3 +982,149 @@ TEAM CONTACT FORM SECTION
   color: green;
   text-align: center;
 }
+
+
+/* ----------------------------------------------------------------------------------------------------------------
+CONTACT PAGE CONTACT  SECTION
+------------------------------------------------------------------------------------------------------------------*/
+.contact-full-section {
+  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6rem 2rem;
+}
+
+.contact-full-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: auto;
+  align-items: stretch;
+}
+
+/* Vertical Logo Column */
+.contact-full-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  min-width: 120px;
+}
+
+.vertical-logo {
+  height: 100px;
+  z-index: 2;
+  background-color: white;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.vertical-line-top,
+.vertical-line-bottom {
+  position: absolute;
+  width: 3px;
+  background-color: var(--navy);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.vertical-line-top {
+  top: 0;
+  height: calc(50% - 60px);
+}
+
+.vertical-line-bottom {
+  bottom: 0;
+  height: calc(50% - 60px);
+}
+
+/* Left Column */
+.contact-full-left {
+  flex: 1;
+  padding-left: 1rem;
+  max-width: 450px;
+}
+
+.contact-full-left .contact-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.contact-details p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-details strong {
+  color: var(--red);
+}
+
+.contact-details a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Right Column - Form */
+.contact-full-right {
+  flex: 3;
+  max-width: none;
+  margin-left: -2rem;
+  padding-left: 2rem;
+}
+
+.contact-full-right form input,
+.contact-full-right form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.contact-full-right form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: var(--navy);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: var(--red);
+}
+
+#form-confirmation {
+  display: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: green;
+  text-align: center;
+}
+
+
+
+
+
