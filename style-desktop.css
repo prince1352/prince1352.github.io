@@ -1066,7 +1066,7 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-contact-heading {
   font-size: 2rem;
-  color: var(--navy);
+  color: var(--red);
   margin-bottom: 2rem;
 }
 
@@ -1176,8 +1176,8 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 
 /* Submit Button */
 .custom-submit-btn {
-  background-color: var(--navy);
-  color: white;
+  background-color: grey;
+  color: var(--navy);
   padding: 0.85rem 1.5rem;
   font-size: 1rem;
   border: 2px solid var(--navy);
@@ -1189,8 +1189,8 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 
 .custom-submit-btn.enabled {
   cursor: pointer;
-  background: white;
-  color: var(--navy);
+  background: var(--navy);
+  color: white;
 }
 
 /* Confirmation Message */
@@ -1209,7 +1209,7 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 .custom-contact-locations h3 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: var(--navy);
+  color: var(--red);
 }
 
 .location-entry {
