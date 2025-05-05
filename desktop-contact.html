@@ -254,6 +254,17 @@
     }
   });
 </script>
+  
+  <!-- Script for Checkbox -->
+  <script>
+  document.getElementById('checkbox-toggle').addEventListener('click', function () {
+    const checkbox = document.getElementById('agree-checkbox');
+    checkbox.checked = !checkbox.checked;
+
+    // 🔄 Trigger any event listeners (like enabling submit button)
+    checkbox.dispatchEvent(new Event('change'));
+  });
+</script>
 
 </body>
 </html>
