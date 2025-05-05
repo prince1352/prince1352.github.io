@@ -252,6 +252,7 @@
 
     const scrollY = window.scrollY;
 
+    // If user hasn't scrolled, show 50% of the screen height
     if (scrollY === 0) {
       textBlock.style.transform = `translateY(${window.innerHeight * 0.5}px)`;
     } else {
@@ -259,8 +260,9 @@
     }
   }
 
-  // Use requestAnimationFrame to ensure it runs after rendering
-  window.addEventListener('load', () => {
+  // Ensure it runs AFTER rendering
+  window.addEventListener('DOMContentLoaded', () => {
+    updateTextPosition();
     requestAnimationFrame(updateTextPosition);
   });
 
@@ -268,17 +270,6 @@
   window.addEventListener('resize', updateTextPosition);
 </script>
 
-
-  <!-- Script for Checkbox -->
-  <script>
-  document.getElementById('checkbox-toggle').addEventListener('click', function () {
-    const checkbox = document.getElementById('agree-checkbox');
-    checkbox.checked = !checkbox.checked;
-
-    // 🔄 Trigger any event listeners (like enabling submit button)
-    checkbox.dispatchEvent(new Event('change'));
-  });
-</script>
 
 </body>
 </html>
