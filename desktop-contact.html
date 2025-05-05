@@ -200,19 +200,6 @@
 
       // Contact form submission
 
-    const checkbox = document.getElementById('agree-checkbox');
-    const submitBtn = document.querySelector('.custom-submit-btn');
-
-    checkbox.addEventListener('change', function () {
-      if (checkbox.checked) {
-        submitBtn.disabled = false;
-        submitBtn.classList.add('enabled');
-      } else {
-        submitBtn.disabled = true;
-        submitBtn.classList.remove('enabled');
-      }
-    });
-
     const form = document.getElementById('custom-contact-form');
     const confirmation = document.getElementById('custom-form-confirmation');
 
@@ -243,31 +230,42 @@
   });
 </script>
 
-   <!-- Script for Parallax -->
-  
-<script>
-  const textBlock = document.querySelector('.custom-contact-text');
+   <!-- Script for Parallax and Checkbox Visual -->
 
-  function setInitialPosition() {
-    if (textBlock) {
-      textBlock.style.transform = translateY(${window.innerHeight * 0.5}px);
-    }
-  }
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const textBlock = document.querySelector('.custom-contact-text');
+      const checkbox = document.getElementById('agree-checkbox');
+      const checkboxBox = document.querySelector('.custom-checkbox-box');
+      const submitBtn = document.querySelector('.custom-submit-btn');
 
-  function updateOnScroll() {
-    if (textBlock) {
-      const scrollY = window.scrollY;
-      textBlock.style.transform = translateY(${scrollY}px);
-    }
-  }
+      // Parallax scroll effect
+      window.addEventListener('scroll', () => {
+        if (textBlock) {
+          const scrollY = window.scrollY;
+          textBlock.style.transform = `translateY(${scrollY}px)`;
+        }
+      });
 
-  // Set initial position on load
-  window.addEventListener('load', setInitialPosition);
+      // Toggle checkbox visually
+      if (checkbox && checkboxBox) {
+        checkboxBox.addEventListener('click', () => {
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event('change'));
+        });
 
-  // Apply scroll position on first scroll (even to top)
-  window.addEventListener('scroll', updateOnScroll);
-</script>
-
+        checkbox.addEventListener('change', () => {
+          if (checkbox.checked) {
+            submitBtn.disabled = false;
+            submitBtn.classList.add('enabled');
+          } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.remove('enabled');
+          }
+        });
+      }
+    });
+  </script>
 
 
 
