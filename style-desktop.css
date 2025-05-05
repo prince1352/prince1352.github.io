@@ -1027,7 +1027,6 @@ CONTACT PAGE CONTACT  SECTION
   text-align: center;
   padding: 2rem;
   color: white;                  /* ✅ restore white color */
-  transform: translateY(0);      /* default position */
   transition: transform 0.1s ease-out; /* smoother faster scroll */
 }
 
