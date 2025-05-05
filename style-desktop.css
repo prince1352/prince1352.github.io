@@ -1098,17 +1098,24 @@ CONTACT PAGE CONTACT  SECTION
 }
 
 .custom-checkbox-align {
+  display: flex;
+  align-items: flex-start;
   margin: 1rem 0 1.5rem 0;
-  padding-left: 0;                 /* no extra indent */
+  padding-left: 0;                /* Ensure no extra space */
+  width: 100%;                    /* Take full form width */
+  box-sizing: border-box;
 }
 
 .custom-checkbox-align label {
-  display: inline-flex;            /* inline layout, aligned left */
+  display: flex;
   align-items: center;
+  gap: 0.4rem;
   font-size: 0.95rem;
   color: var(--navy);
   line-height: 1.4;
-  gap: 0.3rem;
+  width: 100%;                    /* ← This is critical */
+  flex-wrap: nowrap;             /* Prevent vertical stacking */
+  box-sizing: border-box;
 }
 
 .custom-checkbox-align input[type="checkbox"] {
