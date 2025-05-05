@@ -1097,29 +1097,25 @@ CONTACT PAGE CONTACT  SECTION
 }
 
 .custom-checkbox-align {
-  display: flex;
-  align-items: flex-start;
+  padding-left: 1rem;             /* aligns with .custom-disclaimer-box */
   margin: 1rem 0 1.5rem 0;
-  padding-left: 1rem;         /* aligns with disclaimer box content */
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;           /* avoid scroll */
-}
-
-.custom-checkbox-align input[type="checkbox"] {
-  margin-top: 0.2rem;
-  margin-right: 0.4rem;
-  flex-shrink: 0;
-  transform: scale(1.1);
+  display: block;
 }
 
 .custom-checkbox-align label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;                   /* small spacing between box and text */
   font-size: 0.95rem;
   color: var(--navy);
   line-height: 1.4;
+  cursor: pointer;
+}
+
+.custom-checkbox-align input[type="checkbox"] {
   margin: 0;
-  word-break: break-word;
-  flex: 1;
+  transform: scale(1.1);
+  flex-shrink: 0;
 }
 
 .custom-submit-btn {
