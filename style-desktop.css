@@ -195,8 +195,16 @@ ul.navbar > li > a:hover {
   font-weight: 600;
   display: inline-block;
   font-size: 1.15rem;
-  font-family: 'Inter', sans-serif; /* already included, clean and modern */
-  white-space: nowrap; /* ensures it stays on one line */
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+  border: 2px solid transparent;       /* added for hover animation */
+  transition: all 0.3s ease;           /* enables smooth animation */
+}
+
+.cta-button a:hover {
+  background-color: white;
+  color: var(--navy);
+  border: 2px solid var(--navy);
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
