@@ -1098,16 +1098,16 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-checkbox-align {
   display: flex;
-  align-items: flex-start;
-  margin-left: 1rem;       /* 👈 matches the disclaimer box padding */
-  margin-top: -0.5rem;     /* optional: tighten vertical spacing */
+  align-items: center;
+  margin-top: 0.75rem;
   margin-bottom: 1.5rem;
+  /* 👇 removed margin-left */
 }
 
 .custom-checkbox-align input[type="checkbox"] {
-  margin-top: 0.2rem;
-  margin-right: 0.25rem;   /* 👈 minimal gap between checkbox and label */
+  margin-right: 0.25rem; /* tight spacing */
   transform: scale(1.1);
+  margin-top: 0.15rem;
 }
 
 .custom-checkbox-align label {
