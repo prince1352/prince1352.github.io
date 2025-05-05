@@ -1026,8 +1026,9 @@ CONTACT PAGE CONTACT  SECTION
   z-index: 2;
   text-align: center;
   padding: 2rem;
-  color: white;                  /* ✅ restore white color */
-  transition: transform 0.1s ease-out; /* smoother faster scroll */
+  color: white;
+  transform: translateY(50vh);   /* ✅ initial position: center of screen */
+  transition: transform 0.1s ease-out;
 }
 
 .custom-contact-text h1,
