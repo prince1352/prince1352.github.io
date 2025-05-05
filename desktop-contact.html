@@ -243,16 +243,20 @@
   });
 </script>
 
+   <!-- Script for Parallax -->
+  
   <script>
   document.addEventListener('scroll', function () {
     const textBlock = document.querySelector('.custom-contact-text');
     const scrollY = window.scrollY;
+    const offset = scrollY * 0.3;  // ✅ Parallax scroll effect
 
     if (textBlock) {
-      textBlock.style.transform = `translateY(${scrollY}px)`; // ✅ 1:1 scroll rate
+      textBlock.style.transform = `translateY(${offset}px)`;
     }
   });
 </script>
+
 
   
   <!-- Script for Checkbox -->
