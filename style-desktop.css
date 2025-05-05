@@ -1117,6 +1117,12 @@ CONTACT PAGE CONTACT  SECTION
   flex-shrink: 0;
 }
 
+.custom-checkbox-align label span {
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;
+}
+
 .custom-submit-btn {
   background-color: var(--navy);
   color: white;
