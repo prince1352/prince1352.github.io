@@ -1120,7 +1120,7 @@ CONTACT PAGE CONTACT  SECTION
 .custom-checkbox-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-size: 0.95rem;
   color: var(--navy);
   cursor: pointer;
@@ -1129,34 +1129,32 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-checkbox-label input[type="checkbox"] {
   appearance: none;
-  width: 16px;                    /* ✅ Square checkbox */
-  height: 16px;
-  padding: 0;
-  margin: 0;
-  border: 2px solid var(--navy);
+  width: 12px;                /* ✅ smaller square */
+  height: 12px;
+  border: 1.5px solid var(--navy);  /* ✅ thinner border for small box */
   background-color: white;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   display: inline-block;
-  box-sizing: border-box;         /* ✅ Size includes border */
-  position: relative;             /* ✅ Required for ::after checkmark */
+  box-sizing: border-box;
+  position: relative;
   flex-shrink: 0;
+  padding: 0;
+  margin: 0;
 }
 
-/* ✅ Custom checkmark */
+/* ✅ Small checkmark for small box */
 .custom-checkbox-label input[type="checkbox"]:checked::after {
   content: "";
   position: absolute;
-  left: 4px;
+  left: 3px;
   top: 0px;
-  width: 4px;
-  height: 8px;
+  width: 3px;
+  height: 6px;
   border: solid var(--navy);
-  border-width: 0 2px 2px 0;
+  border-width: 0 1.5px 1.5px 0;
   transform: rotate(45deg);
 }
-
-
 
 /* Submit Button */
 .custom-submit-btn {
