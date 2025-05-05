@@ -1026,6 +1026,10 @@ CONTACT PAGE CONTACT  SECTION
   z-index: 2;
   text-align: center;
   padding: 2rem;
+  transform: translateY(0px);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+  position: relative;
 }
 
 .custom-contact-text h1 {
@@ -1042,7 +1046,7 @@ CONTACT PAGE CONTACT  SECTION
 .custom-contact-right {
   flex: 1;
   background: white;
-  padding: 4rem 3rem;
+  padding: 2.5rem 3rem; /* ↓ was 4rem */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
