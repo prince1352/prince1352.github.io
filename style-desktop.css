@@ -1003,16 +1003,16 @@ CONTACT PAGE CONTACT  SECTION
 
 /* LEFT SECTION */
 .custom-contact-left {
-  flex: 1;
-  background: url('images/contact-page.jpg') center center / cover no-repeat fixed;
+  display: flex;
+  align-items: flex-start;       /* ✅ align to top */
+  justify-content: center;
   position: relative;
   min-height: 100vh;
-  display: flex;
-  align-items: center;         /* ✅ Vertically center text */
-  justify-content: center;
-  color: white;
+  background: url('images/contact-page.jpg') center center / cover no-repeat;
   overflow: hidden;
+  padding-top: 4rem;             /* ✅ optional spacing */
 }
+
 
 .custom-contact-overlay {
   position: absolute;
@@ -1026,10 +1026,9 @@ CONTACT PAGE CONTACT  SECTION
   z-index: 2;
   text-align: center;
   padding: 2rem;
-  color: white;
-  position: relative;
-  transform: translateY(0);    /* ✅ allow dynamic offset */
-  transition: transform 0.1s ease-out;
+  color: white;                  /* ✅ restore white color */
+  transform: translateY(50vh);      /* default position */
+  transition: transform 0.1s linear; /* smoother faster scroll */
 }
 
 .custom-contact-text h1,
