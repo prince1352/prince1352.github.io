@@ -1115,23 +1115,27 @@ CONTACT PAGE CONTACT  SECTION
 /* Checkbox Alignment */
 .custom-checkbox-align {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 1rem 0 1.5rem;
+  align-items: flex-start;
   width: 100%;
+  margin: 1rem 0 1.5rem 0;
+  overflow: hidden; /* ✅ prevent horizontal scroll */
 }
 
 .custom-checkbox-align input[type="checkbox"] {
-  transform: scale(1.1);
-  margin: 0;
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
   flex-shrink: 0;
+  transform: scale(1.1);
 }
 
 .custom-checkbox-align label {
+  flex: 1;                     /* ✅ takes remaining space */
   font-size: 0.95rem;
   color: var(--navy);
   line-height: 1.4;
-  margin: 0;
+  word-break: break-word;      /* ✅ allows wrapping inside container */
+  white-space: normal;         /* ✅ ensures proper text flow */
+  overflow-wrap: break-word;
 }
 
 /* Submit Button */
