@@ -1078,7 +1078,7 @@ CONTACT PAGE CONTACT  SECTION
 .custom-disclaimer-box {
   background: #f7f7f7;
   border-radius: 6px;
-  padding: 1rem;
+  padding: 1rem;         /* 👈 important */
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 0.95rem;
@@ -1098,23 +1098,23 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-checkbox-align {
   display: flex;
-  align-items: center;
-  margin-top: -0.5rem;
-  margin-bottom: 1.25rem;
-  margin-left: 1rem; /* aligns with the paragraph inside the box */
+  align-items: flex-start;
+  margin-left: 1rem;       /* 👈 matches the disclaimer box padding */
+  margin-top: -0.5rem;     /* optional: tighten vertical spacing */
+  margin-bottom: 1.5rem;
 }
 
 .custom-checkbox-align input[type="checkbox"] {
-  margin-right: 0.15rem;  /* ultra-tight spacing */
+  margin-top: 0.2rem;
+  margin-right: 0.25rem;   /* 👈 minimal gap between checkbox and label */
   transform: scale(1.1);
-  padding: 0;
 }
 
 .custom-checkbox-align label {
   font-size: 0.95rem;
   color: var(--navy);
   line-height: 1.4;
-  margin: 0; /* remove any default spacing */
+  margin: 0;
 }
 
 .custom-submit-btn {
