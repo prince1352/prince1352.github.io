@@ -978,7 +978,7 @@ TEAM CONTACT FORM SECTION
   max-width: none;
   margin-left: -2rem;
   padding-left: 2rem;
-  /* ✅ Right padding is handled dynamically via JS */
+  box-sizing: border-box;
 }
 
 
