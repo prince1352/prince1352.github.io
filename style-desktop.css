@@ -1014,7 +1014,8 @@ TEAM CONTACT FORM SECTION
   border-radius: 4px;
   transition: background 0.3s;
   width: 100%
-  display: block; 
+  display: block;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {
@@ -1024,7 +1025,6 @@ TEAM CONTACT FORM SECTION
 #contact-form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
 }
 
 .contact-details p {
