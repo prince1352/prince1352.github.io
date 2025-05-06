@@ -888,7 +888,7 @@ TEAM CONTACT ICON SECTION
 .section-divider-centered {
   height: 1px;
   background-color: var(--navy);
-  width: fit-content;
+  min-width: 200px;
   margin: 2rem auto 0 auto;
 }
 
