@@ -831,7 +831,7 @@ TEAM CONTACT ICON SECTION
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  filter: blur(4px);
+  filter: none;
   z-index: 1;
 }
 
