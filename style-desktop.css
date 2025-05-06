@@ -1077,7 +1077,7 @@ CONTACT PAGE CONTACT  SECTION
   min-height: 100vh;
   background: url('images/contact-page.jpg') center center / cover no-repeat;
   overflow: hidden;
-  padding-top: -1rem;
+  padding-top: 0rem;
 }
 
 
@@ -1119,7 +1119,7 @@ CONTACT PAGE CONTACT  SECTION
   flex: 0 0 950px; /* Set fixed width */
   max-width: 950px;
   background: white;
-  padding: 2.5rem 3rem;
+  padding: 3.0rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
