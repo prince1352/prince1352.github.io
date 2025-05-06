@@ -1013,6 +1013,8 @@ TEAM CONTACT FORM SECTION
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s;
+  width: 100%
+  display: block; 
 }
 
 .submit-btn:hover {
