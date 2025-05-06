@@ -1091,7 +1091,7 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-contact-text {
   z-index: 2;
-  text-align: center;
+  text-align: left;
   padding: 2rem;
   color: white;
   transition: transform 0.1s ease-out;
