@@ -856,6 +856,8 @@ TEAM CONTACT ICON SECTION
   justify-content: center;
   gap: 4rem;
   z-index: 2;
+  width: fit-content;  /* ✅ This makes it size to its content */
+  margin: 0 auto;      /* ✅ Center the grid */
 }
 
 .contact-feature-item {
@@ -881,6 +883,13 @@ TEAM CONTACT ICON SECTION
 .contact-feature-item:hover .contact-feature-icon {
   transform: scale(1.1);
   transition: transform 0.3s ease;
+}
+
+.section-divider-centered {
+  height: 1px;
+  background-color: var(--navy);
+  width: fit-content;
+  margin: 2rem auto 0 auto;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
@@ -1064,9 +1073,6 @@ CONTACT PAGE CONTACT  SECTION
   transition: transform 0.1s ease-out;
 }
 
-
-
-
 .custom-contact-text h1,
 .custom-contact-text p {
   color: white; /* ✅ Enforce white explicitly */
@@ -1095,7 +1101,6 @@ CONTACT PAGE CONTACT  SECTION
   justify-content: flex-start;
   box-sizing: border-box;
 }
-
 
 .custom-contact-heading {
   font-size: 2rem;
