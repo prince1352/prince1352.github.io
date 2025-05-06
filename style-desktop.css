@@ -1021,6 +1021,11 @@ TEAM CONTACT FORM SECTION
   background-color: var(--red);
 }
 
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-details p {
   margin-bottom: 1rem;
   line-height: 1.6;
