@@ -529,28 +529,23 @@ renderCarousel(currentReview);
    <!-- Making the Contact Form Aligned -->
 
 <script>
-  function matchFormRightPaddingToLogo() {
-    const logo = document.querySelector('.contact-vertical-logo');
+  function matchFormRightPaddingToVerticalLine() {
+    const line = document.querySelector('.vertical-line-top');
     const container = document.querySelector('.contact-container');
     const form = document.querySelector('.contact-right');
 
-    if (logo && container && form) {
-      const logoRect = logo.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
+    if (line && container && form) {
+      const lineLeft = line.getBoundingClientRect().left;
+      const containerLeft = container.getBoundingClientRect().left;
 
-      // This is the total left space from the edge of the container
-      const logoOffset = logoRect.left - containerRect.left;
+      const gap = Math.max(lineLeft - containerLeft, 0);
 
-      // Subtract the internal left padding on logo (2rem = 32px)
-      const internalLogoPadding = 32;
-
-      const visualGap = Math.max(logoOffset + internalLogoPadding, 0);
-      form.style.paddingRight = `${visualGap}px`;
+      form.style.paddingRight = `${gap}px`;
     }
   }
 
-  window.addEventListener('load', () => setTimeout(matchFormRightPaddingToLogo, 50));
-  window.addEventListener('resize', matchFormRightPaddingToLogo);
+  window.addEventListener('load', () => setTimeout(matchFormRightPaddingToVerticalLine, 50));
+  window.addEventListener('resize', matchFormRightPaddingToVerticalLine);
 </script>
 
   
