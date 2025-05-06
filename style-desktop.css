@@ -835,19 +835,52 @@ TEAM CONTACT MESSAGE SECTION
   z-index: 1;
 }
 
-.team-contact-message-content {
-  position: relative;
+.new-contact-features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 2;
   text-align: center;
-  padding: 0 2rem;
 }
 
-.team-contact-message-text {
+.contact-feature-title {
   color: white;
-  font-size: 1.5rem;
-  max-width: 1000px;
-  font-weight: 400;
-  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.contact-feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  z-index: 2;
+}
+
+.contact-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+}
+
+.contact-feature-icon {
+  font-size: 4.5rem;         /* Increased from 3rem */
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.contact-feature-item p {
+  font-size: 1.25rem;
+  color: white;
+  margin: 0;
+}
+
+.contact-feature-item:hover .contact-feature-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
