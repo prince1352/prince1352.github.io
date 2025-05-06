@@ -534,12 +534,12 @@ renderCarousel(currentReview);
     const form = document.querySelector('.contact-right');
 
     if (logo && form) {
-      // Distance from logo to the left edge of the container
-      const logoLeftOffset = logo.getBoundingClientRect().left;
-      const containerLeftOffset = logo.parentElement.getBoundingClientRect().left;
-      const effectiveLeftPadding = logoLeftOffset - containerLeftOffset;
+      const logoRect = logo.getBoundingClientRect();
+      const containerRect = logo.parentElement.getBoundingClientRect();
 
-      form.style.paddingRight = `${effectiveLeftPadding}px`;
+      const leftGap = logoRect.left - containerRect.left;
+
+      form.style.paddingRight = `${leftGap}px`;
     }
   }
 
