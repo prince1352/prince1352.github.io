@@ -1077,7 +1077,7 @@ CONTACT PAGE CONTACT  SECTION
   min-height: 100vh;
   background: url('images/contact-page.jpg') center center / cover no-repeat;
   overflow: hidden;
-  padding-top: 2.5rem;
+  padding-top: 0rem;
 }
 
 
