@@ -867,8 +867,7 @@ TEAM CONTACT ICON SECTION
 
 .contact-feature-icon {
   font-size: 4.5rem;         /* Increased from 3rem */
-  color: white;
-  border: 2px solid var(--red);
+  color: var(--red);
   margin-bottom: 1rem;
   line-height: 1;
 }
