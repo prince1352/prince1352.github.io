@@ -817,11 +817,12 @@ TEAM CONTACT ICON SECTION
 
 .team-contact-message-section {
   position: relative;
-  height: 300px;
+  height: auto;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6rem 2rem; 
 }
 
 .team-contact-message-blur {
@@ -847,7 +848,7 @@ TEAM CONTACT ICON SECTION
   color: var(--navy);
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .contact-feature-grid {
@@ -886,7 +887,7 @@ TEAM CONTACT ICON SECTION
   height: 1px;
   background-color: var(--navy);
   width: 100%;
-  margin: 2rem 0 0 0; /* ⬅️ Increased top margin */
+  margin: 3.5rem 0 0 0; /* ⬅️ Increased top margin */
 }
 
 .contact-feature-grid-wrapper {
