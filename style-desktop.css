@@ -812,7 +812,7 @@ TEAM REVIEW SECTION
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
-TEAM CONTACT MESSAGE SECTION
+TEAM CONTACT ICON SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
 .team-contact-message-section {
@@ -827,7 +827,7 @@ TEAM CONTACT MESSAGE SECTION
 .team-contact-message-blur {
   position: absolute;
   inset: 0;
-  background-image: url('images/Team-Contact-Message.jpg');
+  background-color: white;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -844,7 +844,7 @@ TEAM CONTACT MESSAGE SECTION
 }
 
 .contact-feature-title {
-  color: white;
+  color: var(--navy);
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2.5rem;
@@ -867,14 +867,15 @@ TEAM CONTACT MESSAGE SECTION
 
 .contact-feature-icon {
   font-size: 4.5rem;         /* Increased from 3rem */
-  color: var(--navy);
+  color: white;
+  border: 2px solid var(--red);
   margin-bottom: 1rem;
   line-height: 1;
 }
 
 .contact-feature-item p {
   font-size: 1.25rem;
-  color: white;
+  color: var(--navy);
   margin: 0;
 }
 
