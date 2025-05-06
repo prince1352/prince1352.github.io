@@ -529,22 +529,22 @@ renderCarousel(currentReview);
    <!-- Making the Contact Form Aligned -->
 
   <script>
-  function syncRightPaddingWithIcons() {
-    const iconGrid = document.querySelector('.contact-feature-grid');
-    const contactForm = document.querySelector('.contact-right');
+  function syncFormRightPaddingToLogoOffset() {
+    const logo = document.querySelector('.contact-vertical-logo');
+    const form = document.querySelector('.contact-right');
 
-    if (iconGrid && contactForm) {
-      const viewportWidth = window.innerWidth;
-      const gridRight = iconGrid.getBoundingClientRect().right;
-      const rightGap = viewportWidth - gridRight;
+    if (logo && form) {
+      // Distance from logo to the left edge of the container
+      const logoLeftOffset = logo.getBoundingClientRect().left;
+      const containerLeftOffset = logo.parentElement.getBoundingClientRect().left;
+      const effectiveLeftPadding = logoLeftOffset - containerLeftOffset;
 
-      // Apply the same gap as right padding to the form
-      contactForm.style.paddingRight = `${rightGap}px`;
+      form.style.paddingRight = `${effectiveLeftPadding}px`;
     }
   }
 
-  window.addEventListener('load', syncRightPaddingWithIcons);
-  window.addEventListener('resize', syncRightPaddingWithIcons);
+  window.addEventListener('load', syncFormRightPaddingToLogoOffset);
+  window.addEventListener('resize', syncFormRightPaddingToLogoOffset);
 </script>
 
   
