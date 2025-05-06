@@ -855,9 +855,8 @@ TEAM CONTACT ICON SECTION
   flex-wrap: wrap;
   justify-content: center;
   gap: 4rem;
-  z-index: 2;
-  width: fit-content;  /* ✅ This makes it size to its content */
-  margin: 0 auto;      /* ✅ Center the grid */
+  width: 100%;
+  max-width: 900px; /* Match your actual icon layout max width */
 }
 
 .contact-feature-item {
@@ -889,11 +888,14 @@ TEAM CONTACT ICON SECTION
   height: 1px;
   background-color: var(--navy);
   width: 100%;
-  max-width: max-content;
+  max-width: 900px; /* Same as grid */
   margin: 2rem auto 0 auto;
-  padding: 0 4rem;
 }
 
+.contact-feature-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 /* ----------------------------------------------------------------------------------------------------------------
 TEAM CONTACT FORM SECTION
