@@ -974,11 +974,14 @@ TEAM CONTACT FORM SECTION
 }
 
 .contact-right {
-  flex: 3
+  flex: 3;
+  max-width: none;
+  margin-left: -2rem;
   padding-left: 2rem;
-  max-width: unset; /* JS will control this */
-  margin-left: -2rem;   /* center it based on JS-assigned width */
+  /* ✅ Right padding is handled dynamically via JS */
+  box-sizing: border-box; /* Optional: ensures padding doesn't overflow */
 }
+
 
 /* .contact-right {
   flex: 3;
