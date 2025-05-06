@@ -979,7 +979,6 @@ TEAM CONTACT FORM SECTION
   margin-left: -2rem;
   padding-left: 2rem;
   /* ✅ Right padding is handled dynamically via JS */
-  box-sizing: border-box; /* Optional: ensures padding doesn't overflow */
 }
 
 
