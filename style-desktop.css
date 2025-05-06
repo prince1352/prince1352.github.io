@@ -888,9 +888,12 @@ TEAM CONTACT ICON SECTION
 .section-divider-centered {
   height: 1px;
   background-color: var(--navy);
-  min-width: 200px;
+  width: 100%;
+  max-width: max-content;
   margin: 2rem auto 0 auto;
+  padding: 0 4rem; /* Matches icon grid spacing (optional) */
 }
+
 
 /* ----------------------------------------------------------------------------------------------------------------
 TEAM CONTACT FORM SECTION
