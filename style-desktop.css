@@ -1099,7 +1099,7 @@ CONTACT PAGE CONTACT  SECTION
 
 .custom-contact-text h1,
 .custom-contact-text p {
-  color: var(--navy); /* ✅ Enforce white explicitly */
+  color: white; /* ✅ Enforce white explicitly */
 }
 
 .custom-contact-text h1 {
