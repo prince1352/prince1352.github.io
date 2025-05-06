@@ -974,11 +974,20 @@ TEAM CONTACT FORM SECTION
 }
 
 .contact-right {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%; /* fills container */
+  max-width: unset; /* JS will control this */
+  margin: 0 auto;   /* center it based on JS-assigned width */
+  box-sizing: border-box;
+}
+
+/* .contact-right {
   flex: 3;
   max-width: none;
   margin-left: -2rem;
   padding-left: 2rem;
-}
+} */
 
 .contact-right form input,
 .contact-right form textarea {
