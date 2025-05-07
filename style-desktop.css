@@ -714,7 +714,8 @@ TEAM REVIEW SECTION
 }
 
 .review-carousel-box {
-  width: 800px;
+  width: 100%;
+  max-width: 800px
   height: 260px;
   background: var(--navy);
   border-radius: 8px;
