@@ -1108,7 +1108,7 @@ CONTACT PAGE CONTACT  SECTION
 .custom-contact-left,
 .custom-contact-right {
   flex: 1 1 0;             /* ✅ allow shrinking first */
-  min-width: 400px;        /* ✅ only wrap when below this */
+  min-width: 350px;        /* ✅ only wrap when below this */
   box-sizing: border-box;
 }
 
@@ -1161,14 +1161,16 @@ CONTACT PAGE CONTACT  SECTION
 
 /* RIGHT SECTION */
 .custom-contact-right {
-  flex: 0 0 950px; /* Set fixed width */
+  flex: 1 1 0; /* Set fixed width */
   max-width: 950px;
+  min-width: 350px;
   background: white;
   padding: 3.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .custom-contact-heading {
