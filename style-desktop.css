@@ -276,16 +276,45 @@ Hamburger Menu Section
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .navbar li a {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
 
+  .logo-text .logo-line-1 {
+    font-size: 1.6rem;
+  }
 
+  .logo-text .logo-line-2 {
+    font-size: 0.85rem;
+  }
 
+  .cta-button a {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
 
+@media screen and (max-width: 1100px) {
+  .navbar li a {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
 
+  .logo-text .logo-line-1 {
+    font-size: 1.4rem;
+  }
 
+  .logo-text .logo-line-2 {
+    font-size: 0.75rem;
+  }
 
-
-
-
+  .cta-button a {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
 
 /* ----------------------------------------------------------------------------------------------------------------
 HOMEPAGE WELCOME SECTION
