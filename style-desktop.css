@@ -40,6 +40,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -81,13 +82,13 @@ MENU SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
 nav {
-  flex: 2;
+  flex: 1 1 auto;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 5.5rem;   /* Previously 3rem — slightly reduced */
-  margin-right: 1.5rem;  /* Add this to push away from CTA button */
+  margin: 0 1rem;  
+  min-width: 0;     
 }
 
 ul.navbar {
