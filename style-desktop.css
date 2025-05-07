@@ -1105,6 +1105,13 @@ CONTACT PAGE CONTACT  SECTION
   min-height: 100vh;
 }
 
+.custom-contact-left,
+.custom-contact-right {
+  flex: 1 1 0;             /* ✅ allow shrinking first */
+  min-width: 400px;        /* ✅ only wrap when below this */
+  box-sizing: border-box;
+}
+
 /* LEFT SECTION */
 .custom-contact-left {
   flex: 1 1 0%;
