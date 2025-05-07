@@ -812,6 +812,19 @@ TEAM REVIEW SECTION
   color: var(--navy);
 }
 
+.review-carousel-wrapper > .review-arrow.left {
+  grid-column: 1;
+}
+
+.review-carousel-wrapper > .review-carousel-box {
+  grid-column: 2;
+}
+
+.review-carousel-wrapper > .review-arrow.right {
+  grid-column: 3;
+}
+
+
 /* ----------------------------------------------------------------------------------------------------------------
 TEAM CONTACT ICON SECTION
 ------------------------------------------------------------------------------------------------------------------*/
