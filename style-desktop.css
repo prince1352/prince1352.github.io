@@ -85,7 +85,6 @@ nav {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   margin: 0 1rem;  
   min-width: 0;     
 }
@@ -98,6 +97,8 @@ ul.navbar {
   align-items: center;
   padding: 0;
   margin: 0;
+  justify-content: space-between;  /* ✅ spreads items */
+  flex: 1 1 auto;                  /* ✅ lets it grow/shrink */
 }
 
 ul.navbar > li {
