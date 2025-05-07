@@ -920,6 +920,7 @@ TEAM CONTACT FORM SECTION
   justify-content: center;
   padding: 0 2rem;
   min-width: 120px;
+  flex: 0 0 120px;
 }
 
 .vertical-logo {
@@ -1057,6 +1058,11 @@ TEAM CONTACT FORM SECTION
   text-align: center;
 }
 
+.contact-left,
+.contact-right {
+  flex: 1 1 100%;  /* ✅ allows full-width stacking */
+  box-sizing: border-box;
+}
 
 /* ----------------------------------------------------------------------------------------------------------------
 CONTACT PAGE CONTACT  SECTION
