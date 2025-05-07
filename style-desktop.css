@@ -208,6 +208,86 @@ ul.navbar > li > a:hover {
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
+Hamburger Menu Section
+------------------------------------------------------------------------------------------------------------------*/
+
+/* 🔽 Hamburger hidden on large screens */
+.hamburger-icon {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--navy);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* 🔽 Mobile Menu hidden by default */
+.mobile-menu {
+  display: none;
+  background: var(--red);
+  color: white;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  margin-bottom: 1rem;
+}
+
+.mobile-menu .submenu {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 0.25rem 0;
+}
+
+/* 🔽 Responsive Toggle */
+@media screen and (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+
+  .logo-icon {
+    max-width: 50px; /* Shrink logo */
+  }
+
+  .cta-button {
+    transform: scale(0.9); /* Shrink button slightly */
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------
 HOMEPAGE WELCOME SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
