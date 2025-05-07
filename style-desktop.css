@@ -965,6 +965,8 @@ TEAM CONTACT FORM SECTION
   flex: 1;
   padding-left: 1rem;
   max-width: 450px;
+  min-width: 0; /* ✅ Allow it to shrink */
+  word-wrap: break-word; /* ✅ Wrap long text */
 }
 
 .contact-left .contact-title {
