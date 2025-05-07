@@ -1060,7 +1060,8 @@ TEAM CONTACT FORM SECTION
 
 .contact-left,
 .contact-right {
-  flex: 1 1 100%;  /* ✅ allows full-width stacking */
+  flex: 1 1 0;            /* ✅ allow shrinking side-by-side */
+  min-width: 300px;       /* ✅ sets a wrap threshold */
   box-sizing: border-box;
 }
 
