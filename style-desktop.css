@@ -711,6 +711,7 @@ TEAM REVIEW SECTION
   margin: 0 auto;
   gap: 1rem;
   position: relative;
+  overflow-x: hidden;
 }
 
 .review-carousel-box {
