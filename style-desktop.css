@@ -806,6 +806,7 @@ TEAM REVIEW SECTION
   transition: color 0.3s;
   z-index: 10;
   padding: 1rem;
+  position: relative;
 }
 
 .review-arrow:hover {
@@ -818,6 +819,9 @@ TEAM REVIEW SECTION
 
 .review-carousel-wrapper > .review-carousel-box {
   grid-column: 2;
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
 }
 
 .review-carousel-wrapper > .review-arrow.right {
