@@ -953,7 +953,7 @@ TEAM CONTACT FORM SECTION
 /* Align Three Columns */
 .contact-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: flex-start;
   gap: 1rem;
   max-width: 1400px;
@@ -965,8 +965,6 @@ TEAM CONTACT FORM SECTION
   flex: 1;
   padding-left: 1rem;
   max-width: 450px;
-  min-width: 0; /* ✅ Allow it to shrink */
-  word-wrap: break-word; /* ✅ Wrap long text */
 }
 
 .contact-left .contact-title {
