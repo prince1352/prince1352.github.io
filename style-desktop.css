@@ -703,9 +703,8 @@ TEAM REVIEW SECTION
 }
 
 .review-carousel-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  grid-template-columns: 60px 1fr 60px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   justify-content: center;
   max-width: 960px;
