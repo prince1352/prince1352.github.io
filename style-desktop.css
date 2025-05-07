@@ -93,7 +93,7 @@ nav {
 ul.navbar {
   list-style: none;
   display: flex;
-  gap: 1.25rem;
+  gap: clamp(0.5rem, 1.5vw, 1.25rem);
   height: 100%;
   align-items: center;
   padding: 0;
@@ -182,7 +182,7 @@ ul.navbar > li > a:hover {
 
 /* CTA Button */
 .cta-button {
-  flex: 0 1 auto;
+  flex: 1;
   min-width: 0;
   text-align: right;
 }
