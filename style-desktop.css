@@ -842,10 +842,6 @@ TEAM REVIEW SECTION
   margin-left: 2rem; /* same on the right */
 }
 
-.review-arrow.left { background: red; }
-.review-arrow.right { background: blue; }
-.review-carousel-card { background: green; }
-
 /* ----------------------------------------------------------------------------------------------------------------
 TEAM CONTACT ICON SECTION
 ------------------------------------------------------------------------------------------------------------------*/
