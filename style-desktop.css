@@ -726,6 +726,8 @@ TEAM REVIEW SECTION
   align-items: center;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;              /* ✅ ensure center alignment */
+
 }
 
 .review-carousel-card {
