@@ -316,6 +316,14 @@ Hamburger Menu Section
   }
 }
 
+.navbar li a,
+.logo-text .logo-line-1,
+.logo-text .logo-line-2,
+.cta-button a,
+.header-container {
+  transition: all 0.2s ease;
+}
+
 /* ----------------------------------------------------------------------------------------------------------------
 HOMEPAGE WELCOME SECTION
 ------------------------------------------------------------------------------------------------------------------*/
