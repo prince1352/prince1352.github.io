@@ -738,6 +738,7 @@ TEAM REVIEW SECTION
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1.5rem 1.5rem;
 }
 
 .review-header {
