@@ -815,7 +815,7 @@ TEAM EXPANDED POPUP SECTION
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-.expanded-card.active {
+.expanded-card.open {
   opacity: 1;
   pointer-events: all;
   transform: translate(-50%, -50%) scale(1);
