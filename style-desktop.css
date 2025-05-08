@@ -134,13 +134,14 @@ ul.navbar > li > a:hover {
   font-size: 0.6rem;
 }
 
-ul.navbar > li:first-child {
-  margin-left: clamp(2rem, 4vw, 4rem); /* more space from logo */
-}
-
 ul.navbar > li:last-child {
   margin-right: clamp(2rem, 4vw, 4rem); /* more space before CTA button */
 }
+
+ul.navbar > li:first-child {
+  margin-left: 4rem;
+}
+
 
 /* ----------------------------------------------------------------------------------------------------------------
 MEGA MENU SECTION
@@ -211,19 +212,19 @@ CTA BUTTON
 .cta-button a {
   background-color: var(--navy);
   color: white;
+  font-size: 1.15rem;
   padding: 0.6rem 1.2rem;                  /* ✅ less horizontal padding */
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
   display: inline-block;
-  font-size: clamp(0.85rem, 1vw, 1.15rem); /* ✅ shrink font */
   font-family: 'Inter', sans-serif;
   white-space: nowrap;
   border: 2px solid transparent;
   transition: all 0.3s ease;
-
-  
-  padding: 0.6rem 1.2rem;                  /* ✅ less horizontal padding */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .cta-button a:hover {
@@ -319,7 +320,7 @@ RESPONSIVE TRANSITIONS
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .desktop-nav {
     display: none;
   }
@@ -348,6 +349,41 @@ RESPONSIVE TRANSITIONS
 @media screen and (max-width: 850px) {
   ul.navbar > li:last-child {
     margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cta-button a {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+/* Small */
+@media screen and (max-width: 1000px) {
+  .cta-button a {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Medium screens */
+@media screen and (max-width: 1200px) {
+  ul.navbar > li:first-child {
+    margin-left: 2rem;
+  }
+}
+
+/* Narrow screens */
+@media screen and (max-width: 1000px) {
+  ul.navbar > li:first-child {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  ul.navbar > li:first-child {
+    margin-left: 0.5rem;
   }
 }
 
