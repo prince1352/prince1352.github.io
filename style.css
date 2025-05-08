@@ -631,6 +631,137 @@ HOMEPAGE SERVICES SECTION
   border-radius: 8px;
 }
 
+/* ============================
+   MOBILE SERVICES SECTION
+============================= */
+
+.mobile-services-section {
+  display: none;
+  position: relative;
+  padding: 6rem 1rem 4rem;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+  
+  /* ✅ Correct format: background-image alone, other props separate */
+  background-image: url('images/Mobile-Service-Background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.mobile-services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* ✅ Main content stays on top of blur */
+.mobile-services-inner-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Services title styling */
+.services-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* One column grid for service cards */
+.mobile-service-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Flip Card Container */
+.service-card {
+  width: 100%;
+  max-width: 400px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.service-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back of Card */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.card-front {
+  background-color: var(--navy);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card-back {
+  background-color: var(--red);
+  color: white;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.card-back p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.mobile-learn-more-btn {
+  padding: 0.6rem 1.25rem;
+  background-color: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
 /* ----------------------------------------------------------------------------------------------------------------
 FOOTER SECTION
 ------------------------------------------------------------------------------------------------------------------*/
