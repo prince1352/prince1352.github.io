@@ -92,7 +92,7 @@ nav {
 ul.navbar {
   list-style: none;
   display: flex;
-  gap: clamp(0.5rem, 1vw, 0.75rem);
+  gap: clamp(0.25rem, 0.6vw, 0.6rem);
   height: 100%;
   align-items: center;
   padding: 0;
@@ -126,6 +126,14 @@ ul.navbar > li > a:hover {
 .arrow {
   margin-left: 5px;
   font-size: 0.6rem;
+}
+
+ul.navbar > li:first-child {
+  margin-left: 3rem; /* ✅ space from logo */
+}
+
+ul.navbar > li:last-child {
+  margin-right: 3rem; /* ✅ space from Free Consultation */
 }
 
 /* Mega Menu Layer */
