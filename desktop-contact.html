@@ -329,6 +329,16 @@
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
     header.classList.toggle('no-shadow');
+
+    // ✅ Close all submenus and arrows when menu is closed
+    if (!mobileMenu.classList.contains('active')) {
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.classList.remove('open');
+      });
+      document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
+        arrow.classList.remove('open');
+      });
+    }
   });
 
   // Handle links with submenus
@@ -355,6 +365,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
