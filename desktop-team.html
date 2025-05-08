@@ -90,9 +90,10 @@
   
 </head>
 <body>
-  <!-- Header -->
-  <header class="header-blur">
-<div class="header-container">
+  
+<!-- Header -->
+<header class="header-blur">
+  <div class="header-container">
     <a href="desktop-index.html" class="logo-link">
       <div class="logo">
         <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
@@ -123,60 +124,63 @@
       <a href="desktop-contact.html">Free Consultation</a>
     </div>
 
-  <!-- Hamburger Icon -->
-<button class="hamburger-icon" aria-label="Toggle Menu">☰</button>
-</div>
+    <!-- Hamburger Icon -->
+    <button class="hamburger-icon" aria-label="Toggle Menu">☰</button>
+  </div>
 
-<!-- Mobile Dropdown Menu -->
-<div class="mobile-menu">
-  <ul>
-    <li>
-      <a href="#" class="has-submenu">
-        Our Practices <span class="dropdown-arrow">▼</span>
-      </a>
-      <div class="submenu">
-        <a href="#">Criminal Law</a>
-        <a href="#">Immigration Law</a>
-        <a href="#">Family Law</a>
-        <a href="#">Mediation</a>
-      </div>
-    </li>
-    <li>
-      <a href="desktop-team.html" class="has-submenu">
-        Our Team <span class="dropdown-arrow">▼</span>
-      </a>
-      <div class="submenu">
-        <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
-        <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
-        <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
-        <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
-        <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
-        <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
-      </div>
-    </li>
-    <li><a href="desktop-about.html">About Us</a></li>
-    <li><a href="desktop-resources.html">Resources</a></li>
-    <li><a href="desktop-contact.html">Contact Us</a></li>
-  </ul>
-</div>
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu">
+    <ul>
+      <li>
+        <a href="#" class="has-submenu">
+          Our Practices <span class="dropdown-arrow">▼</span>
+        </a>
+        <div class="submenu">
+          <a href="#">Criminal Law</a>
+          <a href="#">Immigration Law</a>
+          <a href="#">Family Law</a>
+          <a href="#">Mediation</a>
+        </div>
+      </li>
+      <li>
+        <a href="desktop-team.html" class="has-submenu">
+          Our Team <span class="dropdown-arrow">▼</span>
+        </a>
+        <div class="submenu">
+          <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
+          <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+          <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
+          <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
+          <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
+          <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+        </div>
+      </li>
+      <li><a href="desktop-about.html">About Us</a></li>
+      <li><a href="desktop-resources.html">Resources</a></li>
+      <li><a href="desktop-contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</header>
+
 
   <!-- Mega Menu -->
-  <div class="mega-menu">
-    <div class="submenu-row" id="submenu-practices">
-      <a href="#">Criminal Law</a>
-      <a href="#">Immigration Law</a>
-      <a href="#">Family Law</a>
-      <a href="#">Mediation</a>
-    </div>
-    <div class="submenu-row" id="submenu-team">
-      <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
-      <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
-      <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
-      <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
-      <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
-      <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
-    </div>
+<div class="mega-menu">
+  <div class="submenu-row" id="submenu-practices">
+    <a href="#">Criminal Law</a>
+    <a href="#">Immigration Law</a>
+    <a href="#">Family Law</a>
+    <a href="#">Mediation</a>
   </div>
+  <div class="submenu-row" id="submenu-team">
+    <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
+    <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+    <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
+    <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
+    <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
+    <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+  </div>
+</div>
+
     
   <!-- Top White Section with Logo and Lines -->
   <section class="team-intro">
@@ -626,6 +630,46 @@ renderCarousel(currentReview);
         arrow.classList.add('open');
       }
       // Else: submenu is already open — allow normal link behavior
+    });
+  });
+</script>
+
+  <script>
+  const hamburger = document.querySelector('.hamburger-icon');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const header = document.querySelector('header');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    header.classList.toggle('no-shadow');
+
+    if (!mobileMenu.classList.contains('active')) {
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.classList.remove('open');
+      });
+      document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
+        arrow.classList.remove('open');
+      });
+    }
+  });
+
+  document.querySelectorAll('.has-submenu').forEach(link => {
+    const submenu = link.nextElementSibling;
+    const arrow = link.querySelector('.dropdown-arrow');
+
+    link.addEventListener('click', e => {
+      if (arrow && e.target === arrow) {
+        e.preventDefault();
+        submenu.classList.toggle('open');
+        arrow.classList.toggle('open');
+        return;
+      }
+
+      if (!submenu.classList.contains('open')) {
+        e.preventDefault();
+        submenu.classList.add('open');
+        arrow.classList.add('open');
+      }
     });
   });
 </script>
