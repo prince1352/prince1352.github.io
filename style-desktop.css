@@ -947,7 +947,7 @@ TEAM REVIEW SECTION
 
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-.review-parallax-section {
+.review-section {
   background-color: var(--red);
   color: white;
   padding: 4rem 2rem;
@@ -958,14 +958,14 @@ TEAM REVIEW SECTION
   text-align: center;
 }
 
-.review-section-title {
+.review-title {
   color: white;
   font-size: 2rem;
   margin-bottom: 2rem;
   font-weight: 500;
 }
 
-.review-carousel-wrapper {
+.review-carousel {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -975,25 +975,13 @@ TEAM REVIEW SECTION
   gap: 1rem;
   position: relative;
   overflow-x: hidden;
-}
-
-.review-carousel-box {
-  width: 100%;
-  max-width: 800px;
-  height: 260px;
   background: var(--navy);
   border-radius: 8px;
-  padding: 0rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
+  padding: 0;
 }
 
-.review-carousel-card {
+.review-card {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -1008,18 +996,18 @@ TEAM REVIEW SECTION
   will-change: opacity, transform;
 }
 
-.review-carousel-card.active {
+.review-card.active {
   display: flex;
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-.review-carousel-card.fade-out {
+.review-card.fade-out {
   opacity: 0;
   transform: translateY(40px) scale(0.95);
 }
 
-.review-carousel-card.fade-in {
+.review-card.fade-in {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
@@ -1044,7 +1032,8 @@ TEAM REVIEW SECTION
   color: #ddd;
 }
 
-.review-arrow {
+/* Carousel Arrows */
+.carousel-arrow {
   background: none;
   border: none;
   color: white;
@@ -1056,32 +1045,18 @@ TEAM REVIEW SECTION
   position: relative;
 }
 
-.review-arrow:hover {
+.carousel-arrow:hover {
   color: var(--navy);
 }
 
-.review-carousel-wrapper > .review-arrow.left {
-  grid-column: 1;
-}
-
-.review-carousel-wrapper > .review-carousel-box {
-  grid-column: 2;
-  width: 100%;
-  max-width: 800px;
-  overflow: hidden;
-}
-
-.review-carousel-wrapper > .review-arrow.right {
-  grid-column: 3;
-}
-
-.review-arrow.left {
+.carousel-arrow.left {
   margin-right: 2rem;
 }
 
-.review-arrow.right {
+.carousel-arrow.right {
   margin-left: 2rem;
 }
+
 
 /* ----------------------------------------------------------------------------------------------------------------
 TEAM CONTACT ICON SECTION
