@@ -971,70 +971,28 @@ TEAM REVIEW SECTION
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin: 0 auto;              /* ✅ ensure center alignment */
-
+  margin: 0 auto;
 }
 
 .review-carousel-card {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  will-change: opacity, transform;
-  position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 2rem;
   box-sizing: border-box;
-  margin: 0;  
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
 }
 
-.review-header {
-  text-align: center;
-}
-
-.review-name {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.review-stars {
-  color: gold;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.review-text-wrapper {
-  flex-grow: 1;
+.review-carousel-card.active {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 2rem;
-}
-
-.review-text {
-  font-style: italic;
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 90%;
-}
-
-.review-quote {
-  position: absolute;
-  top: 1rem;
-  right: -0.4rem;
-  font-size: 13rem;
-  font-family: 'Share Tech Mono', monospace;
-  color: #a3d5ff;
-  pointer-events: none;
-  user-select: none;
-  line-height: 0.75;
-  content: '”';
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .review-carousel-card.fade-out {
@@ -1045,6 +1003,26 @@ TEAM REVIEW SECTION
 .review-carousel-card.fade-in {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.review-stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 90%;
+  margin-bottom: 0.8rem;
+}
+
+.review-card span {
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: #ddd;
 }
 
 .review-arrow {
@@ -1079,11 +1057,11 @@ TEAM REVIEW SECTION
 }
 
 .review-arrow.left {
-  margin-right: 2rem; /* matches .review-carousel-box padding */
+  margin-right: 2rem;
 }
 
 .review-arrow.right {
-  margin-left: 2rem; /* same on the right */
+  margin-left: 2rem;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
@@ -1097,7 +1075,11 @@ TEAM CONTACT ICON SECTION
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3.6rem 2rem 0 2rem; 
+  padding: 3.6rem 2rem 0 2rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .team-contact-message-blur {
@@ -1117,6 +1099,7 @@ TEAM CONTACT ICON SECTION
   align-items: center;
   z-index: 2;
   text-align: center;
+  position: relative;
 }
 
 .contact-feature-title {
@@ -1124,6 +1107,14 @@ TEAM CONTACT ICON SECTION
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 3.5rem;
+}
+
+.contact-feature-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .contact-feature-grid {
@@ -1138,13 +1129,15 @@ TEAM CONTACT ICON SECTION
   flex-direction: column;
   align-items: center;
   max-width: 200px;
+  transition: transform 0.3s ease;
 }
 
 .contact-feature-icon {
-  font-size: 4.5rem;         /* Increased from 3rem */
+  font-size: 4.5rem;
   color: var(--red);
   margin-bottom: 1rem;
   line-height: 1;
+  transition: transform 0.3s ease;
 }
 
 .contact-feature-item p {
@@ -1155,22 +1148,13 @@ TEAM CONTACT ICON SECTION
 
 .contact-feature-item:hover .contact-feature-icon {
   transform: scale(1.1);
-  transition: transform 0.3s ease;
 }
 
 .section-divider-centered {
   height: 1px;
   background-color: var(--navy);
   width: 100%;
-  margin: 3.5rem 0 0 0; /* ⬅️ Increased top margin */
-}
-
-.contact-feature-grid-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  margin: 0 auto;
+  margin: 3.5rem 0 0 0;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
