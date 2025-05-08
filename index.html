@@ -230,7 +230,7 @@
           <div class="card-front">Criminal Law</div>
           <div class="card-back">
             <p>Providing strong defense and advocacy in criminal cases.</p>
-            <a href="#contact" class="learn-more-btn">Learn More</a>
+            <a href="#contact" class="mobile-learn-more-btn">Learn More</a>
           </div>
         </div>
       </div>
@@ -239,7 +239,7 @@
           <div class="card-front">Immigration Law</div>
           <div class="card-back">
             <p>Navigating visas, permits, and residency with confidence.</p>
-            <a href="#contact" class="learn-more-btn">Learn More</a>
+            <a href="#contact" class="mobile-learn-more-btn">Learn More</a>
           </div>
         </div>
       </div>
@@ -248,7 +248,7 @@
           <div class="card-front">Family Law</div>
           <div class="card-back">
             <p>Resolving matters like divorce, custody, and support.</p>
-            <a href="#contact" class="learn-more-btn">Learn More</a>
+            <a href="#contact" class="mobile-learn-more-btn">Learn More</a>
           </div>
         </div>
       </div>
@@ -257,7 +257,7 @@
           <div class="card-front">Mediation</div>
           <div class="card-back">
             <p>Helping parties reach peaceful agreements outside of court.</p>
-            <a href="#contact" class="learn-more-btn">Learn More</a>
+            <a href="#contact" class="mobile-learn-more-btn">Learn More</a>
           </div>
         </div>
       </div>
@@ -454,5 +454,16 @@
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const flipCards = document.querySelectorAll(".flip-card, .service-card");
+
+    flipCards.forEach(card => {
+      card.addEventListener("click", () => {
+        card.classList.toggle("flipped");
+      });
+    });
+  });
+</script>
 </body>
 </html>
