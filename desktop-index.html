@@ -12,109 +12,77 @@
     }
   </style>
 </head>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    const confirmation = document.getElementById('form-confirmation');
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault(); // Stop page reload
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch("https://formsubmit.co/ajax/prince52sv@gmail.com", {
-          method: "POST",
-          headers: {
-            'Accept': 'application/json'
-          },
-          body: formData
-        });
-
-        if (response.ok) {
-          form.style.display = 'none';
-          confirmation.style.display = 'block';
-        } else {
-          alert("Error submitting the form. Please try again.");
-        }
-      } catch (error) {
-        alert("Something went wrong. Please try again later.");
-        console.error(error);
-      }
-    });
-  });
-</script>
 <body>
   <!-- Header -->
-  <header>
-<header class="header-blur">
-<div class="header-container">
-    <a href="desktop-index.html" class="logo-link">
-      <div class="logo">
-        <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
-        <div class="logo-text">
-          <div class="logo-line-1">SANDHU</div>
-          <div class="logo-line-2">LAW AND MEDIATION</div>
+  <header class="header-blur">
+    <div class="header-container">
+      <a href="desktop-index.html" class="logo-link">
+        <div class="logo">
+          <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
+          <div class="logo-text">
+            <div class="logo-line-1">SANDHU</div>
+            <div class="logo-line-2">LAW AND MEDIATION</div>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <!-- Normal Navigation Menu -->
-    <nav class="desktop-nav">
-      <ul class="navbar">
-        <li class="dropdown" data-submenu="submenu-practices">
-          <a href="#">Our Practices <span class="arrow">▼</span></a>
+      <!-- Normal Navigation Menu -->
+      <nav class="desktop-nav">
+        <ul class="navbar">
+          <li class="dropdown" data-submenu="submenu-practices">
+            <a href="#">Our Practices <span class="arrow">▼</span></a>
+          </li>
+          <li class="dropdown" data-submenu="submenu-team">
+            <a href="desktop-team.html">Our Team <span class="arrow">▼</span></a>
+          </li>
+          <li><a href="desktop-about.html">About Us</a></li>
+          <li><a href="desktop-resources.html">Resources</a></li>
+          <li><a href="desktop-contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Free Consultation Button -->
+      <div class="cta-button">
+        <a href="desktop-contact.html">Free Consultation</a>
+      </div>
+
+      <!-- Hamburger Icon -->
+      <button class="hamburger-icon" aria-label="Toggle Menu">☰</button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu">
+      <ul>
+        <li>
+          <a href="#" class="has-submenu">
+            Our Practices <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="submenu">
+            <a href="#">Criminal Law</a>
+            <a href="#">Immigration Law</a>
+            <a href="#">Family Law</a>
+            <a href="#">Mediation</a>
+          </div>
         </li>
-        <li class="dropdown" data-submenu="submenu-team">
-          <a href="desktop-team.html">Our Team <span class="arrow">▼</span></a>
+        <li>
+          <a href="desktop-team.html" class="has-submenu">
+            Our Team <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="submenu">
+            <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
+            <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+            <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
+            <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
+            <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
+            <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+          </div>
         </li>
         <li><a href="desktop-about.html">About Us</a></li>
         <li><a href="desktop-resources.html">Resources</a></li>
         <li><a href="desktop-contact.html">Contact Us</a></li>
       </ul>
-    </nav>
-
-    <!-- Free Consultation Button -->
-    <div class="cta-button">
-      <a href="desktop-contact.html">Free Consultation</a>
     </div>
-
-  <!-- Hamburger Icon -->
-<button class="hamburger-icon" aria-label="Toggle Menu">☰</button>
-</div>
-
-<!-- Mobile Dropdown Menu -->
-<div class="mobile-menu">
-  <ul>
-    <li>
-      <a href="#" class="has-submenu">
-        Our Practices <span class="dropdown-arrow">▼</span>
-      </a>
-      <div class="submenu">
-        <a href="#">Criminal Law</a>
-        <a href="#">Immigration Law</a>
-        <a href="#">Family Law</a>
-        <a href="#">Mediation</a>
-      </div>
-    </li>
-    <li>
-      <a href="desktop-team.html" class="has-submenu">
-        Our Team <span class="dropdown-arrow">▼</span>
-      </a>
-      <div class="submenu">
-        <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
-        <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
-        <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
-        <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
-        <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
-        <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
-      </div>
-    </li>
-    <li><a href="desktop-about.html">About Us</a></li>
-    <li><a href="desktop-resources.html">Resources</a></li>
-    <li><a href="desktop-contact.html">Contact Us</a></li>
-  </ul>
-</div>
+  </header>
 
   <!-- Mega Menu -->
   <div class="mega-menu">
@@ -324,6 +292,41 @@ nonDropdowns.forEach(item => {
   navArea.addEventListener('mouseleave', hideMegaMenu);
   megaMenu.addEventListener('mouseleave', hideMegaMenu);
   megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
+</script>
+
+// Contact Form Submission
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const confirmation = document.getElementById('form-confirmation');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // Stop page reload
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/prince52sv@gmail.com", {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          confirmation.style.display = 'block';
+        } else {
+          alert("Error submitting the form. Please try again.");
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again later.");
+        console.error(error);
+      }
+    });
+  });
 </script>
 
   <script>
