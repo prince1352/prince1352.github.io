@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://prince1352.github.io/</loc>
+    <loc>https://prince1352.github.io/index.html</loc>
     <lastmod>2025-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://prince1352.github.io/desktop-team.html</loc>
+    <loc>https://prince1352.github.io/team.html</loc>
     <lastmod>2025-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://prince1352.github.io/desktop-contact.html</loc>
+    <loc>https://prince1352.github.io/contact.html</loc>
     <lastmod>2025-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
