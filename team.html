@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Team | Sandhu Law and Mediation</title>
+
+  <title>Our Legal Team | Sandhu Law and Mediation</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sandhulawfirm.ca/team.html" />
 
   <!-- Primary Meta Tags -->
-  <meta name="description" content="Meet the experienced legal team at Sandhu Law and Mediation. Serving Surrey and Abbotsford with expertise in criminal, immigration, family law, and mediation.">
-  <meta name="keywords" content="Surrey lawyers, Abbotsford lawyers, Sandhu Law, legal team, family law Surrey, immigration lawyer BC, criminal defence lawyer">
+  <meta name="title" content="Our Legal Team | Sandhu Law and Mediation">
+  <meta name="description" content="Meet the experienced team at Sandhu Law and Mediation, providing legal services in criminal law, family law, immigration, and mediation across Surrey and Abbotsford.">
+  <meta name="keywords" content="Surrey law firm, Sandhu Law, legal team, criminal lawyer BC, family law, immigration lawyer, mediation lawyer">
   <meta name="author" content="Sandhu Law and Mediation">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sandhulawfirm.ca/team.html">
 
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="Our Team | Sandhu Law and Mediation" />
-  <meta property="og:description" content="Meet our experienced team of lawyers serving Surrey and Abbotsford. Trusted for criminal, immigration, family law, and mediation." />
-  <meta property="og:image" content="https://sandhulawfirm.ca/images/Logo.png" />
-  <meta property="og:url" content="https://sandhulawfirm.ca/team.html" />
-  <meta property="og:type" content="website" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sandhulawfirm.ca/team.html">
+  <meta property="og:title" content="Our Legal Team | Sandhu Law and Mediation">
+  <meta property="og:description" content="Meet the lawyers and legal professionals behind Sandhu Law and Mediation in Surrey and Abbotsford.">
+  <meta property="og:image" content="https://sandhulawfirm.ca/images/Logo.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Legal Team | Sandhu Law and Mediation">
+  <meta name="twitter:description" content="Meet the experienced legal team at Sandhu Law and Mediation.">
+  <meta name="twitter:image" content="https://sandhulawfirm.ca/images/Logo.png">
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -28,7 +38,7 @@
     "url": "https://sandhulawfirm.ca",
     "logo": "https://sandhulawfirm.ca/images/Logo.png",
     "image": "https://sandhulawfirm.ca/images/Logo.png",
-    "description": "A full-service law firm based in Surrey and Abbotsford, BC, specializing in criminal, immigration, family law, and mediation.",
+    "description": "Full-service law firm in Surrey and Abbotsford, BC. We offer criminal law, family law, immigration, and mediation services.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Unit#282-8128 128 Street",
@@ -41,11 +51,9 @@
   }
   </script>
 
-  <!-- CSS and Fonts -->
   <link id="theme-css" rel="stylesheet" href="" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
   <div id="dynamic-root"></div>
 
@@ -68,6 +76,7 @@
       });
 
     function loadScripts() {
+      // === Mega Menu ===
       const navDropdowns = document.querySelectorAll('.navbar .dropdown');
       const megaMenu = document.querySelector('.mega-menu');
       const submenuRows = document.querySelectorAll('.submenu-row');
