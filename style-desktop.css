@@ -942,7 +942,7 @@ body.no-scroll {
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
-TEAM REVIEW SECTION
+TEAM REVIEW SECTION (Corrected)
 ------------------------------------------------------------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
@@ -975,25 +975,25 @@ TEAM REVIEW SECTION
   gap: 1rem;
   position: relative;
   overflow-x: hidden;
-  background: var(--navy);
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  padding: 0;
 }
 
 .review-card {
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 260px;
   opacity: 0;
   transition: opacity 0.6s ease, transform 0.6s ease;
   will-change: opacity, transform;
+  grid-column: 2;
 }
 
 .review-card.active {
@@ -1039,24 +1039,26 @@ TEAM REVIEW SECTION
   color: white;
   font-size: 2.5rem;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: transform 0.4s ease, color 0.3s;
   z-index: 10;
   padding: 1rem;
-  position: relative;
+  user-select: none;
 }
 
 .carousel-arrow:hover {
   color: var(--navy);
+  transform: scale(1.25);
 }
 
 .carousel-arrow.left {
-  margin-right: 2rem;
+  grid-column: 1;
+  justify-self: end;
 }
 
 .carousel-arrow.right {
-  margin-left: 2rem;
+  grid-column: 3;
+  justify-self: start;
 }
-
 
 /* ----------------------------------------------------------------------------------------------------------------
 TEAM CONTACT ICON SECTION
