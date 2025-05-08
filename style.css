@@ -391,22 +391,15 @@ MOBILE TRANSITION HEADER/MENU
 
 /* === ≤ 900px: Hide service section, show mobile service section === */
 @media screen and (max-width: 900px) {
+  .services-parallax,
+  .services-overlay,
+  .services-layout {
+    display: none;
+  }
 
-  .services-parallax {
-  display: none;
-}
-
-.services-overlay {
- display: none;
-}
-
-.services-layout {
-  display: none;
-}
-  
-.mobile-services-section {
-  display: flex;
-}
+  .mobile-services-section {
+    display: flex;
+  }
 }
   
 /* === ≤ 768px: Shrink everything and minimize spacing === */
