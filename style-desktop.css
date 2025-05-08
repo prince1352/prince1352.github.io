@@ -234,7 +234,7 @@ CTA BUTTON
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
-HAMBURGER MENU SECTION (UPDATED)
+HAMBURGER MENU SECTION (FINAL VERSION)
 ------------------------------------------------------------------------------------------------------------------*/
 
 .hamburger-icon {
@@ -247,21 +247,22 @@ HAMBURGER MENU SECTION (UPDATED)
   margin-left: 1rem;
 }
 
+/* Main mobile dropdown menu */
 .mobile-menu {
   display: none;
   flex-direction: column;
   padding: 1rem;
-  background: white;                            /* ✅ White background */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);     /* ✅ Bottom-only pronounced shadow */
-  font-family: 'Inter', sans-serif;             /* ✅ Matches desktop font */
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* ✅ Bottom shadow only */
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   color: var(--navy);
-  border-top: none;                             /* ✅ No top line to blend with header */
-  animation: slideDownMenu 0.5s ease forwards;  /* ✅ Smooth menu drop animation */
+  border-top: none;
+  animation: slideDownMenu 0.5s ease forwards;
   z-index: 999;
 }
 
-/* ✅ Animation for full menu drop */
+/* Menu slide animation */
 @keyframes slideDownMenu {
   0% {
     opacity: 0;
@@ -280,16 +281,16 @@ HAMBURGER MENU SECTION (UPDATED)
 }
 
 .mobile-menu li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem; /* ✅ Balanced spacing for all items */
   position: relative;
 }
 
-/* 🔽 Submenu (initially hidden) */
+/* Submenu: hidden by default */
 .mobile-menu .submenu {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.7s ease, opacity 0.7s ease;  /* ✅ Longer animation */
+  transition: max-height 0.7s ease, opacity 0.7s ease;  /* ✅ Smooth longer animation */
   padding-left: 1rem;
   padding-top: 0.25rem;
   padding-bottom: 0.75rem;
@@ -299,16 +300,20 @@ HAMBURGER MENU SECTION (UPDATED)
   border-radius: 4px;
 }
 
+/* Submenu: visible */
 .mobile-menu .submenu.open {
   max-height: 600px;
   opacity: 1;
 }
 
+/* Main links */
 .mobile-menu a {
   color: var(--navy);
   text-decoration: none;
-  display: block;
-  padding: 0.5rem 0.25rem;  /* ✅ Improved spacing */
+  display: flex;
+  justify-content: space-between; /* ✅ arrow beside text */
+  align-items: center;
+  padding: 0.5rem 0.25rem;
   transition: color 0.2s ease;
 }
 
@@ -316,26 +321,22 @@ HAMBURGER MENU SECTION (UPDATED)
   color: var(--red);
 }
 
-/* 🔽 Arrow toggle button */
-.dropdown-toggle {
-  background: none;
-  border: none;
-  color: var(--navy);
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  width: 100%;
-  justify-content: space-between;
-  padding: 0;
-}
-
+/* Arrow next to menu item */
 .dropdown-arrow {
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
   transition: transform 0.4s ease;
+  color: var(--navy);
+  flex-shrink: 0;
 }
 
 .dropdown-arrow.open {
   transform: rotate(180deg);
+}
+
+/* ✅ Remove header shadow when menu is open */
+header.no-shadow {
+  box-shadow: none !important;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
