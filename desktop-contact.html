@@ -383,7 +383,7 @@
       // Only animate while in view
       if (scrollY >= sectionTop && scrollY <= sectionBottom) {
         const progress = scrollY - sectionTop;
-        text.style.transform = `translateY(${progress * 0.5}px)`; // ⬅️ Increase multiplier here
+        text.style.transform = `translateY(${progress * 3}px)`; // ⬅️ Increase multiplier here
       }
     });
   });
