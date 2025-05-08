@@ -325,3 +325,49 @@ nonDropdowns.forEach(item => {
   megaMenu.addEventListener('mouseleave', hideMegaMenu);
   megaMenu.addEventListener('mouseenter', () => clearTimeout(submenuTimeout));
 </script>
+
+  <script>
+  // Toggle hamburger menu open/close
+  const hamburger = document.querySelector('.hamburger-icon');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const header = document.querySelector('header');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    header.classList.toggle('no-shadow');
+
+    // ✅ Close all submenus and arrows when menu is closed
+    if (!mobileMenu.classList.contains('active')) {
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.classList.remove('open');
+      });
+      document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
+        arrow.classList.remove('open');
+      });
+    }
+  });
+
+  // Handle links with submenus
+  document.querySelectorAll('.has-submenu').forEach(link => {
+    const submenu = link.nextElementSibling;
+    const arrow = link.querySelector('.dropdown-arrow');
+
+    link.addEventListener('click', e => {
+      if (arrow && e.target === arrow) {
+        // Arrow was clicked — just toggle submenu
+        e.preventDefault();
+        submenu.classList.toggle('open');
+        arrow.classList.toggle('open');
+        return;
+      }
+
+      if (!submenu.classList.contains('open')) {
+        // Text clicked and submenu is closed — open submenu, prevent nav
+        e.preventDefault();
+        submenu.classList.add('open');
+        arrow.classList.add('open');
+      }
+      // Else: submenu is already open — allow normal link behavior
+    });
+  });
+</script>
