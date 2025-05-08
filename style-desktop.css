@@ -390,32 +390,29 @@ MOBILE TRANSITION HEADER/MENU
 }
 
 
-/* === ≤ 850px: Shrink everything and minimize spacing === */
-@media screen and (max-width: 850px) {
+/* === ≤ 768px: Shrink everything and minimize spacing === */
+@media screen and (max-width: 768px) {
   .logo-line-1 {
-    font-size: 1.37rem;
-    margin-right: 0.2rem;
+    font-size: 1.79rem;
   }
 
   .logo-line-2 {
-    font-size: 0.54rem;
-    margin-right: 0.2rem;
+    font-size: 0.7rem;
   }
 
   .cta-button a {
-    font-size: 0.56rem;
-    padding: 0.5rem 1rem;
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
+    font-size: 0.75rem;
+    padding: 0.65rem 1.3rem;
   }
 
-  .logo-icon {
-    margin-left: 0.5rem;
+   .cta-button {
+    margin-right: 0.5rem;
+    margin-left:0.5rem
   }
-
-  .hamburger-icon {
-  font-size: 2rem;
-}
+  
+  .logo {
+    gap: 0.5rem
+  }
 
 }
 
