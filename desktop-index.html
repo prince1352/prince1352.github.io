@@ -346,6 +346,41 @@
     });
   }
 
+// === Hamburger Menu ===
+const hamburger = document.querySelector('.hamburger-icon');
+const mobileMenu = document.querySelector('.mobile-menu');
+const header = document.querySelector('header');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    header.classList.toggle('no-shadow');
+    if (!mobileMenu.classList.contains('active')) {
+      document.querySelectorAll('.submenu').forEach(sub => sub.classList.remove('open'));
+      document.querySelectorAll('.dropdown-arrow').forEach(a => a.classList.remove('open'));
+    }
+  });
+}
+
+// === Mobile Submenu Toggle ===
+document.querySelectorAll('.has-submenu').forEach(link => {
+  const submenu = link.nextElementSibling;
+  const arrow = link.querySelector('.dropdown-arrow');
+  link.addEventListener('click', e => {
+    if (arrow && e.target === arrow) {
+      e.preventDefault();
+      submenu.classList.toggle('open');
+      arrow.classList.toggle('open');
+      return;
+    }
+    if (!submenu.classList.contains('open')) {
+      e.preventDefault();
+      submenu.classList.add('open');
+      arrow.classList.add('open');
+    }
+  });
+});
+ 
   // ✅ Contact form submission
   const form = document.getElementById('contact-form');
   const confirmation = document.getElementById('form-confirmation');
@@ -374,6 +409,7 @@
       }
     });
   }
+    
 </script>
 </body>
 </html>
