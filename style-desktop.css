@@ -1376,16 +1376,14 @@ CONTACT PAGE CONTACT  SECTION
 .custom-contact-left {
   flex: 1 1 0%;
   display: flex;
-  align-items: flex-start;        /* Keep text starting at top */
+  align-items: flex-start;
   justify-content: center;
   position: relative;
+  min-height: 100vh;
   background: url('images/contact-page.jpg') center center / cover no-repeat;
   overflow: hidden;
-  padding: 3rem 2rem;             /* ✅ Add padding if needed */
-  min-height: auto;              /* ❌ FIX: Remove min-height: 100vh */
+  padding-top: 0rem;
 }
-
-
 
 .custom-contact-overlay {
   position: absolute;
