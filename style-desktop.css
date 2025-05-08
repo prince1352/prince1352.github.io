@@ -700,20 +700,19 @@ TEAM INTRO SECTION
   padding: 0 2rem;
 }
 
-.team-line {
+.team-line-left {
   flex: 1;
-  height: 4px;
+  height: 2px;
   background-color: var(--navy);
-}
-
-.team-line.left-line {
   margin-right: 2rem;
 }
 
-.team-line.right-line {
+.team-line-right {
+  flex: 1;
+  height: 2px;
+  background-color: var(--navy);
   margin-left: 2rem;
 }
-
 .team-title {
   font-size: 2.5rem;
   font-weight: 700;
