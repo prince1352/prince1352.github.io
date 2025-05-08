@@ -193,7 +193,7 @@
           <span>I acknowledge the disclaimer above.</span>
         </label>
         
-        <button type="submit" class="custom-submit-btn" disabled>
+       <button type="submit" class="custom-submit-btn" disabled>Submit</button>
           Schedule Your Free Consultation
         </button>
       </form>
@@ -383,11 +383,35 @@
       // Only animate while in view
       if (scrollY >= sectionTop && scrollY <= sectionBottom) {
         const progress = scrollY - sectionTop;
-        text.style.transform = `translateY(${progress * 3}px)`; // ⬅️ Increase multiplier here
+        text.style.transform = `translateY(${progress * 1.5}px)`; // ⬅️ Increase multiplier here
       }
     });
   });
 </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.getElementById("disclaimer-checkbox");
+    const submitBtn = document.querySelector(".custom-submit-btn");
+
+    function toggleSubmit() {
+      if (checkbox.checked) {
+        submitBtn.classList.add("enabled");
+        submitBtn.disabled = false;
+      } else {
+        submitBtn.classList.remove("enabled");
+        submitBtn.disabled = true;
+      }
+    }
+
+    // Initialize state
+    toggleSubmit();
+
+    // Watch for changes
+    checkbox.addEventListener("change", toggleSubmit);
+  });
+</script>
+
 
 </body>
 </html>
