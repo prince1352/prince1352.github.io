@@ -24,7 +24,7 @@ HEADER SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
 header {
-  height: 130px; /* Ensure fixed height */
+  height: 130px;
   background-color: white;
   position: sticky;
   top: 0;
@@ -45,13 +45,14 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* distance between image and text */
+  gap: 1.5rem;
   flex-shrink: 0;
 }
 
 .logo-icon {
   height: 60px;
   width: auto;
+  transition: all 0.25s ease;
 }
 
 .logo-text {
@@ -66,6 +67,7 @@ header {
   font-weight: 700;
   color: var(--red);
   letter-spacing: 0.28rem;
+  transition: all 0.25s ease;
 }
 
 .logo-line-2 {
@@ -74,6 +76,7 @@ header {
   color: var(--navy);
   letter-spacing: 0.15rem;
   white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
@@ -85,20 +88,19 @@ nav {
   height: 100%;
   display: flex;
   align-items: center;
-  margin: 0 1rem;  
-  min-width: 0;     
+  margin: 0 1rem;
+  min-width: 0;
 }
 
 ul.navbar {
   list-style: none;
   display: flex;
-  gap: clamp(0.25rem, 0.6vw, 0.6rem);
   height: 100%;
   align-items: center;
   padding: 0;
   margin: 0;
-  justify-content: space-between;  /* ✅ spreads items */
-  flex: 1 1 auto;                  /* ✅ lets it grow/shrink */
+  flex: 1 1 auto;
+  justify-content: space-between;
 }
 
 ul.navbar > li {
@@ -110,33 +112,39 @@ ul.navbar > li > a {
   display: flex;
   align-items: center;
   height: 100%;
- padding: 0 1rem;
+  padding-left: clamp(0.6rem, 1vw, 1.2rem);  /* internal left padding that shrinks */
+  padding-right: clamp(0.6rem, 1vw, 1.2rem); /* internal right padding that shrinks */
   text-decoration: none;
   color: black;
-  font-size: 1rem;             /* Decreased from 1.2rem */
-  font-weight: 300;            /* Lighter weight */
+  font-size: 1rem;
+  font-weight: 300;
   font-family: 'Inter', sans-serif;
   white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
 ul.navbar > li > a:hover {
   background-color: var(--red);
   color: white;
 }
+
 .arrow {
   margin-left: 5px;
   font-size: 0.6rem;
 }
 
 ul.navbar > li:first-child {
-  margin-left: 3rem; /* ✅ space from logo */
+  margin-left: clamp(2rem, 4vw, 4rem); /* more space from logo */
 }
 
 ul.navbar > li:last-child {
-  margin-right: 3rem; /* ✅ space from Free Consultation */
+  margin-right: clamp(2rem, 4vw, 4rem); /* more space before CTA button */
 }
 
-/* Mega Menu Layer */
+/* ----------------------------------------------------------------------------------------------------------------
+MEGA MENU SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
 .mega-menu {
   position: sticky;
   top: 130px;
@@ -176,20 +184,22 @@ ul.navbar > li:last-child {
 
 .submenu-row a {
   color: white;
-  font-weight: 300; /* Light and modern */
-  font-size: 1rem; /* Match menu */
+  font-weight: 300;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
   text-decoration: none;
   transition: color 0.2s ease;
   padding: 0.5rem 1rem;
 }
 
-
 .submenu-row a:hover {
   text-decoration: underline;
 }
 
-/* CTA Button */
+/* ----------------------------------------------------------------------------------------------------------------
+CTA BUTTON
+------------------------------------------------------------------------------------------------------------------*/
+
 .cta-button {
   flex: 1;
   min-width: 0;
@@ -207,8 +217,8 @@ ul.navbar > li:last-child {
   font-size: 1.15rem;
   font-family: 'Inter', sans-serif;
   white-space: nowrap;
-  border: 2px solid transparent;       /* added for hover animation */
-  transition: all 0.3s ease;           /* enables smooth animation */
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .cta-button a:hover {
@@ -218,10 +228,9 @@ ul.navbar > li:last-child {
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
-Hamburger Menu Section
+HAMBURGER MENU SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
-/* 🔽 Hamburger hidden on large screens */
 .hamburger-icon {
   display: none;
   font-size: 2rem;
@@ -232,7 +241,6 @@ Hamburger Menu Section
   margin-left: 1rem;
 }
 
-/* 🔽 Mobile Menu hidden by default */
 .mobile-menu {
   display: none;
   background: var(--red);
@@ -263,27 +271,15 @@ Hamburger Menu Section
   margin: 0.25rem 0;
 }
 
-/* 🔽 Responsive Toggle */
-
-/* Smooth Resizing + Hamburger Toggle */
-
-.navbar li a,
-.cta-button a,
-.logo-text .logo-line-1,
-.logo-text .logo-line-2,
-.logo-icon {
-  transition: all 0.25s ease;
-}
+/* ----------------------------------------------------------------------------------------------------------------
+RESPONSIVE TRANSITIONS
+------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1400px) {
-  .navbar li a {
-    font-size: 0.95rem;
-    padding: 0.6rem 0.8rem;
-  }
-  .logo-text .logo-line-1 {
+  .logo-line-1 {
     font-size: 2.4rem;
   }
-  .logo-text .logo-line-2 {
+  .logo-line-2 {
     font-size: 1rem;
   }
   .cta-button a {
@@ -293,14 +289,10 @@ Hamburger Menu Section
 }
 
 @media screen and (max-width: 1200px) {
-  .navbar li a {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.7rem;
-  }
-  .logo-text .logo-line-1 {
+  .logo-line-1 {
     font-size: 2.1rem;
   }
-  .logo-text .logo-line-2 {
+  .logo-line-2 {
     font-size: 0.9rem;
   }
   .cta-button a {
@@ -310,14 +302,10 @@ Hamburger Menu Section
 }
 
 @media screen and (max-width: 1000px) {
-  .navbar li a {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.6rem;
-  }
-  .logo-text .logo-line-1 {
+  .logo-line-1 {
     font-size: 1.9rem;
   }
-  .logo-text .logo-line-2 {
+  .logo-line-2 {
     font-size: 0.85rem;
   }
   .cta-button a {
@@ -339,7 +327,17 @@ Hamburger Menu Section
   .logo-icon {
     max-width: 45px;
   }
+}
 
+@media screen and (max-width: 1000px) {
+  /* Reduce outer spacing between logo/menu and menu/CTA on smaller screens */
+  ul.navbar > li:first-child {
+    margin-left: 1rem;
+  }
+
+  ul.navbar > li:last-child {
+    margin-right: 1rem;
+  }
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
