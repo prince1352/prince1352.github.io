@@ -372,26 +372,20 @@
 </script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const textBlock = document.querySelector('.custom-contact-text');
+  document.addEventListener('DOMContentLoaded', function () {
     const leftSection = document.querySelector('.custom-contact-left');
+    const text = document.querySelector('.custom-contact-text');
 
-    // Apply parallax only while within the left section
     window.addEventListener('scroll', () => {
-      if (textBlock && leftSection) {
-        const scrollY = window.scrollY;
-        const sectionTop = leftSection.offsetTop;
-        const sectionHeight = leftSection.offsetHeight;
-        const maxTranslate = sectionHeight - textBlock.offsetHeight;
+      const sectionTop = leftSection.offsetTop;
+      const sectionHeight = leftSection.offsetHeight;
+      const scrollY = window.scrollY;
+      const sectionBottom = sectionTop + sectionHeight;
 
-        // Calculate relative scroll inside the section
-        let translate = scrollY - sectionTop;
-
-        // Clamp the translate value
-        if (translate < 0) translate = 0;
-        if (translate > maxTranslate) translate = maxTranslate;
-
-        textBlock.style.transform = `translateY(${translate}px)`;
+      // Only animate while in view
+      if (scrollY >= sectionTop && scrollY <= sectionBottom) {
+        const progress = scrollY - sectionTop;
+        text.style.transform = `translateY(${progress * 0.5}px)`; // ⬅️ Increase multiplier here
       }
     });
   });
