@@ -294,7 +294,6 @@ HAMBURGER MENU SECTION (FINALIZED)
   padding-left: 1rem;
   background: #f9f9f9;
   border-left: 3px solid var(--navy);
-  margin-top: 0.5rem;
   border-radius: 4px;
 }
 
@@ -304,6 +303,7 @@ HAMBURGER MENU SECTION (FINALIZED)
   opacity: 1;
   padding-top: 0.25rem;
   padding-bottom: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 /* All menu links */
