@@ -348,21 +348,20 @@ MOBILE TRANSITION HEADER/MENU
 /* === ≤ 1300px: Shrink logo, logo text, and CTA === */
 @media screen and (max-width: 1300px) {
   .logo-line-1 {
-    font-size: 1.96rem;
+    font-size: 2.24rem;
   }
 
   .logo-line-2 {
-    font-size: 0.77rem;
+    font-size: 0.88rem;
   }
 
   .cta-button a {
-    font-size: 0.8rem;
-    padding: 0.7rem 1.4rem;
-    margin-right: 1rem;
+    font-size: 0.92rem;
+    padding: 0.8rem 1.6rem;
   }
 
-  .logo-icon {
-    width: 40px;
+  .cta-button {
+    margin-right: 1.5rem;
   }
 
   ul.navbar > li:first-child {
@@ -371,19 +370,6 @@ MOBILE TRANSITION HEADER/MENU
 
   ul.navbar > li:last-child {
     margin-right: 2rem;
-  }
-}
-
-
-
-/* === ≤ 1150px: Adjust navbar margins === */
-@media screen and (max-width: 1150px) {
-  ul.navbar > li:first-child {
-    margin-left: 1rem;
-  }
-
-  ul.navbar > li:last-child {
-    margin-right: 1rem;
   }
 }
 
