@@ -321,29 +321,47 @@
     });
   </script>
 
-   <!-- Script for Hamburger Menu -->
-  
   <script>
+  // Toggle hamburger menu open/close
   const hamburger = document.querySelector('.hamburger-icon');
   const mobileMenu = document.querySelector('.mobile-menu');
+  const header = document.querySelector('header');
 
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
+    header.classList.toggle('no-shadow');
   });
-</script>
 
-  <script>
-  // Toggle submenu dropdowns in hamburger
-  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const submenu = toggle.nextElementSibling;
-      const arrow = toggle.querySelector('.dropdown-arrow');
+  // Dropdown toggle logic
+  document.querySelectorAll('.dropdown-toggle-link').forEach(link => {
+    const submenu = link.nextElementSibling;
+    const arrow = link.querySelector('.dropdown-arrow');
 
+    // Handle click on menu link
+    link.addEventListener('click', (e) => {
+      if (submenu.classList.contains('open')) {
+        // Submenu already open — go to href
+        return;
+      } else {
+        // Submenu not open — just open it and prevent navigation
+        e.preventDefault();
+        submenu.classList.add('open');
+        arrow.classList.add('open');
+      }
+    });
+  });
+
+  // Arrow-only click closes submenu
+  document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
+    arrow.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent parent link from triggering
+      const submenu = arrow.closest('.dropdown-toggle-link').nextElementSibling;
       submenu.classList.toggle('open');
       arrow.classList.toggle('open');
     });
   });
 </script>
+
 
 
 
