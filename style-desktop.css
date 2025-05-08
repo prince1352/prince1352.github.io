@@ -292,8 +292,6 @@ HAMBURGER MENU SECTION (FINALIZED)
   opacity: 0;
   transition: max-height 0.7s ease, opacity 0.7s ease;
   padding-left: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.75rem;
   background: #f9f9f9;
   border-left: 3px solid var(--navy);
   margin-top: 0.5rem;
@@ -304,6 +302,8 @@ HAMBURGER MENU SECTION (FINALIZED)
 .mobile-menu .submenu.open {
   max-height: 600px;
   opacity: 1;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
 }
 
 /* All menu links */
