@@ -46,38 +46,42 @@
       <a href="desktop-contact.html">Free Consultation</a>
     </div>
 
-    <!-- Hamburger Icon -->
-    <button class="hamburger-icon" aria-label="Toggle Menu">☰</button>
-  </div>
+  <!-- Hamburger Icon -->
+<button class="hamburger-icon" aria-label="Toggle Menu">☰</button>
+</div>
 
-  <!-- Mobile Dropdown Menu -->
-  <div class="mobile-menu">
-    <ul>
-      <li>
-        <a href="#">Our Practices</a>
-        <div class="submenu">
-          <a href="#">Criminal Law</a>
-          <a href="#">Immigration Law</a>
-          <a href="#">Family Law</a>
-          <a href="#">Mediation</a>
-        </div>
-      </li>
-      <li>
-        <a href="#">Our Team</a>
-        <div class="submenu">
-          <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
-          <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
-          <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
-          <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
-          <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
-          <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
-        </div>
-      </li>
-      <li><a href="desktop-about.html">About Us</a></li>
-      <li><a href="desktop-resources.html">Resources</a></li>
-      <li><a href="desktop-contact.html">Contact Us</a></li>
-    </ul>
-  </div>
+<!-- Mobile Dropdown Menu -->
+<div class="mobile-menu">
+  <ul>
+    <li>
+      <button class="dropdown-toggle">
+        Our Practices <span class="dropdown-arrow">▼</span>
+      </button>
+      <div class="submenu">
+        <a href="#">Criminal Law</a>
+        <a href="#">Immigration Law</a>
+        <a href="#">Family Law</a>
+        <a href="#">Mediation</a>
+      </div>
+    </li>
+    <li>
+      <button class="dropdown-toggle">
+        Our Team <span class="dropdown-arrow">▼</span>
+      </button>
+      <div class="submenu">
+        <a href="desktop-team.html?lawyer=baldev">Baldev Sandhu</a>
+        <a href="desktop-team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+        <a href="desktop-team.html?lawyer=kiran">Kiran Sandhu</a>
+        <a href="desktop-team.html?lawyer=aman">Aman Sandhu</a>
+        <a href="desktop-team.html?lawyer=harpun">Harpun Brar</a>
+        <a href="desktop-team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+      </div>
+    </li>
+    <li><a href="desktop-about.html">About Us</a></li>
+    <li><a href="desktop-resources.html">Resources</a></li>
+    <li><a href="desktop-contact.html">Contact Us</a></li>
+  </ul>
+</div>
   </header>
 
   <!-- Mega Menu -->
@@ -328,6 +332,18 @@
   });
 </script>
 
+  <script>
+  // Toggle submenu dropdowns in hamburger
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const submenu = toggle.nextElementSibling;
+      const arrow = toggle.querySelector('.dropdown-arrow');
+
+      submenu.classList.toggle('open');
+      arrow.classList.toggle('open');
+    });
+  });
+</script>
 
 
 
