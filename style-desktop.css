@@ -251,13 +251,26 @@ HAMBURGER MENU SECTION (UPDATED)
   display: none;
   flex-direction: column;
   padding: 1rem;
-  background: white;                  /* ✅ White background */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  /* ✅ Subtle shadow */
-  font-family: 'Inter', sans-serif;  /* ✅ Match desktop font */
-  font-size: 1rem;                   /* ✅ Match desktop size */
+  background: white;                            /* ✅ White background */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);     /* ✅ Bottom-only pronounced shadow */
+  font-family: 'Inter', sans-serif;             /* ✅ Matches desktop font */
+  font-size: 1rem;
   color: var(--navy);
-  border-top: 1px solid #ddd;
+  border-top: none;                             /* ✅ No top line to blend with header */
+  animation: slideDownMenu 0.5s ease forwards;  /* ✅ Smooth menu drop animation */
   z-index: 999;
+}
+
+/* ✅ Animation for full menu drop */
+@keyframes slideDownMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-menu ul {
@@ -276,15 +289,18 @@ HAMBURGER MENU SECTION (UPDATED)
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: max-height 0.7s ease, opacity 0.7s ease;  /* ✅ Longer animation */
   padding-left: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
   background: #f9f9f9;
   border-left: 3px solid var(--navy);
   margin-top: 0.5rem;
+  border-radius: 4px;
 }
 
 .mobile-menu .submenu.open {
-  max-height: 500px;
+  max-height: 600px;
   opacity: 1;
 }
 
@@ -292,7 +308,7 @@ HAMBURGER MENU SECTION (UPDATED)
   color: var(--navy);
   text-decoration: none;
   display: block;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0.25rem;  /* ✅ Improved spacing */
   transition: color 0.2s ease;
 }
 
@@ -315,7 +331,7 @@ HAMBURGER MENU SECTION (UPDATED)
 }
 
 .dropdown-arrow {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .dropdown-arrow.open {
