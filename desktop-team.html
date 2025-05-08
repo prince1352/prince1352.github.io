@@ -504,18 +504,26 @@
 
    <script>
 
-  <script>
+     // === Review Animation ===
+     
+<script>
   document.addEventListener('DOMContentLoaded', function () {
-    // === Review Carousel ===
     const cards = document.querySelectorAll('.review-card');
     const leftArrow = document.querySelector('.review-arrow.left');
     const rightArrow = document.querySelector('.review-arrow.right');
     let activeIndex = 0;
     let isTransitioning = false;
 
-    // Show the first card immediately
-    if (cards.length > 0) {
-      cards[0].classList.add('active');
+    function showCard(index) {
+      cards.forEach((card, i) => {
+        card.classList.remove('active', 'fade-in', 'fade-out');
+        if (i === index) {
+          card.classList.add('active');
+          // Force reflow to ensure animation triggers
+          void card.offsetWidth;
+          card.classList.add('fade-in');
+        }
+      });
     }
 
     function updateReview(direction) {
@@ -526,21 +534,22 @@
       currentCard.classList.remove('fade-in');
       currentCard.classList.add('fade-out');
 
-      currentCard.addEventListener('transitionend', () => {
+      setTimeout(() => {
         currentCard.classList.remove('active', 'fade-out');
 
-        // Update index based on direction
         if (direction === 'next') {
           activeIndex = (activeIndex + 1) % cards.length;
         } else {
           activeIndex = (activeIndex - 1 + cards.length) % cards.length;
         }
 
-        const newCard = cards[activeIndex];
-        newCard.classList.add('active', 'fade-in');
-
+        showCard(activeIndex);
         isTransitioning = false;
-      }, { once: true });
+      }, 400); // matches CSS transition duration
+    }
+
+    if (cards.length > 0) {
+      showCard(activeIndex);
     }
 
     rightArrow?.addEventListener('click', () => updateReview('next'));
