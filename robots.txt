@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sandhulawfirm.ca/sitemap.xml
+Sitemap: https://prince1352.github.io/sitemap.xml
+
