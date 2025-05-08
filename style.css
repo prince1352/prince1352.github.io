@@ -342,96 +342,6 @@ header.no-shadow {
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
-MOBILE TRANSITION HEADER/MENU
-------------------------------------------------------------------------------------------------------------------*/
-
-/* === ≤ 1300px: Shrink logo, logo text, and CTA === */
-@media screen and (max-width: 1300px) {
-  .logo-line-1 {
-    font-size: 2.24rem;
-  }
-
-  .logo-line-2 {
-    font-size: 0.88rem;
-  }
-
-  .cta-button a {
-    font-size: 0.92rem;
-    padding: 0.8rem 1.6rem;
-  }
-
-  .cta-button {
-    margin-right: 1.5rem;
-  }
-
-  ul.navbar > li:first-child {
-    margin-left: 2rem;
-  }
-
-  ul.navbar > li:last-child {
-    margin-right: 2rem;
-  }
-}
-
-
-/* === ≤ 1100px: Hide desktop nav, show mobile menu === */
-@media screen and (max-width: 1100px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .hamburger-icon {
-    display: block;
-  }
-
-  .mobile-menu.active {
-    display: flex;
-  }
-}
-
-/* === ≤ 900px: Hide service section, show mobile service section === */
-@media screen and (max-width: 900px) {
-  .services-parallax,
-  .services-overlay,
-  .services-layout {
-    display: none;
-  }
-
-  .mobile-services-section {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 1;
-  }
-}
-  
-/* === ≤ 768px: Shrink everything and minimize spacing === */
-@media screen and (max-width: 768px) {
-  .logo-line-1 {
-    font-size: 1.79rem;
-  }
-
-  .logo-line-2 {
-    font-size: 0.7rem;
-  }
-
-  .cta-button a {
-    font-size: 0.75rem;
-    padding: 0.65rem 1.3rem;
-  }
-
-   .cta-button {
-    margin-right: 0.5rem;
-    margin-left:0.5rem
-  }
-  
-  .logo {
-    gap: 0.5rem
-  }
-
-}
-
-/* ----------------------------------------------------------------------------------------------------------------
 HOMEPAGE WELCOME SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
@@ -658,11 +568,9 @@ HOMEPAGE SERVICES SECTION
   z-index: 1;
   overflow: hidden;
   
-  /* ✅ Correct format: background-image alone, other props separate 
-  background-image: url('images/Mobile-Service-Background.jpg');
-  */
+  /* ✅ Correct format: background-image alone, other props separate */
   
-  background: red;
+  background-image: url('images/Mobile-Service-Background.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1717,4 +1625,94 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 
 .location-btn:hover {
   background: var(--red);
+}
+
+/* ----------------------------------------------------------------------------------------------------------------
+MOBILE TRANSITION HEADER/MENU
+------------------------------------------------------------------------------------------------------------------*/
+
+/* === ≤ 1300px: Shrink logo, logo text, and CTA === */
+@media screen and (max-width: 1300px) {
+  .logo-line-1 {
+    font-size: 2.24rem;
+  }
+
+  .logo-line-2 {
+    font-size: 0.88rem;
+  }
+
+  .cta-button a {
+    font-size: 0.92rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .cta-button {
+    margin-right: 1.5rem;
+  }
+
+  ul.navbar > li:first-child {
+    margin-left: 2rem;
+  }
+
+  ul.navbar > li:last-child {
+    margin-right: 2rem;
+  }
+}
+
+
+/* === ≤ 1100px: Hide desktop nav, show mobile menu === */
+@media screen and (max-width: 1100px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+
+/* === ≤ 900px: Hide service section, show mobile service section === */
+@media screen and (max-width: 900px) {
+  .services-parallax,
+  .services-overlay,
+  .services-layout {
+    display: none;
+  }
+
+  .mobile-services-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+}
+  
+/* === ≤ 768px: Shrink everything and minimize spacing === */
+@media screen and (max-width: 768px) {
+  .logo-line-1 {
+    font-size: 1.79rem;
+  }
+
+  .logo-line-2 {
+    font-size: 0.7rem;
+  }
+
+  .cta-button a {
+    font-size: 0.75rem;
+    padding: 0.65rem 1.3rem;
+  }
+
+   .cta-button {
+    margin-right: 0.5rem;
+    margin-left:0.5rem
+  }
+  
+  .logo {
+    gap: 0.5rem
+  }
+
 }
