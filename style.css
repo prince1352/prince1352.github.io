@@ -399,6 +399,9 @@ MOBILE TRANSITION HEADER/MENU
 
   .mobile-services-section {
     display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
   }
 }
   
