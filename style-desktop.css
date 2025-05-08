@@ -1088,11 +1088,11 @@ TEAM REVIEW SECTION (Corrected)
   grid-column: 3;
 }
 
-.carousel-arrow.left {
+.review-arrow.left {
   margin-right: 2rem;
 }
 
-.carousel-arrow.right {
+.review-arrow.right {
   margin-left: 2rem;
 }
 
