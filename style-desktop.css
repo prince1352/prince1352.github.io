@@ -800,19 +800,20 @@ TEAM EXPANDED POPUP SECTION
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 1000px;
   background-color: var(--red);
   color: white;
-  padding: 3rem 2rem;
-  border-radius: 15px;
+  padding: 0;
+  border-radius: 0;
   transform: translate(-50%, -50%) scale(0.8);
   opacity: 0;
   pointer-events: none;
   z-index: 1000;
   transition: all 0.4s ease;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }
 
 .expanded-card.open {
@@ -821,17 +822,32 @@ TEAM EXPANDED POPUP SECTION
   transform: translate(-50%, -50%) scale(1);
 }
 
-.expanded-card h2 {
-  font-size: 2rem;
+.expanded-card img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expanded-content {
+  width: 60%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.expanded-content h2 {
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
-.expanded-card h4 {
+.expanded-content h4 {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
-.expanded-card p {
+.expanded-content p {
   font-size: 1rem;
   line-height: 1.6;
 }
