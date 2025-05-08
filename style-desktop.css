@@ -234,7 +234,7 @@ CTA BUTTON
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
-HAMBURGER MENU SECTION (FINAL VERSION)
+HAMBURGER MENU SECTION (FINALIZED)
 ------------------------------------------------------------------------------------------------------------------*/
 
 .hamburger-icon {
@@ -253,7 +253,7 @@ HAMBURGER MENU SECTION (FINAL VERSION)
   flex-direction: column;
   padding: 1rem;
   background: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* ✅ Bottom shadow only */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Bottom-only shadow */
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   color: var(--navy);
@@ -262,7 +262,7 @@ HAMBURGER MENU SECTION (FINAL VERSION)
   z-index: 999;
 }
 
-/* Menu slide animation */
+/* Slide-down animation */
 @keyframes slideDownMenu {
   0% {
     opacity: 0;
@@ -281,16 +281,16 @@ HAMBURGER MENU SECTION (FINAL VERSION)
 }
 
 .mobile-menu li {
-  margin-bottom: 0.75rem; /* ✅ Balanced spacing for all items */
+  margin-bottom: 0.75rem;
   position: relative;
 }
 
-/* Submenu: hidden by default */
+/* Submenu: hidden */
 .mobile-menu .submenu {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.7s ease, opacity 0.7s ease;  /* ✅ Smooth longer animation */
+  transition: max-height 0.7s ease, opacity 0.7s ease;
   padding-left: 1rem;
   padding-top: 0.25rem;
   padding-bottom: 0.75rem;
@@ -306,22 +306,23 @@ HAMBURGER MENU SECTION (FINAL VERSION)
   opacity: 1;
 }
 
-/* Main links */
+/* All menu links */
 .mobile-menu a {
   color: var(--navy);
   text-decoration: none;
   display: flex;
-  justify-content: space-between; /* ✅ arrow beside text */
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.25rem;
   transition: color 0.2s ease;
 }
 
+/* Hover effect for all links */
 .mobile-menu a:hover {
   color: var(--red);
 }
 
-/* Arrow next to menu item */
+/* Arrow beside text */
 .dropdown-arrow {
   font-size: 0.75rem;
   margin-left: 0.5rem;
@@ -330,11 +331,12 @@ HAMBURGER MENU SECTION (FINAL VERSION)
   flex-shrink: 0;
 }
 
+/* Arrow rotated when open */
 .dropdown-arrow.open {
   transform: rotate(180deg);
 }
 
-/* ✅ Remove header shadow when menu is open */
+/* Remove shadow on header when menu is open */
 header.no-shadow {
   box-shadow: none !important;
 }
