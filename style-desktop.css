@@ -204,6 +204,7 @@ CTA BUTTON
   flex: 1;
   min-width: 0;
   text-align: right;
+  margin-right: 1rem;  /* ✅ adds space to the right edge */
 }
 
 .cta-button a {
@@ -314,7 +315,7 @@ RESPONSIVE TRANSITIONS
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1000px) {
   .desktop-nav {
     display: none;
   }
