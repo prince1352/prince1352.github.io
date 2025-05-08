@@ -658,8 +658,11 @@ HOMEPAGE SERVICES SECTION
   z-index: 1;
   overflow: hidden;
   
-  /* ✅ Correct format: background-image alone, other props separate */
+  /* ✅ Correct format: background-image alone, other props separate 
   background-image: url('images/Mobile-Service-Background.jpg');
+  */
+  
+  background: red;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
