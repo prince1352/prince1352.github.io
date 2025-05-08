@@ -223,43 +223,50 @@
   </section>
 
   <!-- Review Section -->
-  <section class="review-section">
+<section class="review-section">
   <h2 class="review-title">Client Reviews</h2>
-  <div class="review-carousel">
-    <div class="review-card active">
-      <div class="review-stars">★★★★★</div>
-      <p>"The lawyers at Sandhu Law were professional and compassionate. Highly recommend!"</p>
-      <span>- A. Singh</span>
+  <div class="review-carousel-wrapper">
+    <button class="review-arrow left">&#8249;</button>
+
+    <div class="review-carousel-box">
+      <div class="review-card active">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The lawyers at Sandhu Law were professional and compassionate. Highly recommend!"</p>
+        <span>- A. Singh</span>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They helped my family navigate a tough custody case. Amazing support."</p>
+        <span>- J. Grewal</span>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Exceptional immigration advice. They made the process smooth and stress-free."</p>
+        <span>- M. Patel</span>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Baldev and his team were always there for me and my case. I felt supported throughout."</p>
+        <span>- R. Dhaliwal</span>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Aman Sandhu is a brilliant legal mind. His corporate law advice saved us thousands."</p>
+        <span>- T. Brar</span>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"We appreciated the firm’s honesty and transparency from day one. Highly recommended."</p>
+        <span>- K. Sidhu</span>
+      </div>
     </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p>"They helped my family navigate a tough custody case. Amazing support."</p>
-      <span>- J. Grewal</span>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p>"Exceptional immigration advice. They made the process smooth and stress-free."</p>
-      <span>- M. Patel</span>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p>"Baldev and his team were always there for me and my case. I felt supported throughout."</p>
-      <span>- R. Dhaliwal</span>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p>"Aman Sandhu is a brilliant legal mind. His corporate law advice saved us thousands."</p>
-      <span>- T. Brar</span>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p>"We appreciated the firm’s honesty and transparency from day one. Highly recommended."</p>
-      <span>- K. Sidhu</span>
-    </div>
-  </div>
-  <div class="carousel-arrows">
-    <span class="carousel-arrow left">←</span>
-    <span class="carousel-arrow right">→</span>
+
+    <button class="review-arrow right">&#8250;</button>
   </div>
 </section>
 
@@ -452,28 +459,6 @@
         if (target) target.click();
       }
 
-      // === Review Carousel Logic ===
-      const reviewCards = document.querySelectorAll('.review-card');
-      const leftArrow = document.querySelector('.carousel-arrow.left');
-      const rightArrow = document.querySelector('.carousel-arrow.right');
-      let activeIndex = 0;
-
-      function updateReviewCarousel() {
-        reviewCards.forEach((card, i) => {
-          card.classList.toggle('active', i === activeIndex);
-        });
-      }
-
-      rightArrow?.addEventListener('click', () => {
-        activeIndex = (activeIndex + 1) % reviewCards.length;
-        updateReviewCarousel();
-      });
-
-      leftArrow?.addEventListener('click', () => {
-        activeIndex = (activeIndex - 1 + reviewCards.length) % reviewCards.length;
-        updateReviewCarousel();
-      });
-
       // === Contact Form Submission ===
       const form = document.getElementById('contact-form');
       const confirmBox = document.getElementById('form-confirmation');
@@ -517,6 +502,46 @@
       matchFormRightPaddingToVerticalLine();
     });
   </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.review-card');
+    const leftArrow = document.querySelector('.review-arrow.left');
+    const rightArrow = document.querySelector('.review-arrow.right');
+    let activeIndex = 0;
+    let isTransitioning = false;
+
+    function updateReview(direction) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const currentCard = cards[activeIndex];
+      const outClass = direction === 'next' ? 'fade-out-left' : 'fade-out-right';
+      currentCard.classList.remove('fade-in-left', 'fade-in-right');
+      currentCard.classList.add(outClass);
+
+      currentCard.addEventListener('transitionend', () => {
+        currentCard.classList.remove('active', outClass);
+
+        if (direction === 'next') {
+          activeIndex = (activeIndex + 1) % cards.length;
+        } else {
+          activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+        }
+
+        const newCard = cards[activeIndex];
+        newCard.classList.add('active');
+        newCard.classList.add(direction === 'next' ? 'fade-in-right' : 'fade-in-left');
+
+        isTransitioning = false;
+      }, { once: true });
+    }
+
+    rightArrow?.addEventListener('click', () => updateReview('next'));
+    leftArrow?.addEventListener('click', () => updateReview('prev'));
+  });
+</script>
+  
 </body>
 </html>
 
