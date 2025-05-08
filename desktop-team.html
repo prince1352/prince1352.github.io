@@ -501,28 +501,31 @@
       window.addEventListener('resize', matchFormRightPaddingToVerticalLine);
       matchFormRightPaddingToVerticalLine();
     });
-  </script>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
+    // === Review Carousel ===
     const cards = document.querySelectorAll('.review-card');
-    const leftArrow = document.querySelector('.review-arrow.left');
-    const rightArrow = document.querySelector('.review-arrow.right');
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
     let activeIndex = 0;
     let isTransitioning = false;
+
+    // Show the first card immediately
+    if (cards.length > 0) {
+      cards[0].classList.add('active');
+    }
 
     function updateReview(direction) {
       if (isTransitioning) return;
       isTransitioning = true;
 
       const currentCard = cards[activeIndex];
-      const outClass = direction === 'next' ? 'fade-out-left' : 'fade-out-right';
-      currentCard.classList.remove('fade-in-left', 'fade-in-right');
-      currentCard.classList.add(outClass);
+      currentCard.classList.remove('fade-in');
+      currentCard.classList.add('fade-out');
 
       currentCard.addEventListener('transitionend', () => {
-        currentCard.classList.remove('active', outClass);
+        currentCard.classList.remove('active', 'fade-out');
 
+        // Update index based on direction
         if (direction === 'next') {
           activeIndex = (activeIndex + 1) % cards.length;
         } else {
@@ -530,8 +533,7 @@
         }
 
         const newCard = cards[activeIndex];
-        newCard.classList.add('active');
-        newCard.classList.add(direction === 'next' ? 'fade-in-right' : 'fade-in-left');
+        newCard.classList.add('active', 'fade-in');
 
         isTransitioning = false;
       }, { once: true });
