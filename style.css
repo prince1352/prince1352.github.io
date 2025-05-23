@@ -1702,13 +1702,14 @@ ABOUT US WORK WITH US SECTION
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+  height: 100px;
 }
 
 .why-line-left,
 .why-line-right {
   flex: 1;
   height: 2px;
-  background-color: var(--white);
+  background-color: white;
 }
 
 .why-center-logo {
@@ -1724,7 +1725,6 @@ ABOUT US WORK WITH US SECTION
 }
 
 .why-body {
-  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
   font-weight: 300;
