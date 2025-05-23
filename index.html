@@ -451,7 +451,20 @@
         }
       });
     }
-  });
+
+       // === Optional: Match Form Padding to Vertical Divider ===
+      function matchFormRightPaddingToVerticalLine() {
+        const verticalLogo = document.querySelector('.contact-vertical-logo');
+        const contactRight = document.querySelector('.contact-right');
+        if (verticalLogo && contactRight) {
+          const left = verticalLogo.getBoundingClientRect().left;
+          contactRight.style.paddingRight = `${left}px`;
+        }
+      }
+
+      window.addEventListener('resize', matchFormRightPaddingToVerticalLine);
+      matchFormRightPaddingToVerticalLine();
+    });
 </script>
 
 <script>
