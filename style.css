@@ -1708,17 +1708,17 @@ ABOUT US WORK WITH US SECTION
 .why-line-right {
   flex: 1;
   height: 2px;
-  background-color: var(--navy);
+  background-color: var(--white);
 }
 
 .why-center-logo {
-  height: 60px;
+  height: 90px;
   margin: 0 20px;
 }
 
 .why-title {
   font-family: 'Inter', sans-serif;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 300;
   margin-bottom: 30px;
 }
@@ -1728,7 +1728,7 @@ ABOUT US WORK WITH US SECTION
   margin: 0 auto;
   text-align: center;
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
