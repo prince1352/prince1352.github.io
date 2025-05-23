@@ -1642,7 +1642,7 @@ ABOUT US SECTION
   display: flex;
   width: 100%;
   max-width: 1200px;
-  align-items: center;
+  align-items: left;
   gap: 20px;
 }
 
@@ -1665,6 +1665,7 @@ ABOUT US SECTION
   justify-content: center;
   font-family: 'Inter', sans-serif;
   color: var(--navy);
+  padding-left: 20px;
 }
 
 .about-heading {
