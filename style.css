@@ -1628,7 +1628,7 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
-ABOUT US SECTION
+ABOUT US INFORMATION SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
 .about-content-section {
@@ -1684,6 +1684,71 @@ ABOUT US SECTION
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------
+ABOUT US WORK WITH US SECTION
+------------------------------------------------------------------------------------------------------------------*/
+
+.why-work-section {
+  background-color: var(--red);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.why-header-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.why-line-left,
+.why-line-right {
+  flex: 1;
+  height: 2px;
+  background-color: white;
+}
+
+.why-center-logo {
+  height: 60px;
+  margin: 0 20px;
+}
+
+.why-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.why-body {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background-color: var(--navy);
+  border: 2px solid var(--navy);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: white;
+  color: var(--navy);
+  border-color: var(--navy);
 }
 
 /* ----------------------------------------------------------------------------------------------------------------
