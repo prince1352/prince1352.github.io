@@ -1743,7 +1743,7 @@ ABOUT US WORK WITH US SECTION
   border: 2px solid var(--navy);
   text-decoration: none;
   transition: all 0.3s ease;
-  border-radius: 30px;
+  border-radius: 8px;
   text-align: center;
 }
 
