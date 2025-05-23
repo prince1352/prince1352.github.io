@@ -1693,7 +1693,7 @@ ABOUT US WORK WITH US SECTION
 .why-work-section {
   background-color: var(--red);
   color: white;
-  padding: 80px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -1701,7 +1701,7 @@ ABOUT US WORK WITH US SECTION
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   height: 100px;
 }
 
@@ -1725,7 +1725,7 @@ ABOUT US WORK WITH US SECTION
 }
 
 .why-body {
-  margin: 0 auto;
+  margin: 0px 30px;
   text-align: center;
   font-weight: 300;
   font-size: 1.3rem;
@@ -1734,7 +1734,7 @@ ABOUT US WORK WITH US SECTION
 
 .contact-button {
   display: inline-block;
-  margin: 30px auto 0;
+  margin: 30px auto 15px;
   padding: 12px 30px;
   font-size: 1.5rem;
   font-weight: 500;
