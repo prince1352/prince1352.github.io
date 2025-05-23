@@ -3,10 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Team | Sandhu Law and Mediation</title>
+  <title>About Us | Sandhu Law and Mediation</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     html {
       scroll-behavior: smooth;
     }
+      </style>
+</head>
+  
+<body>
+  <!-- Header -->
+  <header class="header-blur">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          <img src="images/Logo.png" alt="Sandhu Law Logo" class="logo-icon" />
+          <div class="logo-text">
+            <div class="logo-line-1">SANDHU</div>
+            <div class="logo-line-2">LAW AND MEDIATION</div>
+          </div>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <ul class="navbar">
+          <li class="dropdown" data-submenu="submenu-practices">
+            <a href="#">Our Practices <span class="arrow">▼</span></a>
+          </li>
+          <li class="dropdown" data-submenu="submenu-team">
+            <a href="team.html">Our Team <span class="arrow">▼</span></a>
+          </li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta-button">
+        <a href="contact.html">Free Consultation</a>
+      </div>
+
+      <button class="hamburger-icon" aria-label="Toggle Menu">☰</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <ul>
+        <li>
+          <a href="#" class="has-submenu">
+            Our Practices <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="submenu">
+            <a href="#">Criminal Law</a>
+            <a href="#">Immigration Law</a>
+            <a href="#">Family Law</a>
+            <a href="#">Mediation</a>
+          </div>
+        </li>
+        <li>
+          <a href="team.html" class="has-submenu">
+            Our Team <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="submenu">
+            <a href="team.html?lawyer=baldev">Baldev Sandhu</a>
+            <a href="team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+            <a href="team.html?lawyer=kiran">Kiran Sandhu</a>
+            <a href="team.html?lawyer=aman">Aman Sandhu</a>
+            <a href="team.html?lawyer=harpun">Harpun Brar</a>
+            <a href="team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+          </div>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Mega Menu -->
+  <div class="mega-menu">
+    <div class="submenu-row" id="submenu-practices">
+      <a href="#">Criminal Law</a>
+      <a href="#">Immigration Law</a>
+      <a href="#">Family Law</a>
+      <a href="#">Mediation</a>
+    </div>
+    <div class="submenu-row" id="submenu-team">
+      <a href="team.html?lawyer=baldev">Baldev Sandhu</a>
+      <a href="team.html?lawyer=bikramjit">Bikramjit Sandhu</a>
+      <a href="team.html?lawyer=kiran">Kiran Sandhu</a>
+      <a href="team.html?lawyer=aman">Aman Sandhu</a>
+      <a href="team.html?lawyer=harpun">Harpun Brar</a>
+      <a href="team.html?lawyer=aaliyah">Aaliyah Mohammad</a>
+    </div>
+  </div>
