@@ -1631,28 +1631,31 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 ABOUT US SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
-.about-content-container {
-  max-width: 1200px;
-  width: 100%;
+.about-content-section {
+  background-color: #ffffff;
+  padding: 80px 20px;
   display: flex;
-  flex-direction: row;
-  gap: 40px;
+  justify-content: center;
+}
+
+.about-content-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  gap: 40px;
 }
 
 .about-image {
   flex: 1;
-  min-width: 300px;
-  max-width: 500px;
+  padding-left: 20px;
 }
 
 .about-image img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
   display: block;
+  border-radius: 0; /* No rounded corners */
 }
 
 .about-text {
@@ -1660,8 +1663,8 @@ ABOUT US SECTION
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--navy);
   font-family: 'Inter', sans-serif;
+  color: var(--navy);
 }
 
 .about-heading {
