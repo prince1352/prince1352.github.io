@@ -1726,7 +1726,7 @@ ABOUT US WORK WITH US SECTION
 .why-body {
   max-width: 1000px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   font-weight: 300;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -1736,7 +1736,7 @@ ABOUT US WORK WITH US SECTION
   display: inline-block;
   margin: 30px auto 0;
   padding: 12px 30px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: white;
   background-color: var(--navy);
@@ -1745,6 +1745,12 @@ ABOUT US WORK WITH US SECTION
   transition: all 0.3s ease;
   border-radius: 8px;
   text-align: center;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .contact-button:hover {
