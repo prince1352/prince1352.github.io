@@ -1708,7 +1708,7 @@ ABOUT US WORK WITH US SECTION
 .why-line-right {
   flex: 1;
   height: 2px;
-  background-color: white;
+  background-color: var(--navy);
 }
 
 .why-center-logo {
@@ -1734,7 +1734,7 @@ ABOUT US WORK WITH US SECTION
 
 .contact-button {
   display: inline-block;
-  margin-top: 30px;
+  margin: 30px auto 0;
   padding: 12px 30px;
   font-size: 1rem;
   font-weight: 500;
@@ -1743,6 +1743,8 @@ ABOUT US WORK WITH US SECTION
   border: 2px solid var(--navy);
   text-decoration: none;
   transition: all 0.3s ease;
+  border-radius: 30px;
+  text-align: center;
 }
 
 .contact-button:hover {
