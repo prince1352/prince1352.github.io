@@ -1631,13 +1631,6 @@ input[type="checkbox"]:checked + .custom-checkbox-box::after {
 ABOUT US SECTION
 ------------------------------------------------------------------------------------------------------------------*/
 
-.about-content-section {
-  display: flex;
-  justify-content: center;
-  padding: 80px 20px;
-  background-color: #fff;
-}
-
 .about-content-container {
   max-width: 1200px;
   width: 100%;
@@ -1645,18 +1638,25 @@ ABOUT US SECTION
   flex-direction: row;
   gap: 40px;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .about-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 10px;
-  flex-shrink: 0;
+  display: block;
 }
 
 .about-text {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1770,4 +1770,19 @@ MOBILE TRANSITION HEADER/MENU
     gap: 0.5rem
   }
 
+   .about-content-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .about-text {
+    align-items: center;
+  }
+
+  .about-heading,
+  .about-subheading,
+  .about-body {
+    text-align: center;
+  }
 }
